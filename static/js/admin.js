@@ -3592,7 +3592,8 @@ var htmlEditorLangsMap = {
 	'tr_tr': 'tr',
 	'uk_ua': 'uk',
 	'zh_cn': 'zh-cn',
-	'zh_tw': 'zh'
+	'zh_tw': 'zh',
+	'mn_mon': 'mn-mon'
 };
 
 /**
@@ -6704,7 +6705,7 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 
 /***/ },
@@ -13084,7 +13085,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
             if (typeof this._o.onDraw === 'function') {
                 this._o.onDraw(this);
             }
-            
+
             if (opts.bound) {
                 // let the screen reader user know to use arrow keys
                 opts.field.setAttribute('aria-label', 'Use the arrow keys to pick a date');
