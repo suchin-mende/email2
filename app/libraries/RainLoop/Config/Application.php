@@ -207,6 +207,7 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'allow_admin_panel'			=> array(true, 'Access settings'),
 				'allow_two_factor_auth'		=> array(false),
 				'force_two_factor_auth'		=> array(false),
+				'hide_x_mailer_header'		=> array(false),
 				'admin_panel_host'			=> array(''),
 				'admin_panel_key'			=> array('admin'),
 				'content_security_policy'	=> array(''),
@@ -368,6 +369,8 @@ Enables caching in the system'),
 				'fast_cache_index' => array('v1', 'Additional caching key. If changed, fast cache is purged'),
 
 				'http' => array(true, 'Browser-level cache. If enabled, caching is maintainted without using files'),
+				'http_expires' => array(3600, 'Browser-level cache time (seconds, Expires header)'),
+
 				'server_uids' => array(true, 'Caching message UIDs when searching and sorting (threading)')
 			),
 

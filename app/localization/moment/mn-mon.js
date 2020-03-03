@@ -1,127 +1,144 @@
 //! moment.js locale configuration
-//! locale : Chinese (China) [zh-cn]
+//! locale : Mongol(Inner Mongolia)[mn - mon]
 //! author : suupic : https://github.com/suupic
-//! author : Zeno Zeng : https://github.com/zenozeng
+//! author : Suchin Mende : https://github.com/suchin-mende
 
-;(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined'
-       && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
-}(this, (function (moment) { 'use strict';
+;(function(global, factory) {
+  typeof exports === 'object' &&
+  typeof module !== 'undefined' &&
+  typeof require === 'function'
+    ? factory(require('../moment'))
+    : typeof define === 'function' && define.amd
+    ? define(['../moment'], factory)
+    : factory(global.moment)
+})(this, function(moment) {
+  'use strict'
 
-
-var zhCn = moment.defineLocale('zh-cn', {
-    months : '一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月'.split('_'),
-    monthsShort : '1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月'.split('_'),
-    weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
-    weekdaysShort : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-    weekdaysMin : '日_一_二_三_四_五_六'.split('_'),
-    longDateFormat : {
-        LT : 'Ah点mm分',
-        LTS : 'Ah点m分s秒',
-        L : 'YYYY-MM-DD',
-        LL : 'YYYY年MMMD日',
-        LLL : 'YYYY年MMMD日Ah点mm分',
-        LLLL : 'YYYY年MMMD日ddddAh点mm分',
-        l : 'YYYY-MM-DD',
-        ll : 'YYYY年MMMD日',
-        lll : 'YYYY年MMMD日Ah点mm分',
-        llll : 'YYYY年MMMD日ddddAh点mm分'
+  var mnMon = moment.defineLocale('mn-mon', {
+    months: 'ᠨᠢᠭᠡ ᠰᠠᠷ᠎ᠠ_ᠬᠤᠶᠠᠷ ᠰᠠᠷ᠎ᠠ_ᠭᠤᠷᠪᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠳᠥᠷᠪᠡᠨ ᠰᠠᠷ᠎ᠠ_ᠲᠠᠪᠦᠨ ᠰᠠᠷ᠎ᠠ_ᠵᠢᠷᠭᠤᠭᠠᠨ ᠰᠠᠷ᠎ᠠ _ᠳᠣᠯᠤᠭᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠨᠠᠢ᠍ᠮᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠶᠢ᠍ᠰᠤᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠨᠢᠭᠡᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠬᠣᠶᠠᠷ ᠰᠠᠷ᠎ᠠ'.split(
+      '_'
+    ),
+    monthsShort: 'ᠨᠢᠭᠡ ᠰᠠᠷ᠎ᠠ_ᠬᠤᠶᠠᠷ ᠰᠠᠷ᠎ᠠ_ᠭᠤᠷᠪᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠳᠥᠷᠪᠡᠨ ᠰᠠᠷ᠎ᠠ_ᠲᠠᠪᠦᠨ ᠰᠠᠷ᠎ᠠ_ᠵᠢᠷᠭᠤᠭᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠳᠣᠯᠤᠭᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠨᠠᠢ᠍ᠮᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠶᠢ᠍ᠰᠤᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠨᠢᠭᠡᠨ ᠰᠠᠷ᠎ᠠ_ᠠᠷᠪᠠᠨ ᠬᠣᠶᠠᠷ ᠰᠠᠷ᠎ᠠ'.split(
+      '_'
+    ),
+    weekdays: ' ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠡᠳᠤᠷ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠨᠢᠭᠡᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠬᠤᠶᠠᠷ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠭᠤᠷᠪᠠᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠳᠦᠷᠪᠠᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠲᠠᠪᠤᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ'.split(
+      '_'
+    ),
+    weekdaysShort: 'ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠡᠳᠤᠷ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠨᠢᠭᠡᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠬᠤᠶᠠᠷ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠭᠤᠷᠪᠠᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠳᠦᠷᠪᠠᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠲᠠᠪᠤᠨ_ᠭᠠᠷᠠᠭ ᠤ᠋ᠨ ᠵᠢᠷᠭᠤᠭᠠᠨ'.split(
+      '_'
+    ),
+    weekdaysMin: 'ᠡᠳᠤᠷ_ᠨᠢᠭᠡ_ᠬᠤᠶᠠᠷ_ᠭᠤᠷᠪᠠ_ᠳᠦᠷᠪᠠ_ᠲᠠᠪᠤ_ᠵᠢᠷᠭᠤᠭ᠎ᠠ'.split('_'),
+    longDateFormat: {
+      LT: 'Ahᠴᠠᠭmmᠮᠢᠨᠦ᠋ᠲ',
+      LTS: 'Ahᠴᠠᠭmᠮᠢᠨᠦ᠋ᠲsᠰᠧᠺᠦ᠋ᠨ᠋ᠳ᠋',
+      L: 'YYYY-MM-DD',
+      LL: 'YYYYᠣᠨMMMDᠡᠳᠤᠷ',
+      LLL: 'YYYYᠣᠨMMMDᠡᠳᠤᠷAhᠴᠠᠭmmᠮᠢᠨᠦ᠋ᠲ',
+      LLLL: 'YYYYᠣᠨMMMDᠡᠳᠤᠷddddAhᠴᠠᠭmmᠮᠢᠨᠦ᠋ᠲ',
+      l: 'YYYY-MM-DD',
+      ll: 'YYYYᠣᠨMMMDᠡᠳᠤᠷ',
+      lll: 'YYYYᠣᠨMMMDᠡᠳᠤᠷAhᠴᠠᠭmmᠮᠢᠨᠦ᠋ᠲ',
+      llll: 'YYYYᠣᠨMMMDᠡᠳᠦᠷddddAhᠴᠠᠭmmᠮᠢᠨᠦ᠋ᠲ'
     },
-    meridiemParse: /凌晨|早上|上午|中午|下午|晚上/,
-    meridiemHour: function (hour, meridiem) {
-        if (hour === 12) {
-            hour = 0;
-        }
-        if (meridiem === '凌晨' || meridiem === '早上' ||
-                meridiem === '上午') {
-            return hour;
-        } else if (meridiem === '下午' || meridiem === '晚上') {
-            return hour + 12;
-        } else {
-            // '中午'
-            return hour >= 11 ? hour : hour + 12;
-        }
+    meridiemParse: /ᠦᠷ|ᠥᠷᠯᠦᠭᠡ|ᠦᠳᠡ ᠢᠨ ᠡᠮᠦᠨ᠎ᠡ|ᠦᠳᠡ|ᠦᠳᠡ ᠢᠨ ᠬᠣᠢᠨ᠎ᠠ|ᠰᠥᠨᠢ/,
+    meridiemHour: function(hour, meridiem) {
+      if (hour === 12) {
+        hour = 0
+      }
+      if (
+        meridiem === 'ᠦᠷ' ||
+        meridiem === 'ᠥᠷᠯᠦᠭᠡ' ||
+        meridiem === 'ᠦᠳᠡ ᠢᠨ ᠡᠮᠦᠨ᠎ᠡ'
+      ) {
+        return hour
+      } else if (meridiem === 'ᠦᠳᠡ ᠢᠨ ᠬᠣᠢᠨ᠎ᠠ' || meridiem === 'ᠰᠥᠨᠢ') {
+        return hour + 12
+      } else {
+        // '早上'
+        return hour >= 11 ? hour : hour + 12
+      }
     },
-    meridiem : function (hour, minute, isLower) {
-        var hm = hour * 100 + minute;
-        if (hm < 600) {
-            return '凌晨';
-        } else if (hm < 900) {
-            return '早上';
-        } else if (hm < 1130) {
-            return '上午';
-        } else if (hm < 1230) {
-            return '中午';
-        } else if (hm < 1800) {
-            return '下午';
-        } else {
-            return '晚上';
-        }
+    meridiem: function(hour, minute, isLower) {
+      var hm = hour * 100 + minute
+      if (hm < 600) {
+        return ' ᠦᠷ'
+      } else if (hm < 900) {
+        return 'ᠥᠷᠯᠦᠭᠡ'
+      } else if (hm < 1130) {
+        return 'ᠦᠳᠡ ᠢᠨ ᠡᠮᠦᠨ᠎ᠡ'
+      } else if (hm < 1230) {
+        return 'ᠦᠳᠡ'
+      } else if (hm < 1800) {
+        return 'ᠦᠳᠡ ᠢᠨ ᠬᠣᠢᠨ᠎ᠠ'
+      } else {
+        return 'ᠰᠥᠨᠢ'
+      }
     },
-    calendar : {
-        sameDay : function () {
-            return this.minutes() === 0 ? '[今天]Ah[点整]' : '[今天]LT';
-        },
-        nextDay : function () {
-            return this.minutes() === 0 ? '[明天]Ah[点整]' : '[明天]LT';
-        },
-        lastDay : function () {
-            return this.minutes() === 0 ? '[昨天]Ah[点整]' : '[昨天]LT';
-        },
-        nextWeek : function () {
-            var startOfWeek, prefix;
-            startOfWeek = moment().startOf('week');
-            prefix = this.diff(startOfWeek, 'days') >= 7 ? '[下]' : '[本]';
-            return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
-        },
-        lastWeek : function () {
-            var startOfWeek, prefix;
-            startOfWeek = moment().startOf('week');
-            prefix = this.unix() < startOfWeek.unix()  ? '[上]' : '[本]';
-            return this.minutes() === 0 ? prefix + 'dddAh点整' : prefix + 'dddAh点mm';
-        },
-        sameElse : 'LL'
+    calendar: {
+      sameDay: function() {
+        return this.minutes() === 0 ? '[ᠥᠨᠥᠳᠦᠷ]Ah[ᠴᠠᠭ ᠲᠤ]' : '[ᠥᠨᠥᠳᠦᠷ]LT'
+      },
+      nextDay: function() {
+        return this.minutes() === 0 ? '[ᠮᠠᠷᠭᠠᠰᠢ]Ah[ᠴᠠᠭ ᠲᠤ]' : '[ᠮᠠᠷᠭᠠᠰᠢ]LT'
+      },
+      lastDay: function() {
+        return this.minutes() === 0 ? '[ᠥᠴᠦᠭᠡᠳᠦᠷ]Ah[ᠴᠠᠭ ᠲᠤ]' : '[ᠥᠴᠦᠭᠡᠳᠦᠷ]LT'
+      },
+      nextWeek: function() {
+        var startOfWeek, prefix
+        startOfWeek = moment().startOf('week')
+        prefix = this.diff(startOfWeek, 'days') >= 7 ? '[ᠳᠠᠷᠠᠭ᠎ᠠ]' : '[ᠲᠤᠰ]'
+        return this.minutes() === 0
+          ? prefix + 'dddAhᠴᠠᠭ ᠲᠤ'
+          : prefix + 'dddAhᠴᠠᠭmm'
+      },
+      lastWeek: function() {
+        var startOfWeek, prefix
+        startOfWeek = moment().startOf('week')
+        prefix = this.unix() < startOfWeek.unix() ? '[ᠳᠡᠭᠡᠷ᠎ᠠ]' : '[ᠲᠤᠰ]'
+        return this.minutes() === 0
+          ? prefix + 'dddAhᠴᠠᠭ ᠲᠤ'
+          : prefix + 'dddAhᠴᠠᠭmm'
+      },
+      sameElse: 'LL'
     },
-    ordinalParse: /\d{1,2}(日|月|周)/,
-    ordinal : function (number, period) {
-        switch (period) {
-            case 'd':
-            case 'D':
-            case 'DDD':
-                return number + '日';
-            case 'M':
-                return number + '月';
-            case 'w':
-            case 'W':
-                return number + '周';
-            default:
-                return number;
-        }
+    ordinalParse: /\d{1,2}(ᠡᠳᠤᠷ|ᠰᠠᠷ᠎ᠠ|ᠭᠠᠷᠠᠭ)/,
+    ordinal: function(number, period) {
+      switch (period) {
+        case 'd':
+        case 'D':
+        case 'DDD':
+          return number + 'ᠡᠳᠦᠢ'
+        case 'M':
+          return number + 'ᠰᠠᠷ᠎ᠠ'
+        case 'w':
+        case 'W':
+          return number + 'ᠭᠠᠷᠠᠭ'
+        default:
+          return number
+      }
     },
-    relativeTime : {
-        future : '%s内',
-        past : '%s前',
-        s : '几秒',
-        m : '1 分钟',
-        mm : '%d 分钟',
-        h : '1 小时',
-        hh : '%d 小时',
-        d : '1 天',
-        dd : '%d 天',
-        M : '1 个月',
-        MM : '%d 个月',
-        y : '1 年',
-        yy : '%d 年'
+    relativeTime: {
+      future: '%s ᠳᠣᠲᠤᠷ᠎ᠠ',
+      past: '%s iin ᠡᠮᠦᠨ᠎ᠡ',
+      s: 'ᠬᠡᠳᠦᠨ ᠰᠧᠺᠦ᠋ᠨ᠋ᠳ᠋',
+      m: '1 ᠮᠢᠨᠦ᠋ᠲ',
+      mm: '%d ᠮᠢᠨᠦ᠋ᠲ',
+      h: '1 ᠴᠠᠭ',
+      hh: '%d ᠴᠠᠭ',
+      d: '1 ᠡᠳᠤᠷ',
+      dd: '%d ᠡᠳᠤᠷ',
+      M: '1 ᠰᠠᠷ᠎ᠠ',
+      MM: '%d ᠰᠠᠷ᠎ᠠ',
+      y: '1 ᠵᠢᠯ',
+      yy: '%d ᠵᠢᠯ'
     },
-    week : {
-        // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
-        dow : 1, // Monday is the first day of the week.
-        doy : 4  // The week that contains Jan 4th is the first week of the year.
+    week: {
+      // GB/T 7408-1994《数据元和交换格式·信息交换·日期和时间表示法》与ISO 8601:1988等效
+      dow: 1, // Monday is the first day of the week.
+      doy: 4 // The week that contains Jan 4th is the first week of the year.
     }
-});
+  })
 
-return zhCn;
-
-})));
+  return mnMon
+})
