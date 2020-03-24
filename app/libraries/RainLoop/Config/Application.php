@@ -136,16 +136,16 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 			'webmail' => array(
 
-				'title'							=> array('RainLoop Webmail', 'Text displayed as page title'),
-				'loading_description'			=> array('RainLoop', 'Text displayed on startup'),
+				'title'							=> array('Mongol Webmail', 'Text displayed as page title'),
+				'loading_description'			=> array('MongoEmail', 'Text displayed on startup'),
 				'favicon_url'					=> array('', ''),
 
 				'theme'							=> array('Default', 'Theme used by default'),
 				'allow_themes'					=> array(true, 'Allow theme selection on settings screen'),
 				'allow_user_background'			=> array(false),
 
-				'language'						=> array('en', 'Language used by default'),
-				'language_admin'				=> array('en', 'Admin Panel interface language'),
+				'language'						=> array('mn_MON', 'Language used by default'),
+				'language_admin'				=> array('mn_MON', 'Admin Panel interface language'),
 				'allow_languages_on_settings'	=> array(true, 'Allow language selection on settings screen'),
 
 				'allow_additional_accounts'		=> array(true, ''),
@@ -169,12 +169,11 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'login_background'	=> array(''),
 				'login_desc'		=> array(''),
 				'login_css'			=> array(''),
-				'login_powered'		=> array(true),
 
 				'user_css'			=> array(''),
 				'user_logo'			=> array(''),
-				'user_logo_title'	=> array(''),
-				'user_logo_message'	=> array(''),
+				'user_logo_title'	=> array('Halgai Technology Co., Ltd'),
+				'user_logo_message'	=> array('Mongol Email Halgai Technology Co., Ltd'),
 				'user_iframe_message'	=> array(''),
 
 				'welcome_page_url'		=> array(''),
@@ -183,7 +182,6 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 			'contacts' => array(
 				'enable'			=> array(false, 'Enable contacts'),
-				'allow_sharing'		=> array(true),
 				'allow_sync'		=> array(false),
 				'sync_interval'		=> array(20),
 				'type'				=> array('sqlite', ''),
@@ -199,6 +197,7 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 				'custom_server_signature'	=> array('RainLoop'),
 				'x_frame_options_header'	=> array(''),
+				'x_xss_protection_header'	=> array('1; mode=block'),
 
 				'openpgp'					=> array(false),
 
@@ -219,6 +218,7 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'allow_self_signed'		=> array(true, 'Allow self-signed certificates. Requires verify_certificate.'),
 				'cafile'			=> array('', 'Location of Certificate Authority file on local filesystem (/etc/ssl/certs/ca-certificates.crt)'),
 				'capath'			=> array('', 'capath must be a correctly hashed certificate directory. (/etc/ssl/certs/)'),
+				'client_cert'			=> array('', 'Location of client certificate file (pem format with private key) on local filesystem'),
 			),
 
 			'capa' => array(
@@ -251,12 +251,12 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 				'welcome_page' => array(false, ''),
 
-				'glass_style' => array(true),
-				'hide_submit_button' => array(true),
-				'active_backgroud' => array(false),
+				'hide_submit_button' => array(false),
 
 				'forgot_password_link_url' => array('', ''),
 				'registration_link_url' => array('', ''),
+
+				'login_lowercase' => array(true, ''),
 
 				'sign_me_auto'	=> array(\RainLoop\Enumerations\SignMeType::DEFAILT_OFF,
 					'This option allows webmail to remember the logged in user
@@ -281,6 +281,7 @@ Values:
 				'show_images'			=> array(false),
 				'contacts_autosave'		=> array(true),
 				'mail_use_threads'		=> array(false),
+				'allow_draft_autosave'	=> array(true),
 				'mail_reply_same_folder' => array(false)
 			),
 
@@ -297,6 +298,8 @@ Disabling this option is not recommended.'),
 
 				'time_offset' => array('0'),
 				'session_filter' => array(''),
+
+				'sentry_dsn' => array(''),
 
 				'filename' => array('log-{date:Y-m-d}.txt',
 					'Log filename.
@@ -338,7 +341,7 @@ Examples:
 			'social' => array(
 				'google_enable' => array(false, 'Google'),
 				'google_enable_auth' => array(false),
-				'google_enable_auth_fast' => array(false),
+				'google_enable_auth_gmail' => array(false),
 				'google_enable_drive' => array(false),
 				'google_enable_preview' => array(false),
 				'google_client_id' => array(''),
@@ -385,7 +388,7 @@ Enables caching in the system'),
 				'allow_prefetch' => array(true),
 				'allow_smart_html_links' => array(true),
 				'cache_system_data' => array(true),
-				'date_from_headers' => array(false),
+				'date_from_headers' => array(true),
 				'autocreate_system_folders' => array(true),
 				'allow_message_append' => array(false),
 				'disable_iconv_if_mbstring_supported' => array(false),
@@ -393,10 +396,11 @@ Enables caching in the system'),
 				'log_ajax_response_write_limit' => array(300),
 				'allow_html_editor_source_button' => array(false),
 				'allow_html_editor_biti_buttons' => array(false),
-				'allow_ctrl_enter_on_compose' => array(false),
+				'allow_ctrl_enter_on_compose' => array(true),
 				'try_to_detect_hidden_images' => array(false),
 				'hide_dangerous_actions' => array(false),
 				'use_app_debug_js' => array(false),
+				'use_mobile_version_for_tablets' => array(false),
 				'use_app_debug_css' => array(false),
 				'use_imap_sort' => array(true),
 				'use_imap_force_selection' => array(false),
@@ -422,6 +426,8 @@ Enables caching in the system'),
 				'smtp_use_auth_cram_md5' => array(false),
 				'sieve_allow_raw_script' => array(false),
 				'sieve_utf8_folder_name' => array(true),
+				'sieve_auth_plain_initial' => array(true),
+				'sieve_allow_fileinto_inbox' => array(false),
 				'imap_timeout' => array(300),
 				'smtp_timeout' => array(60),
 				'sieve_timeout' => array(10),

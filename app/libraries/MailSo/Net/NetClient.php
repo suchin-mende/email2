@@ -196,6 +196,7 @@ abstract class NetClient
 	 * @param int $iSecurityType = \MailSo\Net\Enumerations\ConnectionSecurityType::AUTO_DETECT
 	 * @param bool $bVerifySsl = false
 	 * @param bool $bAllowSelfSigned = true
+	 * @param string $sClientCert = ''
 	 *
 	 * @return void
 	 *
@@ -205,7 +206,8 @@ abstract class NetClient
 	 */
 	public function Connect($sServerName, $iPort,
 		$iSecurityType = \MailSo\Net\Enumerations\ConnectionSecurityType::AUTO_DETECT,
-		$bVerifySsl = false, $bAllowSelfSigned = true)
+		$bVerifySsl = false, $bAllowSelfSigned = true,
+		$sClientCert = '')
 	{
 		if (!\MailSo\Base\Validator::NotEmptyString($sServerName, true) || !\MailSo\Base\Validator::PortInt($iPort))
 		{
@@ -254,7 +256,6 @@ abstract class NetClient
 
 		$bVerifySsl = !!$bVerifySsl;
 		$bAllowSelfSigned = $bVerifySsl ? !!$bAllowSelfSigned : true;
-
 		$aStreamContextSettings = array(
 			'ssl' => array(
 				'verify_host' => $bVerifySsl,
@@ -263,6 +264,11 @@ abstract class NetClient
 				'allow_self_signed' => $bAllowSelfSigned
 			)
 		);
+
+		if (!empty($sClientCert))
+		{
+			$aStreamContextSettings['ssl']['local_cert'] = $sClientCert;
+		}
 
 		\MailSo\Hooks::Run('Net.NetClient.StreamContextSettings/Filter', array(&$aStreamContextSettings));
 
@@ -317,8 +323,10 @@ abstract class NetClient
 			{
 				case defined('STREAM_CRYPTO_METHOD_ANY_CLIENT') &&
 					@\stream_socket_enable_crypto($this->rConnect, true, STREAM_CRYPTO_METHOD_ANY_CLIENT):
-				case @\stream_socket_enable_crypto($this->rConnect, true, STREAM_CRYPTO_METHOD_TLS_CLIENT):
-				case @\stream_socket_enable_crypto($this->rConnect, true, STREAM_CRYPTO_METHOD_SSLv23_CLIENT):
+				case defined('STREAM_CRYPTO_METHOD_TLS_CLIENT') &&
+					@\stream_socket_enable_crypto($this->rConnect, true, STREAM_CRYPTO_METHOD_TLS_CLIENT):
+				case defined('STREAM_CRYPTO_METHOD_SSLv23_CLIENT') &&
+					@\stream_socket_enable_crypto($this->rConnect, true, STREAM_CRYPTO_METHOD_SSLv23_CLIENT):
 					$bError = false;
 					break;
 			}

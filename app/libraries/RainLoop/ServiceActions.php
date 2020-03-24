@@ -124,9 +124,12 @@ class ServiceActions
 			$sAction = $this->aPaths[2];
 		}
 
+		$this->oActions->SetIsAjax(true);
+
 		try
 		{
-			if ($this->oHttp->IsPost() && !in_array($sAction, array('JsInfo', 'JsError')) &&
+
+			if ($this->oHttp->IsPost() &&
 				$this->Config()->Get('security', 'csrf_protection', false) &&
 				$this->oHttp->GetPost('XToken', '') !== \RainLoop\Utils::GetCsrfToken())
 			{
@@ -211,6 +214,12 @@ class ServiceActions
 		if (\is_array($aResponseItem))
 		{
 			$aResponseItem['Time'] = (int) ((\microtime(true) - APP_START) * 1000);
+
+			$sUpdateToken = $this->oActions->GetUpdateAuthToken();
+			if ($sUpdateToken)
+			{
+				$aResponseItem['UpdateToken'] = $sUpdateToken;
+			}
 		}
 
 		$this->Plugins()->RunHook('filter.ajax-response', array($sAction, &$aResponseItem));
@@ -498,6 +507,7 @@ class ServiceActions
 				if (\method_exists($this->oActions, $sMethodName))
 				{
 					@\header('X-Raw-Action: '.$sMethodName, true);
+					@\header('Content-Security-Policy: script-src \'none\'; frame-src \'none\'; child-src \'none\'', true);
 
 					$sRawError = '';
 					$this->oActions->SetActionParams(array(
@@ -596,7 +606,6 @@ class ServiceActions
 				$this->oActions->cacheByKey($this->sQuery);
 			}
 		}
-
 		return $sResult;
 	}
 
@@ -829,9 +838,9 @@ class ServiceActions
 	/**
 	 * @return string
 	 */
-	public function ServiceSkipMobile()
+	public function ServiceMobileVersion()
 	{
-		\RainLoop\Utils::SetCookie(\RainLoop\Actions::RL_SKIP_MOBILE_KEY, 1);
+		\RainLoop\Utils::SetCookie(\RainLoop\Actions::RL_MOBILE_TYPE, 'mobile');
 		$this->oActions->Location('./');
 		return '';
 	}
@@ -839,9 +848,9 @@ class ServiceActions
 	/**
 	 * @return string
 	 */
-	public function ServiceClearSkipMobile()
+	public function ServiceDesktopVersion()
 	{
-		\RainLoop\Utils::ClearCookie(\RainLoop\Actions::RL_SKIP_MOBILE_KEY);
+		\RainLoop\Utils::SetCookie(\RainLoop\Actions::RL_MOBILE_TYPE, 'desktop');
 		$this->oActions->Location('./');
 		return '';
 	}
@@ -1186,16 +1195,6 @@ class ServiceActions
 	/**
 	 * @return string
 	 */
-	public function ServiceChangeMobile()
-	{
-		$this->changeAction();
-		$this->oActions->Location('./?/Mobile/');
-		return '';
-	}
-
-	/**
-	 * @return string
-	 */
 	public function ServiceChange()
 	{
 		$this->changeAction();
@@ -1296,7 +1295,6 @@ class ServiceActions
 	public function compileTemplates($bAdmin = false, $bJsOutput = true)
 	{
 		$aTemplates = array();
-
 		\RainLoop\Utils::CompileTemplates($aTemplates, APP_VERSION_ROOT_PATH.'app/templates/Views/Components', 'Component');
 		\RainLoop\Utils::CompileTemplates($aTemplates, APP_VERSION_ROOT_PATH.'app/templates/Views/'.($bAdmin ? 'Admin' : 'User'));
 		\RainLoop\Utils::CompileTemplates($aTemplates, APP_VERSION_ROOT_PATH.'app/templates/Views/Common');
@@ -1324,7 +1322,7 @@ class ServiceActions
 	private function convertLanguageNameToMomentLanguageName($sLanguage)
 	{
 		$aHelper = array('en_gb' => 'en-gb', 'fr_ca' => 'fr-ca', 'pt_br' => 'pt-br',
-			'uk_ua' => 'ua', 'zh_cn' => 'zh-cn', 'zh_tw' => 'zh-tw', 'fa_ir' => 'fa');
+			'uk_ua' => 'ua', 'zh_cn' => 'zh-cn', 'zh_tw' => 'zh-tw', 'fa_ir' => 'fa', 'mn_mon' => 'mn-mon');
 
 		return isset($aHelper[$sLanguage]) ? $aHelper[$sLanguage] : \substr($sLanguage, 0, 2);
 	}
@@ -1355,7 +1353,6 @@ class ServiceActions
 			($bAdmin ? 'admin' : 'webmail').'/_source.en.yml', $aResultLang);
 		\RainLoop\Utils::ReadAndAddLang(APP_VERSION_ROOT_PATH.'app/localization/'.
 			($bAdmin ? 'admin' : 'webmail').'/'.$sLanguage.'.yml', $aResultLang);
-
 		$this->Plugins()->ReadLang($sLanguage, $aResultLang);
 
 		$sLangJs = '';

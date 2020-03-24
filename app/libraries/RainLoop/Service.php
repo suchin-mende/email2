@@ -26,7 +26,6 @@ class Service
 	{
 		$this->oHttp = \MailSo\Base\Http::SingletonInstance();
 		$this->oActions = \RainLoop\Api::Actions();
-
 		$this->oServiceActions = new \RainLoop\ServiceActions($this->oHttp, $this->oActions);
 
 		if ($this->oActions->Config()->Get('debug', 'enable', false))
@@ -45,6 +44,12 @@ class Service
 		if (0 < \strlen($sXFrameOptionsHeader))
 		{
 			@\header('X-Frame-Options: '.$sXFrameOptionsHeader, true);
+		}
+
+		$sXssProtectionOptionsHeader = \trim($this->oActions->Config()->Get('security', 'x_xss_protection_header', ''));
+		if (0 < \strlen($sXssProtectionOptionsHeader))
+		{
+			@\header('X-XSS-Protection: '.$sXssProtectionOptionsHeader, true);
 		}
 
 		if ($this->oActions->Config()->Get('labs', 'force_https', false) && !$this->oHttp->IsSecure())
@@ -95,8 +100,6 @@ class Service
 			return $this;
 		}
 
-		$this->oActions->BootStart();
-
 		$sResult = '';
 		$bCached = false;
 
@@ -110,7 +113,7 @@ class Service
 		$sAdminPanelHost = $this->oActions->Config()->Get('security', 'admin_panel_host', '');
 		if (empty($sAdminPanelHost))
 		{
-			$sAdminPanelKey = \strtolower($this->oActions->Config()->Get('security', 'admin_panel_key', 'admin'));
+			$sAdminPanelKey = \strtolower($this->oActions->Config()->Get('security', 'admin_panel_key', 'lang'));
 			$bAdmin = !empty($aPaths[0]) && \strtolower($aPaths[0]) === $sAdminPanelKey;
 		}
 		else if (empty($aPaths[0]) &&
@@ -156,21 +159,26 @@ class Service
 
 		if ($this->oActions->Config()->Get('labs', 'allow_mobile_version', false))
 		{
+			$bUseMobileVersionForTablets = $this->oActions->Config()->Get('labs', 'use_mobile_version_for_tablets', false);
+
 			$oMobileDetect = new \Detection\MobileDetect();
-			$bMobileDevice = $oMobileDetect->isMobile() && !$oMobileDetect->isTablet();
+			$bMobileDevice = $oMobileDetect->isMobile() &&
+				($bUseMobileVersionForTablets ? true : !$oMobileDetect->isTablet());
 
-			$bMobile = (0 < \count($aPaths) && !empty($aPaths[0]) && 'mobile' === \strtolower($aPaths[0]));
-		}
-
-		if ($bIndex && !$bMobile)
-		{
-			$iMobileKey = (int) \RainLoop\Utils::GetCookie(\RainLoop\Actions::RL_SKIP_MOBILE_KEY, 0);
-			if (1 !== $iMobileKey)
+			if ($bIndex)
 			{
-				if ($bMobileDevice)
-				{
-					$this->oActions->Location('./?/Mobile/');
-					return $this;
+				$sMobileType = (string) \RainLoop\Utils::GetCookie(\RainLoop\Actions::RL_MOBILE_TYPE, '');
+				switch ($sMobileType) {
+					default:
+						$sMobileType = '';
+						$bMobile = $bMobileDevice;
+						break;
+					case 'mobile':
+						$bMobile = true;
+						break;
+					case 'desktop':
+						$bMobile = false;
+						break;
 				}
 			}
 		}
@@ -206,7 +214,6 @@ class Service
 			{
 //				$aTemplateParameters['{{BaseTemplates}}'] = $this->oServiceActions->compileTemplates($bAdmin, false);
 				$sResult = \strtr(\file_get_contents(APP_VERSION_ROOT_PATH.'app/templates/Index.html'), $aTemplateParameters);
-
 				$sResult = \RainLoop\Utils::ClearHtmlOutput($sResult);
 				if (0 < \strlen($sCacheFileName))
 				{
@@ -242,6 +249,10 @@ class Service
 			}
 
 			$sResult .= ']-->';
+		}
+		else
+		{
+			@\header('X-XSS-Protection: 1; mode=block');
 		}
 
 		// Output result
@@ -280,17 +291,22 @@ class Service
 		$bAppCssDebug = !!$this->oActions->Config()->Get('labs', 'use_app_debug_css', false);
 
 		$sFaviconUrl = (string) $this->oActions->Config()->Get('webmail', 'favicon_url', '');
-
 		$sFaviconPngLink = $sFaviconUrl ? $sFaviconUrl : $this->staticPath('apple-touch-icon.png');
 		$sAppleTouchLink = $sFaviconUrl ? '' : $this->staticPath('apple-touch-icon.png');
 
 		$sContentSecurityPolicy = $this->oActions->Config()->Get('security', 'content_security_policy', '');
-
+		$sSentryDsn = $this->oActions->Config()->Get('logs', 'sentry_dsn', '');
 		$aTemplateParameters = array(
+			'{{BaseAppHeadScriptLink}}' => $sSentryDsn ?
+				'<script type="text/javascript" data-cfasync="false" src="https://browser.sentry-cdn.com/5.4.3/bundle.min.js" crossorigin="anonymous"></script>' : '',
+			'{{BaseAppBodyScript}}' => $sSentryDsn ?
+				'<script type="text/javascript" data-cfasync="false">window && window.Sentry && window.Sentry.init({dsn:\''.$sSentryDsn.'\',ignoreErrors:[\'Document not active\']});</script>' : '',
 			'{{BaseAppFaviconPngLinkTag}}' => $sFaviconPngLink ? '<link type="image/png" rel="shortcut icon" href="'.$sFaviconPngLink.'" />' : '',
 			'{{BaseAppFaviconTouchLinkTag}}' => $sAppleTouchLink ? '<link type="image/png" rel="apple-touch-icon" href="'.$sAppleTouchLink.'" />' : '',
 			'{{BaseAppMainCssLink}}' => $this->staticPath('css/app'.($bAppCssDebug ? '' : '.min').'.css'),
 			'{{BaseAppThemeCssLink}}' => $this->oActions->ThemeLink($sTheme, $bAdmin),
+			'{{BaseMongolCssLink}}' =>  $this->staticPath('css/mongol'.($bAppCssDebug ? '' : '.min').'.css'),
+			'{{BaseAppPolyfillsScriptLink}}' => $this->staticPath('js/'.($bAppJsDebug ? '' : 'min/').'polyfills'.($bAppJsDebug ? '' : '.min').'.js'),
 			'{{BaseAppBootScriptLink}}' => $this->staticPath('js/'.($bAppJsDebug ? '' : 'min/').'boot'.($bAppJsDebug ? '' : '.min').'.js'),
 			'{{BaseViewport}}' => $bMobile ? 'width=device-width,initial-scale=1,user-scalable=no' : 'width=950,maximum-scale=2',
 			'{{BaseContentSecurityPolicy}}' => $sContentSecurityPolicy ?

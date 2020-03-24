@@ -258,7 +258,7 @@ class Api
 	 */
 	public static function LogoutCurrentLogginedUser()
 	{
-		\RainLoop\Utils::ClearCookie('rlsession');
+		\RainLoop\Utils::ClearCookie('hlsession');
 		return true;
 	}
 

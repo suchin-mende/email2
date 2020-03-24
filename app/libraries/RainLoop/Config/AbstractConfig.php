@@ -39,7 +39,6 @@ abstract class AbstractConfig
 	public function __construct($sFileName, $sFileHeader = '', $sAdditionalFileName = '')
 	{
 		$this->sFile = \APP_PRIVATE_DATA.'configs/'.\trim($sFileName);
-
 		$sAdditionalFileName = \trim($sAdditionalFileName);
 		$this->sAdditionalFile = \APP_PRIVATE_DATA.'configs/'.$sAdditionalFileName;
 		$this->sAdditionalFile = 0 < \strlen($sAdditionalFileName) &&

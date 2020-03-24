@@ -1100,6 +1100,13 @@ class HtmlUtils
 				}
 			}
 
+			$sLinkHref = \trim($oElement->getAttribute('xlink:href'));
+			if ($sLinkHref && !\preg_match('/^(http[s]?):/i', $sLinkHref) && '//' !== \substr($sLinkHref, 0, 2))
+			{
+				$oElement->setAttribute('data-x-blocked-xlink-href', $sLinkHref);
+				$oElement->removeAttribute('xlink:href');
+			}
+			
 			if (\in_array($sTagNameLower, array('a', 'form', 'area')))
 			{
 				$oElement->setAttribute('target', '_blank');
@@ -1529,8 +1536,6 @@ class HtmlUtils
 			'/<th[^>]*>(.+?)<\/th>/i',
 			'/&nbsp;/i',
 			'/&quot;/i',
-			'/&gt;/i',
-			'/&lt;/i',
 			'/&amp;/i',
 			'/&copy;/i',
 			'/&trade;/i',
@@ -1573,8 +1578,6 @@ class HtmlUtils
 			"\t\\1\n",
 			' ',
 			'"',
-			'>',
-			'<',
 			'&',
 			'(c)',
 			'(tm)',
@@ -1600,6 +1603,14 @@ class HtmlUtils
 		$sText = \strip_tags($sText, '');
 		$sText = \preg_replace("/\n\\s+\n/", "\n", $sText);
 		$sText = \preg_replace("/[\n]{3,}/", "\n\n", $sText);
+
+		$sText = \preg_replace(array(
+			'/&gt;/i',
+			'/&lt;/i'
+		), array(
+			'>',
+			'<'
+		), $sText);
 
 		return \trim($sText);
 	}

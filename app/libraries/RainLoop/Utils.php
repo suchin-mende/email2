@@ -303,7 +303,7 @@ class Utils
 	 */
 	static public function GetConnectionToken()
 	{
-		$sKey = 'rltoken';
+		$sKey = 'hltoken';
 
 		$sToken = \RainLoop\Utils::GetCookie($sKey, null);
 		if (null === $sToken)
@@ -328,7 +328,7 @@ class Utils
 	 */
 	static public function GetShortToken()
 	{
-		$sKey = 'rlsession';
+		$sKey = 'hlsession';
 
 		$sToken = \RainLoop\Utils::GetCookie($sKey, null);
 		if (null === $sToken)
@@ -345,9 +345,10 @@ class Utils
 	 */
 	static public function UpdateConnectionToken()
 	{
-		$sKey = 'rltoken';
+		$sKey = 'hltoken';
 
 		$sToken = \RainLoop\Utils::GetCookie($sKey, '');
+
 		if (!empty($sToken))
 		{
 			\RainLoop\Utils::SetCookie($sKey, $sToken, \time() + 60 * 60 * 24 * 30);
@@ -609,20 +610,20 @@ class Utils
 		{
 			if (\class_exists('OC_App'))
 			{
-				$sAppPath = \rtrim(\trim(\OC_App::getAppWebPath('rainloop')), '\\/').'/app/';
+				$sAppPath = \rtrim(\trim(\OC_App::getAppWebPath('halgai')), '\\/').'/app/';
 			}
 
 			if (empty($sAppPath))
 			{
 				$sUrl = \MailSo\Base\Http::SingletonInstance()->GetUrl();
-				if ($sUrl && \preg_match('/\/index\.php\/apps\/rainloop/', $sUrl))
+				if ($sUrl && \preg_match('/\/index\.php\/apps\/halgai/', $sUrl))
 				{
-					$sAppPath = \preg_replace('/\/index\.php\/apps\/rainloop.+$/',
-						'/apps/rainloop/app/', $sUrl);
+					$sAppPath = \preg_replace('/\/index\.php\/apps\/halgai.+$/',
+						'/apps/halgai/app/', $sUrl);
+
 				}
 			}
 		}
-
 		return $sAppPath;
 	}
 	/**
@@ -630,7 +631,7 @@ class Utils
 	 */
 	public static function WebVersionPath()
 	{
-		return self::WebPath().'rainloop/v/'.APP_VERSION.'/';
+		return self::WebPath().APP_DEV_DIR.APP_VERSION.'/';
 	}
 
 	/**

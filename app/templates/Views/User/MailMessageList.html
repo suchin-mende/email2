@@ -1,5 +1,6 @@
 <div id="rl-sub-left">
-	<div class="messageList g-ui-user-select-none" data-bind="css: {'message-selected': isMessageSelected, 'message-focused': !messageListFocused(), 'loading': messageListCompleteLoadingThrottle, 'hideMessageListCheckbox': !useCheckboxesInList() }">
+	<div class="messageList g-ui-user-select-none"
+		data-bind="css: {'message-selected': isMessageSelected, 'message-focused': !messageListFocused(), 'loading': messageListCompleteLoadingThrottle, 'hideMessageListCheckbox': !useCheckboxesInList() }">
 		<div class="toolbar">
 			<div class="btn-toolbar">
 				<!-- ko if:  allowFolders && mobile -->
@@ -29,8 +30,7 @@
 				<div class="btn-group" data-bind="visible: allowReload && mobileCheckedStateHide()">&nbsp;</div>
 				<!-- ko if: !newMoveToFolder() -->
 				<div class="btn-group dropdown colored-toggle hide-on-mobile" data-bind="visible: allowMessageListActions, registrateBootstrapDropdown: true, openDropdownTrigger: moveDropdownTrigger">
-					<a id="move-dropdown-id" href="#" tabindex="-1" class="btn single btn-dark-disabled-border dropdown-toggle buttonMove" data-toggle="dropdown"
-					 data-tooltip-join="top" data-bind="command: moveCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
+					<a id="move-dropdown-id" href="#" tabindex="-1" class="btn single btn-dark-disabled-border dropdown-toggle buttonMove" data-toggle="dropdown" data-tooltip-join="top" data-bind="command: moveCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
 						<i class="icon-copy visible-on-ctrl-btn"></i>
 						<i class="icon-folder hidden-on-ctrl-btn"></i>
 						&nbsp;&nbsp;
@@ -38,20 +38,19 @@
 					</a>
 					<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="move-dropdown-id" role="menu" data-bind="foreach: folderMenuForMove">
 						<!-- ko if: seporator -->
-						<li class="divider" role="presentation" data-bind="visible: seporator"></li>
+							<li class="divider" role="presentation" data-bind="visible: seporator"></li>
 						<!-- /ko -->
 						<!-- ko if: !seporator -->
-						<li class="e-item" role="presentation" data-bind="css: { 'disabled': disabled }, click: function (mdata, oEvent) { if (!disabled) $root.moveSelectedMessagesToFolder(id, oEvent && !!oEvent.ctrlKey); }">
-							<a class="e-link menuitem" href="#" tabindex="-1" data-bind="text: name"></a>
-						</li>
+							<li class="e-item" role="presentation" data-bind="css: { 'disabled': disabled }, click: function (mdata, oEvent) { if (!disabled) $root.moveSelectedMessagesToFolder(id, oEvent && !!oEvent.ctrlKey); }">
+								<a class="e-link menuitem" href="#" tabindex="-1" data-bind="text: name"></a>
+							</li>
 						<!-- /ko -->
 					</ul>
 				</div>
 				<!-- /ko -->
 				<!-- ko if: newMoveToFolder() -->
 				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateShow()">
-					<a id="move-dropdown-id" href="#" tabindex="-1" class="btn single btn-dark-disabled-border buttonMove" data-tooltip-join="top"
-					 data-bind="command: moveNewCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
+					<a id="move-dropdown-id" href="#" tabindex="-1" class="btn single btn-dark-disabled-border buttonMove" data-tooltip-join="top" data-bind="command: moveNewCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
 						<i class="icon-copy visible-on-ctrl-btn"></i>
 						<i class="icon-folder hidden-on-ctrl-btn"></i>
 					</a>
@@ -59,18 +58,22 @@
 				<!-- /ko -->
 				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateHide()">&nbsp;</div>
 				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateShow()">
-					<a class="btn first btn-dark-disabled-border button-archive" data-tooltip-join="top" data-bind="visible: isArchiveVisible, command: archiveCommand, tooltip: 'MESSAGE_LIST/BUTTON_ARCHIVE'">
+					<a class="btn first btn-dark-disabled-border button-archive" data-tooltip-join="top"
+						data-bind="visible: isArchiveVisible, command: archiveCommand, tooltip: 'MESSAGE_LIST/BUTTON_ARCHIVE'">
 						<i class="icon-archive"></i>
 					</a>
-					<a class="btn btn-dark-disabled-border button-spam" data-tooltip-join="top" data-bind="visible: isSpamVisible, command: spamCommand, tooltip: 'MESSAGE_LIST/BUTTON_SPAM',
+					<a class="btn btn-dark-disabled-border button-spam" data-tooltip-join="top"
+						data-bind="visible: isSpamVisible, command: spamCommand, tooltip: 'MESSAGE_LIST/BUTTON_SPAM',
 							css: {'first': !isArchiveVisible()}">
 						<i class="icon-warning"></i>
 					</a>
-					<a class="btn btn-dark-disabled-border button-not-spam" data-tooltip-join="top" data-bind="visible: isUnSpamVisible, command: notSpamCommand, tooltip: 'MESSAGE_LIST/BUTTON_NOT_SPAM',
+					<a class="btn btn-dark-disabled-border button-not-spam" data-tooltip-join="top"
+						data-bind="visible: isUnSpamVisible, command: notSpamCommand, tooltip: 'MESSAGE_LIST/BUTTON_NOT_SPAM',
 							css: {'first': !isArchiveVisible()}">
 						<i class="icon-check-mark-circle-two"></i>
 					</a>
-					<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top" data-bind="command: deleteCommand, tooltip: 'MESSAGE_LIST/BUTTON_DELETE',
+					<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top"
+						data-bind="command: deleteCommand, tooltip: 'MESSAGE_LIST/BUTTON_DELETE',
 							css: {'first': !isArchiveVisible() && !isSpamVisible() && !isUnSpamVisible()}">
 						<i class="icon-trash"></i>
 						<!--<span data-bind="text: printableMessageCountForDeletion()"></span>-->
@@ -78,8 +81,7 @@
 				</div>
 				<div class="btn-group hide-on-mobile" data-bind="visible: allowMessageListActions">&nbsp;</div>
 				<div class="btn-group dropdown colored-toggle hide-on-mobile" data-bind="visible: allowComposer || allowMessageListActions || allowDangerousActions, registrateBootstrapDropdown: true, openDropdownTrigger: moreDropdownTrigger">
-					<a id="more-list-dropdown-id" class="btn single btn-dark-disabled-border dropdown-toggle buttonMore" href="#" tabindex="-1"
-					 data-toggle="dropdown" data-tooltip-join="top" data-bind="tooltip: 'MESSAGE_LIST/BUTTON_MORE'">
+					<a id="more-list-dropdown-id" class="btn single btn-dark-disabled-border dropdown-toggle buttonMore" href="#" tabindex="-1" data-toggle="dropdown" data-tooltip-join="top" data-bind="tooltip: 'MESSAGE_LIST/BUTTON_MORE'">
 						<i class="icon-list animate-this-icon-on-open"></i>
 					</a>
 					<ul class="dropdown-menu pull-right g-ui-menu" role="menu" aria-labelledby="more-list-dropdown-id">
@@ -153,9 +155,7 @@
 					<div class="input-append pull-right" data-bind="visible: allowSearch">
 						<div class="close-input-wrp">
 							<a class="close" data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
-							<input type="text" class="i18n span4 inputSearch" tabindex="-1" placeholder="Search" autocorrect="off" autocapitalize="off"
-							 data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER" data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus"
-							/>
+							<input type="text" class="i18n span4 inputSearch" tabindex="-1" placeholder="Search" autocorrect="off" autocapitalize="off" data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER" data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
 						</div>
 						<a class="btn buttonMoreSearch" data-bind="visible: allowSearchAdv, click: advancedSearchClick">
 							<span class="caret"></span>
@@ -193,8 +193,7 @@
 						</div>
 						<div class="listEmptyListLoading" data-bind="visible: !dragOver() && 0 === messageList().length &&
 							messageListCompleteLoadingThrottle() && '' === messageListError()">
-							<span class="i18n" data-i18n="MESSAGE_LIST/LIST_LOADING"></span><span class="textLoadingAnimationD1">.</span><span
-							 class="textLoadingAnimationD2">.</span><span class="textLoadingAnimationD3">.</span>
+							<span class="i18n" data-i18n="MESSAGE_LIST/LIST_LOADING"></span><span class="textLoadingAnimationD1">.</span><span class="textLoadingAnimationD2">.</span><span class="textLoadingAnimationD3">.</span>
 						</div>
 						<div class="listEmptySearchList" data-bind="visible: !dragOver() && 0 === messageList().length && !messageListCompleteLoadingThrottle() && '' === messageListError() && '' !== messageListSearch()">
 							<span class="i18n" data-i18n="MESSAGE_LIST/EMPTY_SEARCH_LIST"></span>
@@ -211,8 +210,7 @@
 					<span data-bind="text: userUsageProc"></span>%
 				</span>
 				<div class="pull-right">
-					<!-- ko template: { name: 'Pagenator', data: messageListPagenator } -->
-					<!-- /ko -->
+					<!-- ko template: { name: 'Pagenator', data: messageListPagenator } --><!-- /ko -->
 				</div>
 			</div>
 		</div>

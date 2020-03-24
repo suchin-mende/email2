@@ -13,10 +13,9 @@
 
 			define('APP_START_TIME', time());
 			define('APP_REQUEST_RND', md5(APP_START.rand(10000, 99999).APP_START));
-			define('APP_VERSION_ROOT_PATH', APP_INDEX_ROOT_PATH.'rainloop/v/'.APP_VERSION.'/');
+			define('APP_VERSION_ROOT_PATH', APP_INDEX_ROOT_PATH.'halgai/v/'.APP_VERSION.'/');
 
 			define('APP_USE_APC_CACHE', true);
-			define('APP_DEFAULT_DENY_ALL_HTACCESS', "Deny from all\n<IfModule mod_autoindex.c>\nOptions -Indexes\n</ifModule>");
 
 			if (function_exists('date_default_timezone_set'))
 			{
@@ -32,20 +31,20 @@
 			define('APP_SITE', $sSite);
 			unset($sSite);
 
-			define('APP_DEFAULT_PRIVATE_DATA_NAME', '_default_');
+			define('APP_DEFAULT_PRIVATE_DATA_NAME', '_halgai_');
 
 			$sPrivateDataFolderInternalName = @file_exists(APP_INDEX_ROOT_PATH.'MULTIPLY') ? APP_SITE : '';
 			define('APP_PRIVATE_DATA_NAME', 0 === strlen($sPrivateDataFolderInternalName) ? APP_DEFAULT_PRIVATE_DATA_NAME : $sPrivateDataFolderInternalName);
 			define('APP_MULTIPLY', 0 < strlen($sPrivateDataFolderInternalName) && APP_DEFAULT_PRIVATE_DATA_NAME !== APP_PRIVATE_DATA_NAME);
 
 			define('APP_DUMMY', '********');
-			define('APP_DEV_VERSION', 'email2');
+			define('APP_DEV_VERSION', '0.0.0');
 			define('APP_GOOGLE_ACCESS_TOKEN_PREFIX', ':GAT:');
-			define('APP_WEB_SITE', 'http://www.rainloop.net/');
-			define('APP_API_PATH', 'http://api.rainloop.net/');
-			define('APP_STATUS_PATH', 'http://status.rainloop.net/');
-			define('APP_REPOSITORY_PATH', 'http://repository.rainloop.net/v1/');
-			define('APP_REPO_CORE_FILE', 'http://repository.rainloop.net/v2/core.{{channel}}.json');
+			define('APP_WEB_SITE', 'http://www.halgai.com/');
+			define('APP_API_PATH', 'http://api.halgai.com/');
+			define('APP_STATUS_PATH', 'http://status.halgai.com/');
+			define('APP_REPOSITORY_PATH', 'http://repository.halgai.com/v1/');
+			define('APP_REPO_CORE_FILE', 'http://repository.halgai.com/v2/core.{{channel}}.json');
 
 			$sCustomDataPath = '';
 			$sCustomConfiguration = '';
@@ -55,11 +54,11 @@
 				include_once APP_INDEX_ROOT_PATH.'include.php';
 			}
 
-			$sCustomDataPath = function_exists('__get_custom_data_full_path') ? rtrim(trim(__get_custom_data_full_path()), '\\/') : '';
-			define('APP_DATA_FOLDER_PATH', 0 === strlen($sCustomDataPath) ? APP_INDEX_ROOT_PATH.'data/' : $sCustomDataPath.'/');
+			$sCustomDataPath = function_exists('__get_custom_data_full_path') ? rtrim(trim(__get_custom_data_full_path()), '\\/') : $sCustomDataPath;
+			define('APP_DATA_FOLDER_PATH', 0 === strlen($sCustomDataPath) ? APP_INDEX_ROOT_PATH.'mongol/' : $sCustomDataPath.'/');
 			unset($sCustomDataPath);
 
-			$sCustomConfiguration = function_exists('__get_additional_configuration_name') ? trim(__get_additional_configuration_name()) : '';
+			$sCustomConfiguration = function_exists('__get_additional_configuration_name') ? trim(__get_additional_configuration_name()) : $sCustomConfiguration;
 			define('APP_ADDITIONAL_CONFIGURATION_NAME', $sCustomConfiguration);
 			unset($sCustomConfiguration);
 
@@ -150,7 +149,11 @@
 				@file_put_contents(APP_DATA_FOLDER_PATH.'VERSION', APP_VERSION);
 				@file_put_contents(APP_DATA_FOLDER_PATH.'index.html', 'Forbidden');
 				@file_put_contents(APP_DATA_FOLDER_PATH.'index.php', 'Forbidden');
-				@file_put_contents(APP_DATA_FOLDER_PATH.'.htaccess', APP_DEFAULT_DENY_ALL_HTACCESS);
+
+				if (!@file_exists(APP_DATA_FOLDER_PATH.'.htaccess') && @file_exists(APP_VERSION_ROOT_PATH.'app/.htaccess'))
+				{
+					@file_put_contents(APP_DATA_FOLDER_PATH.'.htaccess', @file_get_contents(APP_VERSION_ROOT_PATH.'app/.htaccess'));
+				}
 
 				if (!@is_dir(APP_PRIVATE_DATA))
 				{

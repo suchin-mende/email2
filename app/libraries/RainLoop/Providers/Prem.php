@@ -71,7 +71,6 @@ class Prem
 				$aAppData['LoginBackground'] = $oConfig->Get('branding', 'login_background', '');
 				$aAppData['LoginCss'] = $oConfig->Get('branding', 'login_css', '');
 				$aAppData['LoginDescription'] = $oConfig->Get('branding', 'login_desc', '');
-				$aAppData['LoginPowered'] = !!$oConfig->Get('branding', 'login_powered', true);
 				$aAppData['UserLogo'] = $oConfig->Get('branding', 'user_logo', '');
 				$aAppData['UserLogoTitle'] = $oConfig->Get('branding', 'user_logo_title', '');
 				$aAppData['UserLogoMessage'] = $oConfig->Get('branding', 'user_logo_message', '');
@@ -86,7 +85,7 @@ class Prem
 	public function PremSection(&$oActions, &$oConfig)
 	{
 		if ($oActions && $oActions->HasOneOfActionParams(array(
-			'LoginLogo', 'LoginBackground', 'LoginDescription', 'LoginCss', 'LoginPowered',
+			'LoginLogo', 'LoginBackground', 'LoginDescription', 'LoginCss',
 			'UserLogo', 'UserLogoTitle', 'UserLogoMessage', 'UserIframeMessage', 'UserCss',
 			'WelcomePageUrl', 'WelcomePageDisplay'
 		)) && $this->Type())
@@ -95,7 +94,6 @@ class Prem
 			$oActions->setConfigFromParams($oConfig, 'LoginBackground', 'branding', 'login_background', 'string');
 			$oActions->setConfigFromParams($oConfig, 'LoginDescription', 'branding', 'login_desc', 'string');
 			$oActions->setConfigFromParams($oConfig, 'LoginCss', 'branding', 'login_css', 'string');
-			$oActions->setConfigFromParams($oConfig, 'LoginPowered', 'branding', 'login_powered', 'bool');
 
 			$oActions->setConfigFromParams($oConfig, 'UserLogo', 'branding', 'user_logo', 'string');
 			$oActions->setConfigFromParams($oConfig, 'UserLogoTitle', 'branding', 'user_logo_title', 'string');
@@ -227,7 +225,7 @@ class Prem
 
 	public function ClearOldVersion()
 	{
-		$sVPath = APP_INDEX_ROOT_PATH.'rainloop/v/';
+		$sVPath = APP_INDEX_ROOT_PATH.APP_DEV_DIR;
 
 		if ($this->oLogger)
 		{
@@ -327,12 +325,12 @@ class Prem
 							$this->oLogger->Write('Unknown version', \MailSo\Log\Enumerations\Type::ERROR, 'INSTALLER');
 						}
 					}
-					else if (!\is_dir(APP_INDEX_ROOT_PATH.'rainloop/v/'.$sNewVersion))
+					else if (!\is_dir(APP_INDEX_ROOT_PATH.APP_DEV_DIR.$sNewVersion))
 					{
 						\MailSo\Base\Utils::CopyDir($sTmpFolder.'/rainloop/', APP_INDEX_ROOT_PATH.'rainloop/');
 
-						if (\is_dir(APP_INDEX_ROOT_PATH.'rainloop/v/'.$sNewVersion) &&
-							\is_file(APP_INDEX_ROOT_PATH.'rainloop/v/'.$sNewVersion.'/index.php'))
+						if (\is_dir(APP_INDEX_ROOT_PATH.APP_DEV_DIR.$sNewVersion) &&
+							\is_file(APP_INDEX_ROOT_PATH.APP_DEV_DIR.$sNewVersion.'/index.php'))
 						{
 							$bResult = \copy($sTmpFolder.'/index.php', APP_INDEX_ROOT_PATH.'index.php');
 

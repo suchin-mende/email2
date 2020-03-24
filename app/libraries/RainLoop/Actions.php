@@ -14,7 +14,7 @@ class Actions
 	const AUTH_SPEC_LOGOUT_TOKEN_KEY = 'rlspeclogout';
 	const AUTH_SPEC_LOGOUT_CUSTOM_MSG_KEY = 'rlspeclogoutcmk';
 	const AUTH_ADMIN_TOKEN_KEY = 'rlaauth';
-	const RL_SKIP_MOBILE_KEY = 'rlmobile';
+	const RL_MOBILE_TYPE = 'rlmobiletype';
 
 	/**
 	 * @var \MailSo\Base\Http
@@ -127,6 +127,11 @@ class Actions
 	private $sSpecAuthToken;
 
 	/**
+	 * @var string
+	 */
+	private $sUpdateAuthToken;
+
+	/**
 	 * @access private
 	 */
 	private function __construct()
@@ -155,6 +160,8 @@ class Actions
 		$this->oPremProvider = null;
 
 		$this->sSpecAuthToken = '';
+		$this->sUpdateAuthToken = '';
+		$this->bIsAjax = false;
 
 		$oConfig = $this->Config();
 		$this->Plugins()->RunHook('filter.application-config', array(&$oConfig));
@@ -183,11 +190,51 @@ class Actions
 	}
 
 	/**
+	 * @param string $sUpdateAuthToken
+	 *
+	 * @return \RainLoop\Application
+	 */
+	public function SetUpdateAuthToken($sUpdateAuthToken)
+	{
+		$this->sUpdateAuthToken = $sUpdateAuthToken;
+
+		return $this;
+	}
+
+	/**
+	 * @param string $bIsAjax
+	 *
+	 * @return \RainLoop\Application
+	 */
+	public function SetIsAjax($bIsAjax)
+	{
+		$this->bIsAjax = $bIsAjax;
+
+		return $this;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function GetSpecAuthToken()
 	{
 		return $this->sSpecAuthToken;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function GetUpdateAuthToken()
+	{
+		return $this->sUpdateAuthToken;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function GetIsAjax()
+	{
+		return $this->bIsAjax;
 	}
 
 	/**
@@ -213,30 +260,26 @@ class Actions
 		if (null === $this->oConfig)
 		{
 			$this->oConfig = new \RainLoop\Config\Application();
-
-			$bSave = defined('APP_INSTALLED_START');
-
-			$bLoaded = $this->oConfig->Load();
-			if (!$bLoaded && !$bSave)
+			if (!$this->oConfig->Load())
 			{
-				usleep(10000); // TODO
-				$bLoaded = $this->oConfig->Load();
+				usleep(10000);
+				$this->oConfig->Load();
 			}
 
-			if (!$bLoaded && !$this->oConfig->IsFileExists())
-			{
-				$bSave = true;
-			}
-
-			if ($bLoaded && !$bSave)
-			{
-				$bSave = APP_VERSION !== $this->oConfig->Get('version', 'current');
-			}
-
-			if ($bSave)
-			{
-				$this->oConfig->Save();
-			}
+//			if (!$bLoaded && !$this->oConfig->IsFileExists())
+//			{
+//				$bSave = true;
+//			}
+//
+//			if ($bLoaded && !$bSave)
+//			{
+//				$bSave = APP_VERSION !== $this->oConfig->Get('version', 'current');
+//			}
+//
+//			if ($bSave)
+//			{
+//				$this->oConfig->Save();
+//			}
 		}
 
 		return $this->oConfig;
@@ -343,22 +386,6 @@ class Actions
 		$this->Plugins()->RunHook('filter.fabrica', array($sName, &$mResult, $oAccount), false);
 
 		return $mResult;
-	}
-
-	/**
-	 * @return void
-	 */
-	public function BootStart()
-	{
-		if (defined('APP_INSTALLED_START') && defined('APP_INSTALLED_VERSION') &&
-			APP_INSTALLED_START && !APP_INSTALLED_VERSION)
-		{
-			try
-			{
-				$this->KeenIO('Install');
-			}
-			catch (\Exception $oException) { unset($oException); }
-		}
 	}
 
 	/**
@@ -977,7 +1004,7 @@ class Actions
 			$sKey = $oAccount->ParentEmailHelper();
 		}
 
-		$sIndexKey = empty($sKey) ? '_default_' : $sKey;
+		$sIndexKey = empty($sKey) ? '_halgai_' : $sKey;
 		if ($bForceFile)
 		{
 			$sIndexKey .= '/_files_';
@@ -1219,6 +1246,7 @@ class Actions
 	 */
 	public function IsAdminLoggined($bThrowExceptionOnFalse = true)
 	{
+		echo
 		$bResult = false;
 		if ($this->Config()->Get('security', 'allow_admin_panel', true))
 		{
@@ -1261,11 +1289,12 @@ class Actions
 	 * @param string $sLogin
 	 * @param string $sPassword
 	 * @param string $sSignMeToken = ''
+	 * @param string $sClientCert = ''
 	 * @param bool $bThrowProvideException = false
 	 *
 	 * @return \RainLoop\Model\Account|null
 	 */
-	public function LoginProvide($sEmail, $sLogin, $sPassword, $sSignMeToken = '', $bThrowProvideException = false)
+	public function LoginProvide($sEmail, $sLogin, $sPassword, $sSignMeToken = '', $sClientCert = '', $bThrowProvideException = false)
 	{
 		$oAccount = null;
 		if (0 < \strlen($sEmail) && 0 < \strlen($sLogin) && 0 < \strlen($sPassword))
@@ -1275,7 +1304,7 @@ class Actions
 			{
 				if ($oDomain->ValidateWhiteList($sEmail, $sLogin))
 				{
-					$oAccount = \RainLoop\Model\Account::NewInstance($sEmail, $sLogin, $sPassword, $oDomain, $sSignMeToken);
+					$oAccount = \RainLoop\Model\Account::NewInstance($sEmail, $sLogin, $sPassword, $oDomain, $sSignMeToken, '', '', $sClientCert);
 					$this->Plugins()->RunHook('filter.acount', array(&$oAccount));
 
 					if ($bThrowProvideException && !($oAccount instanceof \RainLoop\Model\Account))
@@ -1320,7 +1349,7 @@ class Actions
 			)
 			{
 				$oAccount = $this->LoginProvide($aAccountHash[1], $aAccountHash[2], $aAccountHash[3],
-					empty($aAccountHash[5]) ? '' : $aAccountHash[5], $bThrowExceptionOnFalse);
+					empty($aAccountHash[5]) ? '' : $aAccountHash[5], empty($aAccountHash[11]) ? '' : $aAccountHash[11], $bThrowExceptionOnFalse);
 
 				if ($oAccount instanceof \RainLoop\Model\Account)
 				{
@@ -1455,9 +1484,7 @@ class Actions
 			'customLogoutLink' => $oConfig->Get('labs', 'custom_logout_link', ''),
 			'forgotPasswordLinkUrl' => \trim($oConfig->Get('login', 'forgot_password_link_url', '')),
 			'registrationLinkUrl' => \trim($oConfig->Get('login', 'registration_link_url', '')),
-			'loginGlassStyle' => (bool) $oConfig->Get('login', 'glass_style', true),
 			'hideSubmitButton' => (bool) $oConfig->Get('login', 'hide_submit_button', true),
-			'activeBackgroud' => (bool) $oConfig->Get('login', 'active_backgroud', false),
 			'jsHash' => \md5(\RainLoop\Utils::GetConnectionToken()),
 			'useImapThread' => (bool) $oConfig->Get('labs', 'use_imap_thread', false),
 			'useImapSubscribe' => (bool) $oConfig->Get('labs', 'use_imap_list_subscribe', true),
@@ -1511,12 +1538,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			'Email' => '',
 			'DevEmail' => '',
 			'DevPassword' => '',
-			'Title' => $oConfig->Get('webmail', 'title', 'RainLoop Webmail'),
-			'LoadingDescription' => $oConfig->Get('webmail', 'loading_description', 'RainLoop'),
-			'LoadingDescriptionEsc' => 'RainLoop',
+			'Title' => $oConfig->Get('webmail', 'title', 'Mongol Webmail'),
+			'LoadingDescription' => $oConfig->Get('webmail', 'loading_description', 'MongolEmail'),
+			'LoadingDescriptionEsc' => 'MongolEmail',
 			'FaviconUrl' => $oConfig->Get('webmail', 'favicon_url', ''),
 			'LoginDescription' => '',
-			'LoginPowered' => true,
 			'LoginLogo' => '',
 			'LoginBackground' => '',
 			'LoginCss' => '',
@@ -1533,6 +1559,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			'DetermineUserDomain' => (bool) $oConfig->Get('login', 'determine_user_domain', false),
 			'UseLoginWelcomePage' => (bool) $oConfig->Get('login', 'welcome_page', false),
 			'StartupUrl' => \trim(\ltrim(\trim($oConfig->Get('labs', 'startup_url', '')), '#/')),
+			'SieveAllowFileintoInbox' => (bool) $oConfig->Get('labs', 'sieve_allow_fileinto_inbox', false),
 			'ContactsIsAllowed' => false,
 			'ChangePasswordIsAllowed' => false,
 			'RequireTwoFactor' => false,
@@ -1579,7 +1606,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				$aResult['AccountSignMe'] = $oAccount->SignMe();
 				$aResult['ChangePasswordIsAllowed'] = $this->ChangePasswordProvider()->PasswordChangePossibility($oAccount);
 				$aResult['ContactsIsAllowed'] = $oAddressBookProvider->IsActive();
-				$aResult['ContactsSharingIsAllowed'] = $oAddressBookProvider->IsSharingAllowed();
 				$aResult['ContactsSyncIsAllowed'] = (bool) $oConfig->Get('contacts', 'allow_sync', false);
 				$aResult['ContactsSyncInterval'] = (int) $oConfig->Get('contacts', 'sync_interval', 20);
 
@@ -1669,7 +1695,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 			$aResult['AllowGoogleSocial'] = (bool) $oConfig->Get('social', 'google_enable', false);
 			$aResult['AllowGoogleSocialAuth'] = (bool) $oConfig->Get('social', 'google_enable_auth', true);
-			$aResult['AllowGoogleSocialAuthFast'] = (bool) $oConfig->Get('social', 'google_enable_auth_fast', true);
+			$aResult['AllowGoogleSocialAuthGmail'] = (bool) $oConfig->Get('social', 'google_enable_auth_gmail', true);
 			$aResult['AllowGoogleSocialDrive'] = (bool) $oConfig->Get('social', 'google_enable_drive', true);
 			$aResult['AllowGoogleSocialPreview'] = (bool) $oConfig->Get('social', 'google_enable_preview', true);
 
@@ -1680,7 +1706,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'' === \trim($oConfig->Get('social', 'google_client_id', '')) || '' === \trim($oConfig->Get('social', 'google_client_secret', '')))))
 			{
 				$aResult['AllowGoogleSocialAuth'] = false;
-				$aResult['AllowGoogleSocialAuthFast'] = false;
+				$aResult['AllowGoogleSocialAuthGmail'] = false;
 				$aResult['AllowGoogleSocialDrive'] = false;
 				$aResult['GoogleClientID'] = '';
 				$aResult['GoogleApiKey'] = '';
@@ -1692,7 +1718,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			}
 
 			if ($aResult['AllowGoogleSocial'] &&
-				!$aResult['AllowGoogleSocialAuth'] && !$aResult['AllowGoogleSocialAuthFast'] &&
+				!$aResult['AllowGoogleSocialAuth'] && !$aResult['AllowGoogleSocialAuthGmail'] &&
 				!$aResult['AllowGoogleSocialDrive'] && !$aResult['AllowGoogleSocialPreview'])
 			{
 				$aResult['AllowGoogleSocial'] = false;
@@ -1759,7 +1785,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				$aResult['PostgreSqlIsSupported'] = \is_array($aDrivers) ? \in_array('pgsql', $aDrivers) : false;
 
 				$aResult['ContactsEnable'] = (bool) $oConfig->Get('contacts', 'enable', false);
-				$aResult['ContactsSharing'] = (bool) $oConfig->Get('contacts', 'allow_sharing', false);
 				$aResult['ContactsSync'] = (bool) $oConfig->Get('contacts', 'allow_sync', false);
 				$aResult['ContactsPdoType'] = (string) $this->ValidateContactPdoType(\trim($this->Config()->Get('contacts', 'type', 'sqlite')));
 				$aResult['ContactsPdoDsn'] = (string) $oConfig->Get('contacts', 'pdo_dsn', '');
@@ -1769,7 +1794,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 				$aResult['AllowGoogleSocial'] = (bool) $oConfig->Get('social', 'google_enable', false);
 				$aResult['AllowGoogleSocialAuth'] = (bool) $oConfig->Get('social', 'google_enable_auth', true);
-				$aResult['AllowGoogleSocialAuthFast'] = (bool) $oConfig->Get('social', 'google_enable_auth_fast', true);
+				$aResult['AllowGoogleSocialAuthGmail'] = (bool) $oConfig->Get('social', 'google_enable_auth_gmail', true);
 				$aResult['AllowGoogleSocialDrive'] = (bool) $oConfig->Get('social', 'google_enable_drive', true);
 				$aResult['AllowGoogleSocialPreview'] = (bool) $oConfig->Get('social', 'google_enable_preview', true);
 
@@ -1813,8 +1838,8 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		$aResult['ProjectHash'] = \md5($aResult['AccountHash'].APP_VERSION.$this->Plugins()->Hash());
 
-		$sLanguage = $oConfig->Get('webmail', 'language', 'en');
-		$sLanguageAdmin = $oConfig->Get('webmail', 'language_admin', 'en');
+		$sLanguage = $oConfig->Get('webmail', 'language', 'mn_MON');
+		$sLanguageAdmin = $oConfig->Get('webmail', 'language_admin', 'mn_MON');
 		$sTheme = $oConfig->Get('webmail', 'theme', 'Default');
 
 		$aResult['NewMoveToFolder'] = (bool) $oConfig->Get('interface', 'new_move_to_folder_button', true);
@@ -1834,6 +1859,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$aResult['UseCheckboxesInList'] = (bool) $oConfig->Get('defaults', 'view_use_checkboxes', true);
 		$aResult['AutoLogout'] = (int) $oConfig->Get('defaults', 'autologout', 30);
 		$aResult['UseThreads'] = (bool) $oConfig->Get('defaults', 'mail_use_threads', false);
+		$aResult['AllowDraftAutosave'] = (bool) $oConfig->Get('defaults', 'allow_draft_autosave', true);
 		$aResult['ReplySameFolder'] = (bool) $oConfig->Get('defaults', 'mail_reply_same_folder', false);
 		$aResult['ContactsAutosave'] = (bool) $oConfig->Get('defaults', 'contacts_autosave', true);
 		$aResult['EnableTwoFactor'] = false;
@@ -1876,6 +1902,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 					$aResult['SoundNotification'] = (bool) $oSettings->GetConf('SoundNotification', $aResult['SoundNotification']);
 					$aResult['DesktopNotifications'] = (bool) $oSettings->GetConf('DesktopNotifications', $aResult['DesktopNotifications']);
 					$aResult['UseCheckboxesInList'] = (bool) $oSettings->GetConf('UseCheckboxesInList', $aResult['UseCheckboxesInList']);
+					$aResult['AllowDraftAutosave'] = (bool) $oSettings->GetConf('AllowDraftAutosave', $aResult['AllowDraftAutosave']);
 					$aResult['AutoLogout'] = (int) $oSettings->GetConf('AutoLogout', $aResult['AutoLogout']);
 					$aResult['Layout'] = (int) $oSettings->GetConf('Layout', $aResult['Layout']);
 
@@ -1890,7 +1917,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 						$aResult['UserBackgroundHash'] = (string) $oSettings->GetConf('UserBackgroundHash', $aResult['UserBackgroundHash']);
 //						if (!empty($aResult['UserBackgroundName']) && !empty($aResult['UserBackgroundHash']))
 //						{
-//							$aResult['IncludeBackground'] = './?/Raw/&q[]=/{{USER}}/UserBackground/&q[]=/'.
+//							$aResult['IncludeBackground'] = './?/Raw/&q[]=/{{USER}}/UserBackground/&q[]=/?mgl'.
 //								$aResult['UserBackgroundHash'].'/';
 //						}
 					}
@@ -1941,13 +1968,13 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$aResult['PluginsLink'] = '';
 		if (0 < $this->Plugins()->Count() && $this->Plugins()->HaveJs($bAdmin))
 		{
-			$aResult['PluginsLink'] = './?/Plugins/0/'.($bAdmin ? 'Admin' : 'User').'/'.$sStaticCache.'/';
+			$aResult['PluginsLink'] = './?/Plugins/0/'.($bAdmin ? 'Admin' : 'User').'/'.$sStaticCache.'/?mgl';
 		}
 
 		$aResult['LangLink'] = './?/Lang/0/'.($bAdmin ? 'Admin' : 'App').'/'.
-			($bAdmin ? $aResult['LanguageAdmin'] : $aResult['Language']).'/'.$sStaticCache.'/';
+			($bAdmin ? $aResult['LanguageAdmin'] : $aResult['Language']).'/'.$sStaticCache.'/?mgl';
 
-		$aResult['TemplatesLink'] = './?/Templates/0/'.($bAdmin ? 'Admin' : 'App').'/'.$sStaticCache.'/';
+		$aResult['TemplatesLink'] = './?/Templates/0/'.($bAdmin ? 'Admin' : 'App').'/'.$sStaticCache.'/?mgl';
 
 		$bAppJsDebug = !!$this->Config()->Get('labs', 'use_app_debug_js', false);
 
@@ -2005,6 +2032,51 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		}
 
 		return $aResult;
+	}
+
+	public function googleStoreTokens($oCache, $sAccessToken, $sRefreshToken)
+	{
+		$sCacheKey = 'tokens='.\md5($sRefreshToken);
+		$oCache->Set($sCacheKey, $sAccessToken);
+		$oCache->SetTimer($sCacheKey);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function googleRefreshTokenCallback($sAccessToken, $sRefreshToken)
+	{
+		$oAccount = $this->getAccountFromToken(false);
+		if ($oAccount && $this->GetIsAjax())
+		{
+			$oCache = $this->Cacher($oAccount);
+			$sCacheKey = 'tokens='.\md5($sRefreshToken);
+
+			$sCachedAccessToken = $oCache->Get($sCacheKey);
+			$iTime = $oCache->GetTimer($sCacheKey);
+
+			if ($sCachedAccessToken === '' || $iTime === 0)
+			{
+				$this->googleStoreTokens($oCache, $sAccessToken, $sRefreshToken);
+			}
+			else if (\time() - 60 * 10 * 2 > $iTime) // 20min
+			{
+				$sCachedAccessToken = $this->Social()->GoogleRefreshToken($sAccessToken, $sRefreshToken);
+				if ($sCachedAccessToken !== $sAccessToken) {
+					$this->googleStoreTokens($oCache, $sCachedAccessToken, $sRefreshToken);
+
+					$oAccount->SetPassword(\RainLoop\Model\Account::GenerateTokensPassword($sCachedAccessToken, $sRefreshToken));
+					$this->AuthToken($oAccount);
+					$this->SetUpdateAuthToken($this->GetSpecAuthToken());
+				}
+			}
+
+			if ($sCachedAccessToken) {
+				return $sCachedAccessToken;
+			}
+		}
+
+		return $sAccessToken;
 	}
 
 	/**
@@ -2080,7 +2152,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	{
 		try
 		{
-			$oAccount->IncConnectAndLoginHelper($this->Plugins(), $this->MailClient(), $this->Config());
+			$oAccount->IncConnectAndLoginHelper($this->Plugins(), $this->MailClient(), $this->Config(), array($this, 'googleRefreshTokenCallback'));
 		}
 		catch (\RainLoop\Exceptions\ClientException $oException)
 		{
@@ -2150,7 +2222,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		$this->Plugins()->RunHook('filter.login-credentials.step-1', array(&$sEmail, &$sPassword));
 
-		$sEmail = \MailSo\Base\Utils::StrToLowerIfAscii(\MailSo\Base\Utils::Trim($sEmail));
+		$sEmail = \MailSo\Base\Utils::Trim($sEmail);
+		if ($this->Config()->Get('login', 'login_lowercase', true))
+		{
+			$sEmail = \MailSo\Base\Utils::StrToLowerIfAscii($sEmail);
+		}
 
 		if (false === \strpos($sEmail, '@'))
 		{
@@ -2236,6 +2312,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$this->Logger()->AddSecret($sPassword);
 
 		$sLogin = $sEmail;
+		if ($this->Config()->Get('login', 'login_lowercase', true))
+		{
+			$sLogin = \MailSo\Base\Utils::StrToLowerIfAscii($sLogin);
+		}
+
 		$this->Plugins()->RunHook('filter.login-credentials', array(&$sEmail, &$sLogin, &$sPassword));
 
 		$this->Logger()->AddSecret($sPassword);
@@ -2243,10 +2324,10 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$this->Plugins()->RunHook('event.login-pre-login-provide', array());
 
 		$oAccount = null;
-
+		$sClientCert = \trim($this->Config()->Get('ssl', 'client_cert', ''));
 		try
 		{
-			$oAccount = $this->LoginProvide($sEmail, $sLogin, $sPassword, $sSignMeToken, true);
+			$oAccount = $this->LoginProvide($sEmail, $sLogin, $sPassword, $sSignMeToken, $sClientCert, true);
 
 			if (!($oAccount instanceof \RainLoop\Model\Account))
 			{
@@ -2289,31 +2370,31 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 					{
 						$this->Logger()->Write('TFA: Verify Code for '.$oAccount->ParentEmailHelper().' account.');
 
-						$bGood = false;
+						$bUseBackupCode = false;
 						if (6 < \strlen($sAdditionalCode) && !empty($aData['BackupCodes']))
 						{
 							$aBackupCodes = \explode(' ', \trim(\preg_replace('/[^\d]+/', ' ', $aData['BackupCodes'])));
-							$bGood = \in_array($sAdditionalCode, $aBackupCodes);
+							$bUseBackupCode = \in_array($sAdditionalCode, $aBackupCodes);
 
-							if ($bGood)
+							if ($bUseBackupCode)
 							{
 								$this->removeBackupCodeFromTwoFactorInfo($oAccount->ParentEmailHelper(), $sAdditionalCode);
 							}
 						}
 
-						if ($bAdditionalCodeSignMe)
-						{
-							\RainLoop\Utils::SetCookie(self::AUTH_TFA_SIGN_ME_TOKEN_KEY, $sSecretHash,
-								\time() + 60 * 60 * 24 * 14);
-						}
-
-						if (!$bGood && !$this->TwoFactorAuthProvider()->VerifyCode($aData['Secret'], $sAdditionalCode))
+						if (!$bUseBackupCode && !$this->TwoFactorAuthProvider()->VerifyCode($aData['Secret'], $sAdditionalCode))
 						{
 							$this->loginErrorDelay();
 
 							$this->LoggerAuthHelper($oAccount);
 
 							throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::AccountTwoFactorAuthError);
+						}
+
+						if ($bAdditionalCodeSignMe)
+						{
+							\RainLoop\Utils::SetCookie(self::AUTH_TFA_SIGN_ME_TOKEN_KEY, $sSecretHash,
+								\time() + 60 * 60 * 24 * 14);
 						}
 					}
 				}
@@ -3378,7 +3459,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	 *
 	 * @throws \MailSo\Base\Exceptions\Exception
 	 */
-	public function getAccountUnredCountFromHash($sHash)
+	public function getAccountUnreadCountFromHash($sHash)
 	{
 		$iResult = 0;
 
@@ -3390,7 +3471,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				$oMailClient = \MailSo\Mail\MailClient::NewInstance();
 				$oMailClient->SetLogger($this->Logger());
 
-				$oAccount->IncConnectAndLoginHelper($this->Plugins(),$oMailClient, $this->Config());
+				$oAccount->IncConnectAndLoginHelper($this->Plugins(), $oMailClient, $this->Config(), array($this, 'googleRefreshTokenCallback'));
 
 				$iResult = $oMailClient->InboxUnreadCount();
 
@@ -3437,7 +3518,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 					foreach ($mAccounts as $sEmail => $sHash)
 					{
 						$aCounts[] = array(\MailSo\Base\Utils::IdnToUtf8($sEmail),
-							$oAccount->Email() === $sEmail ? 0 : $this->getAccountUnredCountFromHash($sHash));
+							$oAccount->Email() === $sEmail ? 0 : $this->getAccountUnreadCountFromHash($sHash));
 					}
 				}
 			}
@@ -3755,7 +3836,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$this->setConfigFromParams($oConfig, 'LoginDefaultDomain', 'login', 'default_domain', 'string');
 
 		$this->setConfigFromParams($oConfig, 'ContactsEnable', 'contacts', 'enable', 'bool');
-		$this->setConfigFromParams($oConfig, 'ContactsSharing', 'contacts', 'allow_sharing', 'bool');
 		$this->setConfigFromParams($oConfig, 'ContactsSync', 'contacts', 'allow_sync', 'bool');
 		$this->setConfigFromParams($oConfig, 'ContactsPdoDsn', 'contacts', 'pdo_dsn', 'string');
 		$this->setConfigFromParams($oConfig, 'ContactsPdoUser', 'contacts', 'pdo_user', 'string');
@@ -3788,7 +3868,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		$this->setConfigFromParams($oConfig, 'GoogleEnable', 'social', 'google_enable', 'bool');
 		$this->setConfigFromParams($oConfig, 'GoogleEnableAuth', 'social', 'google_enable_auth', 'bool');
-		$this->setConfigFromParams($oConfig, 'GoogleEnableAuthFast', 'social', 'google_enable_auth_fast', 'bool');
+		$this->setConfigFromParams($oConfig, 'GoogleEnableAuthGmail', 'social', 'google_enable_auth_gmail', 'bool');
 		$this->setConfigFromParams($oConfig, 'GoogleEnableDrive', 'social', 'google_enable_drive', 'bool');
 		$this->setConfigFromParams($oConfig, 'GoogleEnablePreview', 'social', 'google_enable_preview', 'bool');
 		$this->setConfigFromParams($oConfig, 'GoogleClientID', 'social', 'google_client_id', 'string');
@@ -4140,7 +4220,8 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				$iTime = \microtime(true);
 				$oImapClient->Connect($oDomain->IncHost(), $oDomain->IncPort(), $oDomain->IncSecure(),
 					!!$this->Config()->Get('ssl', 'verify_certificate', false),
-					!!$this->Config()->Get('ssl', 'allow_self_signed', true)
+					!!$this->Config()->Get('ssl', 'allow_self_signed', true),
+					$this->Config()->Get('ssl', 'client_cert', '')
 				);
 
 				$iImapTime = \microtime(true) - $iTime;
@@ -4210,6 +4291,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				{
 					$oSieveClient = \MailSo\Sieve\ManageSieveClient::NewInstance()->SetLogger($this->Logger());
 					$oSieveClient->SetTimeOuts($iConnectionTimeout);
+					$oSieveClient->__USE_INITIAL_AUTH_PLAIN_COMMAND = !!$this->Config()->Get('labs', 'sieve_auth_plain_initial', true);
 
 					$iTime = \microtime(true);
 					$oSieveClient->Connect($oDomain->SieveHost(), $oDomain->SievePort(), $oDomain->SieveSecure(),
@@ -4304,7 +4386,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$iRepTime = $this->Cacher()->GetTimer($sCacheKey);
 		}
 
-		if ('' === $sRep || 0 === $iRepTime || time() - 3600 > $iRepTime)
+		if ('' === $sRep || 0 === $iRepTime || \time() - 3600 > $iRepTime)
 		{
 			$iCode = 0;
 			$sContentType = '';
@@ -4404,7 +4486,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$iRepTime = $this->Cacher()->GetTimer($sCacheKey);
 		}
 
-		if ('' === $sRep || 0 === $iRepTime || time() - 3600 > $iRepTime)
+		if ('' === $sRep || 0 === $iRepTime || \time() - 3600 > $iRepTime)
 		{
 			$iCode = 0;
 			$sContentType = '';
@@ -4601,6 +4683,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$bResult = false;
 		if ($bReal && $oPremProvider && !empty($aData['file']))
 		{
+			//Todo:これのディレクトが正しくない可能性がある
 			$bResult = $oPremProvider->UpdateCore($this, $aData['file']);
 		}
 
@@ -5016,6 +5099,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$this->setSettingsFromParams($oSettings, 'DesktopNotifications', 'bool');
 		$this->setSettingsFromParams($oSettings, 'SoundNotification', 'bool');
 		$this->setSettingsFromParams($oSettings, 'UseCheckboxesInList', 'bool');
+		$this->setSettingsFromParams($oSettings, 'AllowDraftAutosave', 'bool');
 		$this->setSettingsFromParams($oSettings, 'AutoLogout', 'int');
 
 		$this->setSettingsFromParams($oSettings, 'EnableTwoFactor', 'bool');
@@ -5078,20 +5162,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	/**
 	 * @return array
 	 */
-	public function DoJsInfo()
-	{
-		$bIsError = '1' === (string) $this->GetActionParam('IsError', '0');
-		$mData = $this->GetActionParam('Data', null);
-
-		$this->Logger()->WriteDump(is_array($mData) ? $mData : array(),
-			$bIsError ? \MailSo\Log\Enumerations\Type::ERROR : \MailSo\Log\Enumerations\Type::INFO, 'JS-INFO');
-
-		return $this->DefaultResponse(__FUNCTION__, true);
-	}
-
-	/**
-	 * @return array
-	 */
 	public function DoWelcomeClose()
 	{
 		$oAccount = $this->getAccountFromToken();
@@ -5115,36 +5185,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	{
 		return $this->DefaultResponse(__FUNCTION__,
 			APP_VERSION === (string) $this->GetActionParam('Version', ''));
-	}
-
-	/**
-	 * @return array
-	 */
-	public function DoJsError()
-	{
-		$sMessage = $this->GetActionParam('Message', '');
-		if (0 < strlen($sMessage))
-		{
-			$sFileName = $this->GetActionParam('FileName', '');
-			$sLineNo = $this->GetActionParam('LineNo', '');
-			$sLocation = $this->GetActionParam('Location', '');
-			$sHtmlCapa = $this->GetActionParam('HtmlCapa', '');
-			$sTimeOnPage = $this->GetActionParam('TimeOnPage', '');
-
-			$oHttp = $this->Http();
-
-			$this->Logger()->Write($sMessage.' ('.$sFileName.' ~ '.$sLineNo.')', \MailSo\Log\Enumerations\Type::ERROR, 'JS');
-			$this->Logger()->WriteDump(array(
-				'Location' => $sLocation,
-				'Capability' => $sHtmlCapa,
-				'TimeOnPage' => $sTimeOnPage,
-				'HTTP_USER_AGENT' => $oHttp->GetServer('HTTP_USER_AGENT', ''),
-				'HTTP_ACCEPT_ENCODING' => $oHttp->GetServer('HTTP_ACCEPT_ENCODING', ''),
-				'HTTP_ACCEPT_LANGUAGE' => $oHttp->GetServer('HTTP_ACCEPT_LANGUAGE', '')
-			));
-		}
-
-		return $this->DefaultResponse(__FUNCTION__, true);
 	}
 
 	/**
@@ -5210,12 +5250,16 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				'Drafts Mail' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 				'Drafts Mails' => \MailSo\Imap\Enumerations\FolderType::DRAFTS,
 
+				'Junk E-mail' => \MailSo\Imap\Enumerations\FolderType::JUNK,
+
 				'Spam' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 				'Spams' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 
 				'Junk' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 				'Bulk Mail' => \MailSo\Imap\Enumerations\FolderType::JUNK,
 				'Bulk Mails' => \MailSo\Imap\Enumerations\FolderType::JUNK,
+
+				'Deleted Items' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 
 				'Trash' => \MailSo\Imap\Enumerations\FolderType::TRASH,
 				'Deleted' => \MailSo\Imap\Enumerations\FolderType::TRASH,
@@ -5881,6 +5925,8 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		if (!$this->Config()->Get('security', 'hide_x_mailer_header', false))
 		{
 			$oMessage->SetXMailer('RainLoop/'.APP_VERSION);
+		} else {
+			$oMessage->DoesNotAddDefaultXMailer();
 		}
 
 		$oFromIdentity = $this->GetIdentityByID($oAccount, $sIdentityID);
@@ -6220,7 +6266,9 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				$oSmtpClient = \MailSo\Smtp\SmtpClient::NewInstance()->SetLogger($this->Logger());
 				$oSmtpClient->SetTimeOuts(10, (int) \RainLoop\Api::Config()->Get('labs', 'smtp_timeout', 60));
 
-				$bLoggined = $oAccount->OutConnectAndLoginHelper($this->Plugins(), $oSmtpClient, $this->Config(), $bUsePhpMail);
+				$bLoggined = $oAccount->OutConnectAndLoginHelper(
+					$this->Plugins(), $oSmtpClient, $this->Config(), array($this, 'googleRefreshTokenCallback'), $bUsePhpMail
+				);
 
 				if ($bUsePhpMail)
 				{
@@ -8363,7 +8411,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$iExpires = $this->Config()->Get('cache', 'http_expires', 3600);
 			if (0 < $iExpires)
 			{
-				$this->oHttp->ServerUseCache($this->etag($sKey), 1382478804, time() + $iExpires);
+				$this->oHttp->ServerUseCache($this->etag($sKey), 1382478804, \time() + $iExpires);
 				$bResult = true;
 			}
 		}
@@ -8687,12 +8735,14 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 					if ($bDownload || $sLoadedData)
 					{
-						\header('Content-Type: '.$sContentTypeOut);
-						\header('Content-Disposition: '.($bDownload ? 'attachment' : 'inline').'; '.
+						if (!headers_sent()) {
+							\header('Content-Type: '.$sContentTypeOut);
+							\header('Content-Disposition: '.($bDownload ? 'attachment' : 'inline').'; '.
 							\trim(\MailSo\Base\Utils::EncodeHeaderUtf8AttributeValue('filename', $sFileNameOut)), true);
 
-						\header('Accept-Ranges: bytes');
-						\header('Content-Transfer-Encoding: binary');
+							\header('Accept-Ranges: bytes');
+							\header('Content-Transfer-Encoding: binary');
+						}
 
 						if ($bIsRangeRequest && !$sLoadedData)
 						{
@@ -8922,7 +8972,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$iCode = 0;
 			$sContentType = '';
 
-			$sGravatarUrl = 'http://gravatar.com/avatar/'.\md5($sEmail).'.jpg?s=80&d=404';
+			$sGravatarUrl = 'http://gravatar.com/avatar/'.\md5(strtolower($sEmail)).'.jpg?s=80&d=404';
 
 			$this->Logger()->Write('gravatar: '.$sGravatarUrl);
 
@@ -9010,7 +9060,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 			try
 			{
-				$oAccount->IncConnectAndLoginHelper($this->Plugins(), $this->MailClient(), $this->Config());
+				$oAccount->IncConnectAndLoginHelper($this->Plugins(), $this->MailClient(), $this->Config(), array($this, 'googleRefreshTokenCallback'));
 			}
 			catch (\MailSo\Net\Exceptions\ConnectionException $oException)
 			{
@@ -9089,7 +9139,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	 */
 	public function ThemeLink($sTheme, $bAdmin)
 	{
-		return './?/Css/0/'.($bAdmin ? 'Admin' : 'User').'/-/'.$sTheme.'/-/'.$this->StaticCache().'/Hash/-/';
+		return './?/Css/0/'.($bAdmin ? 'Admin' : 'User').'/-/'.$sTheme.'/-/'.$this->StaticCache().'/Hash/-/?mgl';
 	}
 
 	/**
@@ -9124,7 +9174,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		if (\is_array($aLang))
 		{
 			$aHelper = array('en' => 'en_us', 'ar' => 'ar_sa', 'cs' => 'cs_cz', 'no' => 'nb_no', 'ua' => 'uk_ua',
-				'cn' => 'zh_cn', 'zh' => 'zh_cn', 'tw' => 'zh_tw', 'fa' => 'fa_ir');
+				'cn' => 'zh_cn', 'zh' => 'zh_cn', 'tw' => 'zh_tw', 'fa' => 'fa_ir', 'mn' => 'mn_mon');
 
 			$sLanguage = isset($aHelper[$sLanguage]) ? $aHelper[$sLanguage] : $sLanguage;
 			$sDefault = isset($aHelper[$sDefault]) ? $aHelper[$sDefault] : $sDefault;
@@ -9329,80 +9379,6 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$sHtml = \preg_replace('/<\/script>/i', '</x-script>', $sHtml);
 
 		return \RainLoop\Utils::ClearHtmlOutput($sHtml);
-	}
-
-	/**
-	 * @staticvar bool $bOnce
-	 * @param string $sName
-	 * @param array $aData = array()
-	 *
-	 * @return bool
-	 */
-	public function KeenIO($sName, $aData = array())
-	{
-		static $bOnce = null;
-		if (false === $bOnce)
-		{
-			return false;
-		}
-
-		if (APP_VERSION === APP_DEV_VERSION ||
-			\in_array(APP_SITE, \explode(' ', \base64_decode('bG9jYWxob3N0IHJhaW5sb29wLmRlIHJhaW5sb29wLm5ldCBkZW1vLnJhaW5sb29wLm5ldCBkZW1vLnJhaW5sb29wLmRl'))))
-		{
-			return true;
-		}
-
-		if (null === $bOnce && (!\MailSo\Base\Utils::FunctionExistsAndEnabled('curl_init') ||
-				!\MailSo\Base\Utils::FunctionExistsAndEnabled('json_encode')))
-		{
-			$bOnce = false;
-			return false;
-		}
-
-		$aOptions = array(
-			CURLOPT_URL => \base64_decode('aHR0cHM6Ly9hcGkua2Vlbi5pby8zLjAvcHJvamVjdHMvNTE2NmRmOGUzODQzMzE3Y2QzMDAwMDA2L2V2ZW50cy8=').$sName,
-			CURLOPT_HEADER => false,
-			CURLOPT_FAILONERROR => true,
-			CURLOPT_SSL_VERIFYPEER => false,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_HTTPHEADER => array(
-				'Content-Type: application/json'
-			),
-			CURLOPT_POST => true,
-			CURLOPT_POSTFIELDS => \json_encode(\array_merge($aData, array(
-				'version' => APP_VERSION,
-				'uid' => \md5(APP_SITE.APP_SALT),
-				'site' => APP_SITE,
-				'date' => array(
-					'month' => \gmdate('m.Y'),
-					'day' => \gmdate('d.m.Y')
-				)
-			))),
-			CURLOPT_TIMEOUT => 10
-		);
-
-		$sProxy = $this->Config()->Get('labs', 'curl_proxy', '');
-		if (0 < \strlen($sProxy))
-		{
-			$aOptions[CURLOPT_PROXY] = $sProxy;
-
-			$sProxyAuth = $this->Config()->Get('labs', 'curl_proxy_auth', '');
-			if (0 < \strlen($sProxyAuth))
-			{
-				$aOptions[CURLOPT_PROXYUSERPWD] = $sProxyAuth;
-			}
-		}
-
-		$oCurl = \curl_init();
-		\curl_setopt_array($oCurl, $aOptions);
-		$mResult = \curl_exec($oCurl);
-
-		if (\is_resource($oCurl))
-		{
-			\curl_close($oCurl);
-		}
-
-		return !!$mResult;
 	}
 
 	/**
@@ -9984,7 +9960,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 								'Rnd' => \md5(\microtime(true)),
 								'Token' => \RainLoop\Utils::GetConnectionToken(),
 								'Url' => $sUrl
-							)).'/';
+							)).'/?mgl';
 						};
 					}
 

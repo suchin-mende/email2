@@ -6,7 +6,7 @@ Common:
         LANG_EN_GB: English (UK)
         LANG_EN_UK: English (UK)
         LANG_EN_CA: English (Canadian)
-
+        LANG_TH_TH: ภาษาไทย
         LANG_EL_GR: Ελληνικά
         LANG_NL_NL: Nederlands
         LANG_NB_NO: Norsk (bokmål)
@@ -42,15 +42,16 @@ Common:
         LANG_CS_CZ: Čeština
         LANG_AR_SA: ‏العربية‏
         LANG_DA_DK: Dansk
+        LANG_ID_ID: Bahasa Indonesia
+        LANG_MN_MON: ᠮᠤᠩᠭᠤᠯ ᠬᠡᠯᠡ
 
-    LANG_MN_MON: ᠮᠤᠩᠭᠤᠯ ᠬᠡᠯᠡ
     LANGS_NAMES_EN:
         LANG_EN: English
         LANG_EN_US: English (US)
         LANG_EN_GB: English (UK)
         LANG_EN_UK: English (UK)
         LANG_EN_CA: English (Canadian)
-
+        LANG_TH_TH: Thai
         LANG_EL_GR: Greek
         LANG_NL_NL: Dutch
         LANG_NB_NO: Norwegian (bokmal)
@@ -86,5 +87,5 @@ Common:
         LANG_CS_CZ: Czech
         LANG_AR_SA: Arabic
         LANG_DA_DK: Danish
-
-    LANG_MN_MON: Old Mongolian
+        LANG_MN_MON: Old Mongolian
+        LANG_ID_ID: Indonesian

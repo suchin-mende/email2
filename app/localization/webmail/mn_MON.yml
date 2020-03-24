@@ -1,5 +1,5 @@
 mn_MON:
-  LOGIN:
+   LOGIN:
     LABEL_EMAIL: "ᠢᠮᠸᠯ"
     LABEL_LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ"
@@ -12,15 +12,15 @@ mn_MON:
     TITLE_SIGN_IN_TWITTER: "Twitter ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_FORGOT_PASSWORD: "ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ"
     LABEL_REGISTRATION: "ᠨᠡᠷ᠎ᠡ ᠪᠦᠷᠢᠳᠬᠡᠭᠦᠯᠬᠦ"
-  TOP_TOOLBAR:
+   TOP_TOOLBAR:
     BUTTON_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠨᠡᠮᠡᠬᠦ"
     BUTTON_SETTINGS: "ᠳᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"
     BUTTON_HELP: "ᠲᠠᠢᠯᠪᠤᠷᠢ"
     BUTTON_LOGOUT: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠠᠬᠤ"
-  MOBILE:
-    BUTTON_MOBILE_VERSION: "ᠰᠢᠯᠵᠢᠮᠡᠯ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"
-    BUTTON_DESKTOP_VERSION: "ᠺᠣᠮᠫᠢᠦ᠋ᠲ᠋ᠧᠷ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"
-  SEARCH:
+   MOBILE:
+    BUTTON_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠳᠠᠰᠤᠨ ᠊ᠤ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"
+    BUTTON_DESKTOP_VERSION: "ᠺᠣᠮᠫᠢᠦ᠋ᠲ᠋ᠧᠷ ᠊ᠤᠨ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"
+   SEARCH:
     MAIN_INPUT_PLACEHOLDER: "ᠬᠠᠢᠯᠲᠠ"
     TITLE_ADV: "ᠨᠠᠷᠢᠨ ᠬᠠᠢᠯᠲᠠ"
     LABEL_ADV_FROM: "ᠡᠴᠡ ᠢᠯᠡᠭᠡᠪᠡ"
@@ -40,17 +40,17 @@ mn_MON:
     LABEL_ADV_DATE_6_MONTHS: "ᠬᠠᠭᠠᠰ ᠵᠢᠯ ᠤᠨ ᠳᠤᠲᠤᠷ᠎ᠠ"
     LABEL_ADV_DATE_YEAR: "ᠵᠢᠯ ᠤᠨ ᠳᠤᠲᠤᠷ᠎ᠠ"
     BUTTON_ADV_SEARCH: "ᠬᠠᠢᠯᠲᠠ"
-  PREVIEW_POPUP:
+   PREVIEW_POPUP:
     FULLSCREEN: "ᠳᠡᠯᠭᠡᠴᠡ ᠬᠤᠪᠢᠷᠠᠭᠠᠬᠤ"
     ZOOM: " ᠲᠤᠮᠤᠷᠠᠭᠠᠬᠤ/ ᠪᠠᠭᠠᠰᠬᠠᠬᠤ"
     CLOSE: "ᠬᠠᠭᠠᠬᠤ(Esc)"
     LOADING: " ᠳᠥᠷᠦᠭᠡᠨ ᠳᠡᠭᠡᠷ᠎ᠡ"
     GALLERY_PREV: "ᠡᠮᠦᠨᠡᠰᠢ"
     GALLERY_NEXT: "ᠬᠤᠢᠨᠠᠰᠢ"
-    GALLERY_COUNTER: "%curr% / %total%"
+     GALLERY_COUNTER: "%curr% / %total%"
     IMAGE_ERROR: "<a href=\"%url%\" target=\"_blank\"> ᠵᠢᠷᠤᠭ</a> ᠠᠴᠢᠯᠲᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ"
     AJAX_ERROR: "<a href=\"%url%\" target=\"_blank\">ᠠᠭᠤᠯᠭ᠎ᠠ</a> ᠠᠴᠢᠯᠲᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ"
-  FOLDER_LIST:
+   FOLDER_LIST:
     BUTTON_COMPOSE: "ᠵᠠᠬᠢᠳᠠᠯ ᠪᠢᠴᠢᠬᠦ"
     BUTTON_CONTACTS: " ᠬᠠᠷᠢᠯᠴᠠᠬᠤ ᠬᠦᠮᠦᠨ"
     BUTTON_NEW_MESSAGE: "ᠰᠢᠨ᠎ᠡ ᠴᠢᠮᠡᠭᠡ"
@@ -60,9 +60,9 @@ mn_MON:
     SPAM_NAME: "ᠬᠠᠶᠠᠭᠳᠠᠯ ᠵᠠᠬᠢᠳᠠᠯ"
     TRASH_NAME: "ᠠᠷᠢᠯᠭᠠᠭᠰᠠᠨ ᠵᠠᠬᠢᠳᠠᠯ"
     ARCHIVE_NAME: "ᠠᠪᠳᠠᠷᠠᠯᠠᠬᠤ"
-  QUOTA:
+   QUOTA:
     TITLE: "ᠤᠷᠤᠨ ᠵᠠᠢ ᠶᠢ ᠬᠡᠷᠡᠭᠯᠡᠭᠰᠡᠨ ᠬᠡᠮᠵᠢᠶ᠎ᠡ"
-  MESSAGE_LIST:
+   MESSAGE_LIST:
     BUTTON_RELOAD: "ᠵᠠᠬᠢᠳᠠᠯ ᠤᠳ ᠢ ᠳᠠᠬᠢᠨ ᠠᠴᠢᠬᠤ"
     BUTTON_MOVE_TO: "ᠰᠢᠯᠵᠢᠭᠦᠯᠬᠦ"
     BUTTON_DELETE: "ᠠᠷᠢᠯᠭᠠᠭᠰᠠᠨ ᠵᠠᠬᠢᠳᠠᠯ"
@@ -97,7 +97,7 @@ mn_MON:
     SEARCH_PLACEHOLDER: "ᠬᠠᠢᠯᠲᠠ"
     NEW_MESSAGE_NOTIFICATION: "ᠳᠠᠨ ᠳ᠋ᠤ %COUNT% ᠬᠤᠪᠢ  ᠰᠢᠨ᠎ᠡ ᠵᠠᠬᠢᠳᠠᠯ ᠪᠤᠢ"
     QUOTA_SIZE: "ᠬᠡᠷᠡᠭᠯᠡᠪᠡ<strong>%LIMIT%</strong> ᠤᠷᠤᠨ ᠵᠠᠢ ᠡᠴᠡ<strong>%SIZE% (%PROC%%)</strong>"
-  MESSAGE:
+   MESSAGE:
     BUTTON_EDIT: "ᠨᠠᠢᠷᠠᠭᠤᠯᠬᠤ"
     BUTTON_BACK: "ᠪᠤᠴᠠᠬᠤ"
     BUTTON_CLOSE: "ᠬᠠᠭᠠᠬᠤ"
@@ -151,15 +151,15 @@ mn_MON:
     LINK_DOWNLOAD_AS_ZIP: "Zip ᠪᠠᠭᠯᠠᠭ᠎ᠠ ᠪᠡᠷ ᠪᠠᠭᠤᠯᠭᠠᠬᠤ"
     LINK_SAVE_TO_OWNCLOUD: "ownCloud ᠳ᠋ᠤ ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ"
     LINK_SAVE_TO_DROPBOX: "Dropbox ᠲᠤ ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ"
-  READ_RECEIPT:
+   READ_RECEIPT:
     SUBJECT: "%SUBJECT% - ᠨᠡᠭᠡᠭᠡᠭᠰᠡᠨ ᠡᠰᠡᠭᠦ"
-    BODY: |
+     BODY: |
       ᠲᠤᠰ ᠬᠠᠷᠢᠭᠤ ᠨᠢ ᠲᠠᠨ ᠤ %READ-RECEIPT% ᠵᠠᠬᠢᠳᠠᠯ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ ᠢ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠨ᠎ᠡ
 
       ᠠᠩᠬᠠᠷ  ᠲᠤᠰ ᠬᠠᠷᠢᠭᠤ ᠨᠢ ᠵᠥᠪᠬᠡᠨ ᠲᠠᠨ ᠤ ᠵᠠᠬᠢᠳᠠᠯ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ ᠢ ᠢᠯᠡᠷᠬᠡᠢᠯᠡᠨ᠎ᠡ᠂ ᠭᠡᠪᠡᠴᠦ ᠬᠦᠯᠢᠶᠡᠨ ᠠᠪᠤᠭᠴᠢ ᠤᠩᠰᠢᠭᠰᠠᠨ ᠡᠰᠡᠭᠦ ᠶᠢ ᠮᠡᠳᠡᠷᠡᠵᠤ ᠳᠡᠢᠯᠬᠦ ᠦᠭᠡᠢ
-  SUGGESTIONS:
+   SUGGESTIONS:
     SEARCHING_DESC: "ᠬᠠᠢᠵᠤ ᠪᠠᠢᠨ᠎ᠠ..."
-  CONTACTS:
+   CONTACTS:
     LEGEND_CONTACTS: "ᠬᠠᠷᠢᠯᠴᠠᠬᠤ  ᠬᠦᠮᠦᠨ"
     SEARCH_INPUT_PLACEHOLDER: "ᠬᠠᠢᠯᠲᠠ"
     BUTTON_ADD_CONTACT: "ᠬᠠᠷᠢᠯᠴᠠᠭᠴᠢ ᠨᠡᠮᠡᠬᠦ"
@@ -200,7 +200,7 @@ mn_MON:
     BUTTON_SHARE_NONE: "ᠬᠤᠭᠤᠰᠦᠨ"
     BUTTON_SHARE_ALL: "ᠪᠥᠬᠦ ᠬᠦᠮᠦᠰ"
     BUTTON_SYNC: "ᠢᠵᠢᠯᠰᠢᠭᠦᠯᠬᠦ (CardDAV)"
-  COMPOSE:
+   COMPOSE:
     TITLE_FROM: "ᠡᠴᠡ ᠢᠯᠡᠭᠡᠪᠡ"
     TITLE_TO: "ᠳ᠋ᠤ/ ᠲᠤ  ᠢᠯᠡᠭᠡᠬᠦ"
     TITLE_CC: "ᠬᠠᠭᠤᠯᠤᠨ ᠢᠯᠡᠭᠡᠬᠦ"
@@ -216,12 +216,11 @@ mn_MON:
     SAVED_TIME: "%TIME% ᠳ᠋ᠤ ᠬᠠᠳᠠᠭᠠᠯᠠᠪᠠ"
     SAVED_ERROR_ON_SEND: "ᠵᠠᠬᠢᠳᠠᠯ ᠢ ᠨᠢᠭᠡᠨᠲᠡ ᠢᠯᠡᠭᠡᠪᠡ᠂   ᠭᠡᠪᠡᠴᠦ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ ᠵᠢᠭᠰᠠᠭᠠᠯ ᠳ᠋ᠤ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠳᠠᠰᠠᠨ ᠦᠭᠡᠢ"
     DISCARD_UNSAVED_DATA: "ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠳᠠᠰᠠᠨ ᠦᠭᠡᠢ ᠲᠤᠭ᠎᠎ᠠ ᠪᠠᠷᠢᠮᠲᠠ ᠪᠠᠨ ᠲᠠᠶᠢᠭᠳᠠᠬᠤ ᠤᠤ︖"
-    ATTACH_FILES: "ᠳᠠᠭᠠᠯᠳᠤᠯ ᠨᠡᠮᠡᠬᠦ
-"
+    ATTACH_FILES: "ᠳᠠᠭᠠᠯᠳᠤᠯ ᠨᠡᠮᠡᠬᠦ"
     ATTACH_DROP_FILES_DESC: "ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠢ ᠡᠨᠳᠡ  ᠳᠠᠲᠠᠬᠤ"
     ATTACH_ITEM_CANCEL: "ᠦᠭᠡᠢᠰᠬᠡᠬᠦ"
-    DROPBOX: "Dropbox"
-    GOOGLE_DRIVE: "Google Drive"
+     DROPBOX: "Dropbox"
+     GOOGLE_DRIVE: "Google Drive"
     REPLY_MESSAGE_TITLE: "%DATETIME%, %EMAIL% ᠬᠦᠷᠲᠡᠯ᠎ᠡ ᠪᠢᠴᠢᠪᠡ"
     FORWARD_MESSAGE_TOP_TITLE: "-------- ᠢᠮᠧᠯ ᠢ ᠳᠠᠮᠵᠢᠭᠤᠯᠬᠤ -------"
     FORWARD_MESSAGE_TOP_FROM: "ᠡᠴᠡ ᠢᠯᠡᠭᠡᠪᠡ"
@@ -237,21 +236,21 @@ mn_MON:
     BUTTON_MARK_AS_IMPORTANT: " ᠴᠢᠬᠤᠯᠠ ᠪᠡᠷ ᠲᠡᠮᠳᠡᠭᠯᠡᠬᠦ"
     BUTTON_OPEN_PGP: "OpenPGP (ᠵᠥᠪᠬᠡᠨ  ᠪᠢᠴᠢᠭ᠌ ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠪᠡᠷ ᠬᠢᠵᠠᠭᠠᠷᠯᠠᠨ᠎ᠠ)"
     BUTTON_REQUEST_DSN: "ᠨᠡᠭᠡᠭᠡᠭᠰᠡᠨ ᠡᠰᠡᠬᠦ ᠶᠢ ᠬᠠᠷᠢᠭᠤ ᠱᠠᠭᠠᠷᠳᠠᠬᠤ"
-  POPUPS_WELCOME_PAGE:
+   POPUPS_WELCOME_PAGE:
     BUTTON_CLOSE: "ᠬᠠᠭᠠᠬᠤ"
-  POPUPS_ASK:
+   POPUPS_ASK:
     BUTTON_YES: "ᠲᠡᠢᠮᠦ"
     BUTTON_NO: "ᠦᠭᠡᠢ"
     DESC_WANT_CLOSE_THIS_WINDOW: "ᠲᠤᠰ ᠴᠤᠩᠬᠤ ᠶᠢ ᠬᠠᠭᠠᠬᠤ ᠤᠤ︖"
     DESC_WANT_DELETE_MESSAGES: "ᠲᠤᠰ ᠴᠢᠮᠡᠭᠡ ᠶᠢ ᠠᠷᠢᠯᠭᠠᠬᠤ ᠤᠤ︖"
-  POPUPS_LANGUAGES:
+   POPUPS_LANGUAGES:
     TITLE_LANGUAGES: "ᠭᠡᠯᠡ ᠰᠤᠩᠭᠤᠬᠤ"
-  POPUPS_ADD_ACCOUNT:
+   POPUPS_ADD_ACCOUNT:
     TITLE_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠨᠡᠮᠡᠬᠦ ᠦᠦ︖"
     BUTTON_ADD_ACCOUNT: "ᠨᠡᠮᠡᠬᠦ"
     TITLE_UPDATE_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ?"
     BUTTON_UPDATE_ACCOUNT: "ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ"
-  POPUPS_IDENTITY:
+   POPUPS_IDENTITY:
     TITLE_ADD_IDENTITY: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ ᠨᠡᠮᠡᠬᠦ  ᠦᠦ︖"
     TITLE_UPDATE_IDENTITY: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ ᠦᠦ︖"
     BUTTON_ADD_IDENTITY: "ᠨᠡᠮᠡᠬᠦ"
@@ -260,10 +259,10 @@ mn_MON:
     LABEL_NAME: "ᠤᠪᠤᠭ ᠨᠡᠷ᠎ᠡ"
     LABEL_REPLY_TO: "ᠬᠠᠷᠢᠭᠤ"
     LABEL_SIGNATURE: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
-    LABEL_CC: "Cc"
+     LABEL_CC: "Cc"
     LABEL_BCC: "ᠨᠢᠭᠤᠴᠢᠯᠠᠨ ᠢᠯᠡᠭᠡᠬᠦ"
     LABEL_SIGNATURE_INSERT_BEFORE: "ᠬᠠᠷᠢᠭᠤ ᠪᠢᠴᠢᠭᠰᠡᠨ ᠵᠠᠬᠢᠶᠠᠰᠤ ᠶᠢᠨ ᠡᠮᠦᠨ᠎ᠡ ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ ᠢᠶᠡᠨ ᠨᠡᠮᠡ"
-  POPUPS_CREATE_FOLDER:
+   POPUPS_CREATE_FOLDER:
     TITLE_CREATE_FOLDER: "ᠳᠤᠭᠲᠤᠢ ᠪᠠᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
     LABEL_NAME: " ᠳᠤᠭᠲᠤᠢ ᠶᠢᠨ ᠨᠡᠷ᠎ᠡ"
     LABEL_PARENT: "ᠲᠡᠷᠢᠭᠦᠨ ᠳᠤᠭᠲᠤᠢ"
@@ -271,7 +270,7 @@ mn_MON:
     BUTTON_CANCEL: "ᠦᠭᠡᠢᠰᠬᠡᠬᠦ"
     BUTTON_CLOSE: "ᠬᠠᠭᠠᠬᠤ"
     TITLE_CREATING_PROCESS: "ᠳᠤᠭᠲᠤᠢ ᠪᠠᠢᠭᠤᠯᠤᠭᠳᠠᠵᠤ ᠪᠤᠢ"
-  POPUPS_CLEAR_FOLDER:
+   POPUPS_CLEAR_FOLDER:
     TITLE_CLEAR_FOLDER: " ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠡᠬᠢ ᠪᠥᠬᠦ ᠵᠠᠬᠢᠳᠠᠯ ᠢ ᠴᠡᠪᠡᠷᠯᠡᠬᠦ ᠦᠦ︖"
     BUTTON_CLEAR: "ᠴᠡᠪᠡᠷᠯᠡᠬᠦ"
     BUTTON_CANCEL: "ᠦᠭᠡᠢᠰᠬᠡᠬᠦ"
@@ -280,21 +279,21 @@ mn_MON:
     DANGER_DESC_HTML_1: "ᠲᠤᠰ ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ ᠨᠢ  ᠳᠤᠭᠲᠤᠢ  ᠳ᠋ᠡᠬᠢ <strong>%FOLDER%</strong> ᠵᠠᠬᠢᠳᠠᠯ ᠢ ᠪᠥᠬᠦᠨ ᠢ ᠠᠷᠢᠯᠤᠭᠠᠨ᠎᠎ᠠ"
     DANGER_DESC_HTML_2: "ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ ᠶᠠᠪᠤᠭᠳᠠᠪᠠᠯ᠂ ᠪᠤᠴᠠᠬᠤ ᠪᠠ  ᠵᠤᠭᠰᠤᠭᠠᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ"
     TITLE_CLEARING_PROCESS: " ᠳᠤᠭᠲᠤᠢ ᠶᠢ ᠴᠡᠪᠡᠷᠯᠡᠵᠦ ᠪᠤᠢ..."
-  POPUPS_IMPORT_OPEN_PGP_KEY:
+   POPUPS_IMPORT_OPEN_PGP_KEY:
     TITLE_IMPORT_OPEN_PGP_KEY: "OpenPGP ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠤᠷᠤᠭᠤᠯᠬᠤ"
     BUTTON_IMPORT_OPEN_PGP_KEY: "ᠤᠷᠤᠭᠤᠯᠬᠤ"
-  POPUPS_VIEW_OPEN_PGP_KEY:
+   POPUPS_VIEW_OPEN_PGP_KEY:
     TITLE_VIEW_OPEN_PGP_KEY: "OpenPGP ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠪᠠᠢᠴᠠᠭᠠᠬᠤ"
     BUTTON_SELECT: "ᠰᠤᠩᠭᠤᠯᠲᠠ"
     BUTTON_CLOSE: "ᠬᠠᠭᠠᠬᠤ"
-  POPUPS_GENERATE_OPEN_PGP_KEYS:
+   POPUPS_GENERATE_OPEN_PGP_KEYS:
     TITLE_GENERATE_OPEN_PGP_KEYS: "OpenPGP ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠪᠥᠲᠦᠭᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ"
     LABEL_NAME: "ᠨᠡᠷ᠎ᠡ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
     LABEL_KEY_BIT_LENGTH: "ᠲᠦᠯᠬᠢᠭᠦᠷ ᠤᠨ ᠬᠡᠮᠵᠢᠶ᠎ᠡ"
     BUTTON_GENERATE_OPEN_PGP_KEYS: "ᠪᠥᠲᠦᠭᠡᠬᠦ"
-  POPUPS_COMPOSE_OPEN_PGP:
+   POPUPS_COMPOSE_OPEN_PGP:
     TITLE_COMPOSE_OPEN_PGP: "OpenPGP ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ/ ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ"
     LABEL_SIGN: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
     LABEL_ENCRYPT: "ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ"
@@ -302,16 +301,16 @@ mn_MON:
     BUTTON_SIGN: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
     BUTTON_ENCRYPT: "ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ"
     BUTTON_SIGN_AND_ENCRYPT: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ ᠢ ᠨᠢᠭᠤᠴᠠᠯᠠᠬᠤ"
-  POPUPS_MESSAGE_OPEN_PGP:
+   POPUPS_MESSAGE_OPEN_PGP:
     TITLE_MESSAGE_OPEN_PGP: "OpenPGP ᠵᠠᠳᠠᠯᠬᠤ"
     LABEL_KEY: "ᠬᠤᠪᠢ ᠲᠦᠯᠬᠢᠭᠦᠷ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
     BUTTON_DECRYPT: "ᠵᠠᠳᠠᠯᠬᠤ"
-  POPUPS_TWO_FACTOR_TEST:
+   POPUPS_TWO_FACTOR_TEST:
     TITLE_TEST_CODE: "ᠬᠤᠶᠠᠷ ᠠᠯᠬᠤᠮ ᠬᠢᠨᠠᠨ ᠰᠢᠯᠭᠠᠬᠤ"
     LABEL_CODE: "ᠲᠤᠮᠢᠶ᠎ᠠ"
     BUTTON_TEST: "ᠰᠢᠯᠭᠠᠬᠤ"
-  POPUPS_FILTER:
+   POPUPS_FILTER:
     TITLE_CREATE_FILTER: "ᠰᠢᠯᠡᠬᠦ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠶᠢ ᠪᠠᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
     TITLE_EDIT_FILTER: "ᠰᠢᠯᠡᠬᠦ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠶᠢ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ ᠦᠦ︖"
     FILTER_NAME: "ᠨᠡᠷ᠎ᠡ"
@@ -352,7 +351,7 @@ mn_MON:
     VACATION_RECIPIENTS_LABEL: "ᠬᠦᠯᠢᠶᠡᠨ ᠠᠪᠤᠭᠴᠢ(᠌᠌"," ᠬᠤᠪᠢᠶᠠᠭᠠᠷᠠᠢ)"
     REJECT_MESSAGE_LABEL: "ᠵᠠᠬᠢᠳᠠᠯ ᠡᠰᠡ ᠬᠦᠯᠢᠶᠡᠨ ᠠᠪᠤᠬᠤ"
     ALL_INCOMING_MESSAGES_DESC: "ᠪᠥᠬᠦ ᠢᠷᠡᠭᠰᠡᠨ ᠵᠠᠬᠢᠳᠠᠯ"
-  POPUPS_SYSTEM_FOLDERS:
+   POPUPS_SYSTEM_FOLDERS:
     TITLE_SYSTEM_FOLDERS: "ᠰᠢᠰᠲ᠋ᠧᠮ ᠤᠨ  ᠳᠤᠭᠲᠤᠢ  ᠶᠢ ᠰᠤᠩᠭᠤᠭᠠᠷᠠᠢ"
     SELECT_CHOOSE_ONE: "ᠨᠢᠭᠡ ᠶᠢ ᠰᠤᠩᠭᠤᠭᠠᠷᠠᠢ"
     SELECT_UNUSE_NAME: "ᠬᠡᠷᠡᠭᠯᠡᠬᠦ ᠦᠭᠡᠢ"
@@ -363,18 +362,18 @@ mn_MON:
     LABEL_ARCHIVE: "ᠠᠪᠳᠠᠷᠠᠯᠠᠬᠤ"
     BUTTON_CANCEL: "ᠦᠭᠡᠢᠰᠬᠡᠬᠦ"
     BUTTON_CLOSE: "ᠬᠠᠭᠠᠬᠤ"
-    NOTIFICATION_SENT: |
+     NOTIFICATION_SENT: |
       ᠲᠠ ᠌"ᠨᠢᠭᠡᠨᠲᠡ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ "  ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠤ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ ᠵᠠᠬᠢᠳᠠᠯ ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ
       ᠬᠡᠷᠪᠡ ᠲᠠ ᠢᠯᠡᠭᠡᠭᠰᠡᠨ ᠵᠠᠬᠢᠳᠠᠯ  ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ ᠢ ᠡᠰᠡ ᠬᠦᠰᠡᠪᠡᠯ "ᠬᠡᠷᠡᠭᠯᠡᠬᠦ ᠦᠭᠡᠢ"  ᠭᠡᠬᠦ ᠲᠤᠪᠴᠢ ᠶᠢ ᠰᠤᠩᠭᠤᠭᠠᠷᠠᠢ
     NOTIFICATION_DRAFTS: "ᠲᠠ ᠌" ᠡᠬᠡ ᠨᠤᠤᠷᠠᠭ "  ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠤ ᠡᠬᠡ ᠨᠤᠤᠷᠠᠭ ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ"
-    NOTIFICATION_SPAM: |
+     NOTIFICATION_SPAM: |
       ᠲᠠ ᠌"  ᠬᠠᠶᠠᠭᠳᠠᠯ ᠵᠠᠬᠢᠳᠠᠯ "  ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠤ ᠬᠠᠶᠠᠭᠳᠠᠯ ᠵᠠᠬᠢᠳᠠᠯ ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ
        ᠬᠡᠷᠪᠡ ᠲᠠ  ᠪᠤᠴᠠᠯᠲᠠ ᠦᠭᠡᠢ ᠬᠠᠰᠤᠬᠤ  ᠢ ᠬᠦᠰᠡᠪᠡᠯ "ᠬᠡᠷᠡᠭᠯᠡᠬᠦ ᠦᠭᠡᠢ"  ᠭᠡᠬᠦ ᠲᠤᠪᠴᠢ ᠶᠢ ᠰᠤᠩᠭᠤᠭᠠᠷᠠᠢ
-    NOTIFICATION_TRASH: |
+     NOTIFICATION_TRASH: |
       ᠲᠠ ᠌" ᠨᠢᠭᠡᠨᠲᠡ ᠬᠠᠰᠤᠭᠰᠠᠨ ᠵᠠᠬᠢᠳᠠᠯ"  ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠤ  ᠬᠠᠶᠠᠭᠳᠠᠯ ᠵᠠᠬᠢᠳᠠᠯ ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ
       ᠬᠡᠷᠪᠡ ᠲᠠ  ᠪᠤᠴᠠᠯᠲᠠ ᠦᠭᠡᠢ ᠬᠠᠰᠤᠬᠤ  ᠢ ᠬᠦᠰᠡᠪᠡᠯ "ᠬᠡᠷᠡᠭᠯᠡᠬᠦ ᠦᠭᠡᠢ"  ᠭᠡᠬᠦ ᠲᠤᠪᠴᠢ ᠶᠢ ᠰᠤᠩᠭᠤᠭᠠᠷᠠᠢ
     NOTIFICATION_ARCHIVE: "ᠲᠠ ᠌"ᠨᠢᠭᠡᠨᠲᠡ ᠲᠥᠷᠦᠯᠵᠢᠭᠦᠯᠦᠭᠰᠡᠨ ᠵᠠᠬᠢᠳᠠᠯ"  ᠳᠤᠭᠲᠤᠢ ᠳ᠋ᠤ ᠲᠥᠷᠦᠯᠵᠢᠭᠦᠯᠦᠭᠰᠡᠨ ᠵᠠᠬᠢᠳᠠᠯ ᠢᠶᠡᠨ ᠬᠠᠳᠠᠭᠠᠯᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ"
-  POPUPS_TWO_FACTOR_CFG:
+   POPUPS_TWO_FACTOR_CFG:
     LEGEND_TWO_FACTOR_AUTH: "ᠬᠤᠶᠠᠷ ᠠᠯᠬᠤᠮ ᠬᠢᠨᠠᠨ ᠰᠢᠯᠭᠠᠬᠤ"
     LABEL_ENABLE_TWO_FACTOR: "ᠬᠤᠶᠠᠷ ᠠᠯᠬᠤᠮ ᠬᠢᠨᠠᠨ ᠰᠢᠯᠭᠠᠬᠤ ᠶᠢ ᠨᠡᠭᠡᠭᠡᠬᠦ"
     LABEL_TWO_FACTOR_USER: "ᠬᠡᠷᠡᠭᠯᠡᠭᠴᠢ"
@@ -393,20 +392,20 @@ mn_MON:
     TWO_FACTOR_REQUIRE_DESC: "ᠲᠠᠨ ᠤ ᠨᠡᠷ᠎ᠡ ᠳᠠᠩᠰᠠ ᠬᠤᠶᠠᠷ ᠠᠯᠬᠤᠮ ᠬᠢᠨᠠᠨ ᠰᠢᠯᠭᠠᠯᠲᠠ ᠶᠢ ᠳᠤᠬᠢᠷᠠᠭᠤᠯᠬᠤ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠲᠠᠢ"
     TWO_FACTOR_SECRET_CONFIGURED_DESC: "ᠨᠢᠭᠡᠨᠲᠡ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠪᠠ"
     TWO_FACTOR_SECRET_NOT_CONFIGURED_DESC: "ᠡᠰᠡ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠪᠠ"
-    TWO_FACTOR_SECRET_DESC: >-
+     TWO_FACTOR_SECRET_DESC: >-
         ᠡᠨᠡ ᠮᠡᠳᠡᠯᠡᠯ ᠢ Google   ᠰᠢᠯᠭᠠᠭᠤᠷ(  ᠡᠰᠡᠬᠦᠯ᠎ᠡ ᠪᠤᠰᠤᠳTOTP ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ)  ᠤᠷᠤᠭᠤᠯᠠᠷᠠᠢ
         ᠮᠡᠷᠭᠡᠨ ᠴᠤᠬᠤᠷ ᠢ ᠰᠢᠷᠪᠢᠬᠦ ᠪᠤᠶᠤ ᠲᠤᠮᠢᠶ᠎ᠠ ᠶᠢ ᠬᠠᠭᠤᠯᠵᠤ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ
-    TWO_FACTOR_BACKUP_CODES_DESC: >-
+     TWO_FACTOR_BACKUP_CODES_DESC: >-
         ᠬᠡᠷᠪᠡ ᠲᠠGoogle  ᠰᠢᠯᠭᠠᠭᠤᠷ  ᠢᠶᠡᠷ ᠳ᠋ᠤᠭᠠᠷ ᠬᠦᠯᠢᠶᠡᠨ ᠠᠪᠤᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ ᠪᠤᠯ ᠨᠥᠭᠡᠴᠡ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠠᠰᠢᠭᠯᠠᠵᠤ ᠪᠤᠯᠤᠨ᠎ᠠ
         ᠨᠥᠭᠡᠴᠡ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠨᠡᠪᠲᠡᠷᠡᠭᠰᠡᠨ ᠤ ᠳᠠᠷᠠᠭ᠎ᠠ ᠭᠠᠴᠠᠭᠰᠠᠨ ᠪᠠᠢᠳᠠᠯ ᠤᠷᠤᠨ᠎ᠠ
     TWO_FACTOR_SECRET_TEST_BEFORE_DESC: "ᠳᠤᠬᠢᠷᠠᠭᠤᠯᠲᠠ ᠡᠴᠡ ᠡᠮᠦᠨ᠎ᠡ ᠬᠤᠪᠢᠷᠠᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ"
-  TITLES:
+   TITLES:
     LOADING: "ᠠᠴᠢᠶᠠᠯᠠᠵᠤ ᠪᠤᠢ"
     LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     MAILBOX: "ᠢᠮᠧᠯ"
     SETTINGS: "ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"
     COMPOSE: "ᠵᠠᠬᠢᠳᠠᠯ ᠪᠢᠴᠢᠬᠦ"
-  UPLOAD:
+   UPLOAD:
     ERROR_FILE_IS_TOO_BIG: "ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠬᠡᠲᠦᠷᠬᠡᠢ ᠲᠤᠮᠤ"
     ERROR_FILE_PARTIALLY_UPLOADED: "ᠥᠯᠦ ᠮᠡᠳᠡᠬᠦ ᠠᠯᠳᠠᠭ᠎ᠠ ᠭᠠᠷᠪᠠ᠂ ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠤᠨ ᠬᠡᠰᠡᠭ ᠪᠥᠯᠥᠭ ᠨᠢ ᠳᠠᠮᠵᠢᠭᠳᠠᠪᠠ"
     ERROR_NO_FILE_UPLOADED: "ᠳᠠᠮᠵᠢᠭᠤᠯᠤᠭᠰᠠᠨ ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠦᠭᠡᠢ"
@@ -414,11 +413,11 @@ mn_MON:
     ERROR_ON_SAVING_FILE: "ᠥᠯᠦ ᠮᠡᠳᠡᠬᠦ ᠠᠯᠳᠠᠭ᠎ᠠ ᠭᠠᠷᠪᠠ"
     ERROR_FILE_TYPE: "ᠥᠯᠦ ᠮᠡᠳᠡᠷᠡᠬᠦ ᠬᠡᠯᠪᠡᠷᠢ"
     ERROR_UNKNOWN: "ᠥᠯᠦ ᠮᠡᠳᠡᠬᠦ ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠳᠠᠮᠵᠢᠭᠤᠯᠭ᠎ᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ"
-  EDITOR:
-    TEXT_SWITCHER_PLAINT_TEXT: "HTML <-> TEXT"
+   EDITOR:
+     TEXT_SWITCHER_PLAINT_TEXT: "HTML <-> TEXT"
     TEXT_SWITCHER_RICH_FORMATTING: "ᠳᠠᠭᠠᠭᠤ ᠪᠢᠴᠢᠭ᠌"
     TEXT_SWITCHER_CONFIRM: "ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠤᠨ ᠬᠡᠯᠪᠡᠷᠢ ᠵᠢᠴᠢ ᠵᠢᠷᠤᠭ ᠤᠳ ᠠᠯᠳᠠᠭᠳᠠᠬᠤ ᠪᠤᠯᠤᠨ᠎ᠠ᠂ ᠲᠠ ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ ᠪᠠᠨ ᠦᠷᠭᠦᠯᠵᠢᠯᠡᠭᠦᠯᠬᠦ ᠦᠦ︖"
-  SETTINGS_LABELS:
+   SETTINGS_LABELS:
     LABEL_PERSONAL_NAME: "ᠬᠤᠪᠢ ᠪᠡᠶ᠎ᠡ"
     LABEL_GENERAL_NAME: "ᠡᠭᠡᠯ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"
     LABEL_CONTACTS_NAME: "ᠬᠠᠷᠢᠯᠴᠠᠬᠤ ᠬᠦᠮᠦᠨ"
@@ -432,9 +431,9 @@ mn_MON:
     LABEL_SOCIAL_NAME: "ᠨᠡᠢᠭᠡᠮ ᠤᠨ ᠬᠠᠷᠢᠯᠴᠠᠭ᠎ᠠ"
     LABEL_THEMES_NAME: "ᠰᠡᠳᠦᠪ"
     LABEL_CHANGE_PASSWORD_NAME: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
-    LABEL_OPEN_PGP_NAME: "OpenPGP"
+     LABEL_OPEN_PGP_NAME: "OpenPGP"
     BUTTON_BACK: "ᠪᠤᠴᠠᠬᠤ"
-  SETTINGS_FILTERS:
+   SETTINGS_FILTERS:
     LEGEND_FILTERS: "ᠰᠢᠯᠡᠬᠦ ᠡᠰᠬᠡᠮ"
     BUTTON_SAVE: "ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ"
     BUTTON_ADD_FILTER: "ᠰᠢᠯᠡᠬᠦ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠨᠡᠮᠡᠬᠦ"
@@ -446,24 +445,24 @@ mn_MON:
     SUBNAME_REJECT: "ᠲᠠᠲᠠᠭᠠᠯᠵᠠᠬᠤ"
     SUBNAME_VACATION_MESSAGE: "ᠠᠮᠠᠷᠠᠯᠲᠠ ᠶᠢᠨ ᠴᠢᠮᠡᠭᠡ"
     SUBNAME_DISCARD: "ᠦᠭᠡᠢᠰᠬᠡᠬᠦ"
-    CAPABILITY_LABEL: "Capability"
+     CAPABILITY_LABEL: "Capability"
     LOADING_PROCESS: "ᠰᠢᠯᠡᠬᠦ ᠳᠥᠷᠢᠮ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ ᠶᠢ ᠰᠢᠨᠡᠴᠢᠯᠡᠵᠦ ᠪᠤᠢ"
     DELETING_ASK: "ᠬᠠᠰᠤᠬᠤ ᠤᠤ︖"
     CHACHES_NEED_TO_BE_SAVED_DESC: "ᠡᠳᠡᠭᠡᠷ ᠵᠠᠰᠠᠪᠤᠷᠢ ᠶᠢ ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠲᠠᠢ"
-  SETTINGS_IDENTITY:
+   SETTINGS_IDENTITY:
     LEGEND_IDENTITY: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
     LABEL_DISPLAY_NAME: "ᠨᠡᠷ᠎ᠡ ᠳᠠᠭᠤᠳᠠᠯᠭ᠎ᠠ"
     LABEL_REPLY_TO: "ᠬᠠᠷᠢᠭᠤ"
     LABEL_SIGNATURE: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
     LABEL_ADD_SIGNATURE_TO_ALL: "ᠵᠠᠬᠢᠳᠠᠯ ᠢᠯᠡᠭᠡᠬᠦ ᠳ᠋ᠤ ᠴᠥᠮ ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ  ᠳᠠᠭᠠᠭᠤᠯᠤᠨ᠎ᠠ"
-  SETTINGS_SECURITY:
+   SETTINGS_SECURITY:
     LEGEND_SECURITY: "ᠠᠮᠤᠷ ᠲᠦᠪᠰᠢᠨ"
     LABEL_CONFIGURE_TWO_FACTOR: "ᠬᠤᠶᠠᠷ ᠠᠯᠬᠤᠮ ᠬᠢᠨᠠᠨ ᠰᠢᠯᠭᠠᠬᠤ ᠶᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠬᠤ"
     LABEL_AUTOLOGOUT: "ᠥᠪᠡᠷᠲᠡᠭᠡᠨ ᠭᠠᠷᠬᠤ"
     AUTOLOGIN_NEVER_OPTION_NAME: "ᠶᠡᠷᠦ ᠦᠭᠡᠢ"
     AUTOLOGIN_MINUTES_OPTION_NAME: "%MINUTES% ᠮᠢᠨᠦ᠋ᠲ"
     AUTOLOGIN_HOURS_OPTION_NAME: "%HOURS%ᠴᠠᠭ"
-  SETTINGS_GENERAL:
+   SETTINGS_GENERAL:
     LEGEND_GENERAL: "ᠡᠭᠡᠯ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"
     LABEL_LANGUAGE: "ᠬᠡᠯᠡ"
     LABEL_IDENTITY: "ᠲᠤᠳᠤᠷᠬᠠᠢᠯᠠᠯᠲᠠ"
@@ -492,7 +491,7 @@ mn_MON:
     LABEL_SOUND_NOTIFICATION: "ᠰᠠᠨᠠᠭᠤᠯᠬᠤ ᠳᠤᠬᠢᠶ᠎ᠠ"
     LABEL_CHROME_NOTIFICATION_DESC: "ᠰᠢᠨ᠎ᠡ ᠴᠢᠮᠡᠭᠡ ᠢᠯᠡᠷᠡᠬᠦ ᠴᠤᠩᠬᠤ"
     LABEL_CHROME_NOTIFICATION_DESC_DENIED: "(ᠬᠥᠲᠦᠴᠢ  ᠬᠤᠷᠢᠭᠯᠠᠪᠠ)"
-  SETTINGS_CONTACTS:
+   SETTINGS_CONTACTS:
     LEGEND_CONTACTS: "ᠬᠠᠷᠢᠯᠴᠠᠬᠤ ᠬᠦᠮᠦᠨ"
     LABEL_CONTACTS_AUTOSAVE: "ᠠᠤᠲ᠋ᠮᠠᠲ ᠪᠡᠷ ᠬᠠᠶᠢᠭ ᠨᠡᠮᠡᠬᠦ"
     LEGEND_CONTACTS_SYNC: "ᠠᠯᠤᠰ ᠡᠴᠡ ᠢᠵᠢᠯᠰᠢᠭᠦᠯᠬᠦ(CardDAV)"
@@ -501,7 +500,7 @@ mn_MON:
     LABEL_CONTACTS_SYNC_AB_URL: "ᠬᠠᠶᠢᠭURL"
     LABEL_CONTACTS_SYNC_USER: "ᠬᠡᠷᠡᠭᠯᠡᠭᠴᠢ ᠶᠢᠨ ᠨᠡᠷ᠎ᠡ"
     LABEL_CONTACTS_SYNC_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
-  SETTINGS_THEMES:
+   SETTINGS_THEMES:
     LEGEND_THEMES: "ᠥᠩᠭᠡ ᠬᠡ"
     LEGEND_THEMES_CUSTOM: "ᠥᠩᠭᠡ ᠬᠡ  ᠶᠢᠨ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠭ᠎ᠠ"
     LABEL_CUSTOM_TYPE: "ᠬᠡᠯᠪᠡᠷᠢ"
@@ -512,7 +511,7 @@ mn_MON:
     ERROR_FILE_IS_TOO_BIG: "ᠮᠠᠲ᠋ᠧᠷᠢᠶᠠᠯ ᠭᠡᠲᠦᠷᠬᠡᠢ ᠲᠤᠮᠤ"
     ERROR_FILE_TYPE_ERROR: "ᠬᠦᠴᠦᠨ ᠦᠭᠡᠢ ᠬᠡᠯᠪᠡᠷᠢ (ᠵᠥᠪᠬᠡᠨ JPG ᠪᠠ PNG)"
     ERROR_UNKNOWN: "ᠳᠠᠮᠵᠢᠭᠤᠯᠬᠤ ᠦᠶ᠎ᠡ ᠳ᠋ᠤ ᠥᠯᠦ ᠮᠡᠳᠡᠬᠦ ᠠᠯᠳᠠᠭ᠎ᠠ ᠭᠠᠷᠴᠠᠢ"
-  SETTINGS_SOCIAL:
+   SETTINGS_SOCIAL:
     LEGEND_GOOGLE: "Google"
     BUTTON_GOOGLE_CONNECT: "Google ᠳ᠋ᠤ ᠵᠠᠯᠭᠠᠬᠤ"
     BUTTON_GOOGLE_DISCONNECT: "Google ᠵᠠᠯᠭᠠᠯᠲᠠ  ᠶᠢ ᠲᠠᠰᠤᠯᠬᠤ"
@@ -525,7 +524,7 @@ mn_MON:
     BUTTON_TWITTER_CONNECT: "Twitter ᠲᠤ ᠵᠠᠯᠭᠠᠬᠤ"
     BUTTON_TWITTER_DISCONNECT: "Twitter ᠵᠠᠯᠭᠠᠯᠲᠠ  ᠶᠢ ᠲᠠᠰᠤᠯᠬᠤ"
     MAIN_TWITTER_DESC: "Twitterᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠭᠰᠡᠨ ᠤ ᠳᠠᠷᠠᠭ᠎ᠠ ᠳᠡᠯᠭᠡᠴᠡᠨ ᠳ᠋ᠡᠬᠢ Twitter ᠲᠤᠪᠴᠢ ᠪᠡᠷ ᠡᠨᠡ ᠳᠠᠩᠰᠠ ᠤᠷᠤᠭᠤ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ ᠪᠤᠯᠤᠮᠵᠢ ᠲᠠᠢ"
-  SETTINGS_FOLDERS:
+   SETTINGS_FOLDERS:
     LEGEND_FOLDERS: "ᠳᠤᠭᠲᠤᠢ"
     BUTTON_CREATE: "ᠳᠤᠭᠲᠤᠢ ᠪᠠᠢᠭᠤᠯᠬᠤ"
     BUTTON_SYSTEM: "ᠰᠢᠰᠲ᠋ᠧᠮ ᠤᠨ ᠳᠤᠭᠲᠤᠢ"
@@ -542,7 +541,7 @@ mn_MON:
     HELP_DELETE_FOLDER: " ᠳᠤᠭᠲᠤᠢ ᠶᠢ ᠬᠠᠰᠤᠬᠤ"
     HELP_SHOW_HIDE_FOLDER: "ᠢᠯᠡᠷᠡᠭᠦᠯᠬᠦ/ ᠳᠠᠯᠳᠠᠯᠠᠬᠤᠳᠤᠭᠲᠤᠢ)"
     HELP_CHECK_FOR_NEW_MESSAGES: "ᠬᠢᠨᠠᠬᠤ/ ᠡᠰᠡ ᠬᠢᠨᠠᠬᠤ(  ᠰᠢᠨ᠎ᠡ ᠵᠠᠬᠢᠳᠠᠯ)"
-  SETTINGS_ACCOUNTS:
+   SETTINGS_ACCOUNTS:
     LEGEND_ACCOUNTS: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤᠨ ᠤ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ"
     LEGEND_IDENTITIES: "ᠲᠤᠳᠤᠷᠬᠠᠢᠯᠠᠯᠲᠠ ᠤᠳ"
     LEGEND_ACCOUNTS_AND_IDENTITIES: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤ ᠪᠠ ᠲᠡᠮᠳᠡᠭ ᠤᠳ"
@@ -552,7 +551,7 @@ mn_MON:
     LOADING_PROCESS: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤᠨ ᠤ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ"
     DELETING_ASK: "ᠪᠠᠲᠤᠯᠭᠠᠵᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
     DEFAULT_IDENTITY_LABEL: "ᠪᠠᠷᠢᠮᠵᠢᠶ᠎ᠠ ᠬᠡᠯᠪᠡᠷᠢ"
-  SETTINGS_IDENTITIES:
+   SETTINGS_IDENTITIES:
     LEGEND_IDENTITY: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ"
     LEGEND_IDENTITIES: "ᠭᠠᠷ ᠤᠨ ᠦᠰᠦᠭ ᠳᠠᠭᠠᠭᠤᠯᠬᠤ"
     LABEL_DEFAULT: "ᠪᠠᠷᠢᠮᠵᠢᠶ᠎ᠠ ᠬᠡᠯᠪᠡᠷᠢ"
@@ -564,22 +563,22 @@ mn_MON:
     BUTTON_DELETE: "ᠬᠠᠰᠦᠬᠤ"
     LOADING_PROCESS: "ᠭᠠᠷ  ᠤᠨ ᠦᠰᠦᠭ ᠰᠢᠨᠡᠴᠢᠯᠡᠵᠦ ᠪᠤᠢ"
     DELETING_ASK: "ᠪᠠᠲᠤᠯᠭᠠᠵᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
-  SETTINGS_CHANGE_PASSWORD:
+   SETTINGS_CHANGE_PASSWORD:
     LEGEND_CHANGE_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠢ ᠰᠤᠯᠢᠬᠤ"
     LABEL_CURRENT_PASSWORD: "ᠤᠳᠤᠬᠢ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
     LABEL_NEW_PASSWORD: "ᠰᠢᠨ᠎ᠡ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
     LABEL_REPEAT_PASSWORD: "ᠰᠢᠨ᠎ᠡ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠳᠠᠬᠢᠨ ᠪᠢᠴᠢᠬᠦ"
     BUTTON_UPDATE_PASSWORD: "ᠰᠢᠨ᠎ᠡ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠲᠤᠬᠢᠷᠠᠭᠤᠯᠬᠤ"
     ERROR_PASSWORD_MISMATCH: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠵᠤᠬᠢᠴᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ᠂ ᠳᠠᠬᠢᠨ ᠲᠤᠷᠰᠢᠭᠠᠷᠠᠢ"
-  SETTINGS_OPEN_PGP:
-    LEGEND_OPEN_PGP: "OpenPGP"
+   SETTINGS_OPEN_PGP:
+     LEGEND_OPEN_PGP: "OpenPGP"
     BUTTON_ADD_OPEN_PGP_KEY: "OpenPGP ᠲᠦᠢᠯᠬᠢᠭᠦᠷ ᠢ ᠤᠷᠤᠭᠤᠯᠬᠤ"
     BUTTON_GENERATE_OPEN_PGP_KEYS: "OpenPGP ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠪᠥᠲᠦᠭᠡᠬᠦ"
     TITLE_PRIVATE: "ᠬᠤᠪᠢ ᠳ᠋ᠤ ᠪᠠᠨ ᠡᠵᠡᠮᠰᠢᠬᠦ"
     TITLE_PUBLIC: "ᠨᠡᠢᠲᠡ ᠳ᠋ᠤ ᠢᠯᠡ ᠪᠤᠯᠭᠠᠬᠤ"
     DELETING_ASK: "ᠲᠠ ᠪᠠᠲᠤᠯᠭᠠᠵᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
     GENERATE_ONLY_HTTPS: "HTTPS  ᠢᠶᠡᠷ ᠬᠢᠵᠠᠭᠠᠷᠯᠠᠨ᠎ᠠ"
-  SHORTCUTS_HELP:
+   SHORTCUTS_HELP:
     LEGEND_SHORTCUTS_HELP: "ᠳᠥᠭᠦᠮ ᠲᠤᠪᠴᠢ ᠶᠢᠨ ᠲᠠᠢᠯᠪᠤᠷᠢ"
     TAB_MAILBOX: "ᠢᠮᠧᠯ ᠤᠨ ᠭᠠᠷᠴᠠᠭ"
     TAB_MESSAGE_LIST: "ᠵᠠᠬᠢᠳᠠᠯ ᠤᠨ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ"
@@ -619,7 +618,7 @@ mn_MON:
     LABEL_SAVE_MESSAGE: "ᠵᠠᠬᠢᠳᠠᠯ ᠬᠠᠳᠠᠭᠠᠯᠠᠬᠤ"
     LABEL_SEND_MESSAGE: "ᠵᠠᠬᠢᠳᠠᠯ ᠢᠯᠡᠭᠡᠬᠦ"
     LABEL_CLOSE_COMPOSE: "ᠲᠤᠭᠤᠷᠪᠢᠨ ᠪᠢᠴᠢᠬᠦ ᠡᠴᠡ ᠭᠠᠷᠬᠤ"
-  PGP_NOTIFICATIONS:
+   PGP_NOTIFICATIONS:
     NO_PUBLIC_KEYS_FOUND: "ᠨᠡᠢᠲᠡᠯᠢᠭ ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠤᠯᠤᠭᠰᠠᠨ ᠦᠭᠡᠢ"
     NO_PUBLIC_KEYS_FOUND_FOR: "\\\"%EMAIL%\\\" ᠨᠡᠢᠲᠡᠯᠢᠭ ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠤᠯᠤᠭᠰᠠᠨ ᠦᠭᠡᠢ"
     NO_PRIVATE_KEY_FOUND: "ᠬᠤᠪᠢ ᠶᠢᠨ ᠲᠦᠯᠬᠢᠭᠦᠷ ᠢ ᠤᠯᠤᠭᠰᠠᠨ ᠦᠭᠡᠢ"
@@ -632,17 +631,17 @@ mn_MON:
     PGP_ERROR: "OpenPGP ᠪᠤᠷᠤᠭᠤ： %ERROR%"
     SPECIFY_FROM_EMAIL: "ᠵᠠᠬᠢᠳᠠᠯ ᠢᠯᠡᠭᠡᠭᠴᠢ ᠶᠢᠨ ᠬᠠᠶᠢᠭ ᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠠᠷᠠᠢ"
     SPECIFY_AT_LEAST_ONE_RECIPIENT: "ᠨᠠᠳᠤ ᠵᠠᠬ᠎ᠠ ᠳ᠋ᠤ ᠪᠠᠨ ᠨᠢᠭᠡ ᠬᠦᠯᠢᠶᠠᠨ ᠠᠪᠤᠭᠴᠢ ᠬᠠᠶᠢᠭ ᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠠᠷᠠᠢ"
-  NOTIFICATIONS:
+   NOTIFICATIONS:
     INVALID_TOKEN: "ᠬᠦᠴᠦᠨ ᠦᠭᠡᠢ ᠲᠡᠮᠳᠡᠭ"
     AUTH_ERROR: "ᠦᠨᠡᠯᠡᠮᠵᠢ ᠥᠩᠭᠡᠷᠡᠭᠰᠡᠨ ᠦᠭᠡᠢ"
     ACCESS_ERROR: "ᠬᠠᠨᠳᠤᠯᠲᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ"
     CONNECTION_ERROR: "ᠦᠢᠯᠡᠴᠢᠯᠡᠭᠦᠷ ᠲᠤ  ᠵᠠᠯᠭᠠᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ"
     CAPTCHA_ERROR: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ  ᠲᠠᠭᠠᠷᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ"
-    SOCIAL_FACEBOOK_LOGIN_ACCESS_DISABLE: >-
+     SOCIAL_FACEBOOK_LOGIN_ACCESS_DISABLE: >-
         ᠲᠤᠰ ID  ᠨᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠰᠠᠨ ᠢᠮᠧᠯ ᠦᠭᠡᠢ᠂ ᠢᠮᠧᠯ ᠢᠶᠡᠷ ᠢᠶᠡᠨ ᠳᠠᠮᠵᠢᠭᠤᠯᠤᠨ ᠲᠡᠭᠦᠨ ᠢ ᠠᠰᠢᠭᠯᠠᠭᠠᠷᠠᠢ᠃
-    SOCIAL_TWITTER_LOGIN_ACCESS_DISABLE: >-
+     SOCIAL_TWITTER_LOGIN_ACCESS_DISABLE: >-
         ᠲᠤᠰ ID  ᠨᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠰᠠᠨ ᠢᠮᠧᠯ ᠦᠭᠡᠢ᠂ ᠢᠮᠧᠯ ᠢᠶᠡᠷ ᠢᠶᠡᠨ ᠳᠠᠮᠵᠢᠭᠤᠯᠤᠨ ᠲᠡᠭᠦᠨ ᠢ ᠠᠰᠢᠭᠯᠠᠭᠠᠷᠠᠢ᠃
-    SOCIAL_GOOGLE_LOGIN_ACCESS_DISABLE: >-
+     SOCIAL_GOOGLE_LOGIN_ACCESS_DISABLE: >-
         ᠲᠤᠰ ID  ᠨᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠰᠠᠨ ᠢᠮᠧᠯ ᠦᠭᠡᠢ᠂ ᠢᠮᠧᠯ ᠢᠶᠡᠷ ᠢᠶᠡᠨ ᠳᠠᠮᠵᠢᠭᠤᠯᠤᠨ ᠲᠡᠭᠦᠨ ᠢ ᠠᠰᠢᠭᠯᠠᠭᠠᠷᠠᠢ᠃
     DOMAIN_NOT_ALLOWED: "ᠳ᠋ᠤᠮ᠊ᠠ᠊ᠢᠢᠨ  ᠳᠠᠲᠠᠭᠠᠯᠵᠠᠪᠠ"
     ACCOUNT_NOT_ALLOWED: "ᠳᠠᠩᠰᠠ ᠳᠠᠲᠠᠭᠠᠯᠵᠠᠪᠠ"
@@ -687,19 +686,19 @@ mn_MON:
     MAIL_SERVER_ERROR: "ᠵᠠᠬᠢᠳᠠᠯ ᠤᠨ ᠦᠢᠯᠡᠴᠢᠯᠡᠭᠦᠷ  ᠲᠤ  ᠬᠠᠨᠳᠤᠯᠲᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ ᠭᠠᠷᠴᠠᠢ"
     INVALID_INPUT_ARGUMENT: "ᠤᠷᠤᠭᠤᠯᠠᠭᠰᠠᠨ argument  ᠪᠤᠷᠦᠭᠤ ᠪᠠᠢᠨ᠎ᠠ"
     UNKNOWN_ERROR: "ᠥᠯᠦ ᠮᠡᠳᠡᠬᠦ ᠠᠯᠳᠠᠭ᠎ᠠ"
-  STATIC:
+   STATIC:
     BACK_LINK: "ᠳᠠᠬᠢᠨ ᠠᠴᠢᠶᠠᠯᠠᠬᠤ"
-    DOMAIN_LIST_DESC: "webmail   ᠢᠶᠡᠷ ᠳ᠋ᠤᠮ᠊ᠠ᠊ᠢᠢᠨ ᠳ᠋ᠤ ᠨᠡᠪᠲᠡᠷᠡᠵᠦ ᠪᠤᠯᠤᠨ᠎ᠠ"
+    DOMAIN_LIST_DESC: "webmail ᠶᠶᠡᠷ ᠳ᠋ᠤᠮ᠊ᠠ᠊ᠢᠢᠨ ᠳ᠋ᠤ ᠨᠡᠪᠲᠡᠷᠡᠵᠦ ᠪᠤᠯᠤᠨ᠎ᠠ"
     PHP_EXSTENSIONS_ERROR_DESC: "PHP ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠲᠠ ᠶᠢ ᠬᠢᠭᠰᠡᠨ ᠦᠭᠡᠢ"
     PHP_VERSION_ERROR_DESC: "ᠲᠠᠨ ᠤ PHP(%VERSION%) ᠬᠤᠪᠢᠯᠠᠪᠦᠷᠢ 5.3.0 ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠡᠴᠡ ᠳᠤᠤᠷ᠎ᠠ ᠪᠤᠢ"
     NO_SCRIPT_TITLE: "JavaScript ᠨᠡᠭᠡᠭᠡᠭᠦ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠲᠠᠢ"
-    NO_SCRIPT_DESC: |
+     NO_SCRIPT_DESC: |
        ᠲᠠᠨ ᠤ ᠬᠥᠲᠦᠴᠢ JavaScript   ᠶᠢ ᠳᠡᠮᠵᠢᠬᠦ ᠦᠭᠡᠢ
       ᠬᠥᠲᠦᠴᠢ  ᠶᠢᠨ JavaScript  ᠢ ᠳᠠᠬᠢᠨ ᠨᠡᠭᠡᠭᠡᠵᠦ ᠲᠤᠷᠰᠢᠭᠠᠷᠠᠢ
     NO_COOKIE_TITLE: "Cookies ᠨᠡᠭᠡᠭᠡᠭᠦ ᠱᠠᠭᠠᠷᠳᠠᠯᠭ᠎ᠠ ᠲᠠᠢ"
-    NO_COOKIE_DESC: |
+     NO_COOKIE_DESC: |
        ᠲᠠᠨ ᠤ  ᠬᠥᠲᠦᠴᠢ cookies   ᠢ ᠳᠡᠮᠵᠢᠬᠦ ᠦᠭᠡᠢ
       ᠬᠥᠲᠦᠴᠢ  ᠶᠢᠨ cookies   ᠢ ᠳᠠᠬᠢᠨ ᠨᠡᠭᠡᠭᠡᠵᠦ ᠲᠤᠷᠰᠢᠭᠠᠷᠠᠢ
     BAD_BROWSER_TITLE: "ᠲᠠᠨ ᠤ  ᠬᠥᠲᠦᠴᠢ ᠶᠢᠨ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ ᠬᠡᠲᠦ ᠬᠠᠭᠤᠴᠢᠷᠠᠵᠠᠢ"
-    BAD_BROWSER_DESC: |
+     BAD_BROWSER_DESC: |
         ᠬᠡᠷᠪᠡ ᠪᠥᠬᠦ ᠦᠢᠯᠡᠳᠦᠯ ᠢ ᠬᠡᠷᠡᠭᠯᠡᠬᠦ  ᠳ᠋ᠤ ᠬᠦᠷᠪᠡᠯ  ᠳᠤᠤᠷᠠᠬᠢ  ᠬᠥᠲᠦᠴᠢ ᠤᠳ ᠡᠴᠡ ᠰᠤᠩᠭᠤᠵᠤ ᠪᠠᠭᠤᠯᠭᠠᠷᠠᠢ：
