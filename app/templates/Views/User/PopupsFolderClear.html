@@ -1,14 +1,14 @@
 <div class="popups">
-	<div class="modal hide b-folder-clear-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-		<div>
-			<div class="modal-header">
+	<div class="modal hide b-folder-clear-content g-ui-user-select-none modal-width" data-bind="modal: modalVisibility">
+		<div class="modal-flex">
+			<div class="modal-header header-width">
 				<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
 				<h3>
 					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEAR_FOLDER" data-bind="visible: !clearingProcess()"></span>
 					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEARING_PROCESS" data-bind="visible: clearingProcess"></span>
 				</h3>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body body-width">
 				<div>
 					<i class="icon-warning" style="color:red"></i>
 					&nbsp;&nbsp;
@@ -22,7 +22,7 @@
 					<span class="i18n" data-i18n="[html]POPUPS_CLEAR_FOLDER/DANGER_DESC_HTML_2"></span>
 				</div>
 			</div>
-			<div class="modal-footer">
+			<div class="modal-footer footer-width">
 				<a class="btn btn-danger buttonClear" data-bind="command: clearCommand">
 					<i class="icon-fire" data-bind="css: {'icon-fire': !clearingProcess(), 'icon-spinner animated white': clearingProcess()}" ></i>
 					&nbsp;&nbsp;
