@@ -12,7 +12,7 @@
 					&nbsp;
 					<span class="caret"></span>
 				</a>
-				<ul class="dropdown-menu g-ui-menu" tabindex="-1" role="menu" aria-labelledby="top-system-dropdown-id">
+				<ul class="dropdown-menu g-ui-menu menu-right" tabindex="-1" role="menu" aria-labelledby="top-system-dropdown-id">
 
 					<!-- ko if: accounts().length -->
 						<!-- ko foreach: accounts -->
@@ -58,14 +58,14 @@
 					</li>
 					<li class="divider" role="presentation" data-bind="visible: allowSettings || allowHelp"></li>
 					<li class="e-item" role="presentation" data-bind="visible: mobile">
-						<a class="e-link menuitem" href="./?/DesktopVersion/?mgl" tabindex="-1">
+						<a class="e-link menuitem" href="./?/DesktopVersion/" tabindex="-1">
 							<i class="icon-laptop"></i>
 							&nbsp;&nbsp;
 							<span class="i18n" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
 						</a>
 					</li>
 					<li class="e-item" role="presentation" data-bind="visible: !mobile">
-						<a class="e-link menuitem" href="./?/MobileVersion/?mgl" tabindex="-1">
+						<a class="e-link menuitem" href="./?/MobileVersion/" tabindex="-1">
 							<i class="icon-mobile"></i>
 							&nbsp;&nbsp;
 							<span class="i18n" data-i18n="MOBILE/BUTTON_MOBILE_VERSION"></span>

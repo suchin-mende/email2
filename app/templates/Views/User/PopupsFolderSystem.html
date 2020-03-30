@@ -1,12 +1,14 @@
 <div class="popups">
 	<div class="modal hide b-folder-system-content g-ui-user-select-none" data-bind="modal: modalVisibility">
+		<div class="modal-flex">
 		<div class="modal-header">
+			
 			<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
-			<h3>
+			<h3 class="i18nflex">
 				<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/TITLE_SYSTEM_FOLDERS"></span>
 			</h3>
 		</div>
-		<div class="modal-body">dfgdfg
+		<div class="modal-body">
 			<div class="form-horizontal">
 				<div class="alert" data-bind="visible: '' !== notification()">
 					<span data-bind="text: notification"></span>
@@ -14,7 +16,7 @@
 				<br />
 				<div class="control-group">
 					<label class="control-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT1"></span>
+						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT"></span>
 					</label>
 					<div class="controls">
 						<select data-bind="options: folderSelectList, value: sentFolder,
@@ -59,5 +61,6 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>
