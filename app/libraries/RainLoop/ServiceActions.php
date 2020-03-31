@@ -290,7 +290,7 @@ class ServiceActions
 			$this->oActions->SetAuthLogoutToken();
 		}
 
-		$this->oActions->Location('./');
+		$this->oActions->Location('./?mgl');
 		return '';
 	}
 
@@ -1279,7 +1279,7 @@ class ServiceActions
 
 		$sResult = $this->compileAppData($this->oActions->AppData($bAdmin,
 			0 === \strpos($sAdd, 'mobile'), '1' === \substr($sAdd, -1),
-			$sAuthAccountHash), false);
+			$sAuthAccountHash), false, true);
 
 		$this->Logger()->Write($sResult, \MailSo\Log\Enumerations\Type::INFO, 'APPDATA');
 

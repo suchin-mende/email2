@@ -137,7 +137,7 @@ class Application extends \RainLoop\Config\AbstractConfig
 			'webmail' => array(
 
 				'title'							=> array('Mongol Webmail', 'Text displayed as page title'),
-				'loading_description'			=> array('MongoEmail', 'Text displayed on startup'),
+				'loading_description'			=> array('MongolEmail', 'Text displayed on startup'),
 				'favicon_url'					=> array('', ''),
 
 				'theme'							=> array('Default', 'Theme used by default'),

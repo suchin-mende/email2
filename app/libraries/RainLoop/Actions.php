@@ -7,14 +7,14 @@ use RainLoop\Enumerations\UploadClientError;
 
 class Actions
 {
-	const AUTH_TFA_SIGN_ME_TOKEN_KEY = 'rltfasmauth';
-	const AUTH_SIGN_ME_TOKEN_KEY = 'rlsmauth';
-	const AUTH_MAILTO_TOKEN_KEY = 'rlmailtoauth';
-	const AUTH_SPEC_TOKEN_KEY = 'rlspecauth';
-	const AUTH_SPEC_LOGOUT_TOKEN_KEY = 'rlspeclogout';
-	const AUTH_SPEC_LOGOUT_CUSTOM_MSG_KEY = 'rlspeclogoutcmk';
-	const AUTH_ADMIN_TOKEN_KEY = 'rlaauth';
-	const RL_MOBILE_TYPE = 'rlmobiletype';
+	const AUTH_TFA_SIGN_ME_TOKEN_KEY = 'hltfasmauth';
+	const AUTH_SIGN_ME_TOKEN_KEY = 'hlsmauth';
+	const AUTH_MAILTO_TOKEN_KEY = 'hlmailtoauth';
+	const AUTH_SPEC_TOKEN_KEY = 'hlspecauth';
+	const AUTH_SPEC_LOGOUT_TOKEN_KEY = 'hlspeclogout';
+	const AUTH_SPEC_LOGOUT_CUSTOM_MSG_KEY = 'hlspeclogoutcmk';
+	const AUTH_ADMIN_TOKEN_KEY = 'hlaauth';
+	const RL_MOBILE_TYPE = 'hlmobiletype';
 
 	/**
 	 * @var \MailSo\Base\Http
@@ -1246,7 +1246,6 @@ class Actions
 	 */
 	public function IsAdminLoggined($bThrowExceptionOnFalse = true)
 	{
-		echo
 		$bResult = false;
 		if ($this->Config()->Get('security', 'allow_admin_panel', true))
 		{
@@ -1442,10 +1441,11 @@ class Actions
 	 * @param bool $bAdmin = false
 	 * @param bool $bMobile = false
 	 * @param bool $bMobileDevice = false
+	 * @param bool $bMongol = false
 	 *
 	 * @return array
 	 */
-	public function AppDataSystem($bAdmin = false, $bMobile = false, $bMobileDevice = false)
+	public function AppDataSystem($bAdmin = false, $bMobile = false, $bMobileDevice = false, $bMongol = false)
 	{
 		$oConfig = $this->Config();
 
@@ -1472,6 +1472,7 @@ class Actions
 			'version' => APP_VERSION,
 			'admin' => $bAdmin,
 			'mobile' => $bMobile,
+			'mongol' => $bMongol,
 			'mobileDevice' => $bMobileDevice,
 			'webPath' => \RainLoop\Utils::WebPath(),
 			'webVersionPath' => \RainLoop\Utils::WebVersionPath(),
@@ -1514,7 +1515,7 @@ class Actions
 	 *
 	 * @return array
 	 */
-	public function AppData($bAdmin, $bMobile = false, $bMobileDevice = false, $sAuthAccountHash = '')
+	public function AppData($bAdmin, $bMobile = false, $bMobileDevice = false, $sAuthAccountHash = '', $bMongol = false)
 	{
 		if (0 < \strlen($sAuthAccountHash) && \preg_match('/[^_\-\.a-zA-Z0-9]/', $sAuthAccountHash))
 		{
@@ -1554,11 +1555,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			'WelcomePageDisplay' => 'none',
 			'IncludeCss' => '',
 			'IncludeBackground' => '',
-			'LoginDefaultDomain' => $oConfig->Get('login', 'default_domain', ''),
+			'LoginDefaultDomain' => $oConfig->Get('login', 'default_domain', '/?mgl'),
 			'DetermineUserLanguage' => (bool) $oConfig->Get('login', 'determine_user_language', true),
 			'DetermineUserDomain' => (bool) $oConfig->Get('login', 'determine_user_domain', false),
 			'UseLoginWelcomePage' => (bool) $oConfig->Get('login', 'welcome_page', false),
-			'StartupUrl' => \trim(\ltrim(\trim($oConfig->Get('labs', 'startup_url', '')), '#/')),
+			'StartupUrl' => \trim(\ltrim(\trim($oConfig->Get('labs', 'startup_url', '')), '#/?mgl/')),
 			'SieveAllowFileintoInbox' => (bool) $oConfig->Get('labs', 'sieve_allow_fileinto_inbox', false),
 			'ContactsIsAllowed' => false,
 			'ChangePasswordIsAllowed' => false,
@@ -1568,7 +1569,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			'Admin' => array(),
 			'Capa' => array(),
 			'Plugins' => array(),
-			'System' => $this->AppDataSystem($bAdmin, $bMobile, $bMobileDevice)
+			'System' => $this->AppDataSystem($bAdmin, $bMobile, $bMobileDevice, $bMongol)
 		);
 
 		if (0 < \strlen($sAuthAccountHash))
@@ -1971,8 +1972,8 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$aResult['PluginsLink'] = './?/Plugins/0/'.($bAdmin ? 'Admin' : 'User').'/'.$sStaticCache.'/?mgl';
 		}
 
-		$aResult['LangLink'] = './?/Lang/0/'.($bAdmin ? 'Admin' : 'App').'/'.
-			($bAdmin ? $aResult['LanguageAdmin'] : $aResult['Language']).'/'.$sStaticCache.'/?mgl';
+		$aResult['LangLink'] = './?/Lang/?mgl/0/'.($bAdmin ? 'Admin' : 'App').'/'.
+			($bAdmin ? $aResult['LanguageAdmin'] : $aResult['Language']).'/'.$sStaticCache.'/';
 
 		$aResult['TemplatesLink'] = './?/Templates/0/'.($bAdmin ? 'Admin' : 'App').'/'.$sStaticCache.'/?mgl';
 
@@ -9176,7 +9177,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			$aHelper = array('en' => 'en_us', 'ar' => 'ar_sa', 'cs' => 'cs_cz', 'no' => 'nb_no', 'ua' => 'uk_ua',
 				'cn' => 'zh_cn', 'zh' => 'zh_cn', 'tw' => 'zh_tw', 'fa' => 'fa_ir', 'mn' => 'mn_mon');
 
-			$sLanguage = isset($aHelper[$sLanguage]) ? $aHelper[$sLanguage] : $sLanguage;
+			$sLanguage = isset($aHelper[$sLanguage]) ? $aHelper[$sLanguage] : 'mn_mon';
 			$sDefault = isset($aHelper[$sDefault]) ? $aHelper[$sDefault] : $sDefault;
 
 			$sLanguage = \strtolower(\str_replace('-', '_', $sLanguage));

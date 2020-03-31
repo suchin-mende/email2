@@ -136,7 +136,7 @@ class Service
 		}
 
 		$bIndex = true;
-		if (0 < \count($aPaths) && !empty($aPaths[0]) && !$bAdmin && 'index' !== \strtolower($aPaths[0]))
+		if (0 < \count($aPaths) && !empty($aPaths[0]) && !$bAdmin && 'index' !== \strtolower($aPaths[0]) && 'mgl' !== \strtolower($aPaths[0]))
 		{
 			$bIndex = false;
 			$sMethodName = 'Service'.\preg_replace('/@.+$/', '', $aPaths[0]);
@@ -201,7 +201,7 @@ class Service
 				return $this;
 			}
 
-			$aTemplateParameters = $this->indexTemplateParameters($bAdmin, $bMobile, $bMobileDevice);
+			$aTemplateParameters = $this->indexTemplateParameters($bAdmin, $bMobile, $bMobileDevice, true);
 
 			$sCacheFileName = '';
 			if ($this->oActions->Config()->Get('labs', 'cache_system_data', true) && !empty($aTemplateParameters['{{BaseHash}}']))
@@ -277,10 +277,11 @@ class Service
 	 * @param bool $bAdmin = false
 	 * @param bool $bMobile = false
 	 * @param bool $bMobileDevice = false
+	 * @param bool $bMongol = false
 	 *
 	 * @return array
 	 */
-	private function indexTemplateParameters($bAdmin = false, $bMobile = false, $bMobileDevice = false)
+	private function indexTemplateParameters($bAdmin = false, $bMobile = false, $bMobileDevice = false, $bMongol = false)
 	{
 		$sLanguage = 'en';
 		$sTheme = 'Default';
@@ -320,7 +321,8 @@ class Service
 			'language' => $sLanguage,
 			'theme' => $sTheme,
 			'mobile' => $bMobile,
-			'mobileDevice' => $bMobileDevice
+			'mobileDevice' => $bMobileDevice,
+			'mongol' => $bMongol
 		));
 
 		$aTemplateParameters['{{BaseHash}}'] = \md5(
