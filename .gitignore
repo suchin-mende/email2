@@ -1,5 +1,3 @@
-/static/*
-static/*/*
-static/*/*/*
-/app/localization/moment/*
+./static
+./app/localization/moment/*
 !/app/localization/moment/.gitempty
