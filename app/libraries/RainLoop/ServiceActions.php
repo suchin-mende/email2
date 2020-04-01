@@ -290,7 +290,7 @@ class ServiceActions
 			$this->oActions->SetAuthLogoutToken();
 		}
 
-		$this->oActions->Location('./?mgl');
+		$this->oActions->Location('./');
 		return '';
 	}
 
