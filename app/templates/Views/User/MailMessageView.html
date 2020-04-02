@@ -62,7 +62,7 @@
 
 				<div data-bind="visible: !message() && '' === messageError() && !hasCheckedMessages()" style="height: 100%">
 
-					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
+					<div class="b-message-view-desc display-mgl" data-bind="visible: !logoIframe">
 						<span class="i18n" data-bind="visible: !logoImg" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
 							<img style="height: 99%" data-bind="attr: { 'src': logoImg }" />
@@ -86,7 +86,7 @@
 										<span data-bind="visible: !allowComposer" class="icon-ellipsis-alt"></span>
 										<span data-bind="visible: allowComposer" class="caret"></span>
 								</a>
-								<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="more-view-dropdown-id">
+								<ul class="dropdown-menu g-ui-menu mmv-mgl" role="menu" aria-labelledby="more-view-dropdown-id">
 									<div data-bind="visible: allowComposer && !isDraftFolder()">
 										<li class="e-item" role="presentation">
 											<a class="e-link menuitem" href="#" tabindex="-1" data-bind="command: replyCommand">

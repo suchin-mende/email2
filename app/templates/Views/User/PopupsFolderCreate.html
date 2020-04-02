@@ -2,7 +2,7 @@
 	<div class="modal hide b-folder-create-content g-ui-user-select-none" data-bind="modal: modalVisibility">
 		<div class="modal-flex">
 			<div class="modal-header">
-				<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
+				
 				<h3>
 					<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/TITLE_CREATE_FOLDER"></span>
 				</h3>
@@ -16,7 +16,7 @@
 							<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_NAME"></span>
 						</label>
 						<div class="controls">
-							<input type="text" class="uiInput inputName" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+							<input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="textInput: folderName, hasfocus: folderName.focused, onEnter: createFolderCommand" />
 						</div>
 					</div>
@@ -33,7 +33,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a class="btn buttonCreate" data-bind="command: createFolderCommand">
+				<button type="button" class="close  create-close-mgl" data-bind="command: cancelCommand">&times;</button>
+				<a class="btn buttonCreate create-mgl" data-bind="command: createFolderCommand">
 					<i class="icon-folder-add"></i>
 					&nbsp;&nbsp;
 					<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/BUTTON_CREATE"></span>

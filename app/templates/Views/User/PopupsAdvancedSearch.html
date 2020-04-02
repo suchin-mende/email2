@@ -1,8 +1,9 @@
 <div class="popups">
 	<div class="modal hide b-advanced-search-content g-ui-user-select-none" data-bind="modal: modalVisibility">
+		<div class="modal-flex">
 		<div class="modal-header">
-			<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
-			<h3>
+			
+			<h3 class="i18nflex">
 				<span class="i18n" data-i18n="SEARCH/TITLE_ADV"></span>
 			</h3>
 		</div>
@@ -10,13 +11,13 @@
 			<br />
 			<form class="form-horizontal" action="#/" autocomplete="off" onsubmit="return false;" data-bind="command: searchCommand">
 				<div class="row">
-					<div class="span4">
+					<div class="span4 sp4-mgl">
 						<div class="control-group">
 							<label class="control-label">
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_FROM"></span>
 							</label>
 							<div class="controls">
-								<input type="text" class="uiInput inputFrom" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 									data-bind="value: from, onEnter: searchCommand, hasfocus: fromFocus, onEsc: cancelCommand" />
 							</div>
 						</div>
@@ -25,7 +26,7 @@
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TO"></span>
 							</label>
 							<div class="controls">
-								<input type="text" class="uiInput inputFrom" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 									data-bind="value: to, onEnter: searchCommand, onEsc: cancelCommand" />
 							</div>
 						</div>
@@ -34,7 +35,7 @@
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_SUBJECT"></span>
 							</label>
 							<div class="controls">
-								<input type="text" class="uiInput inputFrom" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 									data-bind="value: subject, onEnter: searchCommand, onEsc: cancelCommand" />
 							</div>
 						</div>
@@ -43,12 +44,12 @@
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TEXT"></span>
 							</label>
 							<div class="controls">
-								<input type="text" class="uiInput inputFrom" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 									data-bind="value: text, onEnter: searchCommand, onEsc: cancelCommand" />
 							</div>
 						</div>
 					</div>
-					<div class="span4">
+					<div class="span4 sp4-mgl">
 						<div class="control-group">
 							<label class="control-label">
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_DATE"></span>
@@ -97,11 +98,13 @@
 			</form>
 		</div>
 		<div class="modal-footer">
-			<button type="submit" class="btn buttonAdvSearch" data-bind="command: searchCommand">
+			<button type="button" class="close search-close" data-bind="command: cancelCommand">&times;</button>
+			<button type="submit" class="btn buttonAdvSearch search-mgl" data-bind="command: searchCommand">
 				<i class="icon-search"></i>
 				&nbsp;&nbsp;
-				<span class="i18n" data-i18n="SEARCH/BUTTON_ADV_SEARCH"></span>
+				<span class="i18n i18nflexs" style="writing-mode: vertical-lr;" data-i18n="SEARCH/BUTTON_ADV_SEARCH"></span>
 			</a>
 		</div>
+	</div>
 	</div>
 </div>
