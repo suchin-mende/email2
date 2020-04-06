@@ -8,54 +8,56 @@
 				<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/TITLE_SYSTEM_FOLDERS"></span>
 			</h3>
 		</div>
-		<div class="modal-body">
-			<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
-			<div class="form-horizontal">
+		<div class="modal-body folder-width">
+			<button type="button" class="close folder-close" data-bind="command: cancelCommand">&times;</button>
+			<div class="form-horizontal folder-box">
 				<div class="alert" data-bind="visible: '' !== notification()">
 					<span data-bind="text: notification"></span>
 				</div>
 				<br />
 				<div class="control-group">
-					<label class="control-label">
+					<div>
+					<label class="">
 						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT"></span>
 					</label>
-					<div class="controls">
+					<div class="controls  folder-select">
 						<select data-bind="options: folderSelectList, value: sentFolder,
 							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
 					</div>
 				</div>
+				</div>
 				<div class="control-group">
-					<label class="control-label">
+					<label class="control-label folder-label">
 						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_DRAFTS"></span>
 					</label>
-					<div class="controls">
+					<div class="controls folder-select">
 						<select data-bind="options: folderSelectList, value: draftFolder,
 							optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender"></select>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">
+					<label class="control-label folder-label">
 						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SPAM"></span>
 					</label>
-					<div class="controls">
+					<div class="controls folder-select">
 						<select data-bind="options: folderSelectList, value: spamFolder,
 							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">
+					<label class="control-label folder-label">
 						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_TRASH"></span>
 					</label>
-					<div class="controls">
+					<div class="controls folder-select">
 						<select data-bind="options: folderSelectList, value: trashFolder,
 							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
 					</div>
 				</div>
 				<div class="control-group">
-					<label class="control-label">
+					<label class="control-label folder-label">
 						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_ARCHIVE"></span>
 					</label>
-					<div class="controls">
+					<div class="controls folder-select">
 						<select data-bind="options: folderSelectList, value: archiveFolder,
 							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
 					</div>
