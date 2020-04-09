@@ -1,7 +1,7 @@
 <div class="popups">
-	<div class="modal hide b-folder-system-content g-ui-user-select-none" data-bind="modal: modalVisibility">
+	<div class="modal hide b-folder-system-content g-ui-user-select-none" style="width: 50%;" data-bind="modal: modalVisibility">
 		<div class="modal-flex">
-		<div class="modal-header">
+		<div class="modal-header mgl-header">
 			
 			
 			<h3 class="i18nflex">
@@ -9,7 +9,7 @@
 			</h3>
 		</div>
 		<div class="modal-body folder-width">
-			<button type="button" class="close folder-close" data-bind="command: cancelCommand">&times;</button>
+			
 			<div class="form-horizontal folder-box">
 				<div class="alert" data-bind="visible: '' !== notification()">
 					<span data-bind="text: notification"></span>
@@ -64,6 +64,11 @@
 				</div>
 			</div>
 			
+		</div>
+		<div class="modal-footer mgl-footer" style="width: 60px;">
+			<button type="button" class="close folder-close" data-bind="command: cancelCommand">&times;</button>
+
+
 		</div>
 	</div>
 	</div>
