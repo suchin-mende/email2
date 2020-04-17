@@ -20,7 +20,7 @@
 		</div>
 		<div class="modal-body">
 			<div class="modal-flex">
-				<div class="b-header g-ui-user-select-none  middle-width">
+				<div class="b-header g-ui-user-select-none">
 					<div class="g-ui-table i18nflex">
 						<div class="e-row" style="height: 40px;">
 							
@@ -117,15 +117,18 @@
 							</div>
 						</div>
 						<div class="e-row">
-							<div class="e-cell e-label"></div>
+							
 							<div class="e-cell e-value">
-								<div>
+								
 									<div class="pull-left">
+
 										<div class="btn-group" data-toggle="buttons-radio">
+
 											<button type="button" class="btn first" data-bind="click: function () { attachmentsPlace(false); },
 												css: { 'active': !attachmentsPlace() }">
 												<i class="icon-file-text"></i>
 											</button>
+
 											<button type="button" class="btn last" data-tooltip-join="left" data-bind="click: function () { attachmentsPlace(true); },
 												css: { 'btn-danger': 0 < attachmentsInErrorCount(), 'active': attachmentsPlace() },
 												tooltipErrorTip: attachmentsErrorTooltip">
@@ -135,8 +138,25 @@
 												</span>
 												<i data-bind="css: { 'icon-attachment': 0 === attachmentsInProcessCount(), 'icon-spinner animated': 0 < attachmentsInProcessCount(), 'icon-white': 0 < attachmentsInErrorCount() }"></i>
 											</button>
-										</div>
-										<div class="btn-group dropdown colored-toggle pull-right" style="margin-right: 4px;">
+
+											<a class="btn first" data-tooltip-join="bottom"
+												style="padding-left: 10px; padding-right: 10px;"
+												data-bind="visible: addAttachmentEnabled(), initDom: composeUploaderButton, tooltip: 'COMPOSE/ATTACH_FILES',
+													css: {'last': !(driveEnabled() && driveVisible()) && !(dropboxEnabled())}">
+												<sup style="font-weight: bold; font-size: 100%; top: -0.3em;">+</sup><i class="icon-attachment"></i>
+											</a>
+											<a class="btn" data-tooltip-join="bottom"
+												data-bind="visible: dropboxEnabled, command: dropboxCommand, tooltip: 'COMPOSE/DROPBOX',
+													css: {'first': !addAttachmentEnabled(), 'last': !(driveEnabled() && driveVisible())}">
+												<i class="icon-dropbox"></i>
+											</a>
+											<a class="btn last" data-tooltip-join="bottom"
+												data-bind="visible: driveEnabled() && driveVisible(), command: driveCommand, tooltip: 'COMPOSE/GOOGLE_DRIVE',
+													css: {'first': !addAttachmentEnabled() && !(driveEnabled() && driveVisible())}">
+												<i class="icon-google-drive"></i>
+											</a>
+
+											
 											<a class="btn single dropdown-toggle buttonMore" data-toggle="dropdown">
 												<i class="icon-list"></i>
 											</a>
@@ -171,30 +191,22 @@
 													</a>
 												</li>
 											</ul>
+
 										</div>
+
+										<!-- <div class="btn-group dropdown colored-toggle pull-right" style="margin-right: 4px;">
+
+											
+
+										</div>
+
 										<div class="btn-group pull-right">
-											<a class="btn first" data-tooltip-join="bottom"
-												style="padding-left: 10px; padding-right: 10px;"
-												data-bind="visible: addAttachmentEnabled(), initDom: composeUploaderButton, tooltip: 'COMPOSE/ATTACH_FILES',
-													css: {'last': !(driveEnabled() && driveVisible()) && !(dropboxEnabled())}">
-												<sup style="font-weight: bold; font-size: 100%; top: -0.3em;">+</sup><i class="icon-attachment"></i>
-											</a>
-											<a class="btn" data-tooltip-join="bottom"
-												data-bind="visible: dropboxEnabled, command: dropboxCommand, tooltip: 'COMPOSE/DROPBOX',
-													css: {'first': !addAttachmentEnabled(), 'last': !(driveEnabled() && driveVisible())}">
-												<i class="icon-dropbox"></i>
-											</a>
-											<a class="btn last" data-tooltip-join="bottom"
-												data-bind="visible: driveEnabled() && driveVisible(), command: driveCommand, tooltip: 'COMPOSE/GOOGLE_DRIVE',
-													css: {'first': !addAttachmentEnabled() && !(driveEnabled() && driveVisible())}">
-												<i class="icon-google-drive"></i>
-											</a>
-										</div>
-									</div>
-									<div class="pull-right" style="margin-right: 4px;">
-										
-									</div>
-								</div>
+
+											
+
+										</div> -->
+
+									</div>								
 							</div>
 						</div>
 					</div>
