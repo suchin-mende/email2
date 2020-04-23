@@ -24,10 +24,30 @@
                     <!-- ko template: { name: 'LoginWelcome' } -->
                     <!-- /ko -->
                 </div>
-                <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :50px 90px;">
+                <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :110px 120px;">
                     {{INCLUDE/TopControlGroup/PLACE}}
+
                     <div class="controls plugin-mark-Login-TopControlGroup" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                         <div class="input-append">
+
+                        <div class="box">
+                            
+                            <button type="submit" class="fast-signup-mgl" data-bind="command: submitCommand" >
+                                <span class="i18n i18n-animation login-mgl" >ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠳᠡᠷᠬᠦ</span>             
+                            </button>
+                        
+                        
+                        <button type="submit" class="tong-signup-mgl" data-bind="command: submitCommand">
+                            <span class="i18n i18n-animation login-mgl" > ᠳᠠᠨᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ <br> ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
+                        </button>
+                    
+                        </div>
+                                
+                        <!-- <button type="submit" class="signup-mgl" data-bind="command: submitCommand">
+                            <span class="i18n i18n-animation login-mgl" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                        </button> -->
+                            
+                      
                             <input type="email" class="i18n input-block-level inputEmail checkAutocomplete" name="RainLoopEmail" id="RainLoopEmail" style="padding-right: 35px;" autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false" data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                                 data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
                             <span class="add-on">
@@ -35,11 +55,19 @@
                             </span>
                             <button type="submit" class="signup-mgl" data-bind="command: submitCommand">
                                 <span class="i18n i18n-animation login-mgl" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
-                        </button>
+                            </button>
                         </div>
+                        <p>
+                        <a  class="keep-signup-mgl" data-bind="command: submitCommand">
+                            <span class="i18n i18n-animation login-mgl" >ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ ᠪᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ</span>
+                        </a>
+                </p>
+                <!-- <span class="e-component e-checkbox inline" class="Keep-mgl" tabindex="0" data-bind="click: click, onSpace: click, css: { 'disabled': disable() || !enable() }" style="writing-mode: vertical-lr; position: absolute;
+/* right: 100px;">  -->
                     </div>
                     <div class="controls" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                         <div class="input-append">
+                          
                             <input type="password" class="i18n input-block-level inputPassword checkAutocomplete" name="RainLoopPassword" id="RainLoopPassword" style="padding-right: 35px;" autocomplete="current-password" autocorrect="off" autocapitalize="off" spellcheck="false"
                                 data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
                             <span class="add-on" tabindex="-1" data-tooltip-join="left" data-bind="command: submitCommand, tooltip: 'LOGIN/BUTTON_SIGN_IN'">
@@ -48,9 +76,6 @@
 									<i class="icon-right-middle login-submit-icon"></i>
                                 </button>
                             </span>
-                            <button type="submit" class="signup-mongl" data-bind="command: submitCommand">
-                                <span class="i18n i18n-animation login-mongl" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
-                            </button>
                         </div>
                     </div>
                     <div class="controls" data-bind="visible: additionalCode.visibility(), css: {'error': additionalCode.error, 'animated': additionalCode.errorAnimation}">
@@ -90,10 +115,18 @@
                             <a href="#" tabindex="-1" class="social-button" data-bind="visible: twitterLoginEnabled, command: twitterCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_TWITTER'">
                                 <i class="icon-twitter"></i>
                             </a>
-                            <a href="#" tabindex="-1" class="language-button" data-bind="visible: allowLanguagesOnLogin() && !socialLoginEnabled(), click: selectLanguage, tooltip: 'POPUPS_LANGUAGES/TITLE_LANGUAGES'">
+                            <!-- <a href="#" tabindex="-1" class="language-button" data-bind="visible: allowLanguagesOnLogin() && !socialLoginEnabled(), click: selectLanguage, tooltip: 'POPUPS_LANGUAGES/TITLE_LANGUAGES'">
                                 <i data-bind="css: langRequest() ? 'icon-spinner animated' : 'icon-world'"></i>
+                            </a> -->
+                            <p>
+                            <a type="submit" class="regis-signup-mgl" data-bind="command: submitCommand">
+                                <span class="i18n i18n-animation login-mgl" >ᠳᠠᠨᠰᠠᠯᠬᠤ</span>
                             </a>
+                    </p>
+                            <!-- <span class="sub-label i18n" data-bind="attr: {'data-i18n': label}, css: {'i18n-animation': labelAnimated}"></span> -->
+
                         </div>
+
 
                         <div class="signMeLabel" data-bind="visible: signMeVisibility, component: {
 							name: 'CheckboxSimple',
