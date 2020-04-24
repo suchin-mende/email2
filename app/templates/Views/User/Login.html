@@ -21,33 +21,83 @@
             </div>
             <div class="wrapper-parent">
                 <div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}">
-                    <!-- ko template: { name: 'LoginWelcome' } -->
+                    ko template: { name: 'LoginWelcome' }
                     <!-- /ko -->
                 </div>
                 <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :110px 120px;">
                     {{INCLUDE/TopControlGroup/PLACE}}
 
+                    <div class="content_right">
+                        <div class="tabprice">
+                            <ul class="tabnaving">
+                                <li>
+                                    <a href="#pricenblock2" class="selected">
+                                        <span class="big">ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠳᠡᠷᠬᠦ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#pricenblock3" style="display: block">
+                                        <span class="big">ᠳᠠᠨᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ <br> ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div id="pricenblock2" style="display:block;">
+                                <div class="clr"></div>
+                                <div class="singletab">
+                                    <div class="pad25">
+                                        <p class="contact_msg center">
+                                            <strong>qeqeqqeqeqeqeqeqeq</strong>
+                                        </p>
+                                        <div class="pad100"></div>
+                                    </div>
+
+                                </div>
+
+                                <div id="priceblock3" style="display:none">
+                                    <div class="clr"></div>
+                                    <div class="postertab">
+                                        <div class="priceblocksmall dotted">
+                                            <p>在这儿设置tab的内容</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <div class="controls plugin-mark-Login-TopControlGroup" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                         <div class="input-append">
 
-                        <div class="box">
-                            
-                            <button type="submit" class="fast-signup-mgl" data-bind="command: submitCommand" >
-                                <span class="i18n i18n-animation login-mgl" >ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠳᠡᠷᠬᠦ</span>             
+                            <!-- <div class="box"> -->
+
+                            <!-- <button type="submit" class="fast-signup-mgl" data-bind="command: submitCommand">
+                                <span class="i18n i18n-animation" >ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠳᠡᠷᠬᠦ</span>             
                             </button>
-                        
-                        
-                        <button type="submit" class="tong-signup-mgl" data-bind="command: submitCommand">
-                            <span class="i18n i18n-animation login-mgl" > ᠳᠠᠨᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ <br> ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
-                        </button>
-                    
-                        </div>
-                                
-                        <!-- <button type="submit" class="signup-mgl" data-bind="command: submitCommand">
-                            <span class="i18n i18n-animation login-mgl" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+
+
+                    <button type="submit" class="tong-signup-mgl" data-bind="command: submitCommand">
+                            <span class="i18n i18n-animation" >ᠳᠠᠨᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ <br> ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
                         </button> -->
-                            
-                      
+                            <!-- <button type="submit" class="signup-mgl" data-bind="command: submitCommand">
+                            <span class="i18n i18n-animation" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                        </button> -->
+
+
+
                             <input type="email" class="i18n input-block-level inputEmail checkAutocomplete" name="RainLoopEmail" id="RainLoopEmail" style="padding-right: 35px;" autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false" data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                                 data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
                             <span class="add-on">
@@ -56,18 +106,22 @@
                             <button type="submit" class="signup-mgl" data-bind="command: submitCommand">
                                 <span class="i18n i18n-animation login-mgl" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
                             </button>
+
                         </div>
                         <p>
-                        <a  class="keep-signup-mgl" data-bind="command: submitCommand">
-                            <span class="i18n i18n-animation login-mgl" >ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ ᠪᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ</span>
-                        </a>
-                </p>
-                <!-- <span class="e-component e-checkbox inline" class="Keep-mgl" tabindex="0" data-bind="click: click, onSpace: click, css: { 'disabled': disable() || !enable() }" style="writing-mode: vertical-lr; position: absolute;
+                            <a class="keep-signup-mgl" data-bind="command: submitCommand">
+                                <span class="i18n i18n-animation login-mgl">ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ ᠪᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ</span>
+                            </a>
+                        </p>
+
+
+
+                        <!-- <span class="e-component e-checkbox inline" class="Keep-mgl" tabindex="0" data-bind="click: click, onSpace: click, css: { 'disabled': disable() || !enable() }" style="writing-mode: vertical-lr; position: absolute;
 /* right: 100px;">  -->
                     </div>
                     <div class="controls" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                         <div class="input-append">
-                          
+
                             <input type="password" class="i18n input-block-level inputPassword checkAutocomplete" name="RainLoopPassword" id="RainLoopPassword" style="padding-right: 35px;" autocomplete="current-password" autocorrect="off" autocapitalize="off" spellcheck="false"
                                 data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
                             <span class="add-on" tabindex="-1" data-tooltip-join="left" data-bind="command: submitCommand, tooltip: 'LOGIN/BUTTON_SIGN_IN'">
@@ -119,10 +173,10 @@
                                 <i data-bind="css: langRequest() ? 'icon-spinner animated' : 'icon-world'"></i>
                             </a> -->
                             <p>
-                            <a type="submit" class="regis-signup-mgl" data-bind="command: submitCommand">
-                                <span class="i18n i18n-animation login-mgl" >ᠳᠠᠨᠰᠠᠯᠬᠤ</span>
-                            </a>
-                    </p>
+                                <a type="submit" class="regis-signup-mgl" data-bind="command: submitCommand">
+                                    <span class="i18n i18n-animation">ᠳᠠᠨᠰᠠᠯᠬᠤ</span>
+                                </a>
+                            </p>
                             <!-- <span class="sub-label i18n" data-bind="attr: {'data-i18n': label}, css: {'i18n-animation': labelAnimated}"></span> -->
 
                         </div>
