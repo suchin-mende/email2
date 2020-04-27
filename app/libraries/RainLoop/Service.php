@@ -130,7 +130,7 @@ class Service
 		if ($bAdmin && !$this->oActions->Config()->Get('security', 'allow_admin_panel', true))
 		{
 			echo $this->oServiceActions->ErrorTemplates('Access Denied.',
-				'Access to the RainLoop Webmail Admin Panel is not allowed!', true);
+				'Access to the Mongol Email Admin Panel is not allowed!', true);
 
 			return $this;
 		}

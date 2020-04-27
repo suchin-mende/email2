@@ -203,12 +203,12 @@ class Application extends \RainLoop\Config\AbstractConfig
 
 				'admin_login'				=> array('admin', 'Login and password for web admin panel'),
 				'admin_password'			=> array('12345'),
-				'allow_admin_panel'			=> array(true, 'Access settings'),
-				'allow_two_factor_auth'		=> array(false),
+				'allow_admin_panel'			=> array(false, 'Access settings'),
+				'allow_two_factor_auth'		=> array(true),
 				'force_two_factor_auth'		=> array(false),
 				'hide_x_mailer_header'		=> array(false),
 				'admin_panel_host'			=> array(''),
-				'admin_panel_key'			=> array('admin'),
+				'admin_panel_key'			=> array('HalgaiAdmin'),
 				'content_security_policy'	=> array(''),
 				'core_install_access_domain' => array('')
 			),
@@ -246,15 +246,15 @@ class Application extends \RainLoop\Config\AbstractConfig
 				'allow_languages_on_login' => array(true,
 					'Allow language selection on webmail login screen'),
 
-				'determine_user_language' => array(true, ''),
+				'determine_user_language' => array(false, ''),
 				'determine_user_domain' => array(false, ''),
 
 				'welcome_page' => array(false, ''),
 
 				'hide_submit_button' => array(false),
 
-				'forgot_password_link_url' => array('', ''),
-				'registration_link_url' => array('', ''),
+				'forgot_password_link_url' => array('halgai/v/0.0.0/regist/forgotpw.html', ''),
+				'registration_link_url' => array('halgai/v/0.0.0/regist/regist.html', ''),
 
 				'login_lowercase' => array(true, ''),
 
@@ -287,7 +287,7 @@ Values:
 
 			'logs' => array(
 
-				'enable' => array(false, 'Enable logging'),
+				'enable' => array(true, 'Enable logging'),
 
 				'write_on_error_only' => array(false, 'Logs entire request only if error occured (php requred)'),
 				'write_on_php_error_only' => array(false, 'Logs entire request only if php error occured'),
