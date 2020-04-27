@@ -63,7 +63,21 @@
 										optionsText: 'name',
 										optionsValue: 'id'
 									}
-								}"></div>
+								}">
+								
+							</div>
+							<div><ul>
+								<li data-bind="component: {
+									name: 'Ul',
+									params: {
+										options: selectedDates,
+										value: selectedDateValue,
+										optionsText: 'name',
+										optionsValue: 'id'
+									}
+								}">
+							</ul></div>
+							<span class="selectBox-arrow"></span>
 							</div>
 						</div>
 						<div class="control-group padvs-mgl">
