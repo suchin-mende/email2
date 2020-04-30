@@ -1,20 +1,20 @@
 <div class="popups">
-	<div class="modal hide b-two-factor-test-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-		<div>
+	<div class="modal hide b-two-factor-test-content g-ui-user-select-none" style="width: 15%; height: 50%;" data-bind="modal: modalVisibility">
+		<div class="modal-flex" style="height: 100%;">
 			<div class="modal-header">
-				<button type="button" class="close" data-bind="command: cancelCommand">&times;</button>
-				<h3>
+				
+				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_TEST/TITLE_TEST_CODE"></span>
 				</h3>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body" style="width: 100%;">
 				<div class="form-horizontal">
 					<br />
-					<div class="control-group">
-						<label class="control-label">
-							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_TEST/LABEL_CODE"></span>
+					<div class="control-group ptft-group">
+						<label class="control-label ptft-label">
+							<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_TEST/LABEL_CODE"></span>
 						</label>
-						<div class="controls">
+						<div class="controls ptft-cons">
 							<input type="text" class="uiInput inputName"
 								autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="textInput: code, hasfocus: code.focused, onEnter: testCodeCommand" />
@@ -23,10 +23,11 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<a class="btn" data-bind="command: testCodeCommand, css: { 'btn-success': true === code.status(), 'btn-danger': false === code.status() }">
+				<button type="button" class="close" style="position: relative; right: 7px;" data-bind="command: cancelCommand">&times;</button>
+				<a class="btn" style=" position: relative; bottom: -360px; right: 9px;" data-bind="command: testCodeCommand, css: { 'btn-success': true === code.status(), 'btn-danger': false === code.status() }">
 					<i data-bind="css: {'icon-ok': !testing(), 'icon-spinner animated': testing(), 'icon-white': true === code.status() || false === code.status() }"></i>
 					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_TEST/BUTTON_TEST"></span>
+					<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_TEST/BUTTON_TEST"></span>
 				</a>
 			</div>
 		</div>

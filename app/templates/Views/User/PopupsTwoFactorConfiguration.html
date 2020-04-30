@@ -1,15 +1,15 @@
 <div class="popups">
-	<div class="modal hide b-two-factor-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-		<div class="modal-flex">
+	<div class="modal hide b-two-factor-content g-ui-user-select-none" style="width: 15%; height: 50%;" data-bind="modal: modalVisibility">
+		<div class="modal-flex" style="height: 100%;">
 			<div class="modal-header">
 				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LEGEND_TWO_FACTOR_AUTH"></span>
 				</h3>
 			</div>
 			<div class="modal-body">
-				<div class="form-horizontal" data-bind="visible: capaTwoFactor" style="margin-top: 10px;">
+				<div class="form-horizontal ptfc-box" data-bind="visible: capaTwoFactor" style="margin-top: 10px;">
 					<div class="control-group" data-bind="visible: twoFactorStatus">
-						<div class="controls">
+						<div class="controls ptfc-cons">
 							<div style="display: inline-block" data-tooltip-join="top" data-bind="tooltip: viewTwoFactorEnableTooltip">
 								<div data-bind="component: {
 									name: 'Checkbox',
@@ -30,7 +30,7 @@
 						<label class="control-label">
 							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_USER"></span>
 						</label>
-						<div class="controls" style="padding-top: 5px;">
+						<div class="controls ptfc-cons" style="padding-top: 5px;">
 							<strong><span data-bind="text: viewUser"></span></strong>
 							<div style="padding-top: 15px;" data-bind="visible: lock">
 								<blockquote>
@@ -40,7 +40,7 @@
 						</div>
 					</div>
 					<div class="control-group" data-bind="visible: '' === viewSecret() && twoFactorStatus() && !clearing()">
-						<div class="controls" style="padding-top: 5px;">
+						<div class="controls ptfc-cons" style="padding-top: 5px;">
 							<strong data-bind="visible: secreting">...</strong>
 							<span class="g-ui-link i18n" data-bind="click: showSecret, visible: !secreting()"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_SHOW_SECRET"></span>
@@ -50,7 +50,7 @@
 						<label class="control-label">
 							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_SECRET"></span>
 						</label>
-						<div class="controls" style="padding-top: 5px;">
+						<div class="controls ptfc-cons" style="padding-top: 5px;">
 							<strong data-bind="text: viewSecret"></strong>
 							&nbsp;&nbsp;
 							<span class="g-ui-link i18n" data-bind="click: hideSecret" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_HIDE_SECRET"></span>
@@ -68,7 +68,7 @@
 						<label class="control-label">
 							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_BACKUP_CODES"></span>
 						</label>
-						<div class="controls" style="padding-top: 5px;">
+						<div class="controls ptfc-cons" style="padding-top: 5px;">
 							<pre data-bind="text: viewBackupCodes" style="width: 230px; word-break: break-word;"></pre>
 							<br />
 							<blockquote>
@@ -83,22 +83,22 @@
 				<a class="btn pull-left" data-bind="visible: lock, click: logout">
 					<i class="icon-power"></i>
 					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_LOGOUT"></span>
+					<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_LOGOUT"></span>
 				</a>
 				<a class="btn btn-danger" data-bind="click: clearTwoFactor, visible: twoFactorStatus">
 					<i class="icon-remove" data-bind="css: {'icon-remove': !clearing(), 'icon-spinner animated': clearing()}" ></i>
 					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_CLEAR"></span>
+					<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_CLEAR"></span>
 				</a>
 				<a class="btn" data-bind="click: createTwoFactor, visible: !twoFactorStatus()">
 					<i class="icon-play" data-bind="css: {'icon-play': !processing(), 'icon-spinner animated': processing()}" ></i>
 					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_ACTIVATE"></span>
+					<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_ACTIVATE"></span>
 				</a>
 				<a class="btn" data-bind="command: cancelCommand, visible: viewEnable() || !lock()">
 					<i class="icon-ok" ></i>
 					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_DONE"></span>
+					<span class="i18n i18nflex" data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_DONE"></span>
 				</a>
 			</div>
 		</div>
