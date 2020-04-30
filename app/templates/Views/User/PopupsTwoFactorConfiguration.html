@@ -1,9 +1,8 @@
 <div class="popups">
 	<div class="modal hide b-two-factor-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-		<div>
+		<div class="modal-flex">
 			<div class="modal-header">
-				<button type="button" class="close" data-bind="visible: viewEnable() || !lock(), command: cancelCommand">&times;</button>
-				<h3>
+				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LEGEND_TWO_FACTOR_AUTH"></span>
 				</h3>
 			</div>
@@ -80,6 +79,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
+				<button type="button" class="close" data-bind="visible: viewEnable() || !lock(), command: cancelCommand">&times;</button>
 				<a class="btn pull-left" data-bind="visible: lock, click: logout">
 					<i class="icon-power"></i>
 					&nbsp;&nbsp;

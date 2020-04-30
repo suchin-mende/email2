@@ -55,6 +55,15 @@
 								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_DATE"></span>
 							</label>
 							<div class="controls padvs-cons">
+								<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN" style="height: 19px; display: inline-block;">
+									<span class="selectBox-label level-0" style="height: 176px;"></span>
+									<span class="selectBox-arrow"></span>
+								</a>
+								<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+									<li class="level-0 selectBox-selected">
+										<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+									</li>
+								</ul>
 								<div data-bind="component: {
 									name: 'Select',
 									params: {
@@ -68,7 +77,7 @@
 							</div>
 							<div><ul>
 								<li data-bind="component: {
-									name: 'ul',
+									name: 'Ul',
 									params: {
 										options: selectedDates,
 										value: selectedDateValue,
