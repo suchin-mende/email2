@@ -26,10 +26,10 @@
 }
 
 .regist2{
-  font-size:15px;
-  writing-mode: vertical-lr;
+  font: size 17px;
+  margin-top: -6px;
   font-family: Mongolian Sonin;
-  margin-top: -19px;
+  writing-mode: vertical-lr;
 }
 .regist3{
   height:35px;
@@ -56,7 +56,7 @@
   display:inline-block;
 }
 .the-username{
-  height:30px;
+  height:35px;
   width:300px;
   /* padding-right:50px; */
 }
