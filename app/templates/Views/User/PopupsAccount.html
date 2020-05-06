@@ -1,5 +1,5 @@
 <div class="popups">
-	<div class="modal hide b-account-add-content g-ui-user-select-none" style="width: 30%;" data-bind="modal: modalVisibility">
+	<div class="modal hide b-account-add-content g-ui-user-select-none" style="width: 20%;" data-bind="modal: modalVisibility">
 		<div class="modal-flex">
 			<div class="modal-header">
 				
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="close" style="margin-left: 20px;" data-bind="command: cancelCommand">&times;</button>
+				<button type="button" class="close" style="right: 18px;position: relative;" data-bind="command: cancelCommand">&times;</button>
 				<a class="btn buttonAddAccount pacc-mgl" data-bind="command: addAccountCommand">
 					<i data-bind="visible: isNew, css: {'icon-user-add': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
 					<i data-bind="visible: !isNew(), css: {'icon-ok': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
