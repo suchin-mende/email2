@@ -1,8 +1,8 @@
 <div class="popups">
-	<div class="modal hide b-folder-create-content g-ui-user-select-none" style="height: 60%; width: 20%;" data-bind="modal: modalVisibility">
-		<div class="modal-flex" style="height: 100%;">
+	<div class="modal hide b-folder-create-content g-ui-user-select-none pfc-folder" data-bind="modal: modalVisibility">
+		<div class="modal-flex pfc-flex">
 			<div class="modal-header mgl-header">
-				
+
 				<h3>
 					<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/TITLE_CREATE_FOLDER"></span>
 				</h3>
@@ -12,21 +12,23 @@
 					<br />
 					<div class="control-group">
 						<div style="display: block;">
-						<label class="control-label folder-create">
-							<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_NAME"></span>
-						</label>
-						<div class="controls pfc-mgl">
-							<input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-								data-bind="textInput: folderName, hasfocus: folderName.focused, onEnter: createFolderCommand" />
+							<label class="control-label folder-create">
+								<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_NAME"></span>
+							</label>
+							<div class="controls pfc-mgl">
+								<input type="text" class="uiInput inputName input-mgl" autocomplete="off"
+									autocorrect="off" autocapitalize="off" spellcheck="false"
+									data-bind="textInput: folderName, hasfocus: folderName.focused, onEnter: createFolderCommand" />
+							</div>
 						</div>
-					</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label folder-create">
 							<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_PARENT"></span>
 						</label>
 						<div class="controls pfc-mgl">
-							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN" style="height: 19px; display: inline-block;">
+							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+								tabindex="NaN" style="height: 19px; display: inline-block;">
 								<span class="selectBox-label level-0" style="height: 176px;"></span>
 								<span class="selectBox-arrow"></span>
 							</a>
@@ -35,14 +37,15 @@
 									<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
 								</li>
 							</ul>
-							<select  class="input-mgl" style="display: none;" data-bind="options: parentFolderSelectList, value: selectedParentValue,
+							<select class="input-mgl" style="display: none;" data-bind="options: parentFolderSelectList, value: selectedParentValue,
 								optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender"></select>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer mgl-footer">
-				<button type="button" class="close  create-close-mgl" data-bind="command: cancelCommand">&times;</button>
+				<button type="button" class="close create-close-mgl"
+					data-bind="command: cancelCommand">&times;</button>
 				<a class="btn buttonCreate create-mgl" data-bind="command: createFolderCommand">
 					<i class="icon-folder-add"></i>
 					&nbsp;&nbsp;
