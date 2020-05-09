@@ -1,75 +1,123 @@
 <div class="popups">
-	<div class="modal hide b-folder-system-content g-ui-user-select-none" style="width: 50%;" data-bind="modal: modalVisibility">
+	<div class="modal hide b-folder-system-content g-ui-user-select-none pfs-folder" data-bind="modal: modalVisibility">
 		<div class="modal-flex">
-		<div class="modal-header mgl-header">
-			
-			
-			<h3 class="i18nflex">
-				<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/TITLE_SYSTEM_FOLDERS"></span>
-			</h3>
-		</div>
-		<div class="modal-body folder-width">
-			
-			<div class="form-horizontal folder-box">
-				<div class="alert" data-bind="visible: '' !== notification()">
-					<span data-bind="text: notification"></span>
-				</div>
-				<br />
-				<div class="control-group pfs-grp">
-					<div>
-					<label class="control-label folder-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT"></span>
-					</label>
-					<div class="controls  folder-select">
-						<select data-bind="options: folderSelectList, value: sentFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
-					</div>
-				</div>
-				</div>
-				<div class="control-group pfs-grp">
-					<label class="control-label folder-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_DRAFTS"></span>
-					</label>
-					<div class="controls folder-select">
-						<select data-bind="options: folderSelectList, value: draftFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender"></select>
-					</div>
-				</div>
-				<div class="control-group pfs-grp">
-					<label class="control-label folder-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SPAM"></span>
-					</label>
-					<div class="controls folder-select">
-						<select data-bind="options: folderSelectList, value: spamFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
-					</div>
-				</div>
-				<div class="control-group pfs-grp">
-					<label class="control-label folder-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_TRASH"></span>
-					</label>
-					<div class="controls folder-select">
-						<select data-bind="options: folderSelectList, value: trashFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
-					</div>
-				</div>
-				<div class="control-group pfs-grp">
-					<label class="control-label folder-label">
-						<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_ARCHIVE"></span>
-					</label>
-					<div class="controls folder-select">
-						<select data-bind="options: folderSelectList, value: archiveFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
-					</div>
-				</div>
+			<div class="modal-header mgl-header">
+				<h3 class="i18nflex">
+					<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/TITLE_SYSTEM_FOLDERS"></span>
+				</h3>
 			</div>
-			
-		</div>
-		<div class="modal-footer mgl-footer" style="width: 60px;">
-			<button type="button" class="close folder-close" data-bind="command: cancelCommand">&times;</button>
+			<div class="modal-body folder-width">
+				<div class="form-horizontal folder-box">
+					<div class="alert" data-bind="visible: '' !== notification()">
+						<span data-bind="text: notification"></span>
+					</div>
+					<br />
+					<div class="control-group pfs-grp">
+						<div>
+							<label class="control-label folder-label">
+								<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT"></span>
+							</label>
+							<div class="controls  folder-select">
+								<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+									tabindex="NaN" style="height: 19px; display: inline-block;">
+									<span class="selectBox-label level-0" style="height: 176px;"></span>
+									<span class="selectBox-arrow"></span>
+								</a>
+								<ul
+									class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+									<li class="level-0 selectBox-selected">
+										<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+									</li>
+								</ul>
+								<select data-bind="options: folderSelectList, value: sentFolder,
+							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+							</div>
+						</div>
+					</div>
+					<div class="control-group pfs-grp">
+						<label class="control-label folder-label">
+							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_DRAFTS"></span>
+						</label>
+						<div class="controls folder-select">
+							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+								tabindex="NaN" style="height: 19px; display: inline-block;">
+								<span class="selectBox-label level-0" style="height: 176px;"></span>
+								<span class="selectBox-arrow"></span>
+							</a>
+							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+								<li class="level-0 selectBox-selected">
+									<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+								</li>
+							</ul>
+							<select data-bind="options: folderSelectList, value: draftFolder,
+							optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender"></select>
+						</div>
+					</div>
+					<div class="control-group pfs-grp">
+						<label class="control-label folder-label">
+							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SPAM"></span>
+						</label>
+						<div class="controls folder-select">
+							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+								tabindex="NaN" style="height: 19px; display: inline-block;">
+								<span class="selectBox-label level-0" style="height: 176px;"></span>
+								<span class="selectBox-arrow"></span>
+							</a>
+							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+								<li class="level-0 selectBox-selected">
+									<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+								</li>
+							</ul>
+							<select data-bind="options: folderSelectList, value: spamFolder,
+							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+						</div>
+					</div>
+					<div class="control-group pfs-grp">
+						<label class="control-label folder-label">
+							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_TRASH"></span>
+						</label>
+						<div class="controls folder-select">
+							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+								tabindex="NaN" style="height: 19px; display: inline-block;">
+								<span class="selectBox-label level-0" style="height: 176px;"></span>
+								<span class="selectBox-arrow"></span>
+							</a>
+							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+								<li class="level-0 selectBox-selected">
+									<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+								</li>
+							</ul>
+							<select data-bind="options: folderSelectList, value: trashFolder,
+							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+						</div>
+					</div>
+					<div class="control-group pfs-grp">
+						<label class="control-label folder-label">
+							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_ARCHIVE"></span>
+						</label>
+						<div class="controls folder-select">
+							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+								tabindex="NaN" style="height: 19px; display: inline-block;">
+								<span class="selectBox-label level-0" style="height: 176px;"></span>
+								<span class="selectBox-arrow"></span>
+							</a>
+							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+								<li class="level-0 selectBox-selected">
+									<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+								</li>
+							</ul>
+							<select data-bind="options: folderSelectList, value: archiveFolder,
+							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer mgl-footer" style="width: 60px;">
+				<button type="button" class="close folder-close" data-bind="command: cancelCommand">&times;</button>
 
 
+			</div>
 		</div>
-	</div>
 	</div>
 </div>

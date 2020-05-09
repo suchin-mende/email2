@@ -1,61 +1,78 @@
 <div class="popups">
-	<div class="modal hide b-advanced-search-content g-ui-user-select-none" style="width: 47%;" data-bind="modal: modalVisibility">
-		<div class="modal-flex">
-		<div class="modal-header mgl-header">
-			
-			<h3 class="i18nflex">
-				<span class="i18n" data-i18n="SEARCH/TITLE_ADV"></span>
-			</h3>
-		</div>
-		<div class="modal-body">
-			<br />
-			<form class="form-horizontal" action="#/" autocomplete="off" onsubmit="return false;" data-bind="command: searchCommand">
-				<div class="row" style="display: flex;">
-					<div class="span4 sp4-mgl">
-						<div class="control-group padvs-mgl">
-							<label class="control-label padvs-label">
-								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_FROM"></span>
-							</label>
-							<div class="controls padvs-cons">
-								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-									data-bind="value: from, onEnter: searchCommand, hasfocus: fromFocus, onEsc: cancelCommand" />
+	<div class="modal hide b-advanced-search-content g-ui-user-select-none pas-search"
+		data-bind="modal: modalVisibility">
+		<div class="modal-flex" style="height: 100%;">
+			<div class="modal-header mgl-header">
+
+				<h3 class="i18nflex">
+					<span class="i18n" data-i18n="SEARCH/TITLE_ADV"></span>
+				</h3>
+			</div>
+			<div class="modal-body">
+				<br />
+				<form class="form-horizontal" action="#/" autocomplete="off" onsubmit="return false;"
+					data-bind="command: searchCommand">
+					<div class="row" style="display: flex;">
+						<div class="span4 sp4-mgl">
+							<div class="control-group padvs-mgl">
+								<label class="control-label padvs-label">
+									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_FROM"></span>
+								</label>
+								<div class="controls padvs-cons">
+									<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+										autocorrect="off" autocapitalize="off" spellcheck="false"
+										data-bind="value: from, onEnter: searchCommand, hasfocus: fromFocus, onEsc: cancelCommand" />
+								</div>
+							</div>
+							<div class="control-group padvs-mgl">
+								<label class="control-label padvs-label">
+									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TO"></span>
+								</label>
+								<div class="controls padvs-cons">
+									<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+										autocorrect="off" autocapitalize="off" spellcheck="false"
+										data-bind="value: to, onEnter: searchCommand, onEsc: cancelCommand" />
+								</div>
+							</div>
+							<div class="control-group padvs-mgl">
+								<label class="control-label padvs-label">
+									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_SUBJECT"></span>
+								</label>
+								<div class="controls padvs-cons">
+									<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+										autocorrect="off" autocapitalize="off" spellcheck="false"
+										data-bind="value: subject, onEnter: searchCommand, onEsc: cancelCommand" />
+								</div>
+							</div>
+							<div class="control-group padvs-mgl">
+								<label class="control-label padvs-label">
+									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TEXT"></span>
+								</label>
+								<div class="controls padvs-cons">
+									<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+										autocorrect="off" autocapitalize="off" spellcheck="false"
+										data-bind="value: text, onEnter: searchCommand, onEsc: cancelCommand" />
+								</div>
 							</div>
 						</div>
-						<div class="control-group padvs-mgl">
-							<label class="control-label padvs-label">
-								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TO"></span>
-							</label>
-							<div class="controls padvs-cons">
-								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-									data-bind="value: to, onEnter: searchCommand, onEsc: cancelCommand" />
-							</div>
-						</div>
-						<div class="control-group padvs-mgl">
-							<label class="control-label padvs-label">
-								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_SUBJECT"></span>
-							</label>
-							<div class="controls padvs-cons">
-								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-									data-bind="value: subject, onEnter: searchCommand, onEsc: cancelCommand" />
-							</div>
-						</div>
-						<div class="control-group padvs-mgl">
-							<label class="control-label padvs-label">
-								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TEXT"></span>
-							</label>
-							<div class="controls padvs-cons">
-								<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-									data-bind="value: text, onEnter: searchCommand, onEsc: cancelCommand" />
-							</div>
-						</div>
-					</div>
-					<div class="span4 sp4-mgl">
-						<div class="control-group padvs-mgl" style="margin-left: -15px;">
-							<label class="control-label padvs-label">
-								<span class="i18n" data-i18n="SEARCH/LABEL_ADV_DATE"></span>
-							</label>
-							<div class="controls padvs-cons">
-								<div data-bind="component: {
+						<div class="span4 sp4-mgl">
+							<div class="control-group padvs-mgl" style="margin-left: -15px;">
+								<label class="control-label padvs-label">
+									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_DATE"></span>
+								</label>
+								<div class="controls padvs-cons">
+									<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
+										tabindex="NaN" style="height: 19px; display: inline-block;">
+										<span class="selectBox-label level-0" style="height: 176px;"></span>
+										<span class="selectBox-arrow"></span>
+									</a>
+									<ul
+										class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
+										<li class="level-0 selectBox-selected">
+											<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
+										</li>
+									</ul>
+									<div data-bind="component: {
 									name: 'Select',
 									params: {
 										options: selectedDates,
@@ -64,10 +81,11 @@
 										optionsValue: 'id'
 									}
 								}">
-								
-							</div>
-							<div><ul>
-								<li data-bind="component: {
+
+									</div>
+									<div>
+										<ul>
+											<li data-bind="component: {
 									name: 'Ul',
 									params: {
 										options: selectedDates,
@@ -76,49 +94,51 @@
 										optionsValue: 'id'
 									}
 								}">
-							</ul></div>
-							<span class="selectBox-arrow"></span>
+										</ul>
+									</div>
+									<span class="selectBox-arrow"></span>
+								</div>
 							</div>
-						</div>
-						<div class="control-group padvs-mgl">
-							<label class="control-label padvs-label">
-							</label>
-							<div class="controls padvs-cons">
-								<div data-bind="component: {
+							<div class="control-group padvs-mgl">
+								<label class="control-label padvs-label">
+								</label>
+								<div class="controls padvs-cons">
+									<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_UNSEEN',
 										value: unseen
 									}
 								}"></div>
-								<div data-bind="component: {
+									<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_FLAGGED',
 										value: starred
 									}
 								}"></div>
-								<div data-bind="component: {
+									<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_HAS_ATTACHMENT',
 										value: hasAttachment
 									}
 								}"></div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
+			<div class="modal-footer mgl-footer" style="width: 7%;">
+				<button type="button" class="close search-close" data-bind="command: cancelCommand">&times;</button>
+				<button type="submit" class="btn buttonAdvSearch search-mgl" data-bind="command: searchCommand">
+					<i class="icon-search"></i>
+					&nbsp;&nbsp;
+					<span class="i18n i18nflexs" style="writing-mode: vertical-lr;"
+						data-i18n="SEARCH/BUTTON_ADV_SEARCH"></span>
+					</a>
+			</div>
 		</div>
-		<div class="modal-footer mgl-footer">
-			<button type="button" class="close search-close" data-bind="command: cancelCommand">&times;</button>
-			<button type="submit" class="btn buttonAdvSearch search-mgl" data-bind="command: searchCommand">
-				<i class="icon-search"></i>
-				&nbsp;&nbsp;
-				<span class="i18n i18nflexs" style="writing-mode: vertical-lr;" data-i18n="SEARCH/BUTTON_ADV_SEARCH"></span>
-			</a>
-		</div>
-	</div>
 	</div>
 </div>

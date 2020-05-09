@@ -1,17 +1,20 @@
 <div class="popups">
-	<div class="modal hide b-account-add-content g-ui-user-select-none" style="width: 30%;" data-bind="modal: modalVisibility">
+	<div class="modal hide b-account-add-content g-ui-user-select-none pa-account" data-bind="modal: modalVisibility">
 		<div class="modal-flex">
 			<div class="modal-header">
-				
+
 				<h3 class="i18flex">
-					<span data-bind="visible: isNew" class="i18n" data-i18n="POPUPS_ADD_ACCOUNT/TITLE_ADD_ACCOUNT"></span>
-					<span data-bind="visible: !isNew()" class="i18n" data-i18n="POPUPS_ADD_ACCOUNT/TITLE_UPDATE_ACCOUNT"></span>
+					<span data-bind="visible: isNew" class="i18n"
+						data-i18n="POPUPS_ADD_ACCOUNT/TITLE_ADD_ACCOUNT"></span>
+					<span data-bind="visible: !isNew()" class="i18n"
+						data-i18n="POPUPS_ADD_ACCOUNT/TITLE_UPDATE_ACCOUNT"></span>
 				</h3>
 			</div>
 			<div class="modal-body" style="width: 100%;">
 				<div class="form-horizontal modal-flex">
 					<div class="alert" data-bind="visible: '' !== submitError()">
-						<button type="button" class="close-custom" data-bind="click: function () { submitError('') }">&times;</button>
+						<button type="button" class="close-custom"
+							data-bind="click: function () { submitError('') }">&times;</button>
 						<span data-bind="text: submitError"></span>
 						<div data-bind="visible: submitErrorAdditional">
 							<br />
@@ -22,28 +25,35 @@
 					<div class="control-group popacc-mgl" data-bind="css: {'error': emailError}">
 						<label class="i18n control-label pacc-label" data-i18n="LOGIN/LABEL_EMAIL"></label>
 						<div class="controls pacc-ctrl">
-							<label style="margin-top: 5px;" data-bind="visible: !isNew()"><strong data-bind="text: email"></strong></label>
-							<input type="email" class="inputEmail input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+							<label style="margin-top: 5px;" data-bind="visible: !isNew()"><strong
+									data-bind="text: email"></strong></label>
+							<input type="email" class="inputEmail input-mgl" autocomplete="off" autocorrect="off"
+								autocapitalize="off" spellcheck="false"
 								data-bind="visible: isNew, textInput: email, onEnter: addAccountCommand, hasfocus: emailFocus" />
 						</div>
 					</div>
 					<div class="control-group popacc-mgl" data-bind="css: {'error': passwordError}">
 						<label class="i18n control-label pacc-label" data-i18n="LOGIN/LABEL_PASSWORD"></label>
 						<div class="controls pacc-ctrl">
-							<input type="password" class="inputPassword input-mgl" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+							<input type="password" class="inputPassword input-mgl" autocomplete="off" autocorrect="off"
+								autocapitalize="off" spellcheck="false"
 								data-bind="value: password, onEnter: addAccountCommand" />
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="close" style="margin-left: 20px;" data-bind="command: cancelCommand">&times;</button>
+				<button type="button" class="close pa-close" data-bind="command: cancelCommand">&times;</button>
 				<a class="btn buttonAddAccount pacc-mgl" data-bind="command: addAccountCommand">
-					<i data-bind="visible: isNew, css: {'icon-user-add': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
-					<i data-bind="visible: !isNew(), css: {'icon-ok': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
+					<i
+						data-bind="visible: isNew, css: {'icon-user-add': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
+					<i
+						data-bind="visible: !isNew(), css: {'icon-ok': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
 					&nbsp;&nbsp;
-					<span data-bind="visible: isNew" class="i18n close-mgl" data-i18n="POPUPS_ADD_ACCOUNT/BUTTON_ADD_ACCOUNT"></span>
-					<span data-bind="visible: !isNew()" class="i18n close-mgl" data-i18n="POPUPS_ADD_ACCOUNT/BUTTON_UPDATE_ACCOUNT"></span>
+					<span data-bind="visible: isNew" class="i18n close-mgl"
+						data-i18n="POPUPS_ADD_ACCOUNT/BUTTON_ADD_ACCOUNT"></span>
+					<span data-bind="visible: !isNew()" class="i18n close-mgl"
+						data-i18n="POPUPS_ADD_ACCOUNT/BUTTON_UPDATE_ACCOUNT"></span>
 				</a>
 			</div>
 		</div>
