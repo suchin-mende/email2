@@ -21,9 +21,10 @@
 			<div class="controls sg-cons">
 				<div class="flag-selector">
 					<span class="flag-wrapper">
-						<span data-bind="css: 'flag flag-' + language().toLowerCase()" ></span>
+						<span data-bind="css: 'flag flag-' + language().toLowerCase()"></span>
 					</span>
-					<span class="flag-name" tabindex="0" data-bind="text: languageFullName, click: selectLanguage, onSpace: selectLanguage, onEnter: selectLanguage"></span>
+					<span class="flag-name" tabindex="0"
+						data-bind="text: languageFullName, click: selectLanguage, onSpace: selectLanguage, onEnter: selectLanguage"></span>
 					&nbsp;&nbsp;
 					<div data-bind="component: {
 						name: 'SaveTrigger',
@@ -34,17 +35,20 @@
 		</div>
 		<div class="control-group hide-on-mobile sg-ctrl">
 			<label class="control-label sg-label">
-			   <span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_LAYOUT"></span>
+				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_LAYOUT"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN" style="height: 19px; display: inline-block;">
+				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
+					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand">
 					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow"></span>
+					<span class="selectBox-arrow">◄ ►</span>
 				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
-					<li class="level-0 selectBox-selected">
-						<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
-					</li>
+				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop1"
+					style="display: none;">
+					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 				</ul>
 				<div data-bind="component: {
 					name: 'Select',
@@ -60,17 +64,20 @@
 		</div>
 		<div class="control-group sg-ctrl">
 			<label class="control-label sg-label">
-			   <span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_EDITOR"></span>
+				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_EDITOR"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN" style="height: 19px; display: inline-block;">
+				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
+					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand2">
 					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow"></span>
+					<span class="selectBox-arrow">◄ ►</span>
 				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
-					<li class="level-0 selectBox-selected">
-						<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
-					</li>
+				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop2"
+					style="display: none;">
+					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 				</ul>
 				<div data-bind="component: {
 					name: 'Select',
@@ -86,17 +93,20 @@
 		</div>
 		<div class="control-group sg-ctrl">
 			<label class="control-label sg-label">
-			   <span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_MESSAGE_PER_PAGE"></span>
+				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_MESSAGE_PER_PAGE"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN" style="height: 19px; display: inline-block;">
+				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
+					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand3">
 					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow"></span>
+					<span class="selectBox-arrow">◄ ►</span>
 				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu">
-					<li class="level-0 selectBox-selected">
-						<a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a>
-					</li>
+				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop3"
+					style="display: none;">
+					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
+					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 				</ul>
 				<div data-bind="component: {
 					name: 'Select',
@@ -144,7 +154,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-horizontal hide-on-mobile" data-bind="visible: isDesktopNotificationSupported() || soundNotificationIsSupported()">
+	<div class="form-horizontal hide-on-mobile"
+		data-bind="visible: isDesktopNotificationSupported() || soundNotificationIsSupported()">
 		<div class="legend sg-mgl">
 			<span class="i18n i18nflex i18n-animation" data-i18n="SETTINGS_GENERAL/LABEL_NOTIFICATIONS"></span>
 		</div>
@@ -162,7 +173,8 @@
 					}"></div>
 					&nbsp;
 					<span data-bind="visible: isDesktopNotificationDenied">
-						<span class="i18n" style="color: #999" data-i18n="SETTINGS_GENERAL/LABEL_CHROME_NOTIFICATION_DESC_DENIED"></span>
+						<span class="i18n" style="color: #999"
+							data-i18n="SETTINGS_GENERAL/LABEL_CHROME_NOTIFICATION_DESC_DENIED"></span>
 					</span>
 				</div>
 				<div data-bind="visible: soundNotificationIsSupported">
