@@ -1,4 +1,6 @@
 <div class="b-login-content">
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.7, maximum-scale=1.0, user-scalable=no" />
     <div class="loginFormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
         <center class="plugin-mark-Login-BeforeLogo">
             {{INCLUDE/BeforeLogo/PLACE}}
@@ -30,8 +32,8 @@
        
        <div class="row">
          <div class="col-lg-12">
-           <div class="tabbable">                                        
-             <ul class="nav tab-group-vertical nav-stacked"><!--nav-tabs nav-justified-->
+           <div class="tabbable">                                  
+             <ul class="nav tab-group-vertical nav-stacked mongolo_tab"><!--nav-tabs nav-justified-->
                <li class="active"><a class="tabdslh1" href="#info" data-toggle="tab">
                    <h6 class="tabdeh">ᠳᠠᠩᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠬᠦ  </h6>
                    </a>
@@ -43,9 +45,12 @@
                 </li>
              </ul>                        
              <div class="tab-content">
-               <div class="tab-pane active" id="info">                                
+               <div class="tab-pane active" id="info">              
+                <!-- <div class="vip_mog"> -->
+             
+                <!-- </div>                   -->
                
-                 <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :113px 120px;">
+                 <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :113px 95px;">
                     {{INCLUDE/TopControlGroup/PLACE}}
 
                  
@@ -74,7 +79,12 @@
                                 <span class="i18n i18n-animation login-mgl"></span>
                             </a>
                         </p>
-
+                     
+                            <a class="vip_mog" href="http://localhost:8888//halgai-email/halgai/v/0.0.0/regist/members.html" target="_blank" style="font-size: 15px;">
+                
+                                <img class="VIP_icon" src="halgai/v/0.0.0/regist/mogvip.png">
+                            </a>    
+                        
 
 
 
@@ -192,38 +202,6 @@
                     ko template: { name: 'LoginWelcome' }
                     <!-- /ko -->
                 </div>
-
-             
-
-
-
-
-
-
-                <!-- <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}" style="padding :110px 120px;">
-                    {{INCLUDE/TopControlGroup/PLACE}}
-
-                    <div class="long-set-first" id="weixin-login-content">
-                    <div class="weixin-img-wapper">
-                        <h2 id="long-main-title" class="login-main-title">微信快捷登录</h2>
-                        <div class="weixin-code-imgbox"></div>
-                        <img id="weixin-login-qrcode" src="   " alt>
-                        <div class="scan-overlay-tips" id="scan_successfuly" style="display:none">
-                        <p class="overlay_main">扫描成功</p>
-                        <p class="overlay_sub">请在手机端确认登陆</p>
-                        </div>
-                        <div class="scan-overlay-loading" style="display: none;">
-                        <img src="  " alt>
-                        <p class="overlay_sub">正在登录中</p>
-                        </div>
-                    </div>
-                    <p class="weixin-scan-tips" id="scan_unsuccessfuly" style="display: none;margin-top: 16px;">
-                    <i class="text-orange fa fa-exclamation-circle"></i>
-                    "手机端取消登陆，重新扫码"
-                    </p>
-                    <p class="weixin-scan-tips text-grey" id="scan_by_phone">微信扫一扫，快速登录</p>
-                    </div>          
-                </form> -->
         
             <div class="e-languages thm-languages plugin-mark-Login-BottomFooter" data-bind="visible: allowLanguagesOnLogin() && socialLoginEnabled()">
                 <label class="flag-selector">
