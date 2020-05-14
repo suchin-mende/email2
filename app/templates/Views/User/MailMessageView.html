@@ -480,13 +480,14 @@
 										data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
 
 										<span data-bind="visible: downloadAsZipAllowed">
-											<i class="icon-remove iconcolor-red"
-												data-bind="visible: downloadAsZipError"></i>
-											<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
-													css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
-											&nbsp;&nbsp;
+
 											<span class="g-ui-link" data-bind="click: downloadAsZip">
 												<span class="i18n" data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
+												&nbsp;&nbsp;
+												<i class="icon-remove iconcolor-red"
+													data-bind="visible: downloadAsZipError"></i>
+												<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
+													css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
 											</span>
 										</span>
 
