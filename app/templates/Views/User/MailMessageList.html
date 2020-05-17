@@ -32,7 +32,7 @@
 				</div>
 				<div class="btn-group">&nbsp;</div>
 				<!-- /ko -->
-				<div class="btn-group" data-bind="visible: mobile && allowComposer && mobileCheckedStateHide()">
+				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
 					<a class="btn single buttonCompose" data-tooltip-join="top"
 						data-bind="click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
 						<i class="icon-paper-plane"></i>
@@ -251,7 +251,7 @@
 						</div>
 						<div
 							data-bind="draggable: dragAndDronHelper, droppableSelector: '.b-folders .content.g-scrollbox'">
-							<div class="messageListPlace"
+							<div class="messageListPlace" style="height: 960px;"
 								data-bind="template: { name: messageListItemTemplate(), foreach: messageList }"></div>
 						</div>
 					</div>
