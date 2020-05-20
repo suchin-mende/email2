@@ -22,6 +22,14 @@
     top: 0;
 	bottom: 0;
 }
+.b-login-content .loginFormWrapper .input-append .add-on{
+    position: relative;
+    height: 30px;
+    background: 0 0;
+    margin-left: 4%;
+    z-index: 1000;
+    border: 0;
+}
 .thm-body {
     color: #333;
     background-color: #48525c;
@@ -33,7 +41,7 @@
     font-family: Mongolian Sonin;
     writing-mode: vertical-lr;
     margin-left: 17px;
-    margin-top: 143px;
+    margin-top: 143px; 
     position: absolute;
     font-size: 30px;
 }
@@ -90,7 +98,7 @@ position: absolute;
 width: 34px;
 margin-top: 357px;
 margin-left: -185px;
-transform: rotate(90deg)
+
 }
 .code_button{
     width: 90px;
@@ -118,14 +126,13 @@ transform: rotate(90deg)
     width: 34px;
     margin-top: 357px;
     margin-left: -103px;
-    transform: rotate(90deg)
+
 }
 .pic_right{
     position: absolute;
     width: 34px;
     margin-top: 357px;
     margin-left: -22px;
-    transform: rotate(90deg)
 }
 .pictu_right{
     position: absolute;
@@ -139,13 +146,7 @@ transform: rotate(90deg)
     width: 34px;
     margin-top: 357px;
     margin-left: 143px;
-    transform: rotate(90deg)
 }
-
-/* .regist_halg{
-
-    
-}  */
 .halg{
     position: absolute;
     color:lightgray;
