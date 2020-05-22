@@ -22,30 +22,12 @@
                 </div>
             </div>
             <div class="wrapper-parent">
-                <!-- <div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}"> 
-                  
-                </div> -->
       <div class="container">
        <div class="row">
          <div class="col-lg-12">
            <div class="tabbable">     
-                                
-             <!-- <ul class="nav tab-group-vertical nav-stacked mongolo_tab">
-               <li class="active"><a class="tabdslh1" href="#info" data-toggle="tab">
-                   <h6 class="tabdeh">ᠳᠠᠩᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠬᠦ  </h6>
-                   </a>
-            </li>
-               <li>
-                   <a class="tabdslh2" href="#share" data-toggle="tab" >
-                       <h6 class="tabdeh">ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</h6>    
-                       </a>
-                </li>
-             </ul>                         -->
              <div class="tab-content">
                <div class="tab-pane active" id="info">              
-                <!-- <div class="vip_mog"> -->
-             
-                <!-- </div>                   -->
                 <form id="email_login" class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/" data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
                     <div>
                         {{INCLUDE/TopControlGroup/PLACE}}
@@ -123,8 +105,8 @@
                              }">
      
                          </div>
-                         <a class="signup_a"   href="halgai/v/0.0.0/regist/regist.html" data-i18n="LOGIN/LABEL_REGISTRATION" ></a>
-                         <a class="mog_signup" href="halgai/v/0.0.0/regist/forgotpw.html" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
+                         <a class="signup_a"   href="halgai/v/0.0.0/regist/regist.html" data-i18n="LOGIN/LABEL_REGISTRATION" data-bind="click: gotoRegisterCommand"></a>
+                         <a class="mog_signup" href="halgai/v/0.0.0/regist/forgotpw.html" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD" data-bind="click: gotoFindPassword"></a>
                          </div>
                      </div>
                      <div class="VIP">
