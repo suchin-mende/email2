@@ -46,7 +46,7 @@
                          </div>
                          <div class="controls" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                              <div class="input-append">
-                                 <input type="password" class="i18n input-block-level inputPassword checkAutocomplete email_passwordemail" name="RainLoopPassword" id="RainLoopPassword" style="padding-right: 35px;" autocomplete="current-password" autocorrect="off" autocapitalize="off" spellcheck="false"
+                                 <input type="password" class="i18n input-block-level inputPassword checkAutocomplete email_passwordemail mogol_pass" name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password" autocorrect="off" autocapitalize="off" spellcheck="false"
                                      data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
                                  <span class="add-on" tabindex="-1" data-tooltip-join="left" data-bind="command: submitCommand, tooltip: ''">
                                      <i class="icon-key" data-bind="visible: '' === password()"></i>
@@ -95,7 +95,7 @@
                                      <i class="icon-twitter"></i>
                                  </a>
                              </div>
-                             <div class="signMeLabel mongol_keep" data-bind="visible: signMeVisibility, component: {
+                             <div class="signMeLabel mongol_keep1" data-bind="visible: signMeVisibility, component: {
                                  name: 'CheckboxSimple',
                                  params: {
                                      label: 'LOGIN/LABEL_SIGN_ME',
@@ -105,12 +105,12 @@
                              }">
      
                          </div>
-                         <a class="signup_a"   href="halgai/v/0.0.0/regist/regist.html" data-i18n="LOGIN/LABEL_REGISTRATION" data-bind="click: gotoRegisterCommand"></a>
-                         <a class="mog_signup" href="halgai/v/0.0.0/regist/forgotpw.html" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD" data-bind="click: gotoFindPassword"></a>
+                         <a class="signup_a"   href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/Register.html" data-i18n="LOGIN/LABEL_REGISTRATION" data-bind="click: gotoRegisterCommand"></a>
+                         <a class="mog_signup" href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/FindPassword.html" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD" data-bind="click: gotoFindPassword"></a>
                          </div>
                      </div>
                      <div class="VIP">
-                         <a class="vip_a" href="halgai/v/0.0.0/regist/setPsw.html" target="_blank">
+                         <a class="vip_a" href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/SetPsw.html" target="_blank">
                              <img class="mongol_vip" src="halgai/v/0.0.0/regist/mogvip.png">
                          </a>
                         </div>
