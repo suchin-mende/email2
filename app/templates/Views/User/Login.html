@@ -24,30 +24,12 @@
                 </div>
             </div>
             <div class="wrapper-parent">
-                <div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}">
-                    <!-- /ko -->
-                </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="tabbable">
-                                <ul class="nav tab-group-vertical nav-stacked mongolo_tab">
-                                    <!--nav-tabs nav-justified-->
-                                    <li class="active"><a class="tabdslh1" href="#info" data-toggle="tab">
-                                            <h6 class="tabdeh">ᠳᠠᠩᠰᠠᠯᠠᠭᠰᠠᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠬᠦ </h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="tabdslh2" href="#share" data-toggle="tab">
-                                            <h6 class="tabdeh">ᠬᠤᠷᠳᠤᠨ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</h6>
-                                        </a>
-                                    </li>
-                                </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="info">
-                                        <!-- <div class="vip_mog"> -->
-
-                                        <!-- </div>                   -->
                                         <form id="email_login"
                                             class="wrapper submitting-pane loginForm thm-login thm-login-text"
                                             action="#/"
@@ -56,16 +38,13 @@
                                                 {{INCLUDE/TopControlGroup/PLACE}}
                                                 <div class="controls plugin-mark-Login-TopControlGroup"
                                                     data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
+                                                    <div class="mongolweixin">
+                                                        <a data-bind="click: switchTabCommand">
+                                                            <img src="halgai/v/0.0.0/regist/mogolweixin.png"
+                                                                class="mglweixin_code" id="weixin_icon_login">
+                                                        </a>
+                                                    </div>
 
-
-                                                    <!-- <div class="weixin">
-                                <a data-bind="click: switchTabCommand">
-                                    <img src="/rainloop/v/0.0.0/regist/weixin.png" class="weixin_code" id="weixin_icon_login">
-                                </a> -->
-                                                    <!-- <a href="#" tabindex="-1" class="language-button language" data-bind="visible: allowLanguagesOnLogin() && !socialLoginEnabled(), click: selectLanguage, tooltip: 'POPUPS_LANGUAGES/TITLE_LANGUAGES'">
-                                    <img src="/halgai/v/0.0.0/regist/weixintab.png">
-                                </a>
-                            </div> -->
                                                     <div class="input-append">
                                                         <input type="email"
                                                             class="i18n input-block-level inputEmail checkAutocomplete mongolo_email"
@@ -80,10 +59,10 @@
                                                     data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                                                     <div class="input-append">
                                                         <input type="password"
-                                                            class="i18n input-block-level inputPassword checkAutocomplete email_passwordemail"
+                                                            class="i18n input-block-level inputPassword checkAutocomplete email_passwordemail mogol_pass"
                                                             name="RainLoopPassword" id="RainLoopPassword"
-                                                            style="padding-right: 35px;" autocomplete="current-password"
-                                                            autocorrect="off" autocapitalize="off" spellcheck="false"
+                                                            autocomplete="current-password" autocorrect="off"
+                                                            autocapitalize="off" spellcheck="false"
                                                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
                                                             data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
                                                         <span class="add-on" tabindex="-1" data-tooltip-join="left"
@@ -120,36 +99,70 @@
                                      value: additionalCodeSignMe
                                  }
                              }"></div>
-                                                </div>
-                                                {{INCLUDE/BottomControlGroup/PLACE}}
-                                                <div class="controls controls-submit-wrp"
-                                                    data-bind="css: {'display-none': hideSubmitButton}">
-                                                    <button type="submit"
-                                                        class="btn btn-large btn-block buttonLogin mong_button"
-                                                        data-bind="command: submitCommand">
-                                                        <span class="mong_span" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
-                                                    </button>
-                                                </div>
-                                                <div class="controls clearfix" style="margin-bottom: 10px">
-                                                    <div class="pull-right social-buttons">
-                                                        <a href="#" tabindex="-1" class="social-button"
-                                                            data-bind="visible: googleGmailLoginEnabled, command: googleGmailCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GMAIL'">
-                                                            <i class="icon-mail"></i>
-                                                        </a>
-                                                        <a href="#" tabindex="-1" class="social-button"
-                                                            data-bind="visible: googleLoginEnabled, command: googleCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GOOGLE'">
-                                                            <i class="icon-google"></i>
-                                                        </a>
-                                                        <a href="#" tabindex="-1" class="social-button"
-                                                            data-bind="visible: facebookLoginEnabled, command: facebookCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_FACEBOOK'">
-                                                            <i class="icon-facebook-alt"></i>
-                                                        </a>
-                                                        <a href="#" tabindex="-1" class="social-button"
-                                                            data-bind="visible: twitterLoginEnabled, command: twitterCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_TWITTER'">
-                                                            <i class="icon-twitter"></i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="signMeLabel mongol_keep" data-bind="visible: signMeVisibility, component: {
+                                                    <<<<<<< HEAD </div>
+                                                        {{INCLUDE/BottomControlGroup/PLACE}}
+                                                        <div class="controls controls-submit-wrp"
+                                                            data-bind="css: {'display-none': hideSubmitButton}">
+                                                            <button type="submit"
+                                                                class="btn btn-large btn-block buttonLogin mong_button"
+                                                                data-bind="command: submitCommand">
+                                                                <span class="mong_span"
+                                                                    data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="controls clearfix" style="margin-bottom: 10px">
+                                                            <div class="pull-right social-buttons">
+                                                                <a href="#" tabindex="-1" class="social-button"
+                                                                    data-bind="visible: googleGmailLoginEnabled, command: googleGmailCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GMAIL'">
+                                                                    <i class="icon-mail"></i>
+                                                                </a>
+                                                                <a href="#" tabindex="-1" class="social-button"
+                                                                    data-bind="visible: googleLoginEnabled, command: googleCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GOOGLE'">
+                                                                    <i class="icon-google"></i>
+                                                                </a>
+                                                                <a href="#" tabindex="-1" class="social-button"
+                                                                    data-bind="visible: facebookLoginEnabled, command: facebookCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_FACEBOOK'">
+                                                                    <i class="icon-facebook-alt"></i>
+                                                                </a>
+                                                                <a href="#" tabindex="-1" class="social-button"
+                                                                    data-bind="visible: twitterLoginEnabled, command: twitterCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_TWITTER'">
+                                                                    <i class="icon-twitter"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="signMeLabel mongol_keep" data-bind="visible: signMeVisibility, component: {
+=======
+                         </div>
+                         {{INCLUDE/BottomControlGroup/PLACE}}
+                         <div class=" controls controls-submit-wrp"
+                                                                data-bind="css: {'display-none': hideSubmitButton}">
+                                                                <button type="submit"
+                                                                    class="btn btn-large btn-block buttonLogin mong_button"
+                                                                    data-bind="command: submitCommand">
+                                                                    <span class="mong_span"
+                                                                        data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="controls clearfix mglcler">
+                                                                <div class="pull-right social-buttons">
+                                                                    <a href="#" tabindex="-1" class="social-button"
+                                                                        data-bind="visible: googleGmailLoginEnabled, command: googleGmailCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GMAIL'">
+                                                                        <i class="icon-mail"></i>
+                                                                    </a>
+                                                                    <a href="#" tabindex="-1" class="social-button"
+                                                                        data-bind="visible: googleLoginEnabled, command: googleCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GOOGLE'">
+                                                                        <i class="icon-google"></i>
+                                                                    </a>
+                                                                    <a href="#" tabindex="-1" class="social-button"
+                                                                        data-bind="visible: facebookLoginEnabled, command: facebookCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_FACEBOOK'">
+                                                                        <i class="icon-facebook-alt"></i>
+                                                                    </a>
+                                                                    <a href="#" tabindex="-1" class="social-button"
+                                                                        data-bind="visible: twitterLoginEnabled, command: twitterCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_TWITTER'">
+                                                                        <i class="icon-twitter"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="signMeLabel mongol_keep1" data-bind="visible: signMeVisibility, component: {
+>>>>>>> develop
                                  name: 'CheckboxSimple',
                                  params: {
                                      label: 'LOGIN/LABEL_SIGN_ME',
@@ -157,23 +170,24 @@
                                      value: signMe
                                  }
                              }">
-
-                                                    </div>
-                                                    <a class="signup_a"
-                                                        href="http://localhost:8888/halgai-email/v/0.0.0/regist/regist.html"
-                                                        data-i18n="LOGIN/LABEL_REGISTRATION"></a>
-                                                    <a class="mog_signup"
-                                                        href="http://localhost:8888/halgai-email/v/0.0.0/regist/forgotpw.html"
-                                                        target="_blank" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
-                                                </div>
-                                            </div>
-                                            <div class="VIP">
-                                                <a class="vip_a"
-                                                    href="http://localhost:8888/halgai-email/v/0.0.0/regist/setPsw.html"
-                                                    target="_blank">
-                                                    <img class="mongol_vip" src="halgai/v/0.0.0/regist/mogvip.png">
-                                                </a>
-                                            </div>
+                                                                    <<<<<<< HEAD </div>
+                                                                        <a class="signup_a"
+                                                                            href="http://localhost:8888/halgai-email/v/0.0.0/regist/regist.html"
+                                                                            data-i18n="LOGIN/LABEL_REGISTRATION"></a>
+                                                                        <a class="mog_signup"
+                                                                            href="http://localhost:8888/halgai-email/v/0.0.0/regist/forgotpw.html"
+                                                                            target="_blank"
+                                                                            data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="VIP">
+                                                                <a class="vip_a"
+                                                                    href="http://localhost:8888/halgai-email/v/0.0.0/regist/setPsw.html"
+                                                                    target="_blank">
+                                                                    <img class="mongol_vip"
+                                                                        src="halgai/v/0.0.0/regist/mogvip.png">
+                                                                </a>
+                                                            </div>
                                         </form>
                                     </div>
                                     <div class="tab-pane" id="share">
@@ -224,26 +238,58 @@
                         <span class="i18n" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
                     </a>
                 </span>
+                =======
+
             </div>
-
-            <div class="wrapper-parent">
-                <div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}">
-                    ko template: { name: 'LoginWelcome' }
-                    <!-- /ko -->
-                </div>
-
-                <div class="e-languages thm-languages plugin-mark-Login-BottomFooter"
-                    data-bind="visible: allowLanguagesOnLogin() && socialLoginEnabled()">
-                    <label class="flag-selector">
-                        <i data-bind="css: langRequest() ? 'icon-spinner animated' : 'icon-world'"></i>
-                        &nbsp;&nbsp;
-                        <span class="flag-name" tabindex="0"
-                            data-bind="text: languageFullName, click: selectLanguage, onSpace: selectLanguage, onEnter: selectLanguage, onTab: selectLanguageOnTab"></span>
-                    </label>
-                </div>
-                {{INCLUDE/BottomFooter/PLACE}}
-        </center>
+            <a class="signup_a" href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/Register.html"
+                data-i18n="LOGIN/LABEL_REGISTRATION" data-bind="click: gotoRegisterCommand"></a>
+            <a class="mog_signup" href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/FindPassword.html"
+                target="_blank" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD" data-bind="click: gotoFindPassword"></a>
     </div>
-    <a href="#" onclick="return false;"></a>
-    <div class="loginAfter"></div>
+</div>
+<div class="VIP">
+    <a class="vip_a" href="http://localhost:8888/halgai/v/0.0.0/app/templates/Views/User/SetPsw.html" target="_blank">
+        <img class="mongol_vip" src="halgai/v/0.0.0/regist/mogvip.png">
+    </a>
+</div>
+</form>
+<div class="halgai_box" id="weixin_login" style="display:none;">
+    <div>
+        <a class="mogolo_account" data-bind="click: switchTabCommand"><img src="halgai/v/0.0.0/regist/weixintab.png"
+                class="mglpc_icon" id="pc_icon_login"></a>
+    </div>
+    <div>
+        <img class="erweima" src="halgai/v/0.0.0/regist/mogolweixin.png">
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+>>>>>>> develop
+</div>
+
+<div class="wrapper-parent">
+    <div class="wrapper loginWelcomeForm thm-login-text" data-bind="css: {'welcome-on': welcome}">
+        ko template: { name: 'LoginWelcome' }
+        <!-- /ko -->
+    </div>
+
+    <div class="e-languages thm-languages plugin-mark-Login-BottomFooter"
+        data-bind="visible: allowLanguagesOnLogin() && socialLoginEnabled()">
+        <label class="flag-selector">
+            <i data-bind="css: langRequest() ? 'icon-spinner animated' : 'icon-world'"></i>
+            &nbsp;&nbsp;
+            <span class="flag-name" tabindex="0"
+                data-bind="text: languageFullName, click: selectLanguage, onSpace: selectLanguage, onEnter: selectLanguage, onTab: selectLanguageOnTab"></span>
+        </label>
+    </div>
+    {{INCLUDE/BottomFooter/PLACE}}
+    </center>
+</div>
+<a href="#" onclick="return false;"></a>
+<div class="loginAfter"></div>
 </div>
