@@ -1,6 +1,6 @@
 <div class="popups">
 	<div class="modal hide b-identity-content pi-min" data-bind="modal: modalVisibility">
-		<div class="modal-flex pi-flex">
+		<div class="modal-flex" style="height: 100%;">
 			<div class="modal-header g-ui-user-select-none">
 
 				<h3 class="i18nflex">
@@ -11,7 +11,7 @@
 				</h3>
 			</div>
 			<div class="modal-body pp-iden">
-				<div class="form-horizontal g-ui-user-select-none pi-form">
+				<div class="form-horizontal g-ui-user-select-none" style="display: flex;">
 					<div class="alert" data-bind="visible: '' !== submitError()">
 						<button type="button" class="close"
 							data-bind="click: function () { submitError('') }">&times;</button>
@@ -73,9 +73,9 @@
 					</div>
 				</div>
 				<hr />
-				<div class="form-horizontal g-ui-user-select-none pi-form">
+				<div class="form-horizontal g-ui-user-select-none" style="display: flex;">
 					<div class="control-group piden-mgl">
-						<div class="controls piden-ctrl pi-ctrl">
+						<div class="controls piden-ctrl" style="margin-left: 30px;">
 							<div data-bind="component: {
 								name: 'Checkbox',
 								params: {
@@ -86,12 +86,13 @@
 						</div>
 					</div>
 					<div class="control-group piden-mgl">
-						<div class="e-signature-place pi-place" data-bind="editor: signature"></div>
+						<div class="e-signature-place" style="margin-left: 20px;" data-bind="editor: signature"></div>
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer pi-footer">
-				<button type="button" class="close pi-close" data-bind="command: cancelCommand">&times;</button>
+			<div class="modal-footer" style="width: 6%;">
+				<button type="button" class="close" style="position: relative; right: 18px;"
+					data-bind="command: cancelCommand">&times;</button>
 				<a class="btn buttonAddIdentity i18nflex piden-add" data-bind="command: addOrEditIdentityCommand">
 					<i
 						data-bind="visible: !edit(), css: {'icon-user-add': !submitRequest(), 'icon-spinner animated': submitRequest()}"></i>
