@@ -7,8 +7,7 @@
 					<span class="i18n" data-i18n="POPUPS_LANGUAGES/TITLE_LANGUAGES"></span>
 				</h3>
 			</div>
-			<div class="modal-body" style="min-height: 150px;">
-
+			<div class="modal-body pl-body">
 				<div data-bind="foreach: languages">
 					<label class="lang-item" data-tooltip-i18n="off" data-tooltip-join="right" data-bind="click: function () { $root.changeLanguage(key); }, css: {'selected': selected, 'user': user},
 					tooltip: function () { return $root.languageTooltipName(key); }">
@@ -21,9 +20,8 @@
 					</label>
 				</div>
 			</div>
-			<div class="modal-footer modal-pl" style="width: 100%;">
-				<button type="button" class="close" style="right: 15px; position: relative;"
-					data-bind="command: cancelCommand">&times;</button>
+			<div class="modal-footer pl-footer">
+				<button type="button" class="close pl-close" data-bind="command: cancelCommand">&times;</button>
 			</div>
 		</div>
 	</div>
