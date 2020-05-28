@@ -12,6 +12,37 @@ mn_MON:
     TITLE_SIGN_IN_TWITTER: "Twitter ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_FORGOT_PASSWORD: "ᠨᠢᠭᠤᠴᠠ  ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ"
     LABEL_REGISTRATION: "ᠨᠡᠷ᠎ᠡ ᠪᠦᠷᠢᠳᠬᠡᠭᠦᠯᠬᠦ"
+   REGISTER:
+      REGIST_TITLE: " ᠪᠦᠷᠢᠳᠭᠡᠯ"
+      REGIST_NAME: " ᠨᠡᠷ᠎ᠡ"
+      REGIST_PASSWORD: " ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
+      REGIST_PASSWORD2: " ᠳᠤᠲᠤᠯᠠᠬᠤ"
+      REGIST_TELNO: " ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"
+      REGIST_AUTHNO: " ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
+      REGIST_AUTHCODE: " ᠳ᠋ᠤᠭᠠᠷ"
+      REGIST_BUTTON: " ᠳᠠᠨᠰᠠᠯᠠᠬᠤ"
+   FINDPASSWORD:
+      FIND_FORGOP_NAME: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠪᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
+      FIND_FORGOTP: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"
+      FIND_FORGO_BUTTON: " ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠯᠬᠤᠮ"
+   PACKAGE:
+      PACKAGE_NAME: "ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ</br>ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ "
+      PACKAGE_INPUT1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"
+      PACKAGE_CODE1: " ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
+      PACKAGE_BUTTON1: "ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠯᠬᠤᠮ"
+   VIPPACKAGE:
+      VIP_NAME: " ᠭᠡᠰᠢᠭᠦᠨ"
+      VIP_BUY: " ᠬᠢᠵᠠᠭᠠᠷ  ᠦᠭᠡᠢ"
+      VIP_BUY1: "56%  ᠰᠤᠭᠤᠯᠲᠠ"
+      VIP_BUY2: "45¥ / ᠰᠠᠷ᠎ᠠ"
+      VIP_MENBERS: "ᠬᠢᠵᠠᠭᠠᠷ  ᠦᠭᠡᠢ"
+      VIP_MENBERS1: "65¥ / ᠰᠠᠷ᠎ᠠ"
+      VIP_MENBERS2: "18G"
+      VIP_MENBERS3: "30¥ / ᠰᠠᠷ᠎ᠠ"
+   SETPSW:
+      REGIST_NAME: "ᠰᠢᠨ᠎ᠡ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
+      SETPSW_BUTTON: " ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
+      SETPSW_PASSWORD: " ᠰᠢᠨ᠎ᠡ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
    TOP_TOOLBAR:
     BUTTON_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠨᠡᠮᠡᠬᠦ"
     BUTTON_SETTINGS: "ᠳᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"

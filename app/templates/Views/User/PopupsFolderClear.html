@@ -1,14 +1,11 @@
 <div class="popups">
-	<div class="modal hide b-folder-clear-content g-ui-user-select-none modal-width pfc-folder"
-		data-bind="modal: modalVisibility">
-		<div class="modal-flex pfc-flex">
+	<div class="modal hide b-folder-clear-content g-ui-user-select-none modal-width" style="width: 15%; height: 50%;" data-bind="modal: modalVisibility">
+		<div class="modal-flex" style="height: 100%;">
 			<div class="modal-header header-width">
-
+				
 				<h3 class="i18nflex">
-					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEAR_FOLDER"
-						data-bind="visible: !clearingProcess()"></span>
-					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEARING_PROCESS"
-						data-bind="visible: clearingProcess"></span>
+					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEAR_FOLDER" data-bind="visible: !clearingProcess()"></span>
+					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEARING_PROCESS" data-bind="visible: clearingProcess"></span>
 				</h3>
 			</div>
 			<div class="modal-body body-width">
@@ -27,10 +24,9 @@
 			</div>
 			<div class="modal-footer footer-width">
 
-				<button type="button" class="close pfc-close" data-bind="command: cancelCommand">&times;</button>
+				<button type="button" class="close" style="position: relative;right: 10px;" data-bind="command: cancelCommand">&times;</button>
 				<a class="btn btn-danger buttonClear btclr-mgl" data-bind="command: clearCommand">
-					<i class="icon-fire"
-						data-bind="css: {'icon-fire': !clearingProcess(), 'icon-spinner animated white': clearingProcess()}"></i>
+					<i class="icon-fire" data-bind="css: {'icon-fire': !clearingProcess(), 'icon-spinner animated white': clearingProcess()}" ></i>
 					&nbsp;&nbsp;
 					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/BUTTON_CLEAR"></span>
 				</a>
