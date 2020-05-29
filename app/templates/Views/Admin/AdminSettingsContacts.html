@@ -1,7 +1,8 @@
 <div class="b-admin-general">
 	<div class="row" data-bind="visible: !contactsSupported">
-		<div class="alert span8" style="margin-top: 10px;">
-			<h4 data-i18n="TAB_CONTACTS/ALERT_NOTICE"></h4>
+		<div class="alert span8 ad-sc">
+			<h4 data-i18n=" TAB_CONTACTS/ALERT_NOTICE">
+			</h4>
 			<br />
 			<div data-i18n="[html]TAB_CONTACTS/HTML_ALERT_DOES_NOT_SUPPORTED"></div>
 		</div>
@@ -43,13 +44,13 @@
 			<div class="control-group">
 				<label class="control-label" data-i18n="TAB_CONTACTS/LABEL_STORAGE_DSN"></label>
 				<div class="controls">
-					<input type="text" class="span6" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-						data-bind="value: pdoDsn, saveTrigger: pdoDsnTrigger" />
+					<input type="text" class="span6" autocomplete="off" autocorrect="off" autocapitalize="off"
+						spellcheck="false" data-bind="value: pdoDsn, saveTrigger: pdoDsnTrigger" />
 					<div data-bind="saveTrigger: pdoDsnTrigger"></div>
 					<blockquote style="margin: 10px 0 0 0">
 						<p class="muted">
-mysql:host=127.0.0.1;port=3306;dbname=rainloop<br />
-pgsql:host=127.0.0.1;port=5432;dbname=rainloop
+							mysql:host=127.0.0.1;port=3306;dbname=rainloop<br />
+							pgsql:host=127.0.0.1;port=5432;dbname=rainloop
 						</p>
 					</blockquote>
 				</div>
@@ -72,8 +73,10 @@ pgsql:host=127.0.0.1;port=5432;dbname=rainloop
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<a class="btn" data-bind="command: testContactsCommand, css: { 'btn-success': testContactsSuccess, 'btn-danger': testContactsError }">
-						<i data-bind="css: {'icon-info': !testing(), 'icon-spinner animated': testing(), 'icon-white': testContactsSuccess() || testContactsError() }"></i>
+					<a class="btn"
+						data-bind="command: testContactsCommand, css: { 'btn-success': testContactsSuccess, 'btn-danger': testContactsError }">
+						<i
+							data-bind="css: {'icon-info': !testing(), 'icon-spinner animated': testing(), 'icon-white': testContactsSuccess() || testContactsError() }"></i>
 						&nbsp;&nbsp;
 						<span data-i18n="TAB_CONTACTS/BUTTON_TEST"></span>
 					</a>
@@ -92,8 +95,10 @@ pgsql:host=127.0.0.1;port=5432;dbname=rainloop
 			</div>
 			<div class="control-group">
 				<div class="controls">
-					<a class="btn" data-bind="command: testContactsCommand, css: { 'btn-success': testContactsSuccess, 'btn-danger': testContactsError }">
-						<i data-bind="css: {'icon-info': !testing(), 'icon-spinner animated': testing(), 'icon-white': testContactsSuccess() || testContactsError() }"></i>
+					<a class="btn"
+						data-bind="command: testContactsCommand, css: { 'btn-success': testContactsSuccess, 'btn-danger': testContactsError }">
+						<i
+							data-bind="css: {'icon-info': !testing(), 'icon-spinner animated': testing(), 'icon-white': testContactsSuccess() || testContactsError() }"></i>
 						&nbsp;&nbsp;
 						<span data-i18n="TAB_CONTACTS/BUTTON_TEST"></span>
 					</a>
