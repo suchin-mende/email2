@@ -63,26 +63,26 @@
 								<div class="controls padvs-cons">
 									<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
 										tabindex="NaN" style="height: 19px; display: inline-block;"
-										data-bind="command: toggleDropDownCommand">
+										data-bind="command: openSelect">
 										<span class="selectBox-label level-0" style="height: 176px;"></span>
 										<span class="selectBox-arrow">◄ ►</span>
 									</a>
 									<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-										id="drop1" style="display: none;">
+										id="drop1" style="display: none;" data-bind="component: {
+											name: 'selectBox',
+											params: {
+												options: selectedDates,
+												value: selectedDateValue,
+												optionsText: 'name',
+												optionsValue: 'id'
+											}
+										}">
 										<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 										<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 										<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 										<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 									</ul>
-									<div style="display: none;" data-bind="component: {
-									name: 'Select',
-									params: {
-										options: selectedDates,
-										value: selectedDateValue,
-										optionsText: 'name',
-										optionsValue: 'id'
-									}
-								}">
+									<div style="display: none;">
 
 									</div>
 									<span class="selectBox-arrow"></span>
