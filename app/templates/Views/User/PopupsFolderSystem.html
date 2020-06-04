@@ -21,20 +21,20 @@
 
 							<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title=""
 								tabindex="NaN" style="height: 19px; display: inline-block;"
-								data-bind="click: toggleDropDownCommand">
+								data-bind="click: toggleDropDownCommand1">
 								<span class="selectBox-label level-0" style="height: 176px;"></span>
 								<span class="selectBox-arrow">◄ ►</span>
 							</a>
 							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-								id="drop1" style="display: none;">
+								id="drop1" style="display: none;" data-bind="options: folderSelectList, value: sentFolder,
+								optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender">
 								<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 							</ul>
 
-							<select style="display: none;" data-bind="options: folderSelectList, value: sentFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+							<select style="display: none;"></select>
 						</div>
 
 					</div>
@@ -51,15 +51,15 @@
 								<span class="selectBox-arrow">◄ ►</span>
 							</a>
 							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-								id="drop2" style="display: none;">
+								id="drop2" style="display: none;" data-bind="options: folderSelectList, value: draftFolder,
+								optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender">
 								<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 							</ul>
 
-							<select style="display: none;" data-bind="options: folderSelectList, value: draftFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: defautOptionsAfterRender"></select>
+							<select style="display: none;"></select>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -75,15 +75,15 @@
 								<span class="selectBox-arrow">◄ ►</span>
 							</a>
 							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-								id="drop3" style="display: none;">
+								id="drop3" style="display: none;" data-bind="options: folderSelectList, value: spamFolder,
+								optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender">
 								<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 							</ul>
 
-							<select style="display: none;" data-bind="options: folderSelectList, value: spamFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+							<select style="display: none;"></select>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -99,15 +99,15 @@
 								<span class="selectBox-arrow">◄ ►</span>
 							</a>
 							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-								id="drop4" style="display: none;">
+								id="drop4" style="display: none;" data-bind="options: folderSelectList, value: trashFolder,
+								optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender">
 								<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 							</ul>
 
-							<select style="display: none;" data-bind="options: folderSelectList, value: trashFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+							<select style="display: none;"></select>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -123,15 +123,15 @@
 								<span class="selectBox-arrow">◄ ►</span>
 							</a>
 							<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu"
-								id="drop5" style="display: none;">
+								id="drop5" style="display: none;" data-bind="options: folderSelectList, value: archiveFolder,
+								optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender">
 								<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
 								<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
 							</ul>
 
-							<select style="display: none;" data-bind="options: folderSelectList, value: archiveFolder,
-							optionsText: 'name', optionsValue: 'id', optionsAfterRender: $root.defautOptionsAfterRender"></select>
+							<select style="display: none;"></select>
 						</div>
 					</div>
 				</div>
