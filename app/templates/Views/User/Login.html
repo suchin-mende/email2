@@ -40,7 +40,7 @@
                                                     data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                                                     <div class="mongolweixin">
                                                         <a data-bind="click: switchTabCommand">
-                                                            <img src="halgai/v/0.0.0/regist/mogolweixin.png"
+                                                            <img data-bind="attr: {'src': srcAttrWeiXin()}"
                                                                 class="mglweixin_code" id="weixin_icon_login">
                                                         </a>
                                                     </div>
@@ -142,18 +142,13 @@
                          <a class="mog_signup" data-bind="click: gotoFindPassword" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
                          </div>
                      </div>
-                     <div class="VIP">
-                         <a class="vip_a" data-bind="click: gotoVipPackage">
-                             <img class="mongol_vip"  data-bind="attr: {'src' : srcAttrPassword()}"  src="halgai/v/0.0.0/regist/mogvip.png">
-                         </a>
-                        </div>
                      </form>
                      <div class="halgai_box"  id="weixin_login"  style="display:none;">
                         <div>
-                             <a class="mogolo_account"  data-bind="click: switchTabCommand"><img src="halgai/v/0.0.0/regist/weixintab.png" class="mglpc_icon" id="pc_icon_login"></a>
+                             <a class="mogolo_account"  data-bind="click: switchTabCommand"><img data-bind="attr: {'src': srcAttrPc()}" id="pc_icon_login"></a>
                         </div>
-                        <div>
-                            <img class="erweima" src="halgai/v/0.0.0/regist/mogolweixin.png">
+                        <div class="mogolo_erweima">
+                            <img class="erweima" data-bind="attr: {'src': srcAttrLanguage()}">
                         </div>
                     </div>
                 </div>
