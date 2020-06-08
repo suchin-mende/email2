@@ -8,18 +8,18 @@
     </span>
 </input>
    
-    <img src="assets/email.png" class="picture">
+    <img data-bind="attr: {'src': srcAttrEmail( )}" class="picture">
     <input class="mo_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD"></input>
-    <img src="assets/password.png" class="pi_right"  >
+    <img data-bind="attr: {'src': srcAttrPassword( )}" class="pi_right"  >
     <input  class="mog_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD2"></input>
-    <img src="assets/password.png" class="pic_right"  >
+    <img data-bind="attr: {'src': srcAttrPassword()}" class="pic_right"  >
     <input class="mogo_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_TELNO"></input>
-    <img src="assets/mobile-phone.png"  class="pictu_right"  >
+    <img data-bind="attr: {'src': srcAttrPhone( )}" class="pictu_right"  >
     <input class="mogol_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_AUTHNO"></input>
-    <img src="assets/verification_code.png" class="picture_right"  >
+    <img data-bind="attr: {'src': srcAttrVerifcation( )}" class="picture_right"  >
     <button class="code_button" data-i18n="REGISTER/REGIST_AUTHCODE" ></button>
     <a class="vip_a" data-bind="click: gotoVipPackage">
-        <img class="mongol_viprg" src="assets/VIP.png">
+        <img class="mongol_viprg" data-bind="attr: {'src': srcAttrVip( )}">
     </a>
     <button class="regist_button" data-i18n="REGISTER/REGIST_BUTTON"></button>
 </div>
