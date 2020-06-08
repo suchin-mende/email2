@@ -45,7 +45,7 @@
                                                         </a>
                                                     </div>
 
-                                                    <div class="input-append">
+                                                    <div class="input-append mgl_rotate">
                                                         <input type="email"
                                                             class="i18n input-block-level inputEmail checkAutocomplete mongolo_email"
                                                             name="RainLoopEmail" id="RainLoopEmail" autocomplete="email"
@@ -57,7 +57,7 @@
                                                 </div>
                                                 <div class="controls"
                                                     data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
-                                                    <div class="input-append">
+                                                    <div class="input-append mol_tran">
                                                         <input type="password"
                                                             class="i18n input-block-level inputPassword checkAutocomplete email_passwordemail mogol_pass"
                                                             name="RainLoopPassword" id="RainLoopPassword"
@@ -144,7 +144,7 @@
                      </div>
                      <div class="VIP">
                          <a class="vip_a" data-bind="click: gotoVipPackage">
-                             <img class="mongol_vip" src="halgai/v/0.0.0/regist/mogvip.png">
+                             <img class="mongol_vip"  data-bind="attr: {'src' : srcAttrPassword()}"  src="halgai/v/0.0.0/regist/mogvip.png">
                          </a>
                         </div>
                      </form>
