@@ -1,28 +1,51 @@
-<form  class="regist_box">
+<form class="regist_box">
 
     <h2 class="mongol_regist"  data-i18n="REGISTER/REGIST_TITLE"></h2>
-    
-    <div class="re-input">  
-    <input class="m_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_NAME">
-    <span class="regist_halg">
-        <i class="halg">@halgai.com</i>
-    </span>
-</input>
-   
-    <img data-bind="attr: {'src': srcAttrEmail( )}" class="picture">
-    <input class="mo_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD"></input>
-    <img data-bind="attr: {'src': srcAttrPassword( )}" class="pi_right"  >
-    <input  class="mog_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD2"></input>
-    <img data-bind="attr: {'src': srcAttrPassword()}" class="pic_right"  >
-    <input class="mogo_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_TELNO"></input>
-    <img data-bind="attr: {'src': srcAttrPhone( )}" class="pictu_right"  >
-    <input class="mogol_regist regist_mgl" data-i18n="[placeholder]REGISTER/REGIST_AUTHNO"></input>
-    <img data-bind="attr: {'src': srcAttrVerifcation( )}" class="picture_right"  >
-    <button class="code_button" data-i18n="REGISTER/REGIST_AUTHCODE" ></button>
-    <a class="vip_a" data-bind="click: gotoVipPackage">
-        <img class="mongol_viprg" data-bind="attr: {'src': srcAttrVip( )}">
-    </a>
-    <button class="regist_button" data-i18n="REGISTER/REGIST_BUTTON"></button>
-</div>
+                    <div class="mgl_row" style="display: flex;">
+                        <div class="span4 sp4-mgl">
+                            <div class="control-group reg-mgl">
+                                
+                                <div class="controls padvs-cons mogl_padcs">
+                                    <input class="uiInput inputFrom input-mgl mgol_in" data-i18n="[placeholder]REGISTER/REGIST_NAME" />
+                                    <span class="regist_halg">
+                                        <i class="halg">@halgai.com</i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="control-group reg-mgl">
+                                
+                                <div class="controls padvs-cons">
+                                    <input class="uiInput inputFrom input-mgl mgol_in" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD" />
+                                    <!-- <img data-bind="attr: {'src': srcAttrPassword( )}" class="pi_right"  > -->
+                                </div>
+                            </div>
+                            <div class="control-group reg-mgl">
+                                
+                                <div class="controls padvs-cons">
+                                    <input class="uiInput inputFrom input-mgl mgol_in" data-i18n="[placeholder]REGISTER/REGIST_PASSWORD2" />
+                                    <!-- <img data-bind="attr: {'src': srcAttrPassword()}" class="pic_right"  > -->
+                                </div>
+                            </div>
+                            <div class="control-group reg-mgl">
+                                
+                                <div class="controls padvs-cons">
+                                    <input class="uiInput inputFrom input-mgl mgol_in" data-i18n="[placeholder]REGISTER/REGIST_TELNO" />
+                                    <!-- <img data-bind="attr: {'src': srcAttrPhone( )}" class="pictu_right"  > -->
+                                </div>
+                            </div>
+                            <div class="control-group reg-mgl">
+                                
+                                <div class="controls padvs-cons">
+                                    <input class="uiInput inputFrom input-mgl mgol_input" data-i18n="[placeholder]REGISTER/REGIST_AUTHNO" />
+                                    <!-- <img data-bind="attr: {'src': srcAttrVerifcation( )}" class="picture_right"  > -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="code_button" data-i18n="REGISTER/REGIST_AUTHCODE" ></button>
+                    <a class="vip_a" data-bind="click: gotoVipPackage">
+                        <img class="mongol_viprg" data-bind="attr: {'src': srcAttrVip( )}">
+                    </a>
+                    <button class="regist_button" data-i18n="REGISTER/REGIST_BUTTON"></button>
+                </form>
 
-</form>
