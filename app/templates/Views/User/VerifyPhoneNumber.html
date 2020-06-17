@@ -1,5 +1,12 @@
 <form class="forgotpw_box">
-
+    <div class="alert alertError" data-bind="visibleAnimated: '' !== submitError()">
+        <button type="button" class="close" data-bind="click: function () { submitError('') }">&times;</button>
+        <span data-bind="text: submitError"></span>
+        <div data-bind="visible: '' !== submitErrorAddidional()">
+            <br />
+            <span data-bind="text: submitErrorAddidional"></span>
+        </div>
+    </div>
     <h2 class="mongol_regist"  data-i18n="VERIFY/VERIFY_NAME"></h2>
 					<div class="mgl_row_sow" style="display: flex;">
 						<div class="span4 sp4-mgl">
@@ -11,7 +18,8 @@
                                 <button class="mongol_code1">
                                     <span data-i18n="VERIFY/VERIFY_BOX2"></span>
                                 </button>
-                                <button type="submit" class="forgotpw_butto monglo_button1" data-i18n="VERIFY/VERIFY_BOX3" data-bind="click: gotoSetPassword" ></button>
+                                <button type="submit" class="forgotpw_butto monglo_button1 btn btn-large btn-block buttonLogin mong_button"
+                                data-bind="command: submitCommand" data-i18n="VERIFY/VERIFY_BOX3" data-bind="click: gotoSetPassword" ></button>
 							</div>
 						</div>
                     </div>    
