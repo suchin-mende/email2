@@ -25,7 +25,7 @@
             </div>
             <div class="wrapper-parent">
                 <div class="container">
-                    <div class="row">
+                    <div>
                         <div class="col-lg-12">
                             <div class="tabbable">
                                 <div class="tab-content">
@@ -34,16 +34,17 @@
                                             class="wrapper submitting-pane loginForm thm-login thm-login-text"
                                             action="#/"
                                             data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
-                                            <div>
+                                            <div  class="login-flex">
+                                                <div class="mongolweixin">
+                                                    <a data-bind="click: switchTabCommand">
+                                                        <img data-bind="attr: {'src': srcAttrWeiXin()}"
+                                                            class="mglweixin_code" id="weixin_icon_login">
+                                                    </a>
+                                                </div>
                                                 {{INCLUDE/TopControlGroup/PLACE}}
-                                                <div class="controls plugin-mark-Login-TopControlGroup"
+                                                <div class="controls mog_controls plugin-mark-Login-TopControlGroup"
                                                     data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
-                                                    <div class="mongolweixin">
-                                                        <a data-bind="click: switchTabCommand">
-                                                            <img data-bind="attr: {'src': srcAttrWeiXin()}"
-                                                                class="mglweixin_code" id="weixin_icon_login">
-                                                        </a>
-                                                    </div>
+                                                    
 
                                                     <div class="input-append mgl_rotate">
                                                         <input type="email"
@@ -65,7 +66,7 @@
                                                             autocapitalize="off" spellcheck="false"
                                                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
                                                             data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
-                                                        <span class="add-on" tabindex="-1" data-tooltip-join="left"
+                                                        <span class="mgo_add_on" tabindex="-1" data-tooltip-join="left"
                                                             data-bind="command: submitCommand, tooltip: ''">
                                                             <i class="icon-key"
                                                                 data-bind="visible: '' === password()"></i>
@@ -108,6 +109,16 @@
                                                         data-bind="command: submitCommand">
                                                         <span class="mong_span" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
                                                     </button>
+                                                    <div class="signMeLabel mongol_keep1" data-bind="visible: signMeVisibility, component: {
+                                                        name: 'CheckboxSimple',
+                                                        params: {
+                                                            label: 'LOGIN/LABEL_SIGN_ME',
+                                                            labelAnimated: true,
+                                                            value: signMe
+                                                        }
+                                                    }">
+                            
+                                                </div>
                                                 </div>
                                                 <div class="controls clearfix mglcler">
                                                     <div class="pull-right social-buttons">
@@ -128,16 +139,7 @@
                                                             <i class="icon-twitter"></i>
                                                         </a>
                                                     </div>
-                                                    <div class="signMeLabel mongol_keep1" data-bind="visible: signMeVisibility, component: {
-                                 name: 'CheckboxSimple',
-                                 params: {
-                                     label: 'LOGIN/LABEL_SIGN_ME',
-                                     labelAnimated: true,
-                                     value: signMe
-                                 }
-                             }">
-     
-                         </div>
+                                                    
                          <a class="signup_a"  data-bind="click: gotoRegisterCommand" data-i18n="LOGIN/LABEL_REGISTRATION"></a>
                          <a class="mog_signup" data-bind="click: gotoFindPassword" target="_blank"  data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
                          </div>
