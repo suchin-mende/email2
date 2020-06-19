@@ -1,9 +1,12 @@
-<!-- <div class="b-login-content">
-<div class="loginFormWrapper">
-<div class="wrapper-parent">
-    <div class="container"> -->
 <form class="regist_box">
-
+    <div class="alert alertError" data-bind="visibleAnimated: '' !== submitError()">
+        <button type="button" class="close" data-bind="click: function () { submitError('') }">&times;</button>
+        <span data-bind="text: submitError"></span>
+        <div data-bind="visible: '' !== submitErrorAddidional()">
+            <br />
+            <span data-bind="text: submitErrorAddidional"></span>
+        </div>
+    </div>
     <h2 class="mongol_regist"  data-i18n="REGISTER/REGIST_TITLE"></h2>
                     <div class="mgl_row" style="display: flex;">
                         <div class="span4 sp4-mgl">
@@ -48,7 +51,14 @@
                             </div>
                                     <button class="code_button mgo_code" data-i18n="REGISTER/REGIST_AUTHCODE" ></button>
                                 
-                                <button class="regist_button" data-i18n="REGISTER/REGIST_BUTTON"></button>
+                                <button class="regist_button btn btn-large btn-block buttonLogin mong_button"
+                                data-bind="command: submitCommand"  data-i18n="REGISTER/REGIST_BUTTON"></button>
+                                <!-- <button type="submit"
+                                class="btn btn-large btn-block buttonLogin mong_button"
+                                data-bind="command: submitCommand">
+                                <span class="mong_span" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                            </button> -->
+                            
                             </div>
                         </div>
                     </div>
@@ -58,8 +68,3 @@
                     </a>
                     
                 </form>
-    <!-- </div>
-</div>
-</div>
-
-</div> -->
