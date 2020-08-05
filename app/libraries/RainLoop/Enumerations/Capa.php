@@ -11,6 +11,7 @@ class Capa
 	const PREFETCH = 'PREFETCH';
 	const GRAVATAR = 'GRAVATAR';
 	const THEMES = 'THEMES';
+	const PERSONALS = 'PERSONALS';
 	const USER_BACKGROUND = 'USER_BACKGROUND';
 	const SIEVE = 'SIEVE';
 	const FILTERS = 'FILTERS';
