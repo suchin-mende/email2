@@ -41,10 +41,22 @@
 			define('APP_DEV_VERSION', '0.0.0');
 			define('APP_GOOGLE_ACCESS_TOKEN_PREFIX', ':GAT:');
 			define('APP_WEB_SITE', 'http://www.halgai.com/');
-			define('APP_API_PATH', 'http://api.halgai.com/');
+			// define('APP_API_PATH', 'http://api.halgai.com/');
+			define('APP_API_PATH', 'https://api.mongol.email/');
+			define('APP_API_COMPANY', 'halgai');
+			define('APP_API_VERSION', 'v1');
+			define('APP_API_SERVICE_ID', '1');
+			define('APP_API_COMPANY_ID', '1');
+			define('APP_API_KEY_TX', 'Email-api-key');
 			define('APP_STATUS_PATH', 'http://status.halgai.com/');
 			define('APP_REPOSITORY_PATH', 'http://repository.halgai.com/v1/');
 			define('APP_REPO_CORE_FILE', 'http://repository.halgai.com/v2/core.{{channel}}.json');
+			
+			// define('APP_API_COMPANY', 'mongol');
+			// define('APP_API_USER', 'user');
+
+			
+			
 
 			$sCustomDataPath = '';
 			$sCustomConfiguration = '';
