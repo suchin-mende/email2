@@ -18,7 +18,7 @@
                     <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/"
                         data-bind="submit: submitForm, css: {'errorAnimated': formError, 'submitting': submitRequest()},">
                         <div>
-                            <h3 class="mongol_regist register-h3">邮箱注册</h3>
+                            <h3 class="mongol_regist register-h3" data-i18n="REGISTER/LABE_LTITLE"></h3>
                         </div>
                         <div id="VipPackageInfo" style="display: none;">
                             <p class="" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="controls-register controls plugin-mark-Login-TopControlGroup">
+                        <div class="register-mongol-input controls-register controls plugin-mark-Login-TopControlGroup">
                             <div class="input-append-mongol">
                                 <input type="email"
                                     class="input-padding i18n input-block-level inputEmail checkAutocomplete"
@@ -45,40 +45,40 @@
                             </div>
                         </div>
                         
-                        <div class="controls controls-register">
+                        <div class="register-mongol-input controls controls-register">
                             <div class="input-append-mongol">
                                 <input type="password" minlength="6" maxlength="20"
-                                    class="input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
                                     data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
                                     data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" />
                                 <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
                             </div>
                         </div>
 
-                        <div class="controls controls-register">
+                        <div class="register-mongol-input controls controls-register">
                             <div class="input-append-mongol">
                                 <input type="password" minlength="6" maxlength="20"
-                                    class="input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
                                     data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest"
                                     data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" />
                                 <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
                             </div>
                         </div>
 
-                        <div class="controls controls-register">
+                        <div class="register-mongol-input controls controls-register">
                             <div class="input-append-mongol">
                                 <input type="tel" maxlength="11"
-                                    class="input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
                                     data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest"
                                     data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" />
                                 <img data-bind="attr: {'src': srcAttrPhone( )}" class="right">
                             </div>
                         </div>
 
-                        <div class="controls controls-register">
+                        <div class="register-mongol-input controls controls-register">
                             <div class="input-append-mongol">
                                 <input type="tel" maxlength="6"
-                                    class="input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
                                     data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest"
                                     data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE" />
                             </div>
@@ -92,7 +92,7 @@
                         <div class="controls controls-register register-subminbutton-site">
                             <div class="input-append-mongol">
                                 <button type="submit" data-bind="command: submitCommand"
-                                    class="regist_button btn btn-large btn-block buttonLogin">
+                                    class="register-mongol-button regist_button btn btn-large btn-block buttonLogin">
                                     <span data-i18n="REGISTER/LABEL_REGISTRATION" id="registe"></span>
                                 </button>
                             </div>
