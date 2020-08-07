@@ -47,13 +47,15 @@
 			define('APP_API_VERSION', 'v1');
 			define('APP_API_SERVICE_ID', '1');
 			define('APP_API_COMPANY_ID', '1');
+			define('APP_API_USER', 'user');
 			define('APP_API_KEY_TX', 'Email-api-key');
 			define('APP_STATUS_PATH', 'http://status.halgai.com/');
 			define('APP_REPOSITORY_PATH', 'http://repository.halgai.com/v1/');
 			define('APP_REPO_CORE_FILE', 'http://repository.halgai.com/v2/core.{{channel}}.json');
 			
+			
 			// define('APP_API_COMPANY', 'mongol');
-			// define('APP_API_USER', 'user');
+			
 
 			
 			
