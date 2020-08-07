@@ -222,10 +222,11 @@ class Application extends \RainLoop\Config\AbstractConfig
 			),
 
 			'capa' => array(
+				'settings' => array(true),
 				'folders' => array(true),
+				'personals' => array(true),
 				'composer' => array(true),
 				'contacts' => array(true),
-				'settings' => array(true),
 				'quota' => array(true),
 				'help' => array(true),
 				'reload' => array(true),
