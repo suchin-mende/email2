@@ -1,0 +1,75 @@
+<div class="b-settings-folders g-ui-user-select-none row">
+    <div class="span8 width100-on-mobile" style="display: flex;">
+        <div class="form-horizontal sf-mgl">
+            <div class="legend">
+                <span class="i18n i18nflex" data-i18n="SETTINGS_PERSONALS/LEGEND_PERSONALS"></span>
+                <!-- <i class="icon-spinner animated" style="margin-top: 5px"></i> -->
+            </div>
+        </div>
+        <table class="table table-hover list-table i18nflex sf-table">
+            <colgroup>
+                <col />
+                <!-- <col style="width: 1%" />
+				<col style="width: 1%" /> -->
+                <col />
+            </colgroup>
+            <tbody>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_USERID"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                    </td>
+                </tr>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_EMAILID"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                    </td>
+                </tr>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_PHONENM"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                        <a class="btn i18nflex sp-btn" data-bind="click: phoneNmChange">
+                            <span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_CHANGE"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_PASSWORD"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                        <a class="btn i18nflex sp-btn" data-bind="click: passwordChange">
+                            <span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_CHANGE"></span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_SEX"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                    </td>
+                </tr>
+                <tr class="folder-item">
+                    <td>
+                        <span class="folder-padding"></span>
+                        <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_WECHATID"></span>
+                        <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn i18nflex sp-save" data-bind="click: phoneNmChange">
+        <span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_SAVE"></span>
+    </a>
+    <div class="span4 hide-on-mobile" style="position: relative">
+        <div class="alert alert-info" style="position: fixed">
+        </div>
+    </div>
+</div>
