@@ -43,6 +43,7 @@ mn_MON:
       LABEL_CONFIRM_PASSWOD_FORMAT: "ᠳᠤᠲᠤᠯᠠᠬᠤ"
       LABEL_CONFIRM: "确认"
       LABEL_FINDPWD: "找回密码"
+      
    PACKAGE:
       PACKAGE_NAME: "ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ "
       PACKAGE_INPUT1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"
