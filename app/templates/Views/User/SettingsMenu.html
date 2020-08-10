@@ -1,5 +1,10 @@
 <div class="b-settins-left g-ui-user-select-none">
 	<div class="b-content thm-settings-menu opacity-on-panel-disabled">
+		<a class="btn button-back btn-back" data-bind="click: backToMailBoxClick">
+			<i class="icon-left"></i>
+			&nbsp;&nbsp;
+			<span class="i18n i18n-animation" data-i18n="SETTINGS_LABELS/BUTTON_BACK"></span>
+		</a>
 		<div class="b-settings-menu menu-mgl" data-bind="foreach: menu">
 			<!-- ko if: disabled -->
 			<span class="e-item disabled">
@@ -7,7 +12,8 @@
 			</span>
 			<!-- /ko -->
 			<!-- ko ifnot: disabled -->
-			<a class="e-item selectable" href="#" data-bind="css: {'selected': selected }, attr: { 'href': $root.link(route) }">
+			<a class="e-item selectable" href="#"
+				data-bind="css: {'selected': selected }, attr: { 'href': $root.link(route) }">
 				<span class="i18n e-link e-link-mgl" data-bind="attr: { 'data-i18n': label }"></span>
 			</a>
 			<!-- /ko -->
@@ -18,8 +24,10 @@
 		<nobr>
 			<div class="btn-toolbar">
 				<div class="btn-group">
-					<a class="btn single buttonResize" data-bind="click: function () { leftPanelDisabled(!leftPanelDisabled()); }">
-						<i data-bind="css: {'icon-resize-out': leftPanelDisabled(), 'icon-resize-in': !leftPanelDisabled()}"></i>
+					<a class="btn single buttonResize"
+						data-bind="click: function () { leftPanelDisabled(!leftPanelDisabled()); }">
+						<i
+							data-bind="css: {'icon-resize-out': leftPanelDisabled(), 'icon-resize-in': !leftPanelDisabled()}"></i>
 					</a>
 				</div>
 			</div>
