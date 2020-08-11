@@ -1,28 +1,131 @@
-<form class="forgotpw_box">
-    <img data-bind="attr:{'src': srcAttrVipPackge()}" class="tupian">
-    <h2 class="mongol_members" data-i18n="VIPPACKAGE/VIP_NAME"></h2>
-					<div class="mgl_row_sow" style="display: flex;">
-						<div class="span4 sp4-mgl">
-							<div class="control-group reg-mgl">
-								<div class="controls padvs-cons mogl_padcs">
-                                    <ul class="members">
-                                        <li class="members_mgl">
-                                            <button class="menbers_mgl_heijigar" data-i18n="VIPPACKAGE/VIP_BUY" data-bind="click: gotoVipLogin"></button>
-                                            <p class="menbers_mgl_heijigar2" data-i18n="VIPPACKAGE/VIP_BUY1"></p>
-                                            <p class="menbers_mgl_heijigar3" data-i18n="VIPPACKAGE/VIP_BUY2"></p>
-                                        </li>
-                                        <li class="halgai_menbers">
-                                           <button class="halgai_menbers1" data-i18n="VIPPACKAGE/VIP_MENBERS" data-bind="click: gotoVipLogin"></button>
-                                           <p class="halgai_menbers2" data-i18n="VIPPACKAGE/VIP_MENBERS1"></p>
-                                        </li>
-                                        <li class="menbers_halgai">
-                                            <button class="menbers_halgai1" data-i18n="VIPPACKAGE/VIP_MENBERS2" data-bind="click: gotoVipLogin"></button>
-                                           <p class="menbers_halgai2" data-i18n="VIPPACKAGE/VIP_MENBERS3"></p>
-                                        </li>
-                                    </ul>
-								</div>
-							</div>
-					
-						</div>
+<div class="rl-view-model RL-Register">
+    <div class="b-login-content">
+        <div class="loginFormWrapper">
+            <center class="plugin-mark-Login-BeforeLogo">
+                <div class="wrapper-parent">
+
+                   
+                    <div class="wrapper thm-login">
+                        <div class="text-center">
+                            <img data-bind="attr:{'src': srcAttrVipPackge()}" class="vipPackage-icon-vip">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="vipPackage-h3">注册Halgai会员中心</h3>
+                        </div>
+                        <ul id="#" class="vipPag-ul">
+                            <a data-bind="click: gotoVipLoginTwo" id="two">
+                                <li id="#" class="vipPackage-site2 m-vip-simple-package-item actived">
+                                    <div class="common-msg">
+                                        <p class="title vipPag-p-one-noe">无限</p>
+                                        <p class="subtitle vipPag-p-one-tow">邮箱容量
+                                        </p>
+                                        <p class="tips vipPag-p-one-three">56.6%用户选择
+                                        </p>
+                                        <p class="title">45元/月</p>
+                                    </div>
+                                    <div class="privilege-list-wrapper">
+                                        <ul class="privilege-list">
+                                            <p class="privilege-title">特权福利</p>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>邮箱空间 无限容量</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>最大群发数量 400封</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>网盘 64G</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>超大附件 20GB</span>
+
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>尊享50项特权</span>
+                                            </li>
+                                        </ul>
+                                        <i></i>
+                                    </div>
+                                </li>
+                            </a>
+                            <a data-bind="click: gotoVipLoginThree" id="three">
+                                <li id="#" class="m-vip-simple-package-item actived">
+                                    <div class="common-msg">
+                                        <p class="title vipPag-p-tow-one">无限</p>
+                                        <p class="subtitle vipPag-p-tow-tow">邮箱容量</p>
+                                        <p class="title">60元/月</p>
+                                    </div>
+
+                                    <div class="privilege-list-wrapper">
+                                        <ul class="privilege-list">
+                                            <p>特权福利</p>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>邮箱空间 无限量</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>最大群发数量 400封</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>网盘 128GB</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>超大附件 20GB</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>尊享50项特权</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </a>
+                            <a data-bind="click: gotoVipLoginOne" id="one">
+                                <li id="#" class="vipPackage-site1 m-vip-simple-package-item actived">
+                                    <div class="common-msg">
+                                        <p class="title vipPag-p-three-noe">18GB</p>
+                                        <p class="subtitle vipPag-p-three-tow">邮箱容量
+                                        </p>
+                                        <p class="title">30/月</p>
+                                    </div>
+                                    <div class="privilege-list-wrapper">
+                                        <ul class="privilege-list">
+                                            <p>特权福利</p>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>邮箱空间 无限容量</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>最大群发数量 400封</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>网盘 64G</span>
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>超大附件 20GB</span>
+
+                                            </li>
+                                            <li>
+                                                <i class="ico ico-gold-check"></i>
+                                                <span>尊享50项特权</span>
+                                            </li>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
                     </div>
-</form>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>

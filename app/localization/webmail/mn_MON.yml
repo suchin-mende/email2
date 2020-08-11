@@ -37,6 +37,13 @@ mn_MON:
       FIND_FORGOP_NAME: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠪᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ" 
       FIND_FORGOTP: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"   
       FIND_FORGO_BU: " ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠯᠬᠤᠮ"
+      LABEL_EMAIL: "ᠨᠡᠷ᠎ᠡ"
+      LABEL_NEXT_STEP: "下一步"
+      LABEL_PASSWOD_FORMAT: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
+      LABEL_CONFIRM_PASSWOD_FORMAT: "ᠳᠤᠲᠤᠯᠠᠬᠤ"
+      LABEL_CONFIRM: "确认"
+      LABEL_FINDPWD: "找回密码"
+      
    PACKAGE:
       PACKAGE_NAME: "ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ "
       PACKAGE_INPUT1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"
@@ -59,6 +66,12 @@ mn_MON:
       Vip_LOGIN_PACKAGE_SIZE1: "ᠢᠮᠸᠯ"
       Vip_LOGIN_PACKAGE_SIZE1: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
       Vip_LOGIN_PACKAGE_SIZE3: "ᠪᠦᠷᠢᠳᠭᠡᠬᠦ"
+      LABEL_CHANGE: "修改"
+      LABEL_EMAIL: "邮箱"
+      LABEL_PASSWORD: "密码"
+      LABEL_REGISTRATION: "立即注册"
+      LABEL__VIA_PACKAGE: "套餐信息："
+      LABEL_VIP_CAPACITY: " 无限邮箱容量"
    VERIFY:
       VERIFY_NAME: "ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ"
       VERIFY_BOX1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"
