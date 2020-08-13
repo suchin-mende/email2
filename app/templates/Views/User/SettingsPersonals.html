@@ -60,6 +60,9 @@
                         <span class="folder-padding"></span>
                         <span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_WECHATID"></span>
                         <span class="folder-system-name" data-bind="text: emailTitle()"></span>
+                        <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
+                            autocapitalize="off" spellcheck="false"
+                            data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
                     </td>
                 </tr>
             </tbody>
