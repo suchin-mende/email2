@@ -2318,67 +2318,67 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 	 *
 	 * @throws \MailSo\Base\Exceptions\Exception
 	 */
-	public function DoLogin()
-	{
-		$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
-		$sPassword = $this->GetActionParam('Password', '');
-		$sLanguage = $this->GetActionParam('Language', '');
-		$bSignMe = '1' === (string) $this->GetActionParam('SignMe', '0');
+	// public function DoLogin()
+	// {
+	// 	$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
+	// 	$sPassword = $this->GetActionParam('Password', '');
+	// 	$sLanguage = $this->GetActionParam('Language', '');
+	// 	$bSignMe = '1' === (string) $this->GetActionParam('SignMe', '0');
 
-		$sAdditionalCode = $this->GetActionParam('AdditionalCode', '');
-		$bAdditionalCodeSignMe = '1' === (string) $this->GetActionParam('AdditionalCodeSignMe', '0');
+	// 	$sAdditionalCode = $this->GetActionParam('AdditionalCode', '');
+	// 	$bAdditionalCodeSignMe = '1' === (string) $this->GetActionParam('AdditionalCodeSignMe', '0');
 
-		$oAccount = null;
+	// 	$oAccount = null;
 
-		$this->Logger()->AddSecret($sPassword);
+	// 	$this->Logger()->AddSecret($sPassword);
 
-		if (
-			'sleep@sleep.dev' === $sEmail && 0 < \strlen($sPassword) &&
-			\is_numeric($sPassword) && $this->Config()->Get('debug', 'enable', false) &&
-			0 < (int) $sPassword && 30 > (int) $sPassword
-		) {
-			\sleep((int) $sPassword);
-			throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::AuthError);
-		}
+	// 	if (
+	// 		'sleep@sleep.dev' === $sEmail && 0 < \strlen($sPassword) &&
+	// 		\is_numeric($sPassword) && $this->Config()->Get('debug', 'enable', false) &&
+	// 		0 < (int) $sPassword && 30 > (int) $sPassword
+	// 	) {
+	// 		\sleep((int) $sPassword);
+	// 		throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::AuthError);
+	// 	}
 
-		try {
-			$oAccount = $this->LoginProcess(
-				$sEmail,
-				$sPassword,
-				$bSignMe ? $this->generateSignMeToken($sEmail) : '',
-				$sAdditionalCode,
-				$bAdditionalCodeSignMe
-			);
-		} catch (\RainLoop\Exceptions\ClientException $oException) {
-			if (
-				$oException &&
-				\RainLoop\Notifications::AccountTwoFactorAuthRequired === $oException->getCode()
-			) {
-				return $this->DefaultResponse(__FUNCTION__, true, array(
-					'TwoFactorAuth' => true
-				));
-			} else {
-				throw $oException;
-			}
-		}
+	// 	try {
+	// 		$oAccount = $this->LoginProcess(
+	// 			$sEmail,
+	// 			$sPassword,
+	// 			$bSignMe ? $this->generateSignMeToken($sEmail) : '',
+	// 			$sAdditionalCode,
+	// 			$bAdditionalCodeSignMe
+	// 		);
+	// 	} catch (\RainLoop\Exceptions\ClientException $oException) {
+	// 		if (
+	// 			$oException &&
+	// 			\RainLoop\Notifications::AccountTwoFactorAuthRequired === $oException->getCode()
+	// 		) {
+	// 			return $this->DefaultResponse(__FUNCTION__, true, array(
+	// 				'TwoFactorAuth' => true
+	// 			));
+	// 		} else {
+	// 			throw $oException;
+	// 		}
+	// 	}
 
-		$this->AuthToken($oAccount);
+	// 	$this->AuthToken($oAccount);
 
-		if ($oAccount && 0 < \strlen($sLanguage)) {
-			$oSettings = $this->SettingsProvider()->Load($oAccount);
-			if ($oSettings) {
-				$sLanguage = $this->ValidateLanguage($sLanguage);
-				$sCurrentLanguage = $oSettings->GetConf('Language', '');
+	// 	if ($oAccount && 0 < \strlen($sLanguage)) {
+	// 		$oSettings = $this->SettingsProvider()->Load($oAccount);
+	// 		if ($oSettings) {
+	// 			$sLanguage = $this->ValidateLanguage($sLanguage);
+	// 			$sCurrentLanguage = $oSettings->GetConf('Language', '');
 
-				if ($sCurrentLanguage !== $sLanguage) {
-					$oSettings->SetConf('Language', $sLanguage);
-					$this->SettingsProvider()->Save($oAccount, $oSettings);
-				}
-			}
-		}
+	// 			if ($sCurrentLanguage !== $sLanguage) {
+	// 				$oSettings->SetConf('Language', $sLanguage);
+	// 				$this->SettingsProvider()->Save($oAccount, $oSettings);
+	// 			}
+	// 		}
+	// 	}
 
-		return $this->TrueResponse(__FUNCTION__);
-	}
+	// 	return $this->TrueResponse(__FUNCTION__);
+	// }
 
 	/**
 	 * @param \RainLoop\Model\Account $oAccount
@@ -9549,6 +9549,22 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		unset($mResponse);
 		return $mResult;
+	}
+
+	public function DoLogin()
+	{
+		$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
+		$sPassword = $this->GetActionParam('Password', '');
+
+		$oAccount = null;
+
+		$rsp = $this->ApiServiceProvider()->login($sEmail, $sPassword);
+		$rsp = json_decode($rsp, true);
+
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\Exception();
+
+		return $this->TrueResponse(__FUNCTION__, $rsp);
 	}
 
 	/**
