@@ -49,14 +49,13 @@
                             autocapitalize="off" spellcheck="false"
                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
-                            <div class="select">
-                                <div class="domain" data-value="yeah.net" style="display: block;">@yeah.net</div>
-                                <ul class="domain-select">
-                                    <li class="" data-value="163.com">@163.com</li>
-                                    <li data-value="126.com" class="">@126.com</li>
-                                    <li data-value="yeah.net" class="active">@yeah.net</li>
-                                </ul>
-                            </div>
+                        <div class="center">
+                            <select name="sources" id="sources" class="custom-select sources" placeholder="Source Type" data-bind="click: sEmailClick">
+                              <option value="profile">Profile</option>
+                              <option value="word">Word</option>
+                              <option value="hashtag">Hashtag</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="controls ctrl-m"

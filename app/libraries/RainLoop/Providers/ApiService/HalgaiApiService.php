@@ -12,13 +12,13 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 	{
 	}
 
-	public function login($sUserCd, $sPassword)
-	{
-		return $this->post(APP_API_PATH, $this->makeRoute(array($this->getLanguage(), APP_API_VERSION, APP_API_COMPANY,APP_API_AUTH, 'login')), array(
-			'userCd' => $sUserCd,
-			'password' => $sPassword
-		));
-	}
+	// public function login($sUserCd, $sPassword)
+	// {
+	// 	return $this->post(APP_API_PATH, $this->makeRoute(array($this->getLanguage(), APP_API_VERSION, APP_API_COMPANY,APP_API_AUTH, 'login')), array(
+	// 		'userCd' => $sUserCd,
+	// 		'password' => $sPassword
+	// 	));
+	// }
 
 	public function register($sUserCd, $sUserTx,$sPassword, $sTel, $authCd, $vipPlanCd)
 	{
