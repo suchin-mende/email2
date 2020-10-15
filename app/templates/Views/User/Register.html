@@ -1,11 +1,12 @@
-<!-- <div class="rl-view-model RL-Register"> -->
 <div class="b-login-content">
+
     <div class="loginFormWrapper">
+
         <center class="plugin-mark-Login-BeforeLogo">
 
             <div class="wrapper-parent login-flex">
 
-                <div class="alert alertError" data-bind="visibleAnimated: '' !== submitError()">
+                <div class="alert alertError i18nflex" data-bind="visibleAnimated: '' !== submitError()">
                     <button type="button" class="close" data-bind="click: function () { submitError('') }">
                         &times;
                     </button>
@@ -25,104 +26,106 @@
                             <h3 class="label-h3" data-i18n="REGISTER/LABE_LTITLE"></h3>
                         </div>
 
-                        <div class="controls ctrl-m">
-                            <div class="input-append-mongol">
-                                <div id="VipPackageInfo" style="display: none;">
-                                    <p class="" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
+                        <div class="controls ctrl-m ">
+
+                            <div id="VipPackageInfo" style="display: none;">
+                                <p class="" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
+                                <div>
+                                    <div style="position: absolute;">
+                                        <p class="register-package" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                                    </div>
+                                    <div class="pricepackage">
+                                        <p class="price"></p>
+                                    </div>
                                     <div>
-                                        <div style="position: absolute;">
-                                            <p class="register-package" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                                        </div>
-                                        <div class="pricepackage">
-                                            <p class="price"></p>
-                                        </div>
-                                        <div>
-                                            <p class="alterCinck" data-i18n="VIPLOGIN/LABEL_CHANGE"
-                                                data-bind="click: gotoVipPackage"></p>
-                                        </div>
+                                        <p class="alterCinck" data-i18n="VIPLOGIN/LABEL_CHANGE"
+                                            data-bind="click: gotoVipPackage"></p>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
-                        <div class="controls ctrl-m plugin-mark-Login-TopControlGroup">
-                            <div class="input-append-mongol">
-                                <input type="email"
-                                    class="input-padding i18n input-block-level inputEmail checkAutocomplete"
-                                    autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest"
-                                    data-i18n="[placeholder]REGISTER/LABEL_EMAIL">
-                                <img data-bind="attr: {'src': srcAttrEmail()}" class="right">
-                            </div>
+                        <div class="controls ctrl-m  plugin-mark-Login-TopControlGroup">
+
+                            <input type="email"
+                                class="input-padding i18n input-block-level inputEmail checkAutocomplete"
+                                autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false"
+                                data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest"
+                                data-i18n="[placeholder]REGISTER/LABEL_EMAIL">
+                            <img data-bind="attr: {'src': srcAttrEmail()}" class="right">
+
                         </div>
 
-                        <div class="controls ctrl-m">
-                            <div class="input-append-mongol">
-                                <input type="password" minlength="6" maxlength="20"
-                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
-                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
-                                    data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" />
-                                <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
-                            </div>
+                        <div class="controls ctrl-m ">
+
+                            <input type="password" minlength="6" maxlength="20"
+                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
+                                data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" />
+                            <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
+
                         </div>
 
-                        <div class="controls ctrl-m">
-                            <div class="input-append-mongol">
-                                <input type="password" minlength="6" maxlength="20"
-                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
-                                    data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest"
-                                    data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" />
-                                <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
-                            </div>
+                        <div class="controls ctrl-m ">
+
+                            <input type="password" minlength="6" maxlength="20"
+                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest"
+                                data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" />
+                            <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
+
                         </div>
 
-                        <div class="controls ctrl-m">
-                            <div class="input-append-mongol">
-                                <input type="tel" maxlength="11"
-                                    class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete input-reg"
-                                    data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest"
-                                    data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" />
-                                <img data-bind="attr: {'src': srcAttrPhone( )}" class="right">
-                            </div>
+                        <div class="controls ctrl-m ">
+
+                            <input type="tel" maxlength="11"
+                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete input-reg"
+                                data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest"
+                                data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" />
+                            <img data-bind="attr: {'src': srcAttrPhone( )}" class="right">
+
                         </div>
 
-                        <div class="controls ctrl-m">
-                            <div class="input-append-mongol">
-                                <input type="tel" maxlength="6"
-                                    class="mongol-input login-sms input-padding i18n input-block-level inputPassword checkAutocomplete"
-                                    data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest"
-                                    data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE" />
-                                <button id="smsCode" type="submit" data-bind="command: getCodeCommand"
-                                    class="btn btn-large buttonLogin mgl_btn">
-                                    <span class="vertical-label"
-                                        data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
-                                </button>
-                            </div>
+                        <div class="controls ctrl-m ">
+
+                            <input type="tel" maxlength="6"
+                                class="mongol-input login-sms input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest"
+                                data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE" />
+
+                            <button id="smsCode" type="submit" data-bind="command: getCodeCommand"
+                                class="btn btn-large buttonLogin mgl_btn">
+                                <span class="vertical-label"
+                                    data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
+                            </button>
                         </div>
 
                         <div class="controls ctrl-m register-subminbutton-site">
-                            <div class="input-append-mongol">
-                                <button type="submit" data-bind="command: submitCommand"
-                                    class="btn btn-large buttonLogin mgl_btn">
-                                    <span class="vertical-label" data-i18n="REGISTER/LABEL_REGISTRATION"
-                                        id="registe"></span>
-                                </button>
-                            </div>
+
+                            <button type="submit" data-bind="command: submitCommand"
+                                class="btn btn-large buttonLogin mgl_btn">
+                                <span class="vertical-label" data-i18n="REGISTER/LABEL_REGISTRATION"
+                                    id="registe"></span>
+                            </button>
+
                         </div>
 
-                        <div class="controls ctrl-m i18nflex">
+                        <div class="controls ctrl-m ">
 
-                            <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_FORGET_PASSWORD"
-                                data-bind="click: gotoFindPassword">
-                            </a>
+                            <div class="login-flex">
+                                <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_FORGET_PASSWORD"
+                                    data-bind="click: gotoFindPassword">
+                                </a>
 
-                            <a class="label-a-tag" data-bind="click: gotoVipPackage">
-                                <img data-bind="attr: {'src': srcAttrVip()}" style="width: 25px;">
-                            </a>
+                                <a class="label-a-tag" data-bind="click: gotoVipPackage">
+                                    <img data-bind="attr: {'src': srcAttrVip()}" style="width: 25px;">
+                                </a>
 
-                            <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"
-                                data-bind="click: gotoLogin">
-                            </a>
+                                <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"
+                                    data-bind="click: gotoLogin">
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -131,4 +134,3 @@
         </center>
     </div>
 </div>
-<!-- </div> -->

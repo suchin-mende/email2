@@ -1,4 +1,3 @@
-<!-- <div class="rl-view-model RL-Login"> -->
 <div class="b-login-content">
 
     <div class="loginFormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
@@ -42,51 +41,56 @@
 
                     {{INCLUDE/TopControlGroup/PLACE}}
 
-                    <div class="controls mog_controls plugin-mark-Login-TopControlGroup ctrl-m"
+                    <div class="controls plugin-mark-Login-TopControlGroup ctrl-m "
                         data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
-                        <div class="input-append-mongol">
-                            <input type="email" class="i18n input-block-level inputEmail checkAutocomplete"
-                                name="RainLoopEmail" id="RainLoopEmail" autocomplete="email" autocorrect="off"
-                                autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
-                                data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
-                            <span class="add-on mongol_span" id="">@halgai.com</span>
-                        </div>
+
+                        <input type="email" class="i18n input-block-level inputEmail checkAutocomplete"
+                            name="RainLoopEmail" id="RainLoopEmail" autocomplete="email" autocorrect="off"
+                            autocapitalize="off" spellcheck="false"
+                            data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
+                            data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
+                            <div class="select">
+                                <div class="domain" data-value="yeah.net" style="display: block;">@yeah.net</div>
+                                <ul class="domain-select">
+                                    <li class="" data-value="163.com">@163.com</li>
+                                    <li data-value="126.com" class="">@126.com</li>
+                                    <li data-value="yeah.net" class="active">@yeah.net</li>
+                                </ul>
+                            </div>
                     </div>
 
                     <div class="controls ctrl-m"
                         data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
-                        <div class="input-append-mongol">
-                            <input type="password" class="i18n input-block-level inputPassword checkAutocomplete"
-                                name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password"
-                                autocorrect="off" autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
-                                data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
-                            <span tabindex="-1" data-tooltip-join="left"
-                                data-bind="command: submitCommand, tooltip: ''">
-                                <i class="icon-key" data-bind="visible: '' === password()"></i>
-                                <button type="submit" class="btn-submit-icon-wrp"
-                                    data-bind="visible: '' !== password()">
-                                    <i class="icon-right-middle login-submit-icon"></i>
-                                </button>
-                            </span>
-                        </div>
+
+                        <input type="password" class="i18n input-block-level inputPassword checkAutocomplete"
+                            name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password"
+                            autocorrect="off" autocapitalize="off" spellcheck="false"
+                            data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
+                            data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
+                        <span class="label-icon" tabindex="-1" data-tooltip-join="left"
+                            data-bind="command: submitCommand, tooltip: ''">
+                            <i class="icon-key" data-bind="visible: '' === password()"></i>
+                            <button type="submit" class="btn-submit-icon-wrp" data-bind="visible: '' !== password()">
+                                <i class="icon-right-middle login-submit-icon"></i>
+                            </button>
+                        </span>
+
                     </div>
 
                     <div class="controls ctrl-m"
                         data-bind="visible: additionalCode.visibility(), css: {'error': additionalCode.error, 'animated': additionalCode.errorAnimation}">
-                        <div class="input-append-mongol">
-                            <input type="text" class="i18n input-block-level inputAdditionalCode mongol_input"
-                                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: additionalCode, hasFocus: additionalCode.focused, disable: submitRequest"
-                                data-i18n="[placeholder]LOGIN/LABEL_VERIFICATION_CODE" />
-                            <span class="add-on">
-                                <i class="icon-key"></i>
-                            </span>
-                        </div>
+
+                        <input type="text" class="i18n input-block-level inputAdditionalCode mongol_input"
+                            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                            data-bind="textInput: additionalCode, hasFocus: additionalCode.focused, disable: submitRequest"
+                            data-i18n="[placeholder]LOGIN/LABEL_VERIFICATION_CODE" />
+                        <span class="add-on">
+                            <i class="icon-key"></i>
+                        </span>
+
                     </div>
 
-                    <div class="controls plugin-mark-Login-BottomControlGroup ctrl-m"
+                    <div class="controls plugin-mark-Login-BottomControlGroup ctrl-m "
                         data-bind="visible: additionalCode.visibility()">
                         <div class="additionalCodeSignMeLabel" data-bind="component: {
                                         name: 'CheckboxSimple',
@@ -102,12 +106,13 @@
 
                     <div class="controls controls-submit-wrp ctrl-m"
                         data-bind="css: {'display-none': hideSubmitButton}">
-                        <button type="submit" class="btn btn-large btn-block buttonLogin mgl_btn"
-                            data-bind="command: submitCommand">
-                            <span class="vertical-label" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
-                        </button>
+                        <div class="lg-flex">
+                            <button type="submit" class="btn btn-large btn-block buttonLogin mgl_btn"
+                                data-bind="command: submitCommand">
+                                <span class="vertical-label" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                            </button>
 
-                        <div class="signMeLabel i18nflex" data-bind="visible: signMeVisibility, component: {
+                            <div class="signMeLabel i18nflex" data-bind="visible: signMeVisibility, component: {
                                         name: 'CheckboxSimple',
                                         params: {
                                             label: 'LOGIN/LABEL_SIGN_ME',
@@ -115,12 +120,13 @@
                                             value: signMe
                                         }
                                     }">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="controls i18nflex ctrl-m">
+                    <div class="controls  ctrl-m">
 
-                        <div class="social-buttons">
+                        <div class="social-buttons login-flex">
                             <a href="#" tabindex="-1" class="social-button"
                                 data-bind="visible: googleGmailLoginEnabled, command: googleGmailCommand, tooltip: 'LOGIN/TITLE_SIGN_IN_GMAIL'">
                                 <i class="icon-mail"></i>
@@ -139,12 +145,14 @@
                             </a>
                         </div>
 
-                        <a class="label-a-tag" data-bind="click: gotoRegisterCommand"
-                            data-i18n="LOGIN/LABEL_REGISTRATION">
-                        </a>
-                        <a class="label-a-tag" data-bind="click: gotoFindPassword" target="_blank"
-                            data-i18n="LOGIN/LABEL_FORGOT_PASSWORD">
-                        </a>
+                        <div class="login-flex">
+                            <a class="label-a-tag" data-bind="click: gotoRegisterCommand"
+                                data-i18n="LOGIN/LABEL_REGISTRATION">
+                            </a>
+                            <a class="label-a-tag" data-bind="click: gotoFindPassword" target="_blank"
+                                data-i18n="LOGIN/LABEL_FORGOT_PASSWORD">
+                            </a>
+                        </div>
                     </div>
 
                 </form>
@@ -212,4 +220,3 @@
     <a href="#" onclick="return false;"></a>
     <div class="loginAfter"></div>
 </div>
-<!-- </div> -->
