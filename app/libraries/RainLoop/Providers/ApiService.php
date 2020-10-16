@@ -30,10 +30,10 @@ class ApiService extends \RainLoop\Providers\AbstractProvider
 	 *
 	 * @return bool
 	 */
-	public function login($sUserCd, $sPassword)
-	{
-		return $this->oDriver->login($sUserCd, $sPassword);
-	}
+	// public function login($sUserCd, $sPassword)
+	// {
+	// 	return $this->oDriver->login($sUserCd, $sPassword);
+	// }
 
 	public function register($sUserCd, $sEmailSuffix, $sPassword, $phoneNumber, $smsCode, $vipPlanCd)
 	{
