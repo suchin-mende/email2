@@ -41,7 +41,7 @@
 
                     {{INCLUDE/TopControlGroup/PLACE}}
 
-                    <div class="controls plugin-mark-Login-TopControlGroup ctrl-m "
+                    <div class="controls plugin-mark-Login-TopControlGroup ctrl-m"
                         data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
 
                         <input type="email" class="i18n input-block-level inputEmail checkAutocomplete"
@@ -50,11 +50,14 @@
                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
                         <div class="center">
-                            <select name="sources" id="sources" class="custom-select sources" placeholder="Source Type" data-bind="click: sEmailClick">
-                              <option value="profile">Profile</option>
-                              <option value="word">Word</option>
-                              <option value="hashtag">Hashtag</option>
+                            <select name="sEmail" id="sEmail" class="custom-select sources" style="display: none;" placeholder="Source Type">
+                              <option value="001">@mongol.email</option>
+                              <option value="002">@halgai.com</option>
                             </select>
+                            <a class="selectBox dropdownlist selectBox-dropdown" title="" tabindex="NaN" data-bind="click: sEmailClick">
+                                <span class="selectBox-label">Select one</span>
+                                <span class="selectBox-arrow"></span>
+                            </a>
                         </div>
                     </div>
 
