@@ -309,6 +309,7 @@ class Service
 			'{{BaseMongolCssLink}}' =>  $this->staticPath('css/mongol'.($bAppCssDebug ? '' : '.min').'.css'),
 			'{{BaseAppPolyfillsScriptLink}}' => $this->staticPath('js/'.($bAppJsDebug ? '' : 'min/').'polyfills'.($bAppJsDebug ? '' : '.min').'.js'),
 			'{{BaseAppBootScriptLink}}' => $this->staticPath('js/'.($bAppJsDebug ? '' : 'min/').'boot'.($bAppJsDebug ? '' : '.min').'.js'),
+			'{{SelectBoxScriptLink}}' => $this->staticPath('dev/Component/SelectBox.js/'.($bAppJsDebug ? '' : 'min').'.js'),
 			'{{BaseViewport}}' => $bMobile ? 'width=device-width,initial-scale=1,user-scalable=no' : 'width=950,maximum-scale=2',
 			'{{BaseContentSecurityPolicy}}' => $sContentSecurityPolicy ?
 				'<meta http-equiv="Content-Security-Policy" content="'.$sContentSecurityPolicy.'" />' : '',

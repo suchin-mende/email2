@@ -32,7 +32,7 @@ mn_MON:
       LABEL_FORGET_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ" 
       LABEL_LOGIN_ACCOUNT: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
       LABEL_MONGOL_EMAIL: "@mongol.email"
-      LABEL_HALGAI_EMAIL: "@halgai.email"
+      LABEL_HALGAI_EMAIL: "@halgai.com"
    FINDPASSWORD:
       FIND_FORGOP_NAME: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠪᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ" 
       FIND_FORGOTP: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"   
