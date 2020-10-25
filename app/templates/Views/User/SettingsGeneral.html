@@ -38,28 +38,20 @@
 				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_LAYOUT"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
-					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand1">
-					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow">◄ ►</span>
-				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop1"
-					style="display: none;" data-bind="component: {
+				<div class="selectBox dropdownlist selectBox-dropdown"
+					data-bind="component: {
 						name: 'Select',
 						params: {
 							options: layoutTypes,
 							value: layout,
 							trigger: layoutTrigger,
 							optionsText: 'name',
-							optionsValue: 'id'
+							optionsValue: 'id',
+							lg: 'mn',
+							pid: 'Pid2'
 						}
 					}">
-					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
-				</ul>
-				<div style="display: none;"></div>
+				</div>
 			</div>
 		</div>
 		<div class="control-group sg-ctrl">
@@ -67,28 +59,20 @@
 				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_EDITOR"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
-					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand2">
-					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow">◄ ►</span>
-				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop2"
-					style="display: none;" data-bind="component: {
+				<div class="selectBox dropdownlist selectBox-dropdown"
+					data-bind="component: {
 						name: 'Select',
 						params: {
 							options: editorDefaultTypes,
 							value: editorDefaultType,
 							trigger: editorDefaultTypeTrigger,
 							optionsText: 'name',
-							optionsValue: 'id'
+							optionsValue: 'id',
+							lg: 'mn',
+							pid: 'Pid3'
 						}
 					}">
-					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
-				</ul>
-				<div style="display: none;"></div>
+				</div>
 			</div>
 		</div>
 		<div class="control-group sg-ctrl">
@@ -96,28 +80,20 @@
 				<span class="i18n" data-i18n="SETTINGS_GENERAL/LABEL_MESSAGE_PER_PAGE"></span>
 			</label>
 			<div class="controls sg-cons">
-				<a class="selectBox dropdownlist selectBox-dropdown selectBox-menuShowing" title="" tabindex="NaN"
-					style="height: 19px; display: inline-block;" data-bind="click: toggleDropDownCommand3">
-					<span class="selectBox-label level-0" style="height: 176px;"></span>
-					<span class="selectBox-arrow">◄ ►</span>
-				</a>
-				<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" id="drop3"
-					style="display: none;" data-bind="component: {
+				<div class="selectBox dropdownlist selectBox-dropdown"
+					data-bind="component: {
 						name: 'Select',
 						params: {
 							options: messagesPerPageArray,
 							value: messagesPerPage,
 							trigger: mppTrigger,
 							size: 2,
-							
+							width: 80,
+							lg: 'mn',
+							pid: 'Pid4'
 						}
 					}">
-					<li class="level-0 selectBox-selected"><a rel="323">ᠪᠤᠰᠤᠳ Бусад Others</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia1</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia2</a></li>
-					<li class="level-0"><a rel="315">ᠤᠷᠤᠰ Орос Russia3</a></li>
-				</ul>
-				<div style="display: none;"></div>
+				</div>
 			</div>
 		</div>
 		<div class="control-group sg-ctrl">
