@@ -638,13 +638,13 @@ mn_MON:
     HELP_SHOW_HIDE_FOLDER: "ᠢᠯᠡᠷᠡᠭᠦᠯᠬᠦ/ ᠳᠠᠯᠳᠠᠯᠠᠬᠤᠳᠤᠭᠲᠤᠢ)"
     HELP_CHECK_FOR_NEW_MESSAGES: "ᠬᠢᠨᠠᠬᠤ/ ᠡᠰᠡ ᠬᠢᠨᠠᠬᠤ(  ᠰᠢᠨ᠎ᠡ ᠵᠠᠬᠢᠳᠠᠯ)"
    SETTINGS_ACCOUNTS:
-    LEGEND_ACCOUNTS: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤᠨ ᠤ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ"
+    LEGEND_ACCOUNTS: "ᠨᠡᠷ᠎ᠡ ᠢᠨ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ"
     LEGEND_IDENTITIES: "ᠲᠤᠳᠤᠷᠬᠠᠢᠯᠠᠯᠲᠠ ᠤᠳ"
-    LEGEND_ACCOUNTS_AND_IDENTITIES: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤ ᠪᠠ ᠲᠡᠮᠳᠡᠭ ᠤᠳ"
-    BUTTON_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤ ᠨᠡᠮᠡᠬᠦ"
+    LEGEND_ACCOUNTS_AND_IDENTITIES: "ᠨᠡᠷ᠎ᠡ ᠪᠠ ᠲᠡᠮᠳᠡᠭ ᠤᠳ"
+    BUTTON_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠨᠡᠮᠡᠬᠦ"
     BUTTON_ADD_IDENTITY: "ᠲᠡᠮᠳᠡᠭ ᠨᠡᠮᠡᠬᠦ"
     BUTTON_DELETE: "ᠬᠠᠰᠤᠬᠤ"
-    LOADING_PROCESS: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠤᠳᠠᠰᠤᠨ ᠤ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ"
+    LOADING_PROCESS: "ᠨᠡᠷ᠎ᠡ ᠢᠨ ᠵᠢᠭᠰᠠᠭᠠᠯᠲᠠ ᠰᠢᠨᠡᠴᠢᠯᠡᠬᠦ"
     DELETING_ASK: "ᠪᠠᠲᠤᠯᠭᠠᠵᠢᠭᠤᠯᠬᠤ ᠤᠤ︖"
     DEFAULT_IDENTITY_LABEL: "ᠪᠠᠷᠢᠮᠵᠢᠶ᠎ᠠ ᠬᠡᠯᠪᠡᠷᠢ"
    SETTINGS_IDENTITIES:
