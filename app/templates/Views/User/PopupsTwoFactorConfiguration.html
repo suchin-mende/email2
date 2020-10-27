@@ -28,14 +28,14 @@
 						</div>
 					</div>
 					<div class="control-group ptfc-ctrl">
-						<label class="control-label">
+						<label class="control-label ptfc-label">
 							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_USER"></span>
 						</label>
-						<div class="controls ptfc-cons" style="padding-top: 5px;">
+						<div class="controls ptfc-cons" style="padding-top: 5px; margin-left: 6px;">
 							<strong><span data-bind="text: viewUser"></span></strong>
 							<div style="padding-top: 15px;" data-bind="visible: lock">
 								<blockquote>
-									<p class="muted i18n width100-on-mobile" style="width: 550px"
+									<p class="muted i18n width100-on-mobile"
 										data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_REQUIRE_DESC"></p>
 								</blockquote>
 							</div>
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 					<div class="control-group ptfc-ctrl" data-bind="visible: '' !== viewSecret()">
-						<label class="control-label">
+						<label class="control-label ptfc-label">
 							<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_SECRET"></span>
 						</label>
 						<div class="controls ptfc-cons" style="padding-top: 5px;">
@@ -61,7 +61,7 @@
 							<br />
 							<br />
 							<blockquote>
-								<p class="muted i18n width100-on-mobile" style="width: 550px"
+								<p class="muted i18n width100-on-mobile"
 									data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_SECRET_DESC"></p>
 							</blockquote>
 							<!-- ko if: '' !== viewUrl() -->
@@ -77,10 +77,10 @@
 						</label>
 						<div class="controls ptfc-cons" style="padding-top: 5px;">
 							<pre data-bind="text: viewBackupCodes"
-								style="width: 230px; height: 125px; word-break: break-word;"></pre>
+								style="word-break: break-word;"></pre>
 							<br />
 							<blockquote>
-								<p class="muted i18n width100-on-mobile" style="width: 550px"
+								<p class="muted i18n width100-on-mobile"
 									data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_BACKUP_CODES_DESC"></p>
 							</blockquote>
 						</div>
