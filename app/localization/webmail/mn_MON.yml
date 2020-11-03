@@ -27,7 +27,7 @@ mn_MON:
       LABEL_AFFIRM_PASSWORD: "ᠳᠤᠲᠤᠯᠠᠬᠤ"
       LABEL_CELLPHONE_NUMBER: "ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"  
       LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
-      LABEL_CELLPHONE_VERIFICATION_CODE: "ᠳ᠋ᠤᠭᠠᠷ"
+      LABEL_CELLPHONE_VERIFICATION_CODE: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
       LABEL_REGISTRATION: "ᠪᠦᠷᠢᠳᠭᠡᠬᠦ"
       LABEL_FORGET_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ" 
       LABEL_LOGIN_ACCOUNT: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
@@ -69,7 +69,7 @@ mn_MON:
       LABEL_EMAIL: "ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"
       LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
       LABEL_REGISTRATION: "ᠪᠦᠷᠢᠳᠬᠡᠭᠦᠯᠬᠦ"
-      LABEL__VIA_PACKAGE: "ᠪᠠᠭᠴᠠ："
+      LABEL__VIA_PACKAGE: " ᠪᠠᠭᠴᠠ᠄ "
       LABEL_VIP_CAPACITY: " ᠬᠢᠵᠠᠭᠠᠷ ᠦᠭᠡᠢ"
    VERIFY:
       VERIFY_NAME: "ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ"
@@ -86,7 +86,7 @@ mn_MON:
     BUTTON_ADD_ACCOUNT: "ᠨᠡᠷ᠎ᠡ ᠨᠡᠮᠡᠬᠦ"
     BUTTON_SETTINGS: "ᠳᠤᠬᠢᠷᠠᠭᠤᠯᠤᠯᠲᠠ"
     BUTTON_HELP: "ᠲᠠᠢᠯᠪᠤᠷᠢ"
-    BUTTON_LOGOUT: "ᠨᠡᠷ᠎ᠡ ᠬᠠᠭᠠᠬᠤ"
+    BUTTON_LOGOUT: "ᠭᠠᠷᠬᠤ"
    MOBILE:
     BUTTON_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠳᠠᠰᠤᠨ ᠊ᠤ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"
     BUTTON_DESKTOP_VERSION: "ᠺᠣᠮᠫᠢᠦ᠋ᠲ᠋ᠧᠷ ᠊ᠤᠨ ᠬᠤᠪᠢᠯᠠᠪᠤᠷᠢ"

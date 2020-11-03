@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <form class="wrapper submitting-pane loginForm thm-login thm-login-text" action="#/"
+                <form class="wrapper loginForm thm-login" action="#/"
                     data-bind="submit: submitForm, css: {'errorAnimated': formError, 'submitting': submitRequest()},">
 
                     <div class="login-flex">
@@ -28,20 +28,10 @@
 
                         <div class="controls ctrl-m ">
 
-                            <div id="VipPackageInfo" style="display: none;">
-                                <p class="" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
-                                <div>
-                                    <div style="position: absolute;">
-                                        <p class="register-package" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                                    </div>
-                                    <div class="pricepackage">
-                                        <p class="price"></p>
-                                    </div>
-                                    <div>
-                                        <p class="alterCinck" data-i18n="VIPLOGIN/LABEL_CHANGE"
-                                            data-bind="click: gotoVipPackage"></p>
-                                    </div>
-                                </div>
+                            <div class="login-flex" id="VipPackageInfo" style="display: none; padding-right: 10px;">
+                                <p class="tag-p vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
+                                <p class="tag-p" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                                <p class="tag-p vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
                             </div>
 
                         </div>
@@ -49,62 +39,58 @@
                         <div class="controls ctrl-m  plugin-mark-Login-TopControlGroup">
 
                             <input type="email"
-                                class="input-padding i18n input-block-level inputEmail checkAutocomplete"
+                                class="vertical-input"
                                 autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false"
                                 data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest"
                                 data-i18n="[placeholder]REGISTER/LABEL_EMAIL">
-                            <img data-bind="attr: {'src': srcAttrEmail()}" class="right">
 
                         </div>
 
                         <div class="controls ctrl-m ">
 
                             <input type="password" minlength="6" maxlength="20"
-                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                class="vertical-input"
                                 data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
                                 data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" />
-                            <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
 
                         </div>
 
                         <div class="controls ctrl-m ">
 
                             <input type="password" minlength="6" maxlength="20"
-                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                class="vertical-input"
                                 data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest"
                                 data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" />
-                            <img data-bind="attr: {'src': srcAttrPassword()}" class="right">
 
                         </div>
 
                         <div class="controls ctrl-m ">
 
                             <input type="tel" maxlength="11"
-                                class="mongol-input input-padding i18n input-block-level inputPassword checkAutocomplete input-reg"
+                                class="vertical-input"
                                 data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest"
                                 data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" />
-                            <img data-bind="attr: {'src': srcAttrPhone( )}" class="right">
 
                         </div>
 
                         <div class="controls ctrl-m ">
 
                             <input type="tel" maxlength="6"
-                                class="mongol-input login-sms input-padding i18n input-block-level inputPassword checkAutocomplete"
+                                class="vertical-input r-bod"
                                 data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest"
                                 data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE" />
-
-                            <button id="smsCode" type="submit" data-bind="command: getCodeCommand"
-                                class="btn btn-large buttonLogin mgl_btn">
-                                <span class="vertical-label"
-                                    data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
-                            </button>
                         </div>
 
                         <div class="controls ctrl-m register-subminbutton-site">
 
+                            <button id="smsCode" type="submit" data-bind="command: getCodeCommand"
+                                class="btn mgl_btn">
+                                <span class="vertical-label"
+                                    data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
+                            </button>
+
                             <button type="submit" data-bind="command: submitCommand"
-                                class="btn btn-large buttonLogin mgl_btn">
+                                class="btn mgl_btn">
                                 <span class="vertical-label" data-i18n="REGISTER/LABEL_REGISTRATION"
                                     id="registe"></span>
                             </button>
@@ -113,7 +99,7 @@
 
                         <div class="controls ctrl-m ">
 
-                            <div class="login-flex">
+                            <div class="login-flex" style="padding-left: 10px;">
                                 <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_FORGET_PASSWORD"
                                     data-bind="click: gotoFindPassword">
                                 </a>
@@ -129,8 +115,13 @@
 
                         </div>
                     </div>
+
                 </form>
+
             </div>
+
         </center>
+
     </div>
+
 </div>
