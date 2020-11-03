@@ -29,7 +29,7 @@
                 </div>
                 <!-- <div class="container"> -->
                 <!-- <div class="tab-pane active" id="info"> -->
-                <form id="email_login" class="wrapper submitting-pane loginForm thm-login thm-login-text login-flex"
+                <form id="email_login" class="wrapper loginForm thm-login login-flex"
                     action="#/"
                     data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
 
@@ -41,30 +41,20 @@
 
                     {{INCLUDE/TopControlGroup/PLACE}}
 
-                    <div class="controls plugin-mark-Login-TopControlGroup ctrl-m"
+                    <div class="controls ctrl-m"
                         data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
 
-                        <input type="email" class="i18n input-block-level inputEmail checkAutocomplete"
+                        <input type="email" class="vertical-input"
                             name="RainLoopEmail" id="RainLoopEmail" autocomplete="email" autocorrect="off"
                             autocapitalize="off" spellcheck="false"
                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
-                        <div class="center">
-                            <!-- <select name="sEmail" id="sEmail" class="custom-select sources" style="display: none;" placeholder="Source Type">
-                              <option value="001">@mongol.email</option>
-                              <option value="002">@halgai.com</option>
-                            </select> -->
-                            <!-- <a class="selectBox dropdownlist selectBox-dropdown" title="" tabindex="NaN" data-bind="click: sEmailClick">
-                                <span class="selectBox-label">@mongol.email</span>
-                                <span class="selectBox-arrow"></span>
-                            </a> -->
-                        </div>
                     </div>
 
                     <div class="controls ctrl-m"
                         data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
 
-                        <input type="password" class="i18n input-block-level inputPassword checkAutocomplete"
+                        <input type="password" class="vertical-input"
                             name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password"
                             autocorrect="off" autocapitalize="off" spellcheck="false"
                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
@@ -82,7 +72,7 @@
                     <div class="controls ctrl-m"
                         data-bind="visible: additionalCode.visibility(), css: {'error': additionalCode.error, 'animated': additionalCode.errorAnimation}">
 
-                        <input type="text" class="i18n input-block-level inputAdditionalCode mongol_input"
+                        <input type="text" class="i18n input-block-level vertical-input inputAdditionalCode mongol_input"
                             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
                             data-bind="textInput: additionalCode, hasFocus: additionalCode.focused, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_VERIFICATION_CODE" />
@@ -109,7 +99,7 @@
                     <div class="controls controls-submit-wrp ctrl-m"
                         data-bind="css: {'display-none': hideSubmitButton}">
                         <div class="lg-flex">
-                            <button type="submit" class="btn btn-large btn-block buttonLogin mgl_btn"
+                            <button type="submit" class="btn mgl_btn"
                                 data-bind="command: submitCommand">
                                 <span class="vertical-label" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
                             </button>
