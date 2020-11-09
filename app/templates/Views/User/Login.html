@@ -1,5 +1,64 @@
 <div class="b-login-content">
 
+    <div class="loginFormWrapper">
+          <center class="plugin-mark-Login-BeforeLogo">
+                <div class="wrapper-parent login-flex">
+
+                      <form class="wrapper loginForm login-flex" action="">
+
+                            <div class="vertical-view">
+                                <div class="alert alert Error"></div>
+                            </div>
+
+                            <div class="vertical-view">
+                                  <input type="email" class="v-input">
+                                  <div class="v-val">
+                                        <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                  </div>
+                            </div>
+
+                            <div class="vertical-view">
+                                  <input type="password" class="v-input">
+                                  <div class="v-val">
+                                        <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                  </div>
+                            </div>
+
+                            <div class="vertical-view">
+                                  <div class="login-flex">
+                                        <button class="v-btn v-login">
+                                            <span class="i18nflex">ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
+                                        </button>
+                                        <button class="v-btn v-regist">
+                                            <span class="i18nflex">ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ</span>
+                                        </button>
+                                        <button class="v-btn v-members">
+                                            <span class="i18nflex">VIP ᠬᠡᠰᠢᠭᠦᠨᠴᠢᠯᠡᠬᠦ</span>
+                                        </button>
+                                  </div>
+                            </div>
+
+                            <div class="vertical-view">
+                                  <div class="v-tag">
+                                        <span class="remb-me i18nflex">ᠴᠡᠭᠡᠵᠢᠯᠡᠬᠦ</span>
+                                        <a class="forgot-ac i18nflex" href="">ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠮᠠᠷᠲᠠᠪᠠ</a>
+                                  </div>
+                            </div>
+
+                            <div class="vertical-view">
+                                  <div class="QR-code">
+                                        <span class="i18nflex">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
+                                  </div>
+                            </div>
+
+                      </form>
+                </div>
+                <div class="v-right-sidebar">
+                      <div></div>
+                </div>
+          </center>
+    </div>
+
     <div class="loginFormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
 
         <center class="plugin-mark-Login-BeforeLogo">
@@ -44,7 +103,7 @@
                     <div class="controls ctrl-m"
                         data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
 
-                        <input type="email" class="vertical-input"
+                        <input type="email" class="vertical-input" maxlength="16"
                             name="RainLoopEmail" id="RainLoopEmail" autocomplete="email" autocorrect="off"
                             autocapitalize="off" spellcheck="false"
                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
@@ -54,7 +113,7 @@
                     <div class="controls ctrl-m"
                         data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
 
-                        <input type="password" class="vertical-input"
+                        <input type="password" class="vertical-input" maxlength="20"
                             name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password"
                             autocorrect="off" autocapitalize="off" spellcheck="false"
                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
