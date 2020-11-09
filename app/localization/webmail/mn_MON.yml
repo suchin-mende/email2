@@ -730,7 +730,7 @@ mn_MON:
     SPECIFY_AT_LEAST_ONE_RECIPIENT: "ᠨᠠᠳᠤ ᠵᠠᠬ᠎ᠠ ᠳ᠋ᠤ ᠪᠠᠨ ᠨᠢᠭᠡ ᠬᠦᠯᠢᠶᠠᠨ ᠠᠪᠤᠭᠴᠢ ᠬᠠᠶᠢᠭ ᠢ ᠵᠤᠬᠢᠴᠠᠭᠤᠯᠤᠭᠠᠷᠠᠢ"
    NOTIFICATIONS:
     INVALID_TOKEN: "Token ᠬᠦᠴᠦᠨ ᠦᠭᠡᠢ"
-    AUTH_ERROR: "ᠦᠨᠡᠯᠡᠮᠵᠢ ᠥᠩᠭᠡᠷᠡᠭᠰᠡᠨ ᠦᠭᠡᠢ"
+    AUTH_ERROR: "ᠰᠢᠯᠭᠠᠭᠤᠷ ᠬᠠᠩᠭᠠᠰᠠᠨ ᠦᠭᠡᠢ"
     ACCESS_ERROR: "ᠬᠠᠨᠳᠤᠯᠲᠠ ᠶᠢᠨ ᠠᠯᠳᠠᠭ᠎ᠠ"
     CONNECTION_ERROR: "ᠦᠢᠯᠡᠴᠢᠯᠡᠭᠦᠷ ᠲᠤ  ᠵᠠᠯᠭᠠᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ"
     CAPTCHA_ERROR: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ  ᠲᠠᠭᠠᠷᠠᠭᠰᠠᠨ ᠦᠭᠡᠢ"
