@@ -4,21 +4,53 @@
           <center class="plugin-mark-Login-BeforeLogo">
                 <div class="wrapper-parent login-flex">
 
-                      <form class="wrapper loginForm login-flex" action="">
+                      <form id="email_login" class="wrapper loginForm login-flex" action="#/"
+                            data-bind="submit: submitForm,
+                                css: {
+                                    'errorAnimated': formError,
+                                    'welcome-off': welcome,
+                                    'submitting': submitRequest()
+                                }">
 
                             <div class="vertical-view">
-                                <div class="alert alert Error"></div>
+                                <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
+                                    <button type="button" class="close"
+                                        data-bind="click: function () { submitError('') }">&times;</button>
+                                    <span data-bind="text: submitError"></span>
+                                    <div data-bind="visible: '' !== submitErrorAddidional()">
+                                        <br />
+                                        <span data-bind="text: submitErrorAddidional"></span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="vertical-view">
-                                  <input type="email" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL">
+                                  <img class="ipt-img" data-bind="attr: {'src': srcAttrQc()}">
+                                  <input type="email" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
+                                    maxlength="20"
+                                    name="RainLoopEmail"
+                                    id="RainLoopEmail"
+                                    autocomplete="email"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    spellcheck="false"
+                                    data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest, attr: {'src': srcAttrQc()}">
                                   <div class="v-val">
                                         <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
                                   </div>
                             </div>
 
                             <div class="vertical-view">
-                                  <input type="password" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrQc()}">
+                                  <input type="password" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
+                                    maxlength="20"
+                                    name="RainLoopPassword"
+                                    id="RainLoopPassword"
+                                    autocomplete="current-password"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    spellcheck="false"
+                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
                                   <div class="v-val">
                                         <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
                                   </div>
@@ -26,13 +58,13 @@
 
                             <div class="vertical-view">
                                   <div class="login-flex">
-                                        <div class="v-btn v-login">
+                                        <div class="v-btn v-login" type="submit" data-bind="command: submitCommand">
                                             <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
                                         </div>
-                                        <div class="v-btn v-regist">
+                                        <div class="v-btn v-regist" data-bind="click: gotoRegisterCommand">
                                             <span class="i18nflex" data-i18n="LOGIN/LABEL_REGISTRATION"></span>
                                         </div>
-                                        <div class="v-btn v-members">
+                                        <div class="v-btn v-members" data-bind="click: gotoVipPackage">
                                             <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                         </div>
                                   </div>
@@ -41,17 +73,34 @@
                             <div class="vertical-view">
                                   <div class="v-tag">
                                         <span class="remb-me i18nflex" data-i18n="LOGIN/LABEL_SIGN_ME"></span>
-                                        <a class="forgot-ac i18nflex" href="" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></a>
+                                        <a class="forgot-ac i18nflex" href="" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"
+                                            data-bind="click: gotoFindPassword" target="_blank"></a>
                                   </div>
                             </div>
 
                             <div class="vertical-view">
-                                  <div class="QR-code">
+                                  <div class="QR-code" data-bind="click: switchTabCommand">
+                                        <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
                                         <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
                                   </div>
                             </div>
 
                       </form>
+
+                      <div class="wrapper loginForm QR-code-content" id="weixin_login"
+                            style="display:none;">
+
+                            <div class="vertical-view new-loginFunc">
+                                <div id="lgApp" class="scan-qrcode" data-bind="click: switchTabCommand">
+                                    <img data-bind="attr: {'src': srcAttrPc()}" id="pc_icon_login">
+                                </div>
+                            </div>
+
+                            <div class="vertical-view">
+
+                            </div>
+                      </div>
+
                 </div>
                 <div class="v-right-sidebar">
                       <div></div>
@@ -93,9 +142,9 @@
                     data-bind="submit: submitForm, css: {'errorAnimated': formError, 'welcome-off': welcome, 'submitting': submitRequest()}">
 
                     <div class="controls">
-                        <a data-bind="click: switchTabCommand">
-                            <img data-bind="attr: {'src': srcAttrWeiXin()}" class="scan-qrcode" id="weixin_icon_login">
-                        </a>
+                        <div data-bind="click: switchTabCommand">
+                            <img data-bind="attr: {'src': srcAttrQc()}" class="scan-qrcode" id="weixin_icon_login">
+                        </div>
                     </div>
 
                     {{INCLUDE/TopControlGroup/PLACE}}
