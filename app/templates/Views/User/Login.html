@@ -4,7 +4,7 @@
           <center class="plugin-mark-Login-BeforeLogo">
                 <div class="wrapper-parent login-flex">
 
-                      <form id="email_login" class="wrapper loginForm login-flex" action="#/"
+                      <form id="lgPc" class="wrapper loginForm login-flex" action="#/"
                             data-bind="submit: submitForm,
                                 css: {
                                     'errorAnimated': formError,
@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="vertical-view">
-                                  <img class="ipt-img" data-bind="attr: {'src': srcAttrQc()}">
+                                  <img class="ipt-img" data-bind="attr: {'src': srcAttrEmail()}">
                                   <input type="email" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
                                     maxlength="20"
                                     name="RainLoopEmail"
@@ -34,14 +34,14 @@
                                     autocorrect="off"
                                     autocapitalize="off"
                                     spellcheck="false"
-                                    data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest, attr: {'src': srcAttrQc()}">
+                                    data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
                                   <div class="v-val">
                                         <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
                                   </div>
                             </div>
 
                             <div class="vertical-view">
-                                <img class="ipt-img" data-bind="attr: {'src': srcAttrQc()}">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
                                   <input type="password" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
                                     maxlength="20"
                                     name="RainLoopPassword"
@@ -87,12 +87,12 @@
 
                       </form>
 
-                      <div class="wrapper loginForm QR-code-content" id="weixin_login"
+                      <div class="wrapper loginForm QR-code-content" id="lgQc"
                             style="display:none;">
 
                             <div class="vertical-view new-loginFunc">
-                                <div id="lgApp" class="scan-qrcode" data-bind="click: switchTabCommand">
-                                    <img data-bind="attr: {'src': srcAttrPc()}" id="pc_icon_login">
+                                <div id="lgApp" data-bind="click: switchTabCommand">
+                                    <img class="r-pc" data-bind="attr: {'src': srcAttrPc()}">
                                 </div>
                             </div>
 
@@ -153,7 +153,7 @@
                         data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
 
                         <input type="email" class="vertical-input" maxlength="16"
-                            name="RainLoopEmail" id="RainLoopEmail" autocomplete="email" autocorrect="off"
+                            name="RainLoopEmail" autocomplete="email" autocorrect="off"
                             autocapitalize="off" spellcheck="false"
                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_EMAIL" />
@@ -163,7 +163,7 @@
                         data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
 
                         <input type="password" class="vertical-input" maxlength="20"
-                            name="RainLoopPassword" id="RainLoopPassword" autocomplete="current-password"
+                            name="RainLoopPassword" autocomplete="current-password"
                             autocorrect="off" autocapitalize="off" spellcheck="false"
                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
                             data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" />
@@ -262,7 +262,7 @@
 
                     <div class="controls">
                         <a class="scan-qrcode" data-bind="click: switchTabCommand">
-                            <img data-bind="attr: {'src': srcAttrPc()}" id="pc_icon_login">
+                            <img data-bind="attr: {'src': srcAttrPc()}">
                         </a>
                     </div>
 
