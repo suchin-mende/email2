@@ -1,255 +1,169 @@
 <div class="b-login-content">
 
-    <div class="loginFormWrapper">
-        <center class="plugin-mark-Login-BeforeLogo">
-              <div class="wrapper-parent login-flex">
-
-                <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
-                    data-bind="submit: submitForm,
-                        css: {
-                            'errorAnimated': formError,
-                            'submitting': submitRequest()
-                        },">
-
-                    <div class="vertical-view">
-                        <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
-                            <button type="button" class="close" data-bind="click: function () { submitError('') }">
-                                &times;
-                            </button>
-                            <span data-bind="text: submitError"></span>
-                            <div data-bind="visible: '' !== submitErrorAddidional()">
-                                <br />
-                                <span id="email_error" data-bind="text: submitErrorAddidional"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <h3 class="label-h3" data-i18n="REGISTER/LABEL_TITLE"></h3>
-                    </div>
-
-                    <div class="vertical-view">
-                        <img class="ipt-img" data-bind="attr: {'src': srcAttrEmail()}">
-                        <input type="email" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
-                            autocomplete="email"
-                            autocorrect="off"
-                            autocapitalize="off"
-                            spellcheck="false"
-                            data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
-                        <div class="v-val">
-                            <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
-                        <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
-                            minlength="6"
-                            maxlength="20"
-                            data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
-                        <div class="v-val">
-                            <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
-                        <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
-                            minlength="6"
-                            maxlength="20"
-                            data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
-                        <div class="v-val">
-                            <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
-                        <input type="tel" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
-                            maxlength="11"
-                            data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
-                        <div class="v-val">
-                            <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        
-                            <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
-                            <input type="text" class="v-input sms-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
-                                maxlength="6"
-                                data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
-                            <div class="v-btn v-sms" id="smsCode" type="submit" data-bind="command: getCodeCommand">
-                                <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
-                            </div>
-                            <div class="v-val">
-                                <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
-                            </div>
-                        
-                    </div>
-
-                    <div class="vertical-view">
-                        <div class="v-val sms-mess">
-                              <span class="val-text">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <div class="login-flex btn-flex">
-                            <div class="v-btn v-login" type="submit" data-bind="command: submitCommand">
-                                <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
-                            </div>
-                            <div class="v-btn v-regist" data-bind="click: gotoLogin">
-                                <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                        <div class="v-tag">
-
-                        </div>
-                    </div>
-
-                    <div class="vertical-view">
-                          <div class="QR-code">
-                                <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
-                                <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
-                          </div>
-                    </div>
-
-                </form>
-
+    <div class="e-view">
+        <div class="e-left-view l-full">
+            <div class="back-login" data-bind="click: gotoLogin">
+                <img data-bind="attr: {'src': srcAttrBk()}"></img>
             </div>
-              <div class="v-right-sidebar">
-                    <div></div>
-              </div>
-        </center>
-  </div>
+            
+        </div>
+        <div class="e-right-view r-full">
 
-
-    <div class="loginFormWrapper">
-
-        <center class="plugin-mark-Login-BeforeLogo">
-
-            <div class="wrapper-parent login-flex">
-
-                <div class="alert alertError i18nflex" data-bind="visibleAnimated: '' !== submitError()">
-                    <button type="button" class="close" data-bind="click: function () { submitError('') }">
-                        &times;
-                    </button>
-                    <span data-bind="text: submitError"></span>
-                    <div data-bind="visible: '' !== submitErrorAddidional()">
-                        <br />
-                        <span id="email_error" data-bind="text: submitErrorAddidional"></span>
+            <div class="loginFormWrapper fullFormWrapper">
+                <center class="plugin-mark-Login-BeforeLogo">
+                      <div class="wrapper-parent login-flex">
+        
+                        <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
+                            data-bind="submit: submitForm,
+                                css: {
+                                    'errorAnimated': formError,
+                                    'submitting': submitRequest()
+                                },">
+        
+                            <div class="vertical-view">
+                                <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
+                                    <button type="button" class="close" data-bind="click: function () { submitError('') }">
+                                        &times;
+                                    </button>
+                                    <span data-bind="text: submitError"></span>
+                                    <div data-bind="visible: '' !== submitErrorAddidional()">
+                                        <br />
+                                        <span id="email_error" data-bind="text: submitErrorAddidional"></span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <h3 class="label-h3" data-i18n="REGISTER/LABEL_TITLE"></h3>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrEmail()}">
+                                <input type="email" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                                    autocomplete="email"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    spellcheck="false"
+                                    data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
+                                <div class="v-val">
+                                    <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
+                                <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                                    minlength="6"
+                                    maxlength="20"
+                                    data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
+                                <div class="v-val">
+                                    <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
+                                <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
+                                    minlength="6"
+                                    maxlength="20"
+                                    data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
+                                <div class="v-val">
+                                    <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
+                                <input type="tel" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                                    maxlength="11"
+                                    data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
+                                <div class="v-val">
+                                    <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                
+                                    <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
+                                    <input type="text" class="v-input sms-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
+                                        maxlength="6"
+                                        data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
+                                    <div class="v-btn v-sms" id="smsCode" type="submit" data-bind="command: getCodeCommand">
+                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
+                                    </div>
+                                    <div class="v-val">
+                                        <span class="val-text">ᠬᠠᠶᠢᠭ ᠢᠶᠠᠨ ᠪᠤᠷᠤᠭᠤ ᠪᠢᠴᠢᠪᠡ</span>
+                                    </div>
+                                
+                            </div>
+        
+                            <div class="vertical-view">
+                                <div class="v-val sms-mess">
+                                      <span class="val-text">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <div class="login-flex btn-flex">
+                                    <div class="v-btn v-login" type="submit" data-bind="command: submitCommand">
+                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
+                                    </div>
+                                    <div class="v-btn v-regist" data-bind="click: gotoLogin">
+                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                <div class="v-tag">
+        
+                                </div>
+                            </div>
+        
+                            <div class="vertical-view">
+                                  <div class="QR-code">
+                                        <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
+                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
+                                  </div>
+                            </div>
+        
+                        </form>
+        
+                        <div class="wrapper loginForm QR-code-content" id="lgQc"
+                                    style="display:none;">
+        
+                                    <div class="vertical-view new-loginFunc">
+                                        <div id="lgApp" data-bind="click: switchTabCommand">
+                                            <img class="r-pc" data-bind="attr: {'src': srcAttrPc()}">
+                                        </div>
+                                    </div>
+        
+                                    <div class="vertical-view">
+        
+                                    </div>
+                              </div>
+        
                     </div>
+                </center>
+          </div>
+          <div class="v-right-sidebar">
+            <div class="top-mobile">
+                <img data-bind="attr: {'src': srcAttrIos()}">
+                <img data-bind="attr: {'src': srcAttrAndd()}">
+                <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
+            </div>
+            <div class="bottom-mess">
+                <div class="">
+                    <img data-bind="attr: {'src': srcAttrHs()}">
+                    <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
                 </div>
-
-                <form class="wrapper loginForm thm-login" action="#/"
-                    data-bind="submit: submitForm, css: {'errorAnimated': formError, 'submitting': submitRequest()},">
-
-                    <div class="login-flex">
-
-                        <div class="controls ctrl-m">
-                            <h3 class="label-h3" data-i18n="REGISTER/LABEL_TITLE"></h3>
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <div class="login-flex" id="VipPackageInfo" style="display: none; padding-right: 10px;">
-                                <p class="tag-p vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
-                                <p class="tag-p" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                                <p class="tag-p vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
-                            </div>
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <input type="email"
-                                class="vertical-input"
-                                autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest"
-                                data-i18n="[placeholder]REGISTER/LABEL_EMAIL">
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <input type="password" minlength="6" maxlength="20"
-                                class="vertical-input"
-                                data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest"
-                                data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" />
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <input type="password" minlength="6" maxlength="20"
-                                class="vertical-input"
-                                data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest"
-                                data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" />
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <input type="tel" maxlength="11"
-                                class="vertical-input"
-                                data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest"
-                                data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" />
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <input type="tel" maxlength="6"
-                                class="vertical-input r-bod"
-                                data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest"
-                                data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE" />
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <button id="smsCode" type="submit" data-bind="command: getCodeCommand"
-                                class="btn mgl_btn">
-                                <span class="vertical-label"
-                                    data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
-                            </button>
-
-                            <button type="submit" data-bind="command: submitCommand"
-                                class="btn mgl_btn">
-                                <span class="vertical-label" data-i18n="REGISTER/LABEL_REGISTRATION"
-                                    id="registe"></span>
-                            </button>
-
-                        </div>
-
-                        <div class="controls ctrl-m">
-
-                            <div class="login-flex" style="padding-left: 10px;">
-                                <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_FORGET_PASSWORD"
-                                    data-bind="click: gotoFindPassword">
-                                </a>
-
-                                <a class="label-a-tag" data-bind="click: gotoVipPackage">
-                                    <img data-bind="attr: {'src': srcAttrVip()}" style="width: 25px;">
-                                </a>
-
-                                <a class="label-a-tag" target="_blank" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"
-                                    data-bind="click: gotoLogin">
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </form>
-
+                <div class="">
+                    <img data-bind="attr: {'src': srcAttrCl()}">
+                    <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
+                </div>
             </div>
-
-        </center>
-
+          </div>
+        </div>
     </div>
 
 </div>
