@@ -1,46 +1,93 @@
 <div class="rl-view-model RL-Register">
     <div class="b-login-content">
-        <div class="loginFormWrapper">
-            <center class="plugin-mark-Login-BeforeLogo">
-                <div class="wrapper-parent">
-
-                    <div class="wrapper thm-login view-flex">
-                        <div class="text-center">
-                            <img class="icon-vip" data-bind="attr:{'src': srcAttrVipPackge()}">
-                            <h3 class="vipPackage-h3" data-i18n="VIPPACKAGE/VIP_NAME"></h3>
+        <div class="e-view">
+            <div class="e-left-view l-full">
+                <div class="back-login" data-bind="click: gotoLogin">
+                    <img data-bind="attr: {'src': srcAttrBk()}"></img>
+                </div>
+                
+            </div>
+            <div class="e-right-view r-full">
+    
+                <div class="loginFormWrapper fullFormWrapper">
+                    <center class="plugin-mark-Login-BeforeLogo">
+                        <div class="wrapper-parent">
+        
+                            <div class="wrapper view-flex">
+                                <div class="vertical-view">
+                                    <h3 class="label-h3" data-i18n="VIPPACKAGE/TITLE_VIP"></h3>
+                                </div>
+        
+                                <div id="#" class="vipPag-ul view-flex">
+        
+                                    <div data-bind="click: gotoVipLoginTwo" id="two">
+                                        <div id="#" class="login-flex vip-option case-gold">
+                                            <div class="box-i">
+                                                <img class="v-icon" data-bind="attr: {'src': srcAttrGd()}"></img>
+                                                <img class="v-icon-bd" data-bind="attr: {'src': srcAttrGdb()}"></img>
+                                                <div class="text-box">
+                                                    <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GOLD"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GOLD">/p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div data-bind="click: gotoVipLoginThree" id="three">
+                                        <div id="#" class="login-flex vip-option case-green">
+                                            <div class="box-i">
+                                                <img class="v-icon" data-bind="attr: {'src': srcAttrGr()}"></img>
+                                                <img class="v-icon-bd" data-bind="attr: {'src': srcAttrGrb()}"></img>
+                                                <div class="text-box">
+                                                    <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GREEN"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GREEN">/p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div data-bind="click: gotoVipLoginOne" id="one">
+                                        <div id="#" class="login-flex vip-option case-diamond">
+                                            <div class="box-i">
+                                                <img class="v-icon" data-bind="attr: {'src': srcAttrDm()}"></img>
+                                                <img class="v-icon-bd" data-bind="attr: {'src': srcAttrDmb()}"></img>
+                                                <div class="text-box">
+                                                    <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_DMOD"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
+                                                    <p class="tag-p" data-i18n="VIPPACKAGE/SELL_DMOD">/p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                </div>
+                            </div>
                         </div>
+                    </center>
+              </div>
 
-                        <div id="#" class="vipPag-ul view-flex">
-
-                            <div data-bind="click: gotoVipLoginTwo" id="two">
-                                <div id="#" class="login-flex i18nflex vip-option">
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_MENBERS"></p>
-                                    <p class="tag-p vip-m" data-i18n="VIPPACKAGE/VIP_MAILBOX"></p>
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_BUY1"></p>
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_BUY2">/p>
-                                </div>
-                            </div>
-
-                            <div data-bind="click: gotoVipLoginThree" id="three">
-                                <div id="#" class="login-flex i18nflex vip-option">
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_MENBERS"></p>
-                                    <p class="tag-p vip-m" data-i18n="VIPPACKAGE/VIP_MAILBOX"></p>
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_MENBERS3"></p>
-                                </div>
-                            </div>
-
-                            <div data-bind="click: gotoVipLoginOne" id="one">
-                                <div id="#" class="login-flex i18nflex vip-option">
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_MENBERS2"></p>
-                                    <p class="tag-p vip-m" data-i18n="VIPPACKAGE/VIP_MAILBOX"></p>
-                                    <p class="tag-p" data-i18n="VIPPACKAGE/VIP_MENBERS1"></p>
-                                </div>
-                            </div>
-
-                        </div>
+              <div class="v-right-sidebar">
+                <div class="top-mobile">
+                    <img data-bind="attr: {'src': srcAttrIos()}">
+                    <div class="line-top"></div>
+                    <img data-bind="attr: {'src': srcAttrAndd()}">
+                    <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
+                </div>
+                <div class="bottom-mess">
+                    <div class="">
+                        <img data-bind="attr: {'src': srcAttrHs()}">
+                        <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
+                    </div>
+                    <div class="">
+                        <img data-bind="attr: {'src': srcAttrCl()}">
+                        <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
                     </div>
                 </div>
-            </center>
+              </div>
+
+            </div>
         </div>
     </div>
 </div>
