@@ -121,28 +121,13 @@
                             </div>
         
                             <div class="vertical-view">
-                                  <div class="QR-code">
+                                  <div class="QR-code" data-bind="click: gotoQRcode">
                                         <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
                                   </div>
                             </div>
         
                         </form>
-        
-                        <div class="wrapper loginForm QR-code-content" id="lgQc"
-                                    style="display:none;">
-        
-                                    <div class="vertical-view new-loginFunc">
-                                        <div id="lgApp" data-bind="click: switchTabCommand">
-                                            <img class="r-pc" data-bind="attr: {'src': srcAttrPc()}">
-                                        </div>
-                                    </div>
-        
-                                    <div class="vertical-view">
-        
-                                    </div>
-                              </div>
-        
                     </div>
                 </center>
           </div>

@@ -1,49 +1,47 @@
-<div class="rl-view-model RL-Register">
-    <div class="b-login-content">
-        <div class="e-view">
-            <div class="e-left-view l-full">
-                <div class="back-login" data-bind="click: gotoLogin">
-                    <img data-bind="attr: {'src': srcAttrBk()}"></img>
-                </div>
-                
+<div class="b-login-content">
+    <div class="e-view">
+        <div class="QR-view">
+            <div class="back-login" data-bind="click: gotoLogin">
+                <img data-bind="attr: {'src': srcAttrBk()}"></img>
             </div>
-            <div class="e-right-view r-full">
-    
-                <div class="loginFormWrapper fullFormWrapper">
-                    <center class="plugin-mark-Login-BeforeLogo">
-                        <div class="wrapper-parent">
-        
-                            <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
-                                data-bind="submit: submitForm,
-                                    css: {
-                                        'errorAnimated': formError,
-                                        'submitting': submitRequest()
-                                    },">
-                            </form>
-                                
-                            </div>
+
+            <div class="loginFormWrapper fullFormWrapper QR-fm">
+                <div class="wrapper loginForm QR-code-content box-i">
+                    <div class="vertical-view new-loginFunc">
+                        <div id="triangle-topright" data-bind="click: gotoLogin">
+                            <img class="r-pc" data-bind="attr: {'src': srcAttrPc()}">
                         </div>
-                    </center>
-              </div>
-              <div class="v-right-sidebar">
+                    </div>
+                    <div class="vertical-view">
+                        <div class="v-center-QR-code">
+                            <img class="center-QR-code" data-bind="attr: {'src': srcAttrQc()}">
+                        </div>
+                        <div class="v-center-text">
+                            <p class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="v-right-sidebar qr-text">
                 <div class="top-mobile">
-                    <img data-bind="attr: {'src': srcAttrIos()}">
+                    <img data-bind="attr: {'src': srcAttrQrIos()}">
                     <div class="line-top"></div>
-                    <img data-bind="attr: {'src': srcAttrAndd()}">
+                    <img data-bind="attr: {'src': srcAttrQrAndd()}">
                     <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
                 </div>
                 <div class="bottom-mess">
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrHs()}">
+                        <img data-bind="attr: {'src': srcAttrQrHs()}">
                         <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
                     </div>
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrCl()}">
+                        <img data-bind="attr: {'src': srcAttrQrCl()}">
                         <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
                     </div>
                 </div>
-              </div>
             </div>
+
         </div>
-    </div>
+    </div>        
 </div>
