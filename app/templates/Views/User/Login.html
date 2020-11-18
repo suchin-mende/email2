@@ -29,7 +29,7 @@
           
                           <div class="wrapper-parent login-flex">
           
-                                <form id="lgPc" class="wrapper loginForm login-flex" action="#/"
+                                <form class="wrapper loginForm login-flex" action="#/"
                                       data-bind="submit: submitForm,
                                           css: {
                                               'errorAnimated': formError,
@@ -97,14 +97,23 @@
           
                                       <div class="vertical-view">
                                             <div class="v-tag">
-                                                  <span class="remb-me i18nflex" data-i18n="LOGIN/LABEL_SIGN_ME"></span>
+                                                <div class="signMeLabel" data-bind="visible: signMeVisibility, 
+                                                    component: {
+                                                        name: 'CheckboxSimple',
+                                                        params: {
+                                                            label: 'LOGIN/LABEL_SIGN_ME',
+                                                            labelAnimated: true,
+                                                            value: signMe
+                                                        }
+                                                    }">
+                                                </div>
                                                   <a class="forgot-ac i18nflex" href="" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"
                                                       data-bind="click: gotoFindPassword" target="_blank"></a>
                                             </div>
                                       </div>
           
                                       <div class="vertical-view">
-                                            <div class="QR-code" data-bind="click: switchTabCommand">
+                                            <div class="QR-code" data-bind="click: gotoQRcode">
                                                   <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
                                                   <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
                                             </div>
@@ -112,7 +121,7 @@
           
                                 </form>
           
-                                <div class="wrapper loginForm QR-code-content" id="lgQc"
+                                <!-- <div class="wrapper loginForm QR-code-content" id="lgQc"
                                       style="display:none;">
           
                                       <div class="vertical-view new-loginFunc">
@@ -122,9 +131,11 @@
                                       </div>
           
                                       <div class="vertical-view">
-          
+                                          <div class="center-QR-code" data-bind="attr: {'src': srcAttrQc()}">
+                                              <img data-bind="attr: {'src': srcAttrQc()}">
+                                          </div>
                                       </div>
-                                </div>
+                                </div> -->
           
                           </div>
 
@@ -133,6 +144,7 @@
               <div class="v-right-sidebar">
                 <div class="top-mobile">
                     <img data-bind="attr: {'src': srcAttrIos()}">
+                    <div class="line-top"></div>
                     <img data-bind="attr: {'src': srcAttrAndd()}">
                     <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
                 </div>
