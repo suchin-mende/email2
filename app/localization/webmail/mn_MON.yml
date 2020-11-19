@@ -12,9 +12,12 @@ mn_MON:
     TITLE_SIGN_IN_TWITTER: "Twitter ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_FORGOT_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ"
     LABEL_REGISTRATION: "ᠰᠢᠨ᠎ᠡ ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
+    M_LABEL_REGISTRATION: "ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_VIP_MEMBERS: "VIP ᠬᠡᠰᠢᠭᠦᠨᠴᠢᠯᠡᠬᠦ"
+    M_LABEL_VIP_MEMBERS: "VIP"
     LABEL_QRCODE_SCAN: "Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
    REGISTER:
+    M_LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"

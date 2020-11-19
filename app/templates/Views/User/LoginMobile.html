@@ -1,0 +1,93 @@
+<div class="b-login-content m-view">
+      <div class="m-head-view">
+            <div class="top-menu"></div>
+            <div class="logo-view">
+                  <img class="c-logo" data-bind="attr: {'src': srcAttrQc()}">
+            </div>
+      </div>
+      <div class="m-middle-view m-login-flex">
+            <div class="vertical-view">
+                  <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
+                        <button type="button" class="close"
+                            data-bind="click: function () { submitError('') }">&times;</button>
+                        <span data-bind="text: submitError"></span>
+                        <div data-bind="visible: '' !== submitErrorAddidional()">
+                            <br />
+                            <span data-bind="text: submitErrorAddidional"></span>
+                        </div>
+                  </div>
+            </div>
+            <div class="vertical-view">
+                  <img class="">
+                  <input type="email" class="m-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
+                  maxlength="20"
+                  name="RainLoopEmail"
+                  id="RainLoopEmail"
+                  autocomplete="email"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
+            </div>
+            <div class="vertical-view">
+                  <img class="">
+                  <input type="password" class="m-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
+                  maxlength="20"
+                  name="RainLoopPassword"
+                  id="RainLoopPassword"
+                  autocomplete="current-password"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+            </div>
+            <div class="vertical-view">
+                  <div class="m-btn-group">
+                        <button class="m-btn v-regist" data-bind="command: submitCommand">
+                              <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                        </button>
+                        <button class="m-btn v-login" data-bind="click: gotoRegisterCommand">
+                              <span class="i18nflex" data-i18n="LOGIN/M_LABEL_REGISTRATION"></span>
+                        </button>
+                        <button class="m-btn v-members m-vip" data-bind="click: gotoVipPackage">
+                              <span class="" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
+                        </button>
+                  </div>
+            </div>
+            <div class="vertical-view m-text">
+                  <span class="i18nflex" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"></span>
+            </div>
+      </div>
+      <div class="m-footer-view">
+
+            <div class="social-view">
+                  <div class="s-logo-view">
+                        <img class="s-logo" data-bind="attr: {'src': srcAttrIos()}">
+                  </div>
+                  <div class="s-logo-view">
+                        <img class="s-logo" data-bind="attr: {'src': srcAttrIos()}">
+                  </div>
+                  <div class="s-logo-view">
+                        <img class="s-logo" data-bind="attr: {'src': srcAttrIos()}">
+                  </div>
+            </div>
+
+            <div class="e-mobile-switcher thm-mobile-switcher">
+                  <span data-bind="visible: !mobile">
+                      <i class="icon-mobile"></i>
+                      &nbsp;
+                      <a href="./?/MobileVersion/" tabindex="-1">
+                          <span class="i18n" data-i18n="MOBILE/BUTTON_MOBILE_VERSION"></span>
+                      </a>
+                  </span>
+                  <span data-bind="visible: mobile">
+                      <i class="icon-laptop"></i>
+                      &nbsp;
+                      <a href="./?/DesktopVersion/" tabindex="-1">
+                          <span class="i18n" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
+                      </a>
+                  </span>
+            </div>
+
+      </div>
+</div>
