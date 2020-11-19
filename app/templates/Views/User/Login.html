@@ -2,7 +2,22 @@
     
         <div class="e-view">
             <div class="e-left-view">
-                
+                <div class="e-mobile-switcher thm-mobile-switcher">
+                    <span data-bind="visible: !mobile">
+                        <i class="icon-mobile"></i>
+                        &nbsp;
+                        <a href="./?/MobileVersion/" tabindex="-1">
+                            <span class="i18n" data-i18n="MOBILE/BUTTON_MOBILE_VERSION"></span>
+                        </a>
+                    </span>
+                    <span data-bind="visible: mobile">
+                        <i class="icon-laptop"></i>
+                        &nbsp;
+                        <a href="./?/DesktopVersion/" tabindex="-1">
+                            <span class="i18n" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
+                        </a>
+                    </span>
+                </div>
             </div>
             <div class="e-right-view">
                 <div class="e-lang-select">
