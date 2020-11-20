@@ -1,43 +1,54 @@
-<div class="b-login-content">
+<div class="b-login-content m-view">
       <div class="m-head-view">
+            <div class="top-menu"></div>
             <div class="logo-view">
                   <div class="l-img">
-                        <p class="" data-i18n="REGISTER/M_LABEL_TITLE"></p>
+                        <p class="i18nflex" data-i18n="REGISTER/M_LABEL_TITLE"></p>
                   </div>
             </div>
       </div>
-      <div class="m-middle-view m-login-flex">
-            <div class="m-vertical-view"></div>
-            <div class="m-vertical-view">
-                  <img class="">
-                  <input type="text">
+      <div class="m-middle-view m-regist-grid">
+            <div class="vertical-view">
+                  <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
+                        <button type="button" class="close"
+                            data-bind="click: function () { submitError('') }">&times;</button>
+                        <span data-bind="text: submitError"></span>
+                        <div data-bind="visible: '' !== submitErrorAddidional()">
+                            <br />
+                            <span data-bind="text: submitErrorAddidional"></span>
+                        </div>
+                  </div>
             </div>
-            <div class="m-vertical-view">
+            <div class="vertical-view">
                   <img class="">
-                  <input type="text">
+                  <input type="text" class="m-input">
             </div>
-            <div class="m-vertical-view">
+            <div class="vertical-view">
                   <img class="">
-                  <input type="text">
+                  <input type="text" class="m-input">
             </div>
-            <div class="m-vertical-view">
+            <div class="vertical-view">
                   <img class="">
-                  <input type="text">
+                  <input type="text" class="m-input">
             </div>
-            <div class="m-vertical-view">
+            <div class="vertical-view">
                   <img class="">
-                  <input type="text">
+                  <input type="text" class="m-input">
             </div>
-            <div class="m-vertical-view">
-                  <div class="m-btn-group m-login-flex">
-                        <button class="m-btn">
+            <div class="vertical-view">
+                  <img class="">
+                  <input type="text" class="m-input">
+            </div>
+            <div class="vertical-view">
+                  <div class="m-btn-group">
+                        <button class="m-btn v-login">
                               <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
                         </button>
-                        <button class="m-btn" data-bind="click: gotoLogin">
+                        <button class="m-btn v-regist" data-bind="click: gotoLogin">
                               <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
                         </button>
-                        <button class="m-btn">
-                              <span class="i18nflex"></span>
+                        <button class="m-btn v-members m-vip">
+                              <span class="i18nflex" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
                         </button>
                   </div>
             </div>
