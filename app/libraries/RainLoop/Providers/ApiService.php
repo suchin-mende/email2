@@ -22,6 +22,11 @@ class ApiService extends \RainLoop\Providers\AbstractProvider
 		}
 	}
 
+	public function login($sUserCd, $sPassword)
+	{
+		return $this->oDriver->login($sUserCd, $sPassword);
+	}
+
 	/**
 	 * @param string $sEmail
 	 * @param string $sUrl

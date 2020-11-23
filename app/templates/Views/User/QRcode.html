@@ -1,9 +1,9 @@
 <div class="b-login-content">
     <div class="e-view">
         <div class="QR-view">
-            <div class="back-login" data-bind="click: gotoLogin">
-                <img data-bind="attr: {'src': srcAttrBk()}"></img>
-            </div>
+            <svg class="hsvg-icon h-icon back-login" data-bind="click: gotoLogin" aria-hidden="true">
+                <use xlink:href="#iconlenf_ar"></use>
+            </svg>
 
             <div class="loginFormWrapper fullFormWrapper QR-fm">
                 <div class="wrapper loginForm QR-code-content box-i">
@@ -25,22 +25,30 @@
 
             <div class="v-right-sidebar qr-text">
                 <div class="top-mobile">
-                    <img data-bind="attr: {'src': srcAttrQrIos()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconapple"></use>
+                    </svg>
                     <div class="line-top"></div>
-                    <img data-bind="attr: {'src': srcAttrQrAndd()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconandroid"></use>
+                    </svg>
                     <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
                 </div>
                 <div class="bottom-mess">
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrQrHs()}">
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                            <use xlink:href="#icontech-01"></use>
+                        </svg>
                         <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
                     </div>
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrQrCl()}">
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                            <use xlink:href="#iconcompny_group"></use>
+                        </svg>
                         <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
                     </div>
                 </div>
-            </div>
+              </div>
 
         </div>
     </div>        

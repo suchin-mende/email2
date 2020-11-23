@@ -50,7 +50,9 @@
                                       </div>
           
                                       <div class="vertical-view">
-                                            <img class="ipt-img" data-bind="attr: {'src': srcAttrEmail()}">
+                                            <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                                <use xlink:href="#iconemail"></use>
+                                            </svg>
                                             <input type="email" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
                                               maxlength="20"
                                               name="RainLoopEmail"
@@ -63,7 +65,9 @@
                                       </div>
           
                                       <div class="vertical-view">
-                                          <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
+                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <use xlink:href="#iconkey"></use>
+                                        </svg>
                                             <input type="password" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
                                               maxlength="20"
                                               name="RainLoopPassword"
@@ -108,7 +112,9 @@
           
                                       <div class="vertical-view">
                                             <div class="QR-code" data-bind="click: gotoQRcode">
-                                                  <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
+                                                <svg class="hsvg-icon h-icon" aria-hidden="true">
+                                                    <use xlink:href="#iconwechatqr"></use>
+                                                </svg>
                                                   <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
                                             </div>
                                       </div>
@@ -121,18 +127,26 @@
               </div>
               <div class="v-right-sidebar">
                 <div class="top-mobile">
-                    <img data-bind="attr: {'src': srcAttrIos()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconapple"></use>
+                    </svg>
                     <div class="line-top"></div>
-                    <img data-bind="attr: {'src': srcAttrAndd()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconandroid"></use>
+                    </svg>
                     <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
                 </div>
                 <div class="bottom-mess">
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrHs()}">
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                            <use xlink:href="#icontech-01"></use>
+                        </svg>
                         <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
                     </div>
                     <div class="">
-                        <img data-bind="attr: {'src': srcAttrCl()}">
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                            <use xlink:href="#iconcompny_group"></use>
+                        </svg>
                         <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
                     </div>
                 </div>

@@ -2341,11 +2341,18 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::AuthError);
 		}
 
+		$apiLoginResult = null;
+		try {
+			$apiLoginResult = $this->DoApiLogin($sEmail, $sPassword);
+		} catch (\RainLoop\Exceptions\ClientException $oException) {
+			throw $oException;
+		}
+
 		try {
 			$oAccount = $this->LoginProcess(
-				$sEmail,
+				$apiLoginResult['user']['mail'],
 				$sPassword,
-				$bSignMe ? $this->generateSignMeToken($sEmail) : '',
+				$bSignMe ? $this->generateSignMeToken($apiLoginResult['user']['mail']) : '',
 				$sAdditionalCode,
 				$bAdditionalCodeSignMe
 			);
@@ -9551,21 +9558,25 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		return $mResult;
 	}
 
-	// public function DoLogin()
-	// {
-	// 	$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
-	// 	$sPassword = $this->GetActionParam('Password', '');
+	/**
+	 * Halgai-api login
+	 * 
+	 * @throws \MailSo\Base\Exceptions\Exception
+	 */
+	public function DoApiLogin() {
+		$sEmail = \MailSo\Base\Utils::Trim($this->GetActionParam('Email', ''));
+		$sPassword = $this->GetActionParam('Password', '');
 
-	// 	$oAccount = null;
+		$rsp = $this->ApiServiceProvider()->login($sEmail, $sPassword);
+		$rsp = json_decode($rsp, true);
 
-	// 	$rsp = $this->ApiServiceProvider()->login($sEmail, $sPassword);
-	// 	$rsp = json_decode($rsp, true);
-
-	// 	if ($rsp == null)
-	// 		throw new \RainLoop\Exceptions\Exception();
-
-	// 	return $this->TrueResponse(__FUNCTION__, $rsp);
-	// }
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::ConnectionError);
+		
+		if ($rsp->errors != null)
+			throw new \RainLoop\Exceptions\ClientException(\RainLoop\Notifications::AuthError);
+		return $rsp;
+	}
 
 	/**
 	 * 用户注册

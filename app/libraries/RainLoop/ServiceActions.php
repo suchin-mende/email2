@@ -1202,6 +1202,28 @@ class ServiceActions
 		return '';
 	}
 
+	public function ServiceApiLogin() {
+		$sQuery = $this->oActions->ParseQueryAuthString();
+		$aPaths = \explode('/', $sQuery);
+
+		if (sizeof($aPaths) != 3) {
+			$this->oActions->Location('./');
+			return '';
+		}
+
+		$this->oActions->SetActionParams(array(
+			'Email' => $aPaths[1],
+			'Password' => $aPaths[2]
+		), 'DoLogin');
+		
+		try {
+			$this->oActions->DoLogin();
+		} catch (\Exception $oException) {
+		}
+		$this->oActions->Location('./');
+		return '';
+	}
+
 	/**
 	 * @param string $sTitle
 	 * @param string $sDesc
