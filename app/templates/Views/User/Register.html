@@ -2,9 +2,9 @@
 
     <div class="e-view">
         <div class="e-left-view l-full">
-            <div class="back-login" data-bind="click: gotoLogin">
-                <img data-bind="attr: {'src': srcAttrBk()}"></img>
-            </div>
+            <svg class="hsvg-icon h-icon back-login" data-bind="click: gotoLogin" aria-hidden="true">
+                <use xlink:href="#iconlenf_ar"></use>
+            </svg>
             
         </div>
         <div class="e-right-view r-full">
@@ -38,7 +38,9 @@
                             </div>
         
                             <div class="vertical-view">
-                                <img class="ipt-img" data-bind="attr: {'src': srcAttrEmail()}">
+                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                    <use xlink:href="#iconemail"></use>
+                                </svg>
                                 <input type="email" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
                                     autocomplete="email"
                                     autocorrect="off"
@@ -48,7 +50,9 @@
                             </div>
         
                             <div class="vertical-view">
-                                <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
+                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                    <use xlink:href="#iconkey"></use>
+                                </svg>
                                 <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
                                     minlength="6"
                                     maxlength="20"
@@ -56,7 +60,9 @@
                             </div>
         
                             <div class="vertical-view">
-                                <img class="ipt-img" data-bind="attr: {'src': srcAttrLock()}">
+                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                    <use xlink:href="#iconkey"></use>
+                                </svg>
                                 <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
                                     minlength="6"
                                     maxlength="20"
@@ -64,7 +70,9 @@
                             </div>
         
                             <div class="vertical-view">
-                                <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
+                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                    <use xlink:href="#iconphone-01"></use>
+                                </svg>
                                 <input type="tel" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                                     maxlength="11"
                                     data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
@@ -72,7 +80,9 @@
         
                             <div class="vertical-view">
                                 
-                                    <img class="ipt-img" data-bind="attr: {'src': srcAttrPhone()}">
+                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                    <use xlink:href="#iconphone-01"></use>
+                                </svg>
                                     <input type="text" class="v-input sms-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                                         maxlength="6"
                                         data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
@@ -82,11 +92,11 @@
                                 
                             </div>
         
-                            <div class="vertical-view">
+                            <!-- <div class="vertical-view">
                                 <div class="v-val sms-mess">
                                       <span class="val-text">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
                                 </div>
-                            </div>
+                            </div> -->
         
                             <div class="vertical-view">
                                 <div class="login-flex btn-flex">
@@ -107,7 +117,9 @@
         
                             <div class="vertical-view">
                                   <div class="QR-code" data-bind="click: gotoQRcode">
-                                        <img class="scan-qrcode" data-bind="attr: {'src': srcAttrQc()}">
+                                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                                        <use xlink:href="#iconwechatqr"></use>
+                                    </svg>
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
                                   </div>
                             </div>
@@ -118,18 +130,26 @@
           </div>
           <div class="v-right-sidebar">
             <div class="top-mobile">
-                <img data-bind="attr: {'src': srcAttrIos()}">
+                <svg class="hsvg-icon h-icon" aria-hidden="true">
+                    <use xlink:href="#iconapple"></use>
+                </svg>
                 <div class="line-top"></div>
-                <img data-bind="attr: {'src': srcAttrAndd()}">
+                <svg class="hsvg-icon h-icon" aria-hidden="true">
+                    <use xlink:href="#iconandroid"></use>
+                </svg>
                 <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
             </div>
             <div class="bottom-mess">
                 <div class="">
-                    <img data-bind="attr: {'src': srcAttrHs()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#icontech-01"></use>
+                    </svg>
                     <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
                 </div>
                 <div class="">
-                    <img data-bind="attr: {'src': srcAttrCl()}">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconcompny_group"></use>
+                    </svg>
                     <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
                 </div>
             </div>
