@@ -20,24 +20,52 @@
                   </div>
             </div>
             <div class="vertical-view">
-                  <img class="">
-                  <input type="text" class="m-input">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconemail"></use>
+                  </svg>
+                  <input type="email" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                        autocomplete="email"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
             </div>
             <div class="vertical-view">
-                  <img class="">
-                  <input type="text" class="m-input">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconkey"></use>
+                  </svg>
+                  <input type="password" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                        minlength="6"
+                        maxlength="20"
+                        data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
             </div>
             <div class="vertical-view">
-                  <img class="">
-                  <input type="text" class="m-input">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconkey"></use>
+                  </svg>
+                  <input type="password" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
+                        minlength="6"
+                        maxlength="20"
+                        data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
             </div>
             <div class="vertical-view">
-                  <img class="">
-                  <input type="text" class="m-input">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconphone-01"></use>
+                  </svg>
+                  <input type="tel" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                        maxlength="11"
+                        data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
             </div>
             <div class="vertical-view">
-                  <img class="">
-                  <input type="text" class="m-input">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconphone-01"></use>
+                  </svg>
+                  <input type="text" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
+                        maxlength="6"
+                        data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
+                  <div class="m-btn" id="smsCode" type="submit" data-bind="command: getCodeCommand">
+                        <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
+                  </div>
             </div>
             <div class="vertical-view">
                   <div class="m-btn-group">
@@ -56,19 +84,19 @@
       <div class="m-footer-view">
             <div class="social-view">
                   <div class="s-logo-view">
-                        <span class="l-apple">
-                              <img class="s-logo">
-                        </span>
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                              <use xlink:href="#iconapple"></use>
+                        </svg>
                   </div>
                   <div class="s-logo-view">
-                        <span class="l-wechat">
-                              <img class="s-logo">
-                        </span>
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                              <use xlink:href="#iconwechat"></use>
+                        </svg>
                   </div>
                   <div class="s-logo-view">
-                        <span class="l-facebook">
-                              <img class="s-logo">
-                        </span>
+                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                              <use xlink:href="#iconrenew"></use>
+                        </svg>
                   </div>
             </div>
       </div>
