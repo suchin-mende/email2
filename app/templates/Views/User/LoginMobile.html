@@ -2,7 +2,9 @@
       <div class="m-head-view">
             <div class="top-menu"></div>
             <div class="logo-view">
-                  <img class="c-logo" data-bind="attr: {'src': srcAttrQc()}">
+                  <svg class="hsvg-icon h-icon c-logo" aria-hidden="true">
+                        <use xlink:href="#iconapple"></use>
+                  </svg>
             </div>
       </div>
       <div class="m-middle-view m-login-grid">
@@ -18,7 +20,7 @@
                   </div>
             </div>
             <div class="vertical-view">
-                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                  <svg class="hsvg-icon h-icon ipt-icon login-ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconemail"></use>
                   </svg>
                   <input type="email" class="m-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
@@ -32,7 +34,7 @@
                   data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
             </div>
             <div class="vertical-view">
-                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                  <svg class="hsvg-icon h-icon ipt-icon login-ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconkey"></use>
                   </svg>
                   <input type="password" class="m-input" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
