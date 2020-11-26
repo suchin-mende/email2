@@ -28,7 +28,7 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 			'passwordTx' => $sPassword,
 			'serviceId' => APP_API_SERVICE_ID,
 			'tel' => $sTel,
-			'ruleId' => '',
+			'roleId' => 1,
 			'authCd' => $authCd,
 			'vipPlanCd' => $vipPlanCd
 
