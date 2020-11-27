@@ -3,20 +3,11 @@
         <div class="e-view">
             <div class="e-left-view lg-view">
                 <div class="ls-view">
-                    <svg class="hsvg-icon h-icon pc-l-icon" aria-hidden="true">
-                        <use xlink:href="#iconlogin"></use>
-                    </svg>
+                    <img class="l-Img" data-bind="attr: {'src': loginImg()}">
                 </div>
             </div>
             <div class="e-right-view">
-                <div class="e-lang-select">
-                    <div class="mailtype mgl" id="lang-mn">
-                        <span class="option-mgl" data-bind="click: switchTabCommand">ᠮᠤᠩᠭᠤᠯ ᠬᠡᠯᠡ</span>								
-                    </div>
-                    <div class="mailtype zh-cn" id="lang-cn">
-                        <span class="option-cn" data-bind="click: switchTabCommand">中 文</span>
-                    </div>
-                </div>
+                
                 <div class="loginFormWrapper r-FormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
                     <center class="plugin-mark-Login-BeforeLogo">
                           {{INCLUDE/BeforeLogo/PLACE}}
@@ -83,7 +74,7 @@
           
                                       <div class="vertical-view">
                                             <div class="login-flex">
-                                                  <div class="v-btn v-login" type="submit" data-bind="command: submitCommand">
+                                                  <div class="v-btn v-login" data-bind="command: submitCommand">
                                                       <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
                                                   </div>
                                                   <div class="v-btn v-regist" data-bind="click: gotoRegisterCommand">
