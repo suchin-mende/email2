@@ -786,7 +786,7 @@ mn_MON:
     PHONE_FORMAT_ERROR: "ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ ᠤᠨ ᠬᠡᠯᠪᠡᠷᠢ ᠢ ᠵᠥᠪ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
     SMS_FORMAT_ERROR: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠤᠨ ᠬᠡᠯᠪᠡᠷᠢ ᠢ ᠵᠥᠪ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
     PASSWORD_FORMAT_ERROR: "ᠲᠣᠭ᠎ᠠ ᠪᠠ ᠭᠠᠯᠢᠭ ᠦᠰᠦᠭ ᠢ ᠬᠣᠷᠰᠢᠭᠤᠯᠵᠤ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
-    UNIT: "/ ᠲᠥᠭᠦᠷᠢᠭ"
+    UNIT: "/  ᠵᠢᠯ"
    STATIC:
     BACK_LINK: "ᠳᠠᠬᠢᠨ ᠠᠴᠢᠶᠠᠯᠠᠬᠤ"
     DOMAIN_LIST_DESC: "webmail ᠶᠶᠡᠷ ᠳ᠋ᠤᠮ᠊ᠠ᠊ᠢᠢᠨ ᠳ᠋ᠤ ᠨᠡᠪᠲᠡᠷᠡᠵᠦ ᠪᠤᠯᠤᠨ᠎ᠠ"

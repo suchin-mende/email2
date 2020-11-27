@@ -6,6 +6,48 @@
                         <p class="i18nflex" data-i18n="REGISTER/M_LABEL_TITLE"></p>
                   </div>
             </div>
+            <div class="m-vip-box">
+                  <div id="vipGoldBox" class="c-box" style="display: none;">
+                        <div class="box-i">
+                              <svg class="hsvg-icon h-icon r-m-icon r-m-gold-color" aria-hidden="true">
+                                  <use xlink:href="#iconvip01"></use>
+                              </svg>
+                              <svg class="hsvg-icon h-icon r-m-icon-bd m-gold-color" aria-hidden="true">
+                                  <use xlink:href="#iconvip01"></use>
+                              </svg>
+
+                              <div class="r-m-text-box m-gold-color">
+                                  <p class="i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GOLD"></p>
+                              </div>
+                        </div>
+                  </div>
+                  <div id="vipGreenBox" class="c-box" style="display: none;">
+                        <div class="box-i">
+                              <svg class="hsvg-icon h-icon r-m-icon" aria-hidden="true">
+                                  <use xlink:href="#iconvip02"></use>
+                              </svg>
+                              <svg class="hsvg-icon h-icon r-m-icon-bd m-green-color" aria-hidden="true">
+                                  <use xlink:href="#iconvip02"></use>
+                              </svg>
+                              <div class="r-m-text-box m-green-color">
+                                  <p class="i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GREEN"></p>
+                              </div>
+                        </div>
+                  </div>
+                  <div id="vipDiamondBox" class="c-box" style="display: none;">
+                        <div class="box-i">
+                              <svg class="hsvg-icon h-icon r-m-icon" aria-hidden="true">
+                                  <use xlink:href="#iconvip03"></use>
+                              </svg>
+                              <svg class="hsvg-icon h-icon r-m-icon-bd m-diamond-color" aria-hidden="true">
+                                  <use xlink:href="#iconvip03"></use>
+                              </svg>
+                              <div class="r-m-text-box m-diamond-color">
+                                  <p class="i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_DMOD"></p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
       </div>
       <div class="m-middle-view m-view-box">
             <div class="vertical-view er-view">
@@ -19,48 +61,58 @@
                         </div>
                   </div>
             </div>
+
             <div class="vertical-view">
+                  <div class="login-flex" id="VipPackageInfo" style="display: none;">
+                      <p class="vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
+                      <p class="price"></p>
+                      <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                      <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
+                  </div>
+            </div>
+
+            <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconemail"></use>
                   </svg>
-                  <input type="email" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                  <input type="email" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
                         autocomplete="email"
                         autocorrect="off"
                         autocapitalize="off"
                         spellcheck="false"
                         data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
             </div>
-            <div class="vertical-view">
+            <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconkey"></use>
                   </svg>
-                  <input type="password" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                  <input type="password" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                        minlength="6"
+                        maxlength="20"
+                        data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+            </div>
+            <div class="vertical-view r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconkey"></use>
+                  </svg>
+                  <input type="password" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
                         minlength="6"
                         maxlength="20"
                         data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
             </div>
-            <div class="vertical-view">
-                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
-                        <use xlink:href="#iconkey"></use>
-                  </svg>
-                  <input type="password" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
-                        minlength="6"
-                        maxlength="20"
-                        data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
-            </div>
-            <div class="vertical-view">
+            <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconphone-01"></use>
                   </svg>
-                  <input type="tel" class="m-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                  <input type="tel" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                         maxlength="11"
                         data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
             </div>
-            <div class="vertical-view">
-                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+            <div class="vertical-view r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
                         <use xlink:href="#iconphone-01"></use>
                   </svg>
-                  <input type="text" class="m-input m-sms-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
+                  <input type="text" class="m-input m-sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                         maxlength="6"
                         data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
                   <button class="m-btn m-sms-btn" id="smsCode" type="submit" data-bind="command: getCodeCommand">
@@ -83,17 +135,17 @@
       </div>
       <div class="m-footer-view">
             <div class="social-view">
-                  <div class="s-logo-view">
+                  <div class="s-logo-view rs-logo-view s-logo-bdb">
                         <svg class="hsvg-icon h-icon" aria-hidden="true">
                               <use xlink:href="#iconapple"></use>
                         </svg>
                   </div>
-                  <div class="s-logo-view">
+                  <div class="s-logo-view rs-logo-view s-logo-bdg">
                         <svg class="hsvg-icon h-icon" aria-hidden="true">
                               <use xlink:href="#iconwechat"></use>
                         </svg>
                   </div>
-                  <div class="s-logo-view">
+                  <div class="s-logo-view rs-logo-view s-logo-bdf">
                         <svg class="hsvg-icon h-icon" aria-hidden="true">
                               <use xlink:href="#iconrenew"></use>
                         </svg>

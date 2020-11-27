@@ -36,12 +36,21 @@
                             <div class="vertical-view">
                                 <h3 class="label-h3" data-i18n="REGISTER/LABEL_TITLE"></h3>
                             </div>
+
+                            <div class="vertical-view">
+                                <div class="login-flex" id="VipPackageInfo" style="display: none;">
+                                    <p class="vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
+                                    <p class="price"></p>
+                                    <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                                    <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
+                                </div>
+                            </div>
         
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconemail"></use>
                                 </svg>
-                                <input type="email" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                                <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
                                     autocomplete="email"
                                     autocorrect="off"
                                     autocapitalize="off"
@@ -53,18 +62,24 @@
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconkey"></use>
                                 </svg>
-                                <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
-                                    minlength="6"
+                                <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                                    autocomplete="current-password"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    spellcheck="false"
                                     maxlength="20"
-                                    data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
+                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
                             </div>
         
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconkey"></use>
                                 </svg>
-                                <input type="password" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
-                                    minlength="6"
+                                <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
+                                    autocomplete="current-password"
+                                    autocorrect="off"
+                                    autocapitalize="off"
+                                    spellcheck="false"
                                     maxlength="20"
                                     data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
                             </div>
@@ -73,7 +88,7 @@
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconphone-01"></use>
                                 </svg>
-                                <input type="tel" class="v-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                                <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                                     maxlength="11"
                                     data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
                             </div>
@@ -83,7 +98,7 @@
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconphone-01"></use>
                                 </svg>
-                                    <input type="text" class="v-input sms-input" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
+                                    <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                                         maxlength="6"
                                         data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
                                     <div class="v-btn v-sms" id="smsCode" type="submit" data-bind="command: getCodeCommand">
