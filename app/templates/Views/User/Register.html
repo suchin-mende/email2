@@ -101,7 +101,7 @@
                                     <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                                         maxlength="6"
                                         data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
-                                    <div class="v-btn v-sms" id="smsCode" type="submit" data-bind="command: getCodeCommand">
+                                    <div class="v-btn v-sms" id="smsCode" data-bind="command: getCodeCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
                                     </div>
                                 
@@ -115,7 +115,7 @@
         
                             <div class="vertical-view">
                                 <div class="login-flex btn-flex">
-                                    <div class="v-btn v-login" type="submit" data-bind="command: submitCommand">
+                                    <div class="v-btn v-login" data-bind="command: submitCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
                                     </div>
                                     <div class="v-btn v-regist" data-bind="click: gotoLogin">
