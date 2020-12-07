@@ -6,7 +6,7 @@
                     <img class="l-Img" data-bind="attr: {'src': loginImg()}">
                 </div>
             </div>
-            <div class="e-right-view">
+            <div class="e-right-view login-flex">
                 
                 <div class="loginFormWrapper r-FormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
                     <center class="plugin-mark-Login-BeforeLogo">
@@ -22,7 +22,7 @@
                           </div>
                           {{INCLUDE/AfterLogo/PLACE}}
           
-                          <div class="wrapper-parent login-flex">
+                          <div class="wrapper-parent">
           
                                 <form class="wrapper loginForm login-flex" action="#/"
                                       data-bind="submit: submitForm,
@@ -32,7 +32,7 @@
                                               'submitting': submitRequest()
                                           }">
           
-                                      <div class="vertical-view">
+                                      <div class="vertical-view err-view">
                                           <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
                                               <button type="button" class="close"
                                                   data-bind="click: function () { submitError('') }">&times;</button>
