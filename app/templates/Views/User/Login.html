@@ -7,7 +7,13 @@
                 </div>
             </div>
             <div class="e-right-view login-flex">
-                
+                <div class="s-language" data-bind="visible: allowLanguagesOnLogin() && !socialLoginEnabled(), click: selectLanguage, tooltip: 'POPUPS_LANGUAGES/TITLE_LANGUAGES'">
+                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                        <use xlink:href="#iconlan-earth"></use>
+                    </svg>
+                    <span class="i18nflex">ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ</span>
+                </div>
+
                 <div class="loginFormWrapper r-FormWrapper" data-bind="css: {'afterLoginHide': formHidden}">
                     <center class="plugin-mark-Login-BeforeLogo">
                           {{INCLUDE/BeforeLogo/PLACE}}
