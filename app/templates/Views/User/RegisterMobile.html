@@ -1,4 +1,4 @@
-<div id="rl-right" style="position: relative;" class="b-login-content m-view">
+<div id="rl-right" style="position: relative; left: 0 !important;" class="b-login-content m-view">
       <div class="m-head-view">
             <div class="top-menu"></div>
             <div class="logo-view">
@@ -51,7 +51,7 @@
       </div>
       <div class="m-middle-view m-view-box">
             <div class="vertical-view err-view">
-                  <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
+                  <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">?
                         <button type="button" class="close"
                             data-bind="click: function () { submitError('') }">&times;</button>
                         <span data-bind="text: submitError"></span>
