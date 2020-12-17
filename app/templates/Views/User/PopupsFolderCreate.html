@@ -27,17 +27,20 @@
 							<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_PARENT"></span>
 						</label>
 						<div class="controls pfc-mgl">
-							<a class="selectBox dropdownlist selectBox-dropdown" title="" tabindex="NaN"
-								data-bind="
-									options: parentFolderSelectList,
-									value: selectedParentValue,
-									optionsText: 'name',
-									optionsValue: 'id',
-									optionsAfterRender: defautOptionsAfterRender"
-							>
-								<span class="selectBox-label level-0" style="height: 176px;"></span>
-								<span class="selectBox-arrow">◄ ►</span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title="" tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: parentFolderSelectList,
+										value: selectedParentValue,
+										optionsText: 'name',
+										optionsValue: 'id',
+										optionsAfterRender: defautOptionsAfterRender
+										lg: 'mn',
+										pid: 'Pid6'
+									}
+								}">
+							</div>
 						</div>
 					</div>
 				</div>
