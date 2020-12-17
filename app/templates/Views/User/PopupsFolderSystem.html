@@ -19,16 +19,20 @@
 						</label>
 						<div class="controls  folder-select">
 
-							<a class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
-								data-bind="
-								options: folderSelectList,
-								value: sentFolder,
-								optionsText: 'name',
-								optionsValue: 'id',
-								optionsAfterRender: $root.defautOptionsAfterRender"
-							>
-								<span class="selectBox-arrow"></span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: folderSelectList,
+										value: sentFolder,
+										optionsText: 'name',
+										optionsValue: 'id',
+										optionsAfterRender: $root.defautOptionsAfterRender,
+										lg: 'mn',
+										pid: 'Pid7'
+									}
+								}">
+							</div>
 						</div>
 
 					</div>
@@ -38,16 +42,20 @@
 						</label>
 						<div class="controls folder-select">
 
-							<a class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
-							data-bind="
-								options: folderSelectList,
-								value: draftFolder,
-								optionsText: 'name',
-								optionsValue: 'id',
-								optionsAfterRender: defautOptionsAfterRender"
-							>
-								<span class="selectBox-arrow"></span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: folderSelectList,
+										value: draftFolder,
+										optionsText: 'name',
+										optionsValue: 'id',
+										optionsAfterRender: defautOptionsAfterRender,
+										lg: 'mn',
+										pid: 'Pid8'
+									}
+								}">
+							</div>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -56,16 +64,20 @@
 						</label>
 						<div class="controls folder-select">
 
-							<a class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
-								data-bind="
-									options: folderSelectList,
-									value: spamFolder,
-									optionsText: 'name', 
-									optionsValue: 'id', 
-									optionsAfterRender: $root.defautOptionsAfterRender"
-							>
-								<span class="selectBox-arrow"></span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: folderSelectList,
+										value: spamFolder,
+										optionsText: 'name', 
+										optionsValue: 'id', 
+										optionsAfterRender: $root.defautOptionsAfterRender,
+										lg: 'mn',
+										pid: 'Pid9'
+									}
+								}">
+							</div>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -74,16 +86,20 @@
 						</label>
 						<div class="controls folder-select">
 
-							<a class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
-								data-bind="
-								options: folderSelectList,
-								value: trashFolder,
-								optionsText: 'name',
-								optionsValue: 'id',
-								optionsAfterRender: $root.defautOptionsAfterRender"
-							>
-								<span class="selectBox-arrow"></span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: folderSelectList,
+										value: trashFolder,
+										optionsText: 'name',
+										optionsValue: 'id',
+										optionsAfterRender: $root.defautOptionsAfterRender,
+										lg: 'mn',
+										pid: 'Pid10'
+									}
+								}">
+							</div>
 						</div>
 					</div>
 					<div class="control-group pfs-grp">
@@ -92,16 +108,20 @@
 						</label>
 						<div class="controls folder-select">
 
-							<a class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
-								data-bind="
-								options: folderSelectList,
-								value: archiveFolder,
-								optionsText: 'name',
-								optionsValue: 'id',
-								optionsAfterRender: $root.defautOptionsAfterRender"
-							>
-								<span class="selectBox-arrow"></span>
-							</a>
+							<div class="selectBox dropdownlist selectBox-dropdown" title=""tabindex="NaN"
+								data-bind="component: {
+									name: 'Select',
+									params: {
+										options: folderSelectList,
+										value: archiveFolder,
+										optionsText: 'name',
+										optionsValue: 'id',
+										optionsAfterRender: $root.defautOptionsAfterRender,
+										lg: 'mn',
+										pid: 'Pid11'
+									}
+								}">
+							</div>
 
 						</div>
 					</div>
