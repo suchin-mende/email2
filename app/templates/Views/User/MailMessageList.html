@@ -188,23 +188,23 @@
 			</div>
 		</div>
 		<div class="b-message-list-wrapper">
-			<div class="second-toolbar thm-message-list-top-toolbar">
+			<div class="second-toolbar">
 				<div class="form-inline s-inline">
 
 					<i class="checkboxCkeckAll"
 						data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
-					<div class="view-flex" data-bind="visible: allowSearch">
+					<div class="view-flex search-view" data-bind="visible: allowSearch">
 						<a class="btn buttonMoreSearch ipsm-mgl"
 							data-bind="visible: allowSearchAdv, click: advancedSearchClick">
 							<span class="caret"></span>
 						</a>
 						<div class="close-input-wrp">
-							<a class="close"
-								data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
 							<input type="text" class="i18n span4 inputSearch ips-mgl" tabindex="-1" placeholder="Search"
 								autocorrect="off" autocapitalize="off"
 								data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
 								data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
+							<a class="close"
+								data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
 						</div>
 					</div>
 
@@ -260,7 +260,7 @@
 				</div>
 			</div>
 			<div class="mainDelimiter footerDelimiter"></div>
-			<div class="b-footer thm-message-list-bottom-toolbar">
+			<div class="thm-message-list-bottom-toolbar">
 				<span data-tooltip-i18n="off" data-tooltip-mobile="on"
 					data-bind="visible: 0 < userUsageProc(), tooltip: quotaTooltip" class="e-quota">
 					<span data-bind="text: userUsageProc"></span>%
