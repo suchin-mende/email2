@@ -194,11 +194,12 @@
 					<i class="checkboxCkeckAll"
 						data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
 					<div class="view-flex search-view" data-bind="visible: allowSearch">
-						<a class="btn buttonMoreSearch ipsm-mgl"
-							data-bind="visible: allowSearchAdv, click: advancedSearchClick">
-							<span class="caret"></span>
-						</a>
+						
 						<div class="close-input-wrp">
+							<a class="btn buttonMoreSearch ipsm-mgl"
+								data-bind="visible: allowSearchAdv, click: advancedSearchClick">
+								<span class="caret"></span>
+							</a>
 							<input type="text" class="i18n span4 inputSearch ips-mgl" tabindex="-1" placeholder="Search"
 								autocorrect="off" autocapitalize="off"
 								data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
