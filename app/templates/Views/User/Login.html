@@ -28,9 +28,9 @@
                           </div>
                           {{INCLUDE/AfterLogo/PLACE}}
           
-                          <div class="wrapper-parent">
+                          <div class="wrapper-parent" data-bind="css: {'welcome-on': welcome}">
           
-                                <form class="wrapper loginForm login-flex" action="#/"
+                                <form class="wrapper submitting-pane loginForm login-flex" action="#/"
                                       data-bind="submit: submitForm,
                                           css: {
                                               'errorAnimated': formError,
@@ -50,7 +50,7 @@
                                           </div>
                                       </div>
           
-                                      <div class="vertical-view">
+                                      <div class="vertical-view" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                                             <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                                 <use xlink:href="#iconemail"></use>
                                             </svg>
@@ -63,7 +63,7 @@
                                               data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
                                       </div>
           
-                                      <div class="vertical-view">
+                                      <div class="vertical-view" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconkey"></use>
                                         </svg>
