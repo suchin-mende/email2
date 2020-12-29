@@ -49,19 +49,6 @@
 									</div>
 									<div class="btn-group pull-right">&nbsp;</div>
 								</div>
-								<span class="pull-right">
-									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_CC"
-										data-bind="visible: !showCc(), click: function () { showCc(true); }"></span>
-									&nbsp;&nbsp;
-									<span data-bind="visible: !showBcc()">
-										<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_BCC"
-											data-bind="click: function () { showBcc(true); }"></span>
-										&nbsp;&nbsp;
-									</span>
-									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_REPLY_TO"
-										data-bind="visible: !showReplyTo(), click: function () { showReplyTo(true); }"></span>
-									&nbsp;
-								</span>
 							</div>
 
 						</div>
@@ -113,6 +100,24 @@
 							<div class="e-cell e-value">
 								<input type="text" class="vertical-input" autocomplete="off"
 									data-bind="textInput: subject, hasFocus: subject.focused" />
+							</div>
+						</div>
+
+						<div class="e-row">
+							<div class="e-cell e-label">
+								<span class="pull-right">
+									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_CC"
+										data-bind="visible: !showCc(), click: function () { showCc(true); }"></span>
+									&nbsp;&nbsp;
+									<span data-bind="visible: !showBcc()">
+										<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_BCC"
+											data-bind="click: function () { showBcc(true); }"></span>
+										&nbsp;&nbsp;
+									</span>
+									<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_REPLY_TO"
+										data-bind="visible: !showReplyTo(), click: function () { showReplyTo(true); }"></span>
+									&nbsp;
+								</span>
 							</div>
 						</div>
 						
