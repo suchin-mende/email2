@@ -74,6 +74,13 @@
                                               autocapitalize="off"
                                               spellcheck="false"
                                               data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+                                              <span class="add-on" tabindex="-1" data-tooltip-join="left"
+                                                data-bind="command: submitCommand, tooltip: ''">
+                                                <button type="submit" class="btn-submit-icon-wrp"
+                                                    data-bind="visible: '' !== password()">
+                                                    <i class="icon-right-middle login-submit-icon"></i>
+                                                </button>
+                                            </span>
                                       </div>
           
                                       <div class="vertical-view">
