@@ -7,9 +7,9 @@
 				<!-- ko if:  allowFolders && mobile -->
 
 				<div class="b-toolbar btn-toolbar hide-on-mobile">
-					<a class="btn buttonCompose pull-left tool-icon" data-tooltip-join="top"
+					<a class="btn buttonCompose pull-left" data-tooltip-join="top"
 						data-bind=" click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
-							<svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
+							<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
 								<use xlink:href="#iconpen"></use>
 							</svg>
 						<span class="btn-text-wrp buttonComposeText">
@@ -37,7 +37,7 @@
 				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
 					<a class="btn single buttonCompose" data-tooltip-join="top"
 						data-bind="click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
-							<svg class="hsvg-icon h-icon" aria-hidden="true">
+							<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
 								<use xlink:href="#iconpen"></use>
 						  	</svg>
 					</a>
@@ -59,8 +59,9 @@
 						data-tooltip-join="top"
 						data-bind="command: moveCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
 						<i class="icon-copy visible-on-ctrl-btn"></i>
-						<i class="icon-folder hidden-on-ctrl-btn"></i>
-						&nbsp;&nbsp;
+						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+							<use xlink:href="#iconre01"></use>
+						</svg>
 						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="move-dropdown-id" role="menu"
@@ -83,7 +84,9 @@
 						class="btn single btn-dark-disabled-border buttonMove" data-tooltip-join="top"
 						data-bind="command: moveNewCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
 						<i class="icon-copy visible-on-ctrl-btn"></i>
-						<i class="icon-folder hidden-on-ctrl-btn"></i>
+						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+							<use xlink:href="#iconre01"></use>
+						</svg>
 					</a>
 				</div>
 				<!-- /ko -->
@@ -92,7 +95,9 @@
 				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateShow()">
 					<a class="btn first btn-dark-disabled-border button-archive" data-tooltip-join="top"
 						data-bind="visible: isArchiveVisible, command: archiveCommand, tooltip: 'MESSAGE_LIST/BUTTON_ARCHIVE'">
-						<i class="icon-archive"></i>
+						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+							<use xlink:href="#iconre03"></use>
+						</svg>
 					</a>
 					<a class="btn btn-dark-disabled-border button-spam" data-tooltip-join="top" data-bind="visible: isSpamVisible, command: spamCommand, tooltip: 'MESSAGE_LIST/BUTTON_SPAM',
 							css: {'first': !isArchiveVisible()}">
@@ -104,7 +109,9 @@
 					</a>
 					<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top" data-bind="command: deleteCommand, tooltip: 'MESSAGE_LIST/BUTTON_DELETE',
 							css: {'first': !isArchiveVisible() && !isSpamVisible() && !isUnSpamVisible()}">
-						<i class="icon-trash"></i>
+							<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+								<use xlink:href="#iconre04"></use>
+							</svg>
 						<!--<span data-bind="text: printableMessageCountForDeletion()"></span>-->
 					</a>
 				</div>
@@ -114,7 +121,9 @@
 					<a id="more-list-dropdown-id" class="btn single btn-dark-disabled-border dropdown-toggle buttonMore"
 						href="#" tabindex="-1" data-toggle="dropdown" data-tooltip-join="top"
 						data-bind="tooltip: 'MESSAGE_LIST/BUTTON_MORE'">
-						<i class="icon-list animate-this-icon-on-open"></i>
+						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+							<use xlink:href="#iconre05"></use>
+						</svg>
 					</a>
 					<ul class="dropdown-menu pull-right g-ui-menu menu-left" role="menu"
 						aria-labelledby="more-list-dropdown-id">
@@ -174,8 +183,9 @@
 						<li class="e-item" role="presentation"
 							data-bind="visible: allowDangerousActions, command: deleteWithoutMoveCommand">
 							<a class="e-link menuitem" href="#" tabindex="-1">
-								<i class="icon-trash"></i>
-								&nbsp;&nbsp;
+								<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+									<use xlink:href="#iconre04"></use>
+								</svg>
 								<span class="i18n" data-i18n="MESSAGE_LIST/BUTTON_DELETE_WITHOUT_MOVE"></span>
 							</a>
 						</li>
