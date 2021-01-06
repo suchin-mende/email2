@@ -77,7 +77,7 @@
 					style="height: 100%">
 
 					<div class="b-message-view-desc display-mgl" data-bind="visible: !logoIframe">
-						<span class="i18n" data-bind="visible: !logoImg" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
+						<span class="i18n" data-bind="visible: !logoImg, attr: { 'src': messTip }" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
 							<img style="height: 99%" data-bind="attr: { 'src': logoImg }" />
 						</div>
