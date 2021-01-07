@@ -5,21 +5,21 @@
             <svg class="hsvg-icon h-icon back-login" data-bind="click: gotoLogin" aria-hidden="true">
                 <use xlink:href="#iconlenf_ar"></use>
             </svg>
-            
+
         </div>
         <div class="e-right-view r-full">
 
             <div class="loginFormWrapper fullFormWrapper">
                 <center class="plugin-mark-Login-BeforeLogo">
                       <div class="wrapper-parent">
-        
+
                         <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
                             data-bind="submit: submitForm,
                                 css: {
                                     'errorAnimated': formError,
                                     'submitting': submitRequest()
                                 },">
-        
+
                             <div class="vertical-view err-view">
                                 <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
                                     <button type="button" class="close" data-bind="click: function () { submitError('') }">
@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                 <h3 class="label-h3" data-i18n="REGISTER/LABEL_TITLE"></h3>
                             </div>
@@ -45,7 +45,7 @@
                                     <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconemail"></use>
@@ -56,15 +56,15 @@
                                     autocapitalize="off"
                                     spellcheck="false"
                                     data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
-                                
+
                                 <div class="c-tooltip">
                                     <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                         <use xlink:href="#iconaks_help"></use>
                                     </svg>
-                                    <span class="c-tooltiptext">text.....</span>
+                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconkey"></use>
@@ -81,10 +81,10 @@
                                     <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                         <use xlink:href="#iconaks_help"></use>
                                     </svg>
-                                    <span class="c-tooltiptext">text.....</span>
+                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconkey"></use>
@@ -97,7 +97,7 @@
                                     maxlength="20"
                                     data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
                             </div>
-        
+
                             <div class="vertical-view">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconphone-01"></use>
@@ -110,12 +110,12 @@
                                     <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                         <use xlink:href="#iconaks_help"></use>
                                     </svg>
-                                    <span class="c-tooltiptext">text.....</span>
+                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_TEL_HELP"></span>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
-                                
+
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconphone-01"></use>
                                 </svg>
@@ -125,32 +125,35 @@
                                     <div class="v-btn v-sms" id="smsCode" data-bind="command: getCodeCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
                                     </div>
-                                
+
                             </div>
-        
+
                             <!-- <div class="vertical-view">
                                 <div class="v-val sms-mess">
                                       <span class="val-text">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
                                 </div>
                             </div> -->
-        
+
                             <div class="vertical-view">
                                 <div class="login-flex btn-flex">
                                     <div class="v-btn v-login" data-bind="command: submitCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
                                     </div>
-                                    <div class="v-btn v-regist" data-bind="click: gotoLogin">
+                                    <!-- <div class="v-btn v-regist" data-bind="click: gotoLogin">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
+                                    </div> -->
+                                    <div class="v-btn v-members" data-bind="click: gotoVipPackage">
+                                        <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                     </div>
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                 <div class="v-tag-none">
-        
+
                                 </div>
                             </div>
-        
+
                             <div class="vertical-view">
                                   <div class="QR-code" data-bind="click: gotoQRcode">
                                     <svg class="hsvg-icon h-icon" aria-hidden="true">
@@ -159,37 +162,12 @@
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
                                   </div>
                             </div>
-        
+
                         </form>
                     </div>
                 </center>
           </div>
-          <div class="v-right-sidebar">
-            <div class="top-mobile">
-                <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                    <use xlink:href="#iconapple"></use>
-                </svg>
-                <div class="line-top"></div>
-                <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                    <use xlink:href="#iconandroid"></use>
-                </svg>
-                <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
-            </div>
-            <div class="bottom-mess">
-                <div class="">
-                    <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                        <use xlink:href="#icontech-01"></use>
-                    </svg>
-                    <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
-                </div>
-                <div class="">
-                    <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                        <use xlink:href="#iconcompny_group"></use>
-                    </svg>
-                    <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
-                </div>
-            </div>
-          </div>
+        <div class="v-right-sidebar" data-bind="template: {name: 'Footer'}"></div>
         </div>
     </div>
 

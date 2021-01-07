@@ -1,5 +1,5 @@
 <div class="b-login-content">
-    
+
         <div class="e-view">
             <div class="e-left-view lg-view">
                 <div class="ls-view">
@@ -30,9 +30,9 @@
                               <span class="desc" data-bind="text: loginDescription"></span>
                           </div>
                           {{INCLUDE/AfterLogo/PLACE}}
-          
+
                           <div class="wrapper-parent" data-bind="css: {'welcome-on': welcome}">
-          
+
                                 <form class="wrapper submitting-pane loginForm login-flex" action="#/"
                                       data-bind="submit: submitForm,
                                           css: {
@@ -40,7 +40,7 @@
                                               'welcome-off': welcome,
                                               'submitting': submitRequest()
                                           }">
-          
+
                                       <div class="vertical-view err-view">
                                           <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
                                               <button type="button" class="close"
@@ -52,7 +52,7 @@
                                               </div>
                                           </div>
                                       </div>
-          
+
                                       <div class="vertical-view" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                                             <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                                 <use xlink:href="#iconemail"></use>
@@ -65,7 +65,7 @@
                                               spellcheck="false"
                                               data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
                                       </div>
-          
+
                                       <div class="vertical-view" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconkey"></use>
@@ -85,7 +85,7 @@
                                                 </button>
                                             </span>
                                       </div>
-          
+
                                       <div class="vertical-view">
                                             <div class="login-flex">
                                                   <div class="v-btn v-login" data-bind="command: submitCommand">
@@ -99,10 +99,10 @@
                                                   </div>
                                             </div>
                                       </div>
-          
+
                                       <div class="vertical-view">
                                             <div class="v-tag">
-                                                <div class="signMeLabel" data-bind="visible: signMeVisibility, 
+                                                <div class="signMeLabel" data-bind="visible: signMeVisibility,
                                                     component: {
                                                         name: 'CheckboxSimple',
                                                         params: {
@@ -116,7 +116,7 @@
                                                       data-bind="click: gotoFindPassword" target="_blank"></a>
                                             </div>
                                       </div>
-          
+
                                       <div class="vertical-view">
                                             <div class="QR-code" data-bind="click: gotoQRcode">
                                                 <svg class="hsvg-icon h-icon" aria-hidden="true">
@@ -125,39 +125,14 @@
                                                   <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
                                             </div>
                                       </div>
-          
+
                                 </form>
 
                           </div>
 
                     </center>
               </div>
-              <div class="v-right-sidebar">
-                <div class="top-mobile">
-                    <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                        <use xlink:href="#iconapple"></use>
-                    </svg>
-                    <div class="line-top"></div>
-                    <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                        <use xlink:href="#iconandroid"></use>
-                    </svg>
-                    <span class="i18nflex">ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ</span>
-                </div>
-                <div class="bottom-mess">
-                    <div class="">
-                        <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                            <use xlink:href="#icontech-01"></use>
-                        </svg>
-                        <span class="i18nflex">ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ</span>
-                    </div>
-                    <div class="">
-                        <svg class="hsvg-icon h-icon sidebar-icon" aria-hidden="true">
-                            <use xlink:href="#iconcompny_group"></use>
-                        </svg>
-                        <span class="i18nflex"> ᠬᠠᠯᠠᠭᠠᠢ ᠬᠢᠵᠠᠭᠠᠷᠲᠤ ᠬᠠᠷᠢᠭᠤᠴᠠᠯᠭᠠᠲᠤ ᠺᠣᠮᠫᠠᠨᠢ</span>
-                    </div>
-                </div>
-              </div>
+            <div class="v-right-sidebar" data-bind="template: {name: 'Footer'}"></div>
             </div>
         </div>
 

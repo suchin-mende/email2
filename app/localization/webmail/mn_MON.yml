@@ -21,19 +21,38 @@ mn_MON:
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
-    LABEL_AFFIRM_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠡᠨ ᠪᠠᠲᠤᠯᠠᠬᠤ"
-    LABEL_CELLPHONE_NUMBER: "ᠭᠠᠷ ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"  
+    LABEL_AFFIRM_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠶᠢᠡᠨ ᠪᠠᠲᠤᠯᠠᠬᠤ"
+    LABEL_CELLPHONE_NUMBER: "ᠭᠠᠷ ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"
     LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "ᠳ᠋ᠤᠭᠠᠷ ᠢᠯᠡᠭᠡᠬᠦ"
     LABEL_CELLPHONE_VERIFICATION_CODE: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
     LABEL_REGISTRATION: "ᠪᠦᠷᠢᠳᠭᠡᠬᠦ"
-    LABEL_FORGET_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ᠢᠶᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ" 
+    LABEL_FORGET_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠶᠢᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ"
     LABEL_LOGIN_ACCOUNT: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_MONGOL_EMAIL: "@mongol.email"
+    LABEL_VIP_MONGOL_EMAIL: "@vip.mongol.email"
     LABEL_HALGAI_EMAIL: "@halgai.com"
     LABEL_QRCODE_SCAN: "Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
+    LABEL_USERCD_HELP:
+          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠪᠠᠭ᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠤᠷᠤᠭᠤᠯᠵᠤ ᠪᠤᠯᠤᠨ᠎ᠠ᠃
+          ᠲᠦᠯᠦᠪᠦᠷᠢ ᠦᠭᠡᠢ ᠬᠠᠶᠢᠭ ᠲᠡᠮᠳᠡᠭᠯᠡᠬᠦ ᠋ᠳ᠋ᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ
+          ᠡᠷᠬᠡᠪᠰᠢ ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠵᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ᠃
+          ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡ ᠦᠭᠡᠢ 6 ᠦᠰᠦᠭ ᠪᠤᠶᠤ᠂ᠲᠡᠬᠦᠨ ᠡᠴᠨ ᠪᠠᠰᠠ
+          ᠴᠦᠭᠡᠨ ᠦᠰᠦᠭ ᠲᠠᠢ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠪᠤᠯᠬᠤ ᠬᠡᠷᠡᠭ ᠲᠠᠢ
+          ᠤᠴᠢᠷ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠤ ᠲᠠᠢᠯᠪᠤᠷᠢ ᠡᠴᠨ ᠨᠠᠷᠢᠨ ᠠᠭᠤᠯᠭ᠎ᠠ ᠵᠢ ᠯᠠᠪᠯᠠᠭᠠᠷᠢ᠃
+          3 ᠦᠰᠦᠭ ᠤᠨ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ ᠨᠠᠮᠡᠯᠳᠠ ᠲᠦᠯᠦᠪᠤᠷᠢ ᠠᠪᠬᠤ
+          ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠬᠤ ᠪᠤᠯᠪᠠᠤ!
+    LABEL_PASSWORD_HELP:
+          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠶᠡᠭᠡ ᠪᠠᠭ᠎᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠠ ᠲᠤᠭ᠎ᠠ ᠵᠢ
+          ᠬᠤᠯᠢᠵᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ ᠪᠢᠴᠢᠭᠡᠷᠠᠢ᠃
+          ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠤᠨ ᠠᠮᠤᠷ ᠲᠦᠪᠰᠢᠨ ᠢ ᠪᠠᠳᠤᠯᠠᠬᠤ ᠶᠢᠨ ᠲᠦᠯᠦᠭᠡ
+          ᠡᠷᠬᠡᠪᠰᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠬᠦ ᠴᠢᠬᠤᠯᠠᠳᠠᠢ ᠤᠴᠢᠷ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
+    LABEL_TEL_HELP:
+          ᠤᠯᠤᠰ ᠤᠨ ᠨᠤᠮᠧᠷ ᠪᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠨ ᠵᠦᠪ ᠲᠠᠭᠯᠠᠭᠠᠷᠠᠢ᠃
+          ᠨᠢᠭᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠷ ᠨᠢᠭᠡ ᠯᠡ ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠠᠪᠴᠤ
+          ᠪᠤᠯᠬᠤ ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
    FINDPASSWORD:
-    FIND_FORGOP_NAME: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠪᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ" 
-    FIND_FORGOTP: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"   
+    FIND_FORGOP_NAME: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠪᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
+    FIND_FORGOTP: " ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ"
     FIND_FORGO_BU: " ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠯᠬᠤᠮ"
     LABEL_EMAIL: "ᠨᠡᠷ᠎ᠡ ‍\ ᠢᠮᠧᠯ ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_PHONE_NUMBER: "ᠭᠠᠷ ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"
@@ -46,6 +65,10 @@ mn_MON:
     BUTTON_REGIST: "ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     BUTTON_LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_QRCODE_SCAN: "Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
+   FOOTER:
+    LAVEL_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ"
+    LAVEL_SYSTEM_HELP: "ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ"
+    LAVEL_HALGAI_COMMPANY: "ᠬᠠᠯᠠᠭᠠᠢ ᠮᠡᠳᠡᠭᠡᠯᠡᠯ ᠲᠧᠭᠨᠢᠭ ᠤᠨ ᠬᠢᠵᠠᠭᠠᠷᠳᠤ ᠺᠣᠮᠫᠠᠨᠢ"
    PACKAGE:
     PACKAGE_NAME: "ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ "
     PACKAGE_INPUT1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"
@@ -158,7 +181,7 @@ mn_MON:
     YESTERDAY_AT: "ᠥᠴᠦᠭᠡᠳᠦᠷ %TIME%"
     SEARCH_PLACEHOLDER: "ᠬᠠᠢᠯᠲᠠ"
     NEW_MESSAGE_NOTIFICATION: "ᠳᠠᠨ ᠳ᠋ᠤ %COUNT% ᠬᠤᠪᠢ  ᠰᠢᠨ᠎ᠡ ᠵᠠᠬᠢᠳᠠᠯ ᠪᠤᠢ"
-    QUOTA_SIZE: "ᠬᠡᠷᠡᠭᠯᠡᠪᠡ<strong>%LIMIT%</strong> ᠤᠷᠤᠨ ᠵᠠᠢ ᠡᠴᠡ<strong>%SIZE% (%PROC%%)</strong>"
+    QUOTA_SIZE: "<strong>%LIMIT%</strong> ᠤᠷᠤᠨ ᠵᠠᠢ ᠡᠴᠡ<strong>%SIZE% (%PROC%%)</strong> ᠵᠢ ᠬᠡᠷᠡᠭᠯᠡᠪᠡ"
    MESSAGE:
     BUTTON_EDIT: "ᠨᠠᠢᠷᠠᠭᠤᠯᠬᠤ"
     BUTTON_BACK: "ᠪᠤᠴᠠᠬᠤ"
