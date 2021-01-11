@@ -63,4 +63,44 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 	{
 		return APP_DEV_DIR == 'halgai/v/' ? 'mn' : 'cn';
 	}
+
+	public function vipPlans()
+	{
+		return $this->get(APP_API_PATH, $this->makeRoute(array($this->getLanguage(), APP_API_VERSION, APP_API_COMPANY, 'vip/plans')));
+	}
+
+	public function vipPlan($planCd, $childPlans)
+	{
+		$params = array(
+			$this->getLanguage(), 
+			APP_API_VERSION, 
+			APP_API_COMPANY, 
+			'vip/plan',
+			$planCd
+		);
+		if ($childPlans != null)
+			array_push($params, $childPlans);
+		return $this->get(
+			APP_API_PATH,
+			$this->makeRoute($params)
+		);
+	}
+
+	public function vipCoupon($userCd, $planCd, $ticketCode)
+	{
+		$params = array(
+			$this->getLanguage(), 
+			APP_API_VERSION, 
+			APP_API_COMPANY, 
+			'vip/coupon',
+			$userCd,
+			$planCd
+		);
+		if ($ticketCode != null)
+			array_push($params, $ticketCode);
+		return $this->get(
+			APP_API_PATH,
+			$this->makeRoute($params)
+		);
+	}
 }

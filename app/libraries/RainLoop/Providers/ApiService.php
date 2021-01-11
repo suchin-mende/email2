@@ -54,4 +54,19 @@ class ApiService extends \RainLoop\Providers\AbstractProvider
 		return $this->oDriver->findPassword($sUserCd, $smsCode, $sPassword);
 	}
 
+	public function vipPlans()
+	{
+		return $this->oDriver->vipPlans();
+	}
+
+	public function vipPlan($planCd, $childPlans)
+	{
+		return $this->oDriver->vipPlan($planCd, $childPlans);
+	}
+
+	public function vipCoupon($userCd, $planCd, $ticketCode)
+	{
+		return $this->oDriver->vipCoupon($userCd, $planCd, $ticketCode);
+	}
+
 }

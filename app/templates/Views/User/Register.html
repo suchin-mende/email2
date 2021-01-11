@@ -38,11 +38,17 @@
                             </div>
 
                             <div class="vertical-view">
-                                <div class="login-flex" id="VipPackageInfo" style="display: none;">
+                                <div class="tag-vip" id="VipPackageInfo" style="display: none;">
+                                    <svg class="hsvg-icon h-icon vip-icon" aria-hidden="true">
+                                        <use xlink:href="#iconvip04"></use>
+                                    </svg>
                                     <p class="vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
                                     <p class="price"></p>
                                     <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
                                     <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
+                                    <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
+                                        <use xlink:href="#iconvip05"></use>
+                                    </svg>
                                 </div>
                             </div>
 
@@ -142,7 +148,7 @@
                                     <!-- <div class="v-btn v-regist" data-bind="click: gotoLogin">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
                                     </div> -->
-                                    <div class="v-btn v-members" data-bind="click: gotoVipPackage">
+                                    <div class="v-btn v-members" style="margin-top: 2px;" data-bind="click: gotoVipPackage">
                                         <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                     </div>
                                 </div>
