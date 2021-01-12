@@ -45,23 +45,11 @@ en:
     LABEL_HALGAI_EMAIL: "@halgai.com" 
     LABE_LTITLE: "邮箱注册"
     LABEL_USERCD_HELP:
-          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠪᠠᠭ᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠤᠷᠤᠭᠤᠯᠵᠤ ᠪᠤᠯᠤᠨ᠎ᠠ᠃
-          ᠲᠦᠯᠦᠪᠦᠷᠢ ᠦᠭᠡᠢ ᠬᠠᠶᠢᠭ ᠲᠡᠮᠳᠡᠭᠯᠡᠬᠦ ᠋ᠳ᠋ᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ
-          ᠡᠷᠬᠡᠪᠰᠢ ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠵᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ᠃
-          ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡ ᠦᠭᠡᠢ 6 ᠦᠰᠦᠭ ᠪᠤᠶᠤ᠂ᠲᠡᠬᠦᠨ ᠡᠴᠨ ᠪᠠᠰᠠ
-          ᠴᠦᠭᠡᠨ ᠦᠰᠦᠭ ᠲᠠᠢ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠪᠤᠯᠬᠤ ᠬᠡᠷᠡᠭ ᠲᠠᠢ
-          ᠤᠴᠢᠷ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠤ ᠲᠠᠢᠯᠪᠤᠷᠢ ᠡᠴᠨ ᠨᠠᠷᠢᠨ ᠠᠭᠤᠯᠭ᠎ᠠ ᠵᠢ ᠯᠠᠪᠯᠠᠭᠠᠷᠢ᠃
-          3 ᠦᠰᠦᠭ ᠤᠨ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ ᠨᠠᠮᠡᠯᠳᠠ ᠲᠦᠯᠦᠪᠤᠷᠢ ᠠᠪᠬᠤ
-          ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠬᠤ ᠪᠤᠯᠪᠠᠤ!
+          Start with a letter and use combinations of 6 to 18 characters (letter, number, dot, underline)
     LABEL_PASSWORD_HELP:
-          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠶᠡᠭᠡ ᠪᠠᠭ᠎᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠠ ᠲᠤᠭ᠎ᠠ ᠵᠢ
-          ᠬᠤᠯᠢᠵᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ ᠪᠢᠴᠢᠭᠡᠷᠠᠢ᠃
-          ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠤᠨ ᠠᠮᠤᠷ ᠲᠦᠪᠰᠢᠨ ᠢ ᠪᠠᠳᠤᠯᠠᠬᠤ ᠶᠢᠨ ᠲᠦᠯᠦᠭᠡ
-          ᠡᠷᠬᠡᠪᠰᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠬᠦ ᠴᠢᠬᠤᠯᠠᠳᠠᠢ ᠤᠴᠢᠷ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
+          Use combinations of 6 to 18 characters, including at least 2 of letters, numbers, and symbols
     LABEL_TEL_HELP:
-          ᠤᠯᠤᠰ ᠤᠨ ᠨᠤᠮᠧᠷ ᠪᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠨ ᠵᠦᠪ ᠲᠠᠭᠯᠠᠭᠠᠷᠠᠢ᠃
-          ᠨᠢᠭᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠷ ᠨᠢᠭᠡ ᠯᠡ ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠠᠪᠴᠤ
-          ᠪᠤᠯᠬᠤ ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
+          Please fill in the correct country number and mobile phone number can only be bound to one email address
   LOGIN:
     LABEL_EMAIL: "Email"
     LABEL_LOGIN: "Login"
@@ -760,6 +748,17 @@ en:
     MAIL_SERVER_ERROR: "An error has occured while accessing mail server"
     INVALID_INPUT_ARGUMENT: "Invalid input argument"
     UNKNOWN_ERROR: "Unknown error"
+    SYSTEM_ERROR: "E999999： System error"
+    EMAIL_UNLL_ERROR: "Mail address cannot be empty"
+    PASSWORD_UNLL_ERROR: "The password cannot be empty"
+    AFFIRM_PASSWORD_UNLL_ERROR: "Verify that the password cannot be blank"
+    PASSWORD_INCONFORMITY_ERROR: "Password Inconsistency"
+    PHONE_UNLL_ERROR: "The phone number cannot be blank"
+    PHONE_CODE_UNLL_ERROR: "The mobile verification code cannot be empty"
+    EMAIL_FORMAT_ERROR: "Email format error"
+    PHONE_FORMAT_ERROR: "The format of mobile phone number is wrong"
+    SMS_FORMAT_ERROR: "Incorrect format of CAPTCHA"
+    PASSWORD_FORMAT_ERROR: "The password must consist of numbers and letters"
   STATIC:
     BACK_LINK: "Reload"
     DOMAIN_LIST_DESC: "List of domains webmail is allowed to access."
