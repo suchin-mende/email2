@@ -16,6 +16,7 @@ mn_MON:
     LABEL_VIP_MEMBERS: "VIP ᠬᠡᠰᠢᠭᠦᠨᠴᠢᠯᠡᠬᠦ"
     M_LABEL_VIP_MEMBERS: "VIP"
     LABEL_QRCODE_SCAN: "Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
+    LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
    REGISTER:
     M_LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"

@@ -1,4 +1,55 @@
 en:
+  VIPLOGIN:
+    LABEL_CHANGE: "change"
+    LABEL_EMAIL: "Email"
+    LABEL_PASSWORD: "Password"
+    LABEL_REGISTRATION: "Register now"
+    LABEL__VIA_PACKAGE: "套餐信息："
+    LABEL_VIP_CAPACITY: "VIP无限邮箱容量—"
+    LABEL_VIP_MAILBOX: " 邮箱容量"
+    LABEL_VIP_USELECT: "56.6%用户选择"
+    LABEL_VIP_CAPAC: "18GB-"
+    LABEL_VIP_ONE: "30元/月"
+    LABEL_VIP_TOW: "45元/月"
+    LABEL_VIP_THREE: "60元/月"
+    LABEL_VIP_H3: "VIP会员"
+    LABEL_MAILBOX_GOLD: "黄金会员"
+    LABEL_MAILBOX_GREEN: "宝石会员"
+    LABEL_MAILBOX_DMOD: "钻石会员"
+    SELL_GOLD: "¥99/年"
+    SELL_GREEN: "¥199/年"
+    SELL_DMOD: "¥299/年"
+  SETPASSWORD:
+    LABEL_PASSWOD_FORMAT: "6-20位密码，区分大小写"
+    LABEL_CONFIRM: "确认"
+  FINDPASSWORD:
+    LABEL_EMAIL: "Email"
+    LABEL_NEXT_STEP: "下一步"
+    LABEL_PASSWOD_FORMAT: "New password"
+    LABEL_CONFIRM_PASSWOD_FORMAT: "Confirm Password"
+    LABEL_CONFIRM: "Confirm"
+    LABEL_FINDPWD: "Retrieve password"
+    LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "Get Captcha"
+    LABEL_CELLPHONE_VERIFICATION_CODE: "Auth code"
+  REGISTER: ######后加
+    LABEL_EMAIL: "Email"
+    LABEL_PASSWORD: "Password"
+    LABEL_AFFIRM_PASSWORD: "Confirm Password"
+    LABEL_CELLPHONE_NUMBER: "Cell phone number"  
+    LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "Get Captcha"
+    LABEL_CELLPHONE_VERIFICATION_CODE: "Auth code"
+    LABEL_REGISTRATION: "Register now"
+    LABEL_FORGET_PASSWORD: "Forgot password" 
+    LABEL_LOGIN_ACCOUNT: "Login account"
+    LABEL_MONGOL_EMAIL: "@mongol.email"
+    LABEL_HALGAI_EMAIL: "@halgai.com" 
+    LABE_LTITLE: "邮箱注册"
+    LABEL_USERCD_HELP:
+          Start with a letter and use combinations of 6 to 18 characters (letter, number, dot, underline)
+    LABEL_PASSWORD_HELP:
+          Use combinations of 6 to 18 characters, including at least 2 of letters, numbers, and symbols
+    LABEL_TEL_HELP:
+          Please fill in the international area code and mobile phone number correctly, and can only be bound to one email
   LOGIN:
     LABEL_EMAIL: "Email"
     LABEL_LOGIN: "Login"
@@ -13,6 +64,8 @@ en:
     TITLE_SIGN_IN_TWITTER: "Sign In using Twitter"
     LABEL_FORGOT_PASSWORD: "Forgot password"
     LABEL_REGISTRATION: "Registration"
+    LABEL_QRCODE_SCAN: "Scan the QR code"
+    LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
   TOP_TOOLBAR:
     BUTTON_ADD_ACCOUNT: "Add Account"
     BUTTON_SETTINGS: "Settings"
@@ -695,6 +748,18 @@ en:
     MAIL_SERVER_ERROR: "An error has occured while accessing mail server"
     INVALID_INPUT_ARGUMENT: "Invalid input argument"
     UNKNOWN_ERROR: "Unknown error"
+    SYSTEM_ERROR: "E999999： System error"
+    EMAIL_UNLL_ERROR: "Mail address cannot be empty"
+    PASSWORD_UNLL_ERROR: "The password cannot be empty"
+    AFFIRM_PASSWORD_UNLL_ERROR: "Verify that the password cannot be blank"
+    PASSWORD_INCONFORMITY_ERROR: "Password Inconsistency"
+    PHONE_UNLL_ERROR: "The phone number cannot be blank"
+    PHONE_CODE_UNLL_ERROR: "The mobile verification code cannot be empty"
+    EMAIL_FORMAT_ERROR: "Email format error"
+    PHONE_FORMAT_ERROR: "The format of mobile phone number is wrong"
+    SMS_FORMAT_ERROR: "Incorrect format of CAPTCHA"
+    PASSWORD_FORMAT_ERROR: "The password must consist of numbers and letters"
+    UNIT: "/元"
   STATIC:
     BACK_LINK: "Reload"
     DOMAIN_LIST_DESC: "List of domains webmail is allowed to access."
