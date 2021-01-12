@@ -1,4 +1,65 @@
 en:
+  VIPLOGIN:
+    LABEL_CHANGE: "修改"
+    LABEL_EMAIL: "邮箱"
+    LABEL_PASSWORD: "密码"
+    LABEL_REGISTRATION: "立即注册"
+    LABEL__VIA_PACKAGE: "套餐信息："
+    LABEL_VIP_CAPACITY: "VIP无限邮箱容量—"
+    LABEL_VIP_MAILBOX: " 邮箱容量"
+    LABEL_VIP_USELECT: "56.6%用户选择"
+    LABEL_VIP_CAPAC: "18GB-"
+    LABEL_VIP_ONE: "30元/月"
+    LABEL_VIP_TOW: "45元/月"
+    LABEL_VIP_THREE: "60元/月"
+    LABEL_VIP_H3: "VIP会员"
+    LABEL_MAILBOX_GOLD: "黄金会员"
+    LABEL_MAILBOX_GREEN: "宝石会员"
+    LABEL_MAILBOX_DMOD: "钻石会员"
+    SELL_GOLD: "¥99/年"
+    SELL_GREEN: "¥199/年"
+    SELL_DMOD: "¥299/年"
+  SETPASSWORD:
+    LABEL_PASSWOD_FORMAT: "6-20位密码，区分大小写"
+    LABEL_CONFIRM: "确认"
+  FINDPASSWORD:
+    LABEL_EMAIL: "邮箱"
+    LABEL_NEXT_STEP: "下一步"
+    LABEL_PASSWOD_FORMAT: "新密码"
+    LABEL_CONFIRM_PASSWOD_FORMAT: "确认新密码"
+    LABEL_CONFIRM: "确认"
+    LABEL_FINDPWD: "找回密码"
+  REGISTER: ######后加
+    LABEL_EMAIL: "邮箱"
+    LABEL_PASSWORD: "密码"
+    LABEL_AFFIRM_PASSWORD: "确认密码"
+    LABEL_CELLPHONE_NUMBER: "手机号"  
+    LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "获取验证码"
+    LABEL_CELLPHONE_VERIFICATION_CODE: "验证码"
+    LABEL_REGISTRATION: "立即注册"
+    LABEL_FORGET_PASSWORD: "忘记密码" 
+    LABEL_LOGIN_ACCOUNT: "登录账号"
+    LABEL_MONGOL_EMAIL: "@mongol.email"
+    LABEL_HALGAI_EMAIL: "@halgai.com" 
+    LABE_LTITLE: "邮箱注册"
+    LABEL_USERCD_HELP:
+          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠪᠠᠭ᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠤᠷᠤᠭᠤᠯᠵᠤ ᠪᠤᠯᠤᠨ᠎ᠠ᠃
+          ᠲᠦᠯᠦᠪᠦᠷᠢ ᠦᠭᠡᠢ ᠬᠠᠶᠢᠭ ᠲᠡᠮᠳᠡᠭᠯᠡᠬᠦ ᠋ᠳ᠋ᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ
+          ᠡᠷᠬᠡᠪᠰᠢ ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠪᠡ ᠲᠤᠭ᠎ᠠ ᠵᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ᠃
+          ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠭᠡ ᠦᠭᠡᠢ 6 ᠦᠰᠦᠭ ᠪᠤᠶᠤ᠂ᠲᠡᠬᠦᠨ ᠡᠴᠨ ᠪᠠᠰᠠ
+          ᠴᠦᠭᠡᠨ ᠦᠰᠦᠭ ᠲᠠᠢ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠪᠤᠯᠬᠤ ᠬᠡᠷᠡᠭ ᠲᠠᠢ
+          ᠤᠴᠢᠷ VIP ᠭᠡᠰᠢᠬᠦᠨ ᠤ ᠲᠠᠢᠯᠪᠤᠷᠢ ᠡᠴᠨ ᠨᠠᠷᠢᠨ ᠠᠭᠤᠯᠭ᠎ᠠ ᠵᠢ ᠯᠠᠪᠯᠠᠭᠠᠷᠢ᠃
+          3 ᠦᠰᠦᠭ ᠤᠨ ᠬᠠᠶᠢᠭ ᠠᠪᠬᠤ ᠳᠤ ᠨᠠᠮᠡᠯᠳᠠ ᠲᠦᠯᠦᠪᠤᠷᠢ ᠠᠪᠬᠤ
+          ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠬᠤ ᠪᠤᠯᠪᠠᠤ!
+    LABEL_PASSWORD_HELP:
+          ᠠᠩᠯᠢ ᠦᠰᠦᠭ ᠤᠨ ᠶᠡᠭᠡ ᠪᠠᠭ᠎᠎ᠠ ᠪᠢᠴᠢᠯᠭᠡ ᠪᠠ ᠲᠤᠭ᠎ᠠ ᠵᠢ
+          ᠬᠤᠯᠢᠵᠤ 6~18 ᠦᠰᠦᠭ ᠤᠨ ᠲᠤᠳᠤᠷ᠎ᠠ ᠪᠢᠴᠢᠭᠡᠷᠠᠢ᠃
+          ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠤᠨ ᠠᠮᠤᠷ ᠲᠦᠪᠰᠢᠨ ᠢ ᠪᠠᠳᠤᠯᠠᠬᠤ ᠶᠢᠨ ᠲᠦᠯᠦᠭᠡ
+          ᠡᠷᠬᠡᠪᠰᠢ ᠬᠤᠯᠢᠵᠤ ᠪᠢᠴᠢᠬᠦ ᠴᠢᠬᠤᠯᠠᠳᠠᠢ ᠤᠴᠢᠷ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
+    LABEL_TEL_HELP:
+          ᠤᠯᠤᠰ ᠤᠨ ᠨᠤᠮᠧᠷ ᠪᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠨ ᠵᠦᠪ ᠲᠠᠭᠯᠠᠭᠠᠷᠠᠢ᠃
+          ᠨᠢᠭᠡ ᠤᠳᠠᠰᠤᠨ ᠨᠤᠮᠧᠷ ᠶᠢᠡᠷ ᠨᠢᠭᠡ ᠯᠡ ᠢᠮᠠᠢᠯ ᠬᠠᠶᠢᠭ ᠠᠪᠴᠤ
+          ᠪᠤᠯᠬᠤ ᠲᠤᠯᠠᠳᠠ ᠠᠩᠬᠠᠷᠤᠭᠠᠷᠠᠢ!
   LOGIN:
     LABEL_EMAIL: "Email"
     LABEL_LOGIN: "Login"
@@ -13,6 +74,7 @@ en:
     TITLE_SIGN_IN_TWITTER: "Sign In using Twitter"
     LABEL_FORGOT_PASSWORD: "Forgot password"
     LABEL_REGISTRATION: "Registration"
+    LABEL_QRCODE_SCAN: "Scan the QR code"
   TOP_TOOLBAR:
     BUTTON_ADD_ACCOUNT: "Add Account"
     BUTTON_SETTINGS: "Settings"
