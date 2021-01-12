@@ -317,6 +317,7 @@ en:
     PHONE_FORMAT_ERROR: "The format of mobile phone number is wrong"
     SMS_FORMAT_ERROR: "Incorrect format of CAPTCHA"
     PASSWORD_FORMAT_ERROR: "The password must consist of numbers and letters"
+    UNIT: "/元"
   STATIC:
     BACK_LINK: "Reload"
     DOMAIN_LIST_DESC: "List of domains webmail is allowed to access."

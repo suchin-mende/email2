@@ -49,7 +49,7 @@ en:
     LABEL_PASSWORD_HELP:
           Use combinations of 6 to 18 characters, including at least 2 of letters, numbers, and symbols
     LABEL_TEL_HELP:
-          Please fill in the correct country number and mobile phone number can only be bound to one email address
+          Please fill in the international area code and mobile phone number correctly, and can only be bound to one email
   LOGIN:
     LABEL_EMAIL: "Email"
     LABEL_LOGIN: "Login"
@@ -759,6 +759,7 @@ en:
     PHONE_FORMAT_ERROR: "The format of mobile phone number is wrong"
     SMS_FORMAT_ERROR: "Incorrect format of CAPTCHA"
     PASSWORD_FORMAT_ERROR: "The password must consist of numbers and letters"
+    UNIT: "/元"
   STATIC:
     BACK_LINK: "Reload"
     DOMAIN_LIST_DESC: "List of domains webmail is allowed to access."
