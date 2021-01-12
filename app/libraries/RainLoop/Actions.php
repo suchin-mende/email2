@@ -9725,4 +9725,44 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		return $this->TrueResponse(__FUNCTION__);
 	}
+
+	public function DoVipPlans()
+	{
+		$rsp = $this->ApiServiceProvider()->vipPlans();
+		$rsp = json_decode($rsp, true);
+
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\Exception();
+
+		return $this->TrueResponse(__FUNCTION__, $rsp);
+	}
+
+	public function DoVipPlan()
+	{
+		$planCd = \MailSo\Base\Utils::Trim($this->GetActionParam('planCd', ''));
+		$childPlan = \MailSo\Base\Utils::Trim($this->GetActionParam('childPlan', null));
+
+		$rsp = $this->ApiServiceProvider()->vipPlan($planCd, $childPlan);
+		$rsp = json_decode($rsp, true);
+
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\Exception();
+
+		return $this->TrueResponse(__FUNCTION__, $rsp);
+	}
+
+	public function DoVipCoupon()
+	{
+		$userCd = \MailSo\Base\Utils::Trim($this->GetActionParam('userCd', ''));
+		$planCd = \MailSo\Base\Utils::Trim($this->GetActionParam('planCd', ''));
+		$ticketCode = \MailSo\Base\Utils::Trim($this->GetActionParam('ticketCode', null));
+
+		$rsp = $this->ApiServiceProvider()->vipCoupon($userCd, $planCd, $ticketCode);
+		$rsp = json_decode($rsp, true);
+
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\Exception();
+
+		return $this->TrueResponse(__FUNCTION__, $rsp);
+	}
 }
