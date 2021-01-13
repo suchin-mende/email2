@@ -34,57 +34,69 @@
                             </div>
 
                             <div class="vertical-view">
-                                <div class="login-flex" id="VipPackageInfo" style="display: none;">
-                                    <svg class="hsvg-icon h-icon vip-icon" aria-hidden="true">
-                                        <use xlink:href="#iconvip04"></use>
-                                    </svg>
-                                    <p class="vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
-                                    <p class="price"></p>
-                                    <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                                    <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
-                                    <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
-                                        <use xlink:href="#iconvip05"></use>
-                                    </svg>
+                                <div class="tag-vip" id="VipPackageInfo" style="display: none;">
+                                    <div class="packge-v">
+                                        <svg class="hsvg-icon h-icon vip-icon" aria-hidden="true">
+                                            <use xlink:href="#iconvip04"></use>
+                                        </svg>
+                                        <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                                        <p class="price"></p>
+                                    </div>
+                                    
+                                    <div class="packge-v v-label" data-bind="click: gotoVipPackage">
+                                        <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
+                                            <use xlink:href="#iconvip05"></use>
+                                        </svg>
+                                        <p class="v-label" data-i18n="VIPLOGIN/LABEL_CHANGE"></p>
+                                    </div>
+                                    
                                 </div>
                             </div>
 
                             <div class="vertical-view">
-                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-                                    <use xlink:href="#iconemail"></use>
-                                </svg>
-                                <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
-                                    autocomplete="email"
-                                    autocorrect="off"
-                                    autocapitalize="off"
-                                    spellcheck="false"
-                                    data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
-
-                                <div class="c-tooltip">
-                                    <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
-                                        <use xlink:href="#iconaks_help"></use>
-                                    </svg>
-                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
+                                <div class="sms-flex">
+                                    <div>
+                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <use xlink:href="#iconemail"></use>
+                                        </svg>
+                                        <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                                            autocomplete="email"
+                                            autocorrect="off"
+                                            autocapitalize="off"
+                                            spellcheck="false"
+                                            data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
+                                    </div>
+                                        <div class="c-tooltip">
+                                            <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
+                                                <use xlink:href="#iconaks_help"></use>
+                                            </svg>
+                                            <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
+                                        </div>
                                 </div>
                             </div>
 
                             <div class="vertical-view">
-                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-                                    <use xlink:href="#iconkey"></use>
-                                </svg>
-                                <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
-                                    autocomplete="current-password"
-                                    autocorrect="off"
-                                    autocapitalize="off"
-                                    spellcheck="false"
-                                    maxlength="20"
-                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
-
-                                <div class="c-tooltip">
-                                    <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
-                                        <use xlink:href="#iconaks_help"></use>
-                                    </svg>
-                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
+                                <div class="sms-flex">
+                                    <div>
+                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <use xlink:href="#iconkey"></use>
+                                        </svg>
+                                        <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                                            autocomplete="current-password"
+                                            autocorrect="off"
+                                            autocapitalize="off"
+                                            spellcheck="false"
+                                            maxlength="20"
+                                            data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+                                    </div>
+                                    <div class="c-tooltip">
+                                        <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
+                                            <use xlink:href="#iconaks_help"></use>
+                                        </svg>
+                                        <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
+                                    </div>
                                 </div>
+                                
                             </div>
 
                             <div class="vertical-view">
@@ -101,49 +113,52 @@
                             </div>
 
                             <div class="vertical-view">
-                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-                                    <use xlink:href="#iconphone-01"></use>
-                                </svg>
-                                <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
-                                    maxlength="11"
-                                    data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
-
-                                <div class="c-tooltip">
-                                    <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
-                                        <use xlink:href="#iconaks_help"></use>
-                                    </svg>
-                                    <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_TEL_HELP"></span>
+                                <div class="sms-flex">
+                                    <div>
+                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <use xlink:href="#iconphone-01"></use>
+                                        </svg>
+                                        <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                                            maxlength="11"
+                                            data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
+                                    </div>
+    
+                                    <div class="c-tooltip">
+                                        <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
+                                            <use xlink:href="#iconaks_help"></use>
+                                        </svg>
+                                        <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_TEL_HELP"></span>
+                                    </div>
                                 </div>
+                                
                             </div>
 
                             <div class="vertical-view">
 
-                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-                                    <use xlink:href="#iconphone-01"></use>
-                                </svg>
-                                    <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
-                                        maxlength="6"
-                                        data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
+                                <div class="sms-flex">
+                                    <div>
+                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <use xlink:href="#iconphone-01"></use>
+                                        </svg>
+                                            <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
+                                                maxlength="6"
+                                                data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
+                                    </div>
+
                                     <div class="v-btn v-sms" id="smsCode" data-bind="command: getCodeCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
                                     </div>
-
+                                </div>
                             </div>
 
-                            <!-- <div class="vertical-view">
-                                <div class="v-val sms-mess">
-                                      <span class="val-text">Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ</span>
-                                </div>
-                            </div> -->
-
                             <div class="vertical-view">
-                                <div class="login-flex btn-flex">
+                                <div class="btn-flex">
                                     <div class="v-btn v-login" data-bind="command: submitCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
                                     </div>
-                                    <!-- <div class="v-btn v-regist" data-bind="click: gotoLogin">
+                                    <div class="v-btn v-regist" id="VipLogin" data-bind="click: gotoLogin">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
-                                    </div> -->
+                                    </div>
                                     <div class="v-btn v-members" style="margin-top: 2px;" data-bind="click: gotoVipPackage">
                                         <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                     </div>
