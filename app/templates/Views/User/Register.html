@@ -20,6 +20,7 @@
                                     'submitting': submitRequest()
                                 },">
 
+
                             <div class="vertical-view err-view">
                                 <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
                                     <button type="button" class="close" data-bind="click: function () { submitError('') }">
@@ -31,6 +32,10 @@
                                         <span id="email_error" data-bind="text: submitErrorAddidional"></span>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="vertical-view">
+                                <h3 class="label-h3 i18nflex" data-i18n="REGISTER/LABEL_TITLE"></h3>
                             </div>
 
                             <div class="vertical-view">
@@ -56,7 +61,7 @@
                             <div class="vertical-view">
                                 <div class="sms-flex">
                                     <div>
-                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                        <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
                                             <use xlink:href="#iconemail"></use>
                                         </svg>
                                         <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
@@ -109,7 +114,7 @@
                                     autocapitalize="off"
                                     spellcheck="false"
                                     maxlength="20"
-                                    data-bind="textInput: affirmPassword, hasFocus: affirmPasswordFocus, disable: submitRequest">
+                                    data-bind="textInput: confirmPwd, hasFocus: confirmPwdFocus, disable: submitRequest">
                             </div>
 
                             <div class="vertical-view">
@@ -120,7 +125,7 @@
                                         </svg>
                                         <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                                             maxlength="11"
-                                            data-bind="textInput: cellPhoneNumber, hasFocus: cellPhoneNumberFocus, disable: submitRequest">
+                                            data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
                                     </div>
     
                                     <div class="c-tooltip">
@@ -142,7 +147,7 @@
                                         </svg>
                                             <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                                                 maxlength="6"
-                                                data-bind="textInput: cellPhoneVerificationCode, hasFocus: cellPhoneVerificationCodeFocus, disable: submitRequest">
+                                                data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
                                     </div>
 
                                     <div class="v-btn v-sms" id="smsCode" data-bind="command: getCodeCommand">
@@ -156,10 +161,10 @@
                                     <div class="v-btn v-login" data-bind="command: submitCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
                                     </div>
-                                    <div class="v-btn v-regist" id="VipLogin" data-bind="click: gotoLogin">
+                                    <div class="v-btn v-regist" data-bind="click: gotoLogin">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
                                     </div>
-                                    <div class="v-btn v-members" style="margin-top: 2px;" data-bind="click: gotoVipPackage">
+                                    <div class="v-btn v-members" id="VipLogin" data-bind="click: gotoVipPackage">
                                         <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                     </div>
                                 </div>

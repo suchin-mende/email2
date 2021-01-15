@@ -3,7 +3,7 @@
         <div class="e-view">
             <div class="e-left-view lg-view">
                 <div class="ls-view">
-                    <img class="l-Img" data-bind="attr: {'src': loginImg()}">
+                    <img class="l-Img" data-bind="attr: {'src': leftWall()}">
                 </div>
             </div>
             <div class="e-right-view login-flex">
@@ -54,7 +54,7 @@
                                       </div>
 
                                       <div class="vertical-view" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
-                                            <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                            <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
                                                 <use xlink:href="#iconemail"></use>
                                             </svg>
                                             <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
@@ -70,15 +70,16 @@
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconkey"></use>
                                         </svg>
-                                            <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
+                                            <input class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
                                               maxlength="20"
                                               autocomplete="current-password"
                                               autocorrect="off"
                                               autocapitalize="off"
                                               spellcheck="false"
-                                              data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
-                                              <svg data-bind="" class="hsvg-icon h-icon show-pw" aria-hidden="true">
-                                                  <use xlink:href="#iconeye01"></use>
+                                              data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
+                                              <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
+                                                    <use xlink:href="#iconeye01"></use>
+                                                  <!-- <use data-bind="attr:{ ['xlink:href']: '#iconeye01' }"></use> -->
                                               </svg>
                                               <span style="display: none;" class="add-on" tabindex="-1" data-tooltip-join="left"
                                                 data-bind="command: submitCommand, tooltip: ''">
