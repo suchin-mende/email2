@@ -210,21 +210,28 @@
 					<div class="view-flex search-view" data-bind="visible: allowSearch">
 						
 						<div class="close-input-wrp">
-							<a class="btn buttonMoreSearch ipsm-mgl"
-								data-bind="visible: allowSearchAdv, click: advancedSearchClick">
-								<svg class="hsvg-icon h-icon s-arrow" aria-hidden="true">
-									<use xlink:href="#iconlan-arrow"></use>
-								</svg>
-							</a>
-							<a class="close"
-								data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
-							<input type="text" class="i18n span4 inputSearch ips-mgl" tabindex="-1" placeholder="Search"
+							<div>
+								<a class="btn buttonMoreSearch ipsm-mgl"
+									data-bind="visible: allowSearchAdv, click: advancedSearchClick">
+									<svg class="hsvg-icon h-icon s-arrow" aria-hidden="true">
+										<use xlink:href="#iconlan-arrow"></use>
+									</svg>
+								</a>
+								<a class="close"
+									data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
+							</div>
+							<div class="line-top" style="margin-left: 10px;"></div>
+
+							<div>
+								<input type="text" class="i18n span4 inputSearch ips-mgl" tabindex="-1" placeholder="Search"
 								autocorrect="off" autocapitalize="off"
 								data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
 								data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
 								<svg class="hsvg-icon h-icon s-search" aria-hidden="true">
 									<use xlink:href="#iconre06"></use>
 								</svg>
+							</div>
+							
 						</div>
 					</div>
 
