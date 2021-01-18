@@ -67,9 +67,9 @@ mn_MON:
     BUTTON_LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_QRCODE_SCAN: "Email APP ᠦᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
    FOOTER:
-    LAVEL_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ"
-    LAVEL_SYSTEM_HELP: "ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ"
-    LAVEL_HALGAI_COMMPANY: "ᠬᠠᠯᠠᠭᠠᠢ ᠮᠡᠳᠡᠭᠡᠯᠡᠯ ᠲᠧᠭᠨᠢᠭ ᠤᠨ ᠬᠢᠵᠠᠭᠠᠷᠳᠤ ᠺᠣᠮᠫᠠᠨᠢ"
+    LABEL_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ"
+    LABEL_SYSTEM_HELP: "ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ"
+    LABEL_HALGAI_COMMPANY: "ᠬᠠᠯᠠᠭᠠᠢ ᠮᠡᠳᠡᠭᠡᠯᠡᠯ ᠲᠧᠭᠨᠢᠭ ᠤᠨ ᠬᠢᠵᠠᠭᠠᠷᠳᠤ ᠺᠣᠮᠫᠠᠨᠢ"
    PACKAGE:
     PACKAGE_NAME: "ᠪᠠᠷ  ᠰᠢᠯᠠᠭᠠᠬᠤ ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ "
     PACKAGE_INPUT1: "ᠰᠢᠯᠠᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠢ"

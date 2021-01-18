@@ -50,6 +50,10 @@ en:
           Use combinations of 6 to 18 characters, including at least 2 of letters, numbers, and symbols
     LABEL_TEL_HELP:
           Please fill in the international area code and mobile phone number correctly, and can only be bound to one email
+  FOOTER:
+    LABEL_MOBILE_VERSION: "ᠭᠠᠷ ᠤᠲᠠᠰᠤᠨ ᠤ ᠬᠤᠪᠢᠯᠪᠤᠷᠢ"
+    LABEL_SYSTEM_HELP: "ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ"
+    LABEL_HALGAI_COMMPANY: "ᠬᠠᠯᠠᠭᠠᠢ ᠮᠡᠳᠡᠭᠡᠯᠡᠯ ᠲᠧᠭᠨᠢᠭ ᠤᠨ ᠬᠢᠵᠠᠭᠠᠷᠳᠤ ᠺᠣᠮᠫᠠᠨᠢ"
   LOGIN:
     LABEL_EMAIL: "Email"
     LABEL_LOGIN: "Login"
