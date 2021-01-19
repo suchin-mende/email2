@@ -252,18 +252,18 @@
 						data-bind="command: sendCommand, tooltipErrorTip: sendErrorDesc, css: {'btn-success': sendButtonSuccess, 'btn-danger': sendError, 'btn-warning': sendSuccessButSaveError }">
 						<i class="icon-white"
 							data-bind="css: {'icon-paper-plane': !sending(), 'icon-spinner animated big': sending()}"></i>
-						<span class="i18n btn-text hide-on-mobile" data-i18n="COMPOSE/BUTTON_SEND"></span>
+						<span class="i18n i18nflex btn-text hide-on-mobile" data-i18n="COMPOSE/BUTTON_SEND"></span>
 					</a>
 					<a class="btn button-save"
 						data-bind="visible: allowFolders, command: saveCommand, tooltipErrorTip: savedErrorDesc, css: { savedError }">
 						<i
 							data-bind="css: {'icon-floppy': !saving(), 'icon-spinner animated': saving(), 'icon-white': savedError()}"></i>
-						<span class="i18n btn-text hide-on-mobile" data-i18n="COMPOSE/BUTTON_SAVE"></span>
+						<span class="i18n i18nflex btn-text hide-on-mobile" data-i18n="COMPOSE/BUTTON_SAVE"></span>
 						<a class="btn button-delete button-delete-transitions"
 							data-bind="command: deleteCommand">
 							<i class="icon-trash"></i>
 						</a>
-						<span class="saved-text hide-on-mobile"
+						<span class="i18nflex saved-text hide-on-mobile"
 							data-bind="text: savedTimeText"></span>
 					</a>
 				</div>

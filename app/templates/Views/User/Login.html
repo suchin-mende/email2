@@ -33,7 +33,7 @@
 
                           <div class="wrapper-parent" data-bind="css: {'welcome-on': welcome}">
 
-                                <form class="wrapper submitting-pane loginForm login-flex" action="#/"
+                                <form class="wrapper submitting-pane loginForm login-flex ccsafari" action="#/"
                                       data-bind="submit: submitForm,
                                           css: {
                                               'errorAnimated': formError,
@@ -41,92 +41,109 @@
                                               'submitting': submitRequest()
                                           }">
 
-                                      <div class="vertical-view err-view">
-                                          <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
-                                              <button type="button" class="close"
-                                                  data-bind="click: function () { submitError('') }">&times;</button>
-                                              <span data-bind="text: submitError"></span>
-                                              <div data-bind="visible: '' !== submitErrorAddidional()">
-                                                  <br />
-                                                  <span data-bind="text: submitErrorAddidional"></span>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                      <div class="vertical-view" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
-                                            <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
-                                                <use xlink:href="#iconemail"></use>
-                                            </svg>
-                                            <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
-                                              maxlength="20"
-                                              autocomplete="email"
-                                              autocorrect="off"
-                                              autocapitalize="off"
-                                              spellcheck="false"
-                                              data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
-                                      </div>
-
-                                      <div class="vertical-view" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
-                                        <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-                                            <use xlink:href="#iconkey"></use>
-                                        </svg>
-                                            <input class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
-                                              maxlength="20"
-                                              autocomplete="current-password"
-                                              autocorrect="off"
-                                              autocapitalize="off"
-                                              spellcheck="false"
-                                              data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
-                                              <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
-                                                    <use xlink:href="#iconeye01"></use>
-                                                  <!-- <use data-bind="attr:{ ['xlink:href']: '#iconeye01' }"></use> -->
-                                              </svg>
-                                              <span style="display: none;" class="add-on" tabindex="-1" data-tooltip-join="left"
-                                                data-bind="command: submitCommand, tooltip: ''">
-                                                <button type="submit" class="btn-submit-icon-wrp"
-                                                    data-bind="visible: '' !== password()">
-                                                    <i class="icon-right-middle login-submit-icon"></i>
-                                                </button>
-                                            </span>
-                                      </div>
-
-                                      <div class="vertical-view">
-                                            <div class="btn-flex">
-                                                  <div class="v-btn v-login" data-bind="command: submitCommand">
-                                                      <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
-                                                  </div>
-                                                  <div class="v-btn v-regist" data-bind="click: gotoRegisterCommand">
-                                                      <span class="i18nflex" data-i18n="LOGIN/LABEL_REGISTRATION"></span>
-                                                  </div>
-                                                  <div class="v-btn v-members" data-bind="click: gotoVipPackage">
-                                                      <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
-                                                  </div>
-                                            </div>
-                                      </div>
-
-                                      <div class="vertical-view">
-                                            <div class="v-tag">
-                                                <div class="signMeLabel" data-bind="visible: signMeVisibility,
-                                                    component: {
-                                                        name: 'CheckboxSimple',
-                                                        params: {
-                                                            label: 'LOGIN/LABEL_SIGN_ME',
-                                                            labelAnimated: true,
-                                                            value: signMe
-                                                        }
-                                                    }">
+                                        <div>
+                                            <div class="vertical-view err-view">
+                                                <div class="alert alert Error i18nflex" data-bind="visibleAnimated: '' !== submitError()">
+                                                    <button type="button" class="close"
+                                                        data-bind="click: function () { submitError('') }">&times;</button>
+                                                    <span data-bind="text: submitError"></span>
+                                                    <div data-bind="visible: '' !== submitErrorAddidional()">
+                                                        <br />
+                                                        <span data-bind="text: submitErrorAddidional"></span>
+                                                    </div>
                                                 </div>
-                                                  <a class="forgot-ac i18nflex" href="" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"
-                                                      data-bind="click: gotoFindPassword" target="_blank"></a>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="face-input" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
+                                                <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
+                                                    <use xlink:href="#iconemail"></use>
+                                                </svg>
+                                                <div class="vertical-view">
+                                                    <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
+                                                        maxlength="20"
+                                                        autocomplete="email"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        spellcheck="false"
+                                                        data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="face-input" data-bind="css: {'error': passwordError, 'animated': passwordErrorAnimation}">
+                                                <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                                    <use xlink:href="#iconkey"></use>
+                                                </svg>
+        
+                                                <div class="vertical-view">
+                                                    <input class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_PASSWORD"
+                                                      maxlength="20"
+                                                      autocomplete="current-password"
+                                                      autocorrect="off"
+                                                      autocapitalize="off"
+                                                      spellcheck="false"
+                                                      data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
+                                                </div>
+                                                      <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
+                                                            <use xlink:href="#iconeye01"></use>
+                                                          <!-- <use data-bind="attr:{ ['xlink:href']: '#iconeye01' }"></use> -->
+                                                      </svg>
+                                                      <span style="display: none;" class="add-on" tabindex="-1" data-tooltip-join="left"
+                                                        data-bind="command: submitCommand, tooltip: ''">
+                                                        <button type="submit" class="btn-submit-icon-wrp"
+                                                            data-bind="visible: '' !== password()">
+                                                            <i class="icon-right-middle login-submit-icon"></i>
+                                                        </button>
+                                                    </span>
+                                              </div>
+                                        </div>
+
+                                      <div>
+                                            <div class="vertical-view">
+                                                <div class="btn-flex">
+                                                    <div class="v-btn v-login" data-bind="command: submitCommand">
+                                                        <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
+                                                    </div>
+                                                    <div class="v-btn v-regist" data-bind="click: gotoRegisterCommand">
+                                                        <span class="i18nflex" data-i18n="LOGIN/LABEL_REGISTRATION"></span>
+                                                    </div>
+                                                    <div class="v-btn v-members" data-bind="click: gotoVipPackage">
+                                                        <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                       </div>
 
-                                      <div class="vertical-view">
-                                            <div class="QR-code" data-bind="click: gotoQRcode">
-                                                <svg class="hsvg-icon h-icon" aria-hidden="true">
-                                                    <use xlink:href="#iconwechatqr"></use>
-                                                </svg>
-                                                  <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
+                                      <div>
+                                            <div class="vertical-view">
+                                                <div class="v-tag">
+                                                    <div class="signMeLabel" data-bind="visible: signMeVisibility,
+                                                        component: {
+                                                            name: 'CheckboxSimple',
+                                                            params: {
+                                                                label: 'LOGIN/LABEL_SIGN_ME',
+                                                                labelAnimated: true,
+                                                                value: signMe
+                                                            }
+                                                        }">
+                                                    </div>
+                                                    <a class="forgot-ac i18nflex" href="" data-i18n="LOGIN/LABEL_FORGOT_PASSWORD"
+                                                        data-bind="click: gotoFindPassword" target="_blank"></a>
+                                                </div>
+                                            </div>
+                                      </div>
+                                      
+                                      <div>
+                                            <div class="vertical-view">
+                                                <div class="QR-code" data-bind="click: gotoQRcode">
+                                                    <svg class="hsvg-icon h-icon" aria-hidden="true">
+                                                        <use xlink:href="#iconwechatqr"></use>
+                                                    </svg>
+                                                    <span class="i18nflex" data-i18n="LOGIN/LABEL_QRCODE_SCAN"></span>
+                                                </div>
                                             </div>
                                       </div>
 
