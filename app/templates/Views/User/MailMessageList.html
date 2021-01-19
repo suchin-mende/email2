@@ -125,7 +125,7 @@
 							<use xlink:href="#iconre05"></use>
 						</svg>
 					</a>
-					<ul class="dropdown-menu pull-right g-ui-menu menu-left" role="menu"
+					<ul class="dropdown-menu pull-right g-ui-menu menu-left i18nflex" role="menu"
 						aria-labelledby="more-list-dropdown-id">
 						<div data-bind="visible: allowMessageListActions">
 							<li class="e-item" role="presentation"
@@ -223,7 +223,7 @@
 							<div class="line-top" style="margin-left: 10px;"></div>
 
 							<div>
-								<input type="text" class="i18n span4 inputSearch ips-mgl" tabindex="-1" placeholder="Search"
+								<input type="text" class="i18n span4 inputSearch ips-mgl i18nflex" tabindex="-1" placeholder="Search"
 								autocorrect="off" autocapitalize="off"
 								data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
 								data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
@@ -257,7 +257,7 @@
 							&nbsp;&nbsp;
 							<span class="i18n" data-i18n="MESSAGE_LIST/PUT_MESSAGE_HERE"></span>
 						</div>
-						<div class="listClear" data-bind="visible: clearListIsVisible()">
+						<div class="listClear i18nflex" data-bind="visible: clearListIsVisible()">
 							<span class="g-ui-link i18n" data-i18n="MESSAGE_LIST/BUTTON_EMPTY_FOLDER"
 								data-bind="command: clearCommand"></span>
 						</div>
