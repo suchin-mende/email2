@@ -14,149 +14,152 @@
                       <div class="wrapper-parent">
 
                         <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
+                            autocorrect="off" autocapitalize="off" spellcheck="false"
                             data-bind="submit: submitForm,
                                 css: {
                                     'errorAnimated': formError,
                                     'submitting': submitRequest()
                                 },">
 
-
-                            <div class="vertical-view err-view">
-                                <div class="alert alert Error" data-bind="visibleAnimated: '' !== submitError()">
-                                    <button type="button" class="close" data-bind="click: function () { submitError('') }">
-                                        &times;
-                                    </button>
-                                    <span data-bind="text: submitError"></span>
-                                    <div data-bind="visible: '' !== submitErrorAddidional()">
-                                        <br />
-                                        <span id="email_error" data-bind="text: submitErrorAddidional"></span>
+                            <div>
+                                <div class="err-view">
+                                    <div class="alert alert Error i18nflex" data-bind="visibleAnimated: '' !== submitError()">
+                                        <span data-bind="text: submitError"></span>
+                                        <div data-bind="visible: '' !== submitErrorAddidional()">
+                                            <br />
+                                            <span data-bind="text: submitErrorAddidional"></span>
+                                        </div>
+                                        <button type="button" class="close"
+                                            data-bind="click: function () { submitError('') }">&times;</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
-                                <h3 class="label-h3 i18nflex" data-i18n="REGISTER/LABEL_TITLE"></h3>
-                            </div>
-
-                            <div class="vertical-view">
-                                <div class="tag-vip" id="VipPackageInfo" style="display: none;">
-                                    <div class="packge-v">
-                                        <svg class="hsvg-icon h-icon vip-icon" aria-hidden="true">
-                                            <use xlink:href="#iconvip04"></use>
-                                        </svg>
-                                        <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                                        <p class="price"></p>
-                                    </div>
-                                    
-                                    <div class="packge-v v-label" data-bind="click: gotoVipPackage">
-                                        <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
-                                            <use xlink:href="#iconvip05"></use>
-                                        </svg>
-                                        <p class="v-label" data-i18n="VIPLOGIN/LABEL_CHANGE"></p>
-                                    </div>
-                                    
+                            <div>
+                                <div class="vertical-view">
+                                    <h3 class="label-h3 i18nflex" data-i18n="REGISTER/LABEL_TITLE"></h3>
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
+                            <div>
+                                <div class="vertical-view">
+                                    <div class="tag-vip i18nflex" id="VipPackageInfo" style="display: none;">
+                                        <div class="packge-v">
+                                            <svg class="hsvg-icon h-icon vip-icon" aria-hidden="true">
+                                                <use xlink:href="#iconvip04"></use>
+                                            </svg>
+                                            <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
+                                            <p class="price"></p>
+                                        </div>
+                                        
+                                        <div class="packge-v v-label" data-bind="click: gotoVipPackage">
+                                            <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
+                                                <use xlink:href="#iconvip05"></use>
+                                            </svg>
+                                            <p class="v-label" data-i18n="VIPLOGIN/LABEL_CHANGE"></p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
                                 <div class="sms-flex">
-                                    <div>
+                                    <div class="face-input">
                                         <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
                                             <use xlink:href="#iconemail"></use>
                                         </svg>
-                                        <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
+                                        <div class="vertical-view">
+                                            <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
                                             autocomplete="email"
-                                            autocorrect="off"
-                                            autocapitalize="off"
-                                            spellcheck="false"
+                                            maxlength="20"
                                             data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
+                                        </div>
                                     </div>
                                         <div class="c-tooltip">
                                             <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                                 <use xlink:href="#iconaks_help"></use>
                                             </svg>
-                                            <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
+                                            <span class="c-tooltiptext i18nflex" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
                                         </div>
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
+                            <div>
                                 <div class="sms-flex">
-                                    <div>
+                                    <div class="face-input">
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconkey"></use>
                                         </svg>
-                                        <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                                        <div class="vertical-view">
+                                            <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
                                             autocomplete="current-password"
-                                            autocorrect="off"
-                                            autocapitalize="off"
-                                            spellcheck="false"
                                             maxlength="20"
                                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+                                        </div>
                                     </div>
                                     <div class="c-tooltip">
                                         <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                             <use xlink:href="#iconaks_help"></use>
                                         </svg>
-                                        <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
+                                        <span class="c-tooltiptext i18nflex" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
                                     </div>
                                 </div>
-                                
                             </div>
 
-                            <div class="vertical-view">
+                            <div class="face-input">
                                 <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                     <use xlink:href="#iconkey"></use>
                                 </svg>
-                                <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
+                                <div class="vertical-view">
+                                    <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
                                     autocomplete="current-password"
-                                    autocorrect="off"
-                                    autocapitalize="off"
-                                    spellcheck="false"
                                     maxlength="20"
                                     data-bind="textInput: confirmPwd, hasFocus: confirmPwdFocus, disable: submitRequest">
+                                </div>
                             </div>
 
-                            <div class="vertical-view">
+                            <div>
                                 <div class="sms-flex">
-                                    <div>
+                                    <div class="face-input">
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconphone-01"></use>
                                         </svg>
-                                        <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
+                                        <div class="vertical-view">
+                                            <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                                             maxlength="11"
                                             data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
+                                        </div>
                                     </div>
     
                                     <div class="c-tooltip">
                                         <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                             <use xlink:href="#iconaks_help"></use>
                                         </svg>
-                                        <span class="c-tooltiptext" data-i18n="REGISTER/LABEL_TEL_HELP"></span>
+                                        <span class="c-tooltiptext i18nflex" data-i18n="REGISTER/LABEL_TEL_HELP"></span>
                                     </div>
                                 </div>
-                                
                             </div>
 
-                            <div class="vertical-view">
-
+                            <div>
                                 <div class="sms-flex">
-                                    <div>
+                                    <div class="face-input face-sms">
                                         <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
                                             <use xlink:href="#iconphone-01"></use>
                                         </svg>
+                                        <div class="vertical-view">
                                             <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_VERIFICATION_CODE"
                                                 maxlength="6"
                                                 data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
+                                        </div>
                                     </div>
-
                                     <div class="v-btn v-sms" id="smsCode" data-bind="command: getCodeCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_GAIN_CELLPHONE_VERIFICATION_CODE"></span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
+                            <div>
                                 <div class="btn-flex">
                                     <div class="v-btn v-login" data-bind="command: submitCommand">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
@@ -170,19 +173,23 @@
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
-                                <div class="v-tag-none">
-
+                            <div>
+                                <div class="vertical-view">
+                                    <div class="v-tag-none">
+    
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="vertical-view">
-                                  <div class="QR-code" data-bind="click: gotoQRcode">
-                                    <svg class="hsvg-icon h-icon" aria-hidden="true">
-                                        <use xlink:href="#iconwechatqr"></use>
-                                    </svg>
-                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
-                                  </div>
+                            <div>
+                                <div class="vertical-view">
+                                    <div class="QR-code" data-bind="click: gotoQRcode">
+                                      <svg class="hsvg-icon h-icon" aria-hidden="true">
+                                          <use xlink:href="#iconwechatqr"></use>
+                                      </svg>
+                                          <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
+                                    </div>
+                              </div>
                             </div>
 
                         </form>
