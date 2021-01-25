@@ -17,67 +17,64 @@
 
                                 <div>
                                     <div class="vertical-view">
-                                        <h3 class="label-h3 i18nflex" data-i18n="VIPPACKAGE/TITLE_VIP"></h3>
+                                        <h3 class="label-h3 i18nflex vipTitle" data-i18n="VIPPACKAGE/TITLE_VIP"></h3>
                                     </div>
                                 </div>
 
 
                                 <div>
-                                    <div class="vipPag-ul view-flex">
+                                    <div class="vPackge" data-bind="foreach: vPlanBox">
 
-                                        <div data-bind="click: vipGoldBox">
-                                            <div id="c-gold" class="login-flex vip-option case-gold">
+                                        <div class="vCard" data-bind="click: function () { $root.salePack(vipPlanCd); }">
+
+                                            <div 
+                                                data-bind="attr: { 
+                                                    class: index == 0 ? 'vFront vip-option case-gold': index == 1 ? 'vFront vip-option case-green' : 'vFront vip-option case-diamond',
+                                                }">
+                                                
                                                 <div class="box-i">
-                                                    <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
-                                                        <use xlink:href="#iconvip01"></use>
-                                                    </svg>
-                                                    <svg class="hsvg-icon h-icon v-icon-bd v-gold-color" aria-hidden="true">
-                                                        <use xlink:href="#iconvip01"></use>
-                                                    </svg>
+
+                                                    <div class="vp-icon" data-bind="style: { display: index == 0 ? 'block' : 'none' }">
+                                                        <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
+                                                            <use xlink:href="#iconvip01"></use>
+                                                        </svg>
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-gold-color" aria-hidden="true">
+                                                            <use xlink:href="#iconvip01"></use>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div class="vp-icon" data-bind="style: { display: index == 1 ? 'block' : 'none' }">
+                                                        <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
+                                                            <use xlink:href="#iconvip02"></use>
+                                                        </svg>
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-green-color" aria-hidden="true">
+                                                            <use xlink:href="#iconvip02"></use>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div class="vp-icon" data-bind="style: { display: index == 2 ? 'block' : 'none' }">
+                                                        <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
+                                                            <use xlink:href="#iconvip03"></use>
+                                                        </svg>
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-diamond-color" aria-hidden="true">
+                                                            <use xlink:href="#iconvip03"></use>
+                                                        </svg>
+                                                    </div>
     
                                                     <div class="text-box">
-                                                        <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GOLD"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GOLD">/p>
+                                                        <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
+                                                        <p class="tag-p i18nflex" data-bind="text: descriptionTx"></p>
+                                                        <p class="tag-p" data-bind="text: price">/p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-    
-                                        <div data-bind="click: vipGreenBox">
-                                            <div id="c-green" class="login-flex vip-option case-green">
+
+                                            <div class="vip-option vBack">
                                                 <div class="box-i">
-                                                    <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
-                                                        <use xlink:href="#iconvip02"></use>
-                                                    </svg>
-                                                    <svg class="hsvg-icon h-icon v-icon-bd v-green-color" aria-hidden="true">
-                                                        <use xlink:href="#iconvip02"></use>
-                                                    </svg>
-                                                    <div class="text-box">
-                                                        <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GREEN"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GREEN">/p>
-                                                    </div>
+                                                    <p class="i18nflex" data-bind="text: descriptionLongTx"></p>
                                                 </div>
                                             </div>
-                                        </div>
-    
-                                        <div data-bind="click: vipDiamondBox">
-                                            <div id="c-diamond" class="login-flex vip-option case-diamond">
-                                                <div class="box-i">
-                                                    <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
-                                                        <use xlink:href="#iconvip03"></use>
-                                                    </svg>
-                                                    <svg class="hsvg-icon h-icon v-icon-bd v-diamond-color" aria-hidden="true">
-                                                        <use xlink:href="#iconvip03"></use>
-                                                    </svg>
-                                                    <div class="text-box">
-                                                        <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_DMOD"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/LABEL_VIP"></p>
-                                                        <p class="tag-p" data-i18n="VIPPACKAGE/SELL_DMOD">/p>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
     
                                     </div>

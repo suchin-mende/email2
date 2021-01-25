@@ -57,12 +57,12 @@
                                         </div>
 
                                         <div>
-                                            <div class="face-input" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
+                                            <div class="face-input checkAutocomplete" data-bind="css: {'error': emailError, 'animated': emailErrorAnimation}">
                                                 <svg class="hsvg-icon h-icon ipt-img mail-icon" aria-hidden="true">
                                                     <use xlink:href="#iconemail"></use>
                                                 </svg>
                                                 <div class="vertical-view">
-                                                    <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
+                                                    <input type="email" class="v-input" data-i18n="[placeholder]LOGIN/LABEL_EMAIL"
                                                         maxlength="20"
                                                         autocomplete="email"
                                                         data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
