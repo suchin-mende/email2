@@ -85,10 +85,11 @@
                                                       spellcheck="false"
                                                       data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
                                                 </div>
-                                                      <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
-                                                            <use xlink:href="#iconeye01"></use>
-                                                          <!-- <use data-bind="attr:{ ['xlink:href']: '#iconeye01' }"></use> -->
-                                                      </svg>
+                                                    <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
+                                                        <use data-bind="visible: inputType() != 'text'" xlink:href="#iconeye01"></use>
+                                                        <use data-bind="visible: inputType() != 'password'" xlink:href="#iconeye02"></use>
+                                                    </svg>
+                                                      
                                                       <span style="display: none;" class="add-on" tabindex="-1" data-tooltip-join="left"
                                                         data-bind="command: submitCommand, tooltip: ''">
                                                         <button type="submit" class="btn-submit-icon-wrp"
