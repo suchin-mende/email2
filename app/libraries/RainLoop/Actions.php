@@ -9751,7 +9751,10 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		if ($rsp == null)
 			throw new \RainLoop\Exceptions\Exception();
 
-		return $this->TrueResponse(__FUNCTION__, $rsp);
+		$plans = array(
+			'plan' => $rsp
+		);
+		return $this->TrueResponse(__FUNCTION__, $plans);
 	}
 
 	public function DoVipCoupon()
