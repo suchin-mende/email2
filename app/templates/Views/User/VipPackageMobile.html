@@ -1,4 +1,4 @@
-<div class="m-login-content m-view">
+<div id="rl-right" style="position: relative; left: 0 !important;" class="m-login-content m-view vBox-view">
       <div class="m-head-view">
             <div class="m-top-menu">
                   <svg class="hsvg-icon h-icon menu-icon" aria-hidden="true" data-bind="click: gotoLogin">
@@ -6,48 +6,46 @@
                   </svg>
             </div>
       </div>
-      <div class="m-middle-view">
-            <div class="m-vip-box">
-                  <div class="case-gold c-box" data-bind="click: vipGoldBox">
+      <div class="m-middle-view" data-bind="foreach: vPlanBox">
+            <div class="m-vip-box" data-bind="click: function () { $root.salePack(vipPlanCd); }">
+                  <div data-bind="attr: { 
+                        class: index == 0 ? 'c-box case-gold': index == 1 ? 'c-box case-green' : 'c-box case-diamond',
+                    }">
                         <div class="box-i">
-                              <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
-                                  <use xlink:href="#iconvip01"></use>
-                              </svg>
-                              <svg class="hsvg-icon h-icon m-icon-bd m-gold-color" aria-hidden="true">
-                                  <use xlink:href="#iconvip01"></use>
-                              </svg>
+                              <div data-bind="style: { display: index == 0 ? 'block' : 'none' }">
+                                    <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
+                                          <use xlink:href="#iconvip01"></use>
+                                      </svg>
+                                      <svg class="hsvg-icon h-icon m-icon-bd m-gold-color" aria-hidden="true">
+                                          <use xlink:href="#iconvip01"></use>
+                                      </svg>
+                              </div>
+
+                              <div data-bind="style: { display: index == 1 ? 'block' : 'none' }">
+                                    <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
+                                          <use xlink:href="#iconvip02"></use>
+                                      </svg>
+                                      <svg class="hsvg-icon h-icon m-icon-bd m-green-color" aria-hidden="true">
+                                          <use xlink:href="#iconvip02"></use>
+                                      </svg>
+                              </div>
+
+                              <div data-bind="style: { display: index == 2 ? 'block' : 'none' }">
+                                    <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
+                                          <use xlink:href="#iconvip03"></use>
+                                      </svg>
+                                      <svg class="hsvg-icon h-icon m-icon-bd m-diamond-color" aria-hidden="true">
+                                          <use xlink:href="#iconvip03"></use>
+                                      </svg>
+                              </div>
 
                               <div class="m-text-box">
-                                  <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GOLD"></p>
-                                  <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GOLD">/p>
+                                  <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
+                                  <p class="tag-p" data-bind="text: price">/p>
                               </div>
-                        </div>
-                  </div>
-                  <div class="case-green c-box" data-bind="click: vipGreenBox">
-                        <div class="box-i">
-                              <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
-                                  <use xlink:href="#iconvip02"></use>
-                              </svg>
-                              <svg class="hsvg-icon h-icon m-icon-bd m-green-color" aria-hidden="true">
-                                  <use xlink:href="#iconvip02"></use>
-                              </svg>
-                              <div class="m-text-box">
-                                  <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_GREEN"></p>
-                                  <p class="tag-p" data-i18n="VIPPACKAGE/SELL_GREEN">/p>
-                              </div>
-                        </div>
-                  </div>
-                  <div class="case-diamond c-box" data-bind="click: vipDiamondBox">
-                        <div class="box-i">
-                              <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
-                                  <use xlink:href="#iconvip03"></use>
-                              </svg>
-                              <svg class="hsvg-icon h-icon m-icon-bd m-diamond-color" aria-hidden="true">
-                                  <use xlink:href="#iconvip03"></use>
-                              </svg>
-                              <div class="m-text-box">
-                                  <p class="tag-p i18nflex" data-i18n="VIPPACKAGE/LABEL_MAILBOX_DMOD"></p>
-                                  <p class="tag-p" data-i18n="VIPPACKAGE/SELL_DMOD">/p>
+
+                              <div class="m-vDetail">
+                                    <p class="i18nflex" data-bind="text: descriptionLongTx"></p>
                               </div>
                         </div>
                   </div>

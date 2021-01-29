@@ -18,6 +18,7 @@ mn_MON:
     LABEL_QRCODE_SCAN: "Email APP ᠊ᠤᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
    REGISTER:
+    SHOW_PAYMENT: "VIP  Cash"
     M_LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
@@ -84,6 +85,7 @@ mn_MON:
     SELL_GOLD: "¥99/ᠵᠢᠯ"
     SELL_GREEN: "¥199/ᠵᠢᠯ"
     SELL_DMOD: "¥299/ᠵᠢᠯ"
+    SALE_PLAN: " RMB"
    VIPLOGIN:
     VIP_PNG: "ᠭᠡᠰᠢᠭᠦᠨ"
     Vip_LOGIN_PACKAGE: "ᠬᠢᠵᠠᠭᠠᠷ  ᠦᠭᠡᠢ 45¥ / ᠰᠠᠷ᠎ᠠ"
