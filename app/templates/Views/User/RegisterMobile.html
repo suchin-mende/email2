@@ -1,13 +1,17 @@
 <div id="rl-right" style="position: relative; left: 0 !important;" class="b-login-content m-view">
       <div class="m-head-view">
-            <div class="top-menu"></div>
+            <div class="m-top-menu">
+                  <svg class="hsvg-icon h-icon menu-icon" aria-hidden="true" data-bind="click: gotoLogin">
+                        <use xlink:href="#iconleftarrow"></use>
+                  </svg>
+            </div>
             <div class="logo-view">
                   <div class="c-logo">
                         <p class="i18nflex" data-i18n="REGISTER/M_LABEL_TITLE"></p>
                   </div>
             </div>
-            <div class="m-vip-box">
-                  <div id="vipGoldBox" class="c-box" style="display: none;">
+            <div class="rm-vip-box">
+                  <div id="vipGoldBox" class="c-vBox">
                         <div class="box-i">
                               <svg class="hsvg-icon h-icon r-m-icon r-m-gold-color" aria-hidden="true">
                                   <use xlink:href="#iconvip01"></use>
@@ -106,7 +110,7 @@
                   </svg>
                   <input type="tel" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
                         maxlength="11"
-                        data-bind="textInput: mPhonePwd, hasFocus: mPhonePwdFocus, disable: submitRequest">
+                        data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
             </div>
             <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
