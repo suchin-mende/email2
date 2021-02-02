@@ -1,26 +1,23 @@
 <div class="messageListItem" data-bind="css: lineAsCss()">
-	<div class="sidebarParent">
-		&nbsp;
-	</div>
+	<div class="sidebarParent"></div>
 	<div class="delimiter"></div>
 	<div class="wrapper">
-		<div>
+		<div class="messList">
 			<div class="checkedParent">
 				<i class="checkboxMessage"
 					data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked'"></i>
 			</div>
 			<div class="senderParent actionHandle dragHandle">
-				<span class="replyFlag"><i class="icon-reply"></i>&nbsp;</span>
-				<span class="forwardFlag"><i class="icon-forward"></i>&nbsp;</span>
+				<span class="replyFlag"><i class="icon-reply"></i></span>
+				<span class="forwardFlag"><i class="icon-forward"></i></span>
 				<span class="sender" data-bind="text: senderEmailsString, attr: {'title': senderClearEmailsString}"></span>
-				&nbsp;
 			</div>
 			<div class="view-flex">
 				<div class="subjectParent actionHandle dragHandle">
 					<b class="importantMark">!</b>
 					<span class="subject emptySubjectText i18nflex" data-bind="text: $root.emptySubjectValue"></span>
-					<span class="subject-prefix" data-bind="text: subjectPrefix"></span><span class="subject-suffix"
-						data-bind="text: subjectSuffix"></span>
+					<span class="subject-prefix" data-bind="text: subjectPrefix"></span>
+					<span class="subject-suffix" data-bind="text: subjectSuffix"></span>
 				</div>
 				<div class="attachmentParent actionHandle dragHandle">
 					<span class="attachment">
