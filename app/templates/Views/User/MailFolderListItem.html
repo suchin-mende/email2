@@ -6,7 +6,7 @@
 		<i data-bind="css: collapsedCss()"></i>
 		<span class="focused-poiner"></span>
 		<span class="name" data-bind="text: name"></span>
-		<span class="badge pull-right count" data-bind="text: printableUnreadCount"></span>
+		<span class="count" data-bind="text: printableUnreadCount"></span>
 	</a>
 	<div class="b-sub-folders" data-bind="template: { name: 'MailFolderListItem', foreach: subFolders }, css: { 'collapsed': collapsed() }"></div>
 </div>
