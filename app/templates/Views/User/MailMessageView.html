@@ -1,6 +1,7 @@
 <div id="rl-sub-right">
 	<div class="messageView"
 		data-bind="css: {'message-selected': isMessageSelected, 'message-focused': messageFocused}">
+
 		<div class="toolbar top-toolbar g-ui-user-select-none" data-bind="visible: !usePreviewPane()">
 			<nobr>
 				<div class="messageButtons btn-toolbar">
@@ -50,34 +51,36 @@
 				</div>
 			</nobr>
 		</div>
+
 		<div class="b-content b-message-view-wrapper thm-message-view-background-color">
-			<div style="height: 100%">
+
+			<div class="v-mess-tips">
 				<div class="b-message-view-backdrop" data-bind="visible: moveAction">
 					<div class="backdrop-message-wrp">
-						<div class="backdrop-message backdrop-mgl">
+						<div class="backdrop-message">
 							<i class="icon-folder"
 								style="padding: 0 7px; font-size: 24px; width: 24px; line-height: 24px;"></i>
-							<span class="i18n" style="vertical-align: middle; padding: 0 7px"
+							<span class="i18n i18nflex" style="vertical-align: middle; padding: 0 7px"
 								data-i18n="MESSAGE/MESSAGE_VIEW_MOVE_DESC"></span>
 						</div>
 					</div>
 				</div>
 				<div class="b-message-view-checked-helper"
 					data-bind="visible: !message() && '' === messageError() && hasCheckedMessages()">
-					<span data-bind="text: printableCheckedMessageCount()"></span>
+					<span class="i18nflex" data-bind="text: printableCheckedMessageCount()"></span>
 					<i class="icon-mail"></i>
 				</div>
 
 				<div class="b-message-view-desc error"
 					data-bind="visible: !message() && '' !== messageError() && !hasCheckedMessages()">
-					<span class="text" data-bind="text: messageError()"></span>
+					<span class="text i18nflex" data-bind="text: messageError()"></span>
 				</div>
 
 				<div data-bind="visible: !message() && '' === messageError() && !hasCheckedMessages()"
 					style="height: 100%">
 
-					<div class="b-message-view-desc display-mgl i18nflex" data-bind="visible: !logoIframe">
-						<span class="i18n" data-bind="visible: !logoImg, attr: { 'src': messTip }" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
+					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
+						<span class="i18n i18nflex" data-bind="visible: !logoImg, attr: { 'src': messTip }" data-i18n="MESSAGE/MESSAGE_VIEW_DESC"></span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
 							<img style="height: 99%" data-bind="attr: { 'src': logoImg }" />
 						</div>
@@ -92,8 +95,276 @@
 					</div>
 
 				</div>
+			</div>
+			
+			<div class="view-flex" style="height: 100%">
 
-				<div class="message-fixed-button-toolbar clearfix" data-bind="visible: message">
+				<div class="Mail-info-view" data-bind="visible: message">
+
+					<div class="v-messageItemHeader" data-bind="css: {'emptySubject': '' === viewSubject()}">
+						<div class="subjectParent i18nflex">
+							
+							<span class="infoParent g-ui-user-select-none"
+								data-bind="click: function() { showFullInfo(!showFullInfo()); }">
+								<i class="icon-info" style="padding-top: 1px;"></i>
+							</span>
+							<span class="flagParent g-ui-user-select-none">
+								<i class="icon-star-empty flagOff"
+									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"
+									style="padding-top: 2px;"></i>
+							</span>
+							<b style="color: red; margin-right: 5px" data-bind="visible: viewIsImportant">!</b>
+							<span class="subject i18nflex"
+								data-bind="text: viewSubject, title: viewSubject, event: { 'dblclick': toggleFullScreen }"></span>
+							<span class="i18n emptySubjectText i18nflex" data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
+								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
+							<button class="close" data-bind="command: closeMessageCommand">&times;</button>
+						</div>
+
+						<div>
+							<div>
+								<img class="v-fromPic"
+									data-bind="visible: viewUserPicVisible, attr: {'src': viewUserPic() }">
+								<div class="view-flex">
+									<div class="informationShort i18nflex" data-bind="event: { 'dblclick': toggleFullScreen }">
+										<span>
+											<span class="from i18nflex" data-bind="html: viewFromShort, title: viewFrom"></span>
+											<span data-bind="visible: viewFromDkimVisibility">
+												&nbsp;
+												<i
+													data-bind="css: viewFromDkimStatusIconClass, title: viewFromDkimStatusTitle"></i>
+											</span>
+										</span>
+										<span data-bind="visible: 0 < viewTimeStamp()">
+											(<span class="date i18nflex" data-moment-format="FULL"
+												data-bind="moment: viewTimeStamp"></span>)
+										</span>
+									</div>
+									<div class="informationShortWrp i18nflex">
+										<div class="informationShort"
+											data-bind="visible: viewTo, event: { 'dblclick': toggleFullScreen }">
+											<span>
+												<span class="i18n uiLabel labelTo"
+													data-i18n="MESSAGE/LABEL_TO"></span>:
+													<span class="to" data-bind="text: viewTo"></span>
+											</span>
+										</div>
+										<div class="informationShort"
+											data-bind="visible: viewCc, event: { 'dblclick': toggleFullScreen }">
+											<span>
+												<span class="i18n uiLabel labelTo"
+													data-i18n="MESSAGE/LABEL_CC"></span>:
+													<span class="to" data-bind="text: viewCc"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="informationFull" data-bind="visible: showFullInfo()">
+								<table>
+									<tr data-bind="visible: '' !== viewFrom()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_FROM"></span></td>
+										<td>
+											<span class="pull-right size" data-bind="text: viewSize"></span>
+											<span class="from uiLabelValue" data-bind="text: viewFrom, title: viewFrom"></span>
+										</td>
+									</tr>
+									<tr data-bind="visible: '' !== viewTo()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_TO"></span></td>
+										<td><span class="to uiLabelValue" data-bind="text: viewTo, title: viewTo"></span></td>
+									</tr>
+									<tr data-bind="visible: '' !== viewCc()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_CC"></span></td>
+										<td><span class="cc uiLabelValue" data-bind="text: viewCc, title: viewCc"></span></td>
+									</tr>
+									<tr data-bind="visible: '' !== viewBcc()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_BCC"></span></td>
+										<td><span class="bcc uiLabelValue" data-bind="text: viewBcc, title: viewBcc"></span>
+										</td>
+									</tr>
+									<tr data-bind="visible: '' !== viewReplyTo()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_REPLY_TO"></span></td>
+										<td><span class="replyTo uiLabelValue"
+												data-bind="text: viewReplyTo, title: viewReplyTo"></span></td>
+									</tr>
+									<tr data-bind="visible: 0 < viewTimeStamp()">
+										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_DATE"></span></td>
+										<td>
+											<span class="date uiLabelValue i18nflex" data-moment-format="FULL"
+												data-bind="moment: viewTimeStamp"></span>
+											&nbsp;
+											(<span class="date uiLabelValue i18nflex" data-moment-format="FROMNOW"
+												data-bind="moment: viewTimeStamp"></span>)
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class="messageItem fixIndex">
+						<div class="content g-scrollbox" tabindex="0" data-scroller-shadows-content data-bind="hasfocus: messageDomFocused, css: { 'focused': messageDomFocused },
+								style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
+	
+							<div class="content-wrapper">
+	
+								<div>
+									<span class="buttonUp" data-bind="click: scrollMessageToTop">
+										<i class="icon-up"></i>
+									</span>
+									<span class="buttonFull" data-bind="click: fullScreen">
+										<i class="icon-arrows-out"></i>
+									</span>
+									<span class="buttonUnFull" data-bind="click: unFullScreen">
+										<i class="icon-arrows-in"></i>
+									</span>
+	
+									<div class="line-loading e-strip-animation"
+										data-bind="visible: messageLoadingThrottle()"></div>
+	
+									<div class="loading g-ui-min-height-300" data-bind="visible: messageLoadingThrottle()">
+										<span class="i18n text" data-i18n="MESSAGE/MESSAGE_LOADING"></span><span
+											class="textLoadingAnimationD1">.</span><span
+											class="textLoadingAnimationD2">.</span><span
+											class="textLoadingAnimationD3">.</span>
+									</div>
+								</div>
+	
+								<div class="g-ui-min-height-300 content-content" data-bind="visible: !messageLoadingThrottle()">
+									<div class="bodySubHeader">
+										<div class="showImages"
+											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
+											<i class="icon-image"></i>
+											&nbsp;&nbsp;
+											<span class="i18n text" data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
+										</div>
+										<div class="readReceipt"
+											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
+											<i class="icon-mail"></i>
+											&nbsp;&nbsp;
+											<span class="i18n text" data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
+										</div>
+										<div class="attachmentsPlace"
+											data-bind="visible: message() && message().hasVisibleAttachments(),
+												css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
+											<ul class="attachmentList"
+												data-bind="foreach: message() ? message().attachments() : []">
+												<li class="attachmentItem clearfix" draggable="true" data-tooltip-join="top"
+													data-bind="visible: !isLinked, event: { 'dragstart': eventDragStart }, attr: { 'title': fileName }, css: {'checked': checked}">
+													<div class="attachmentIconParent pull-left"
+														data-bind="css: { 'hasPreview': hasPreview(), 'hasPreplay': hasPreplay(), 'isImage': isImage() }">
+														<div class="hidePreview">
+															<div class="iconMain">
+																<i class="attachmentIcon attachmentMainIcon"
+																	data-bind="css: iconClass()"></i>
+																<i class="attachmentIconText attachmentMainIconText"
+																	data-bind="text: iconText()"></i>
+															</div>
+														</div>
+														<div class="showPreview">
+															<a data-bind="click: $root.attachmentPreview, css: {'attachmentImagePreview': isImage(), 'visible': !isLinked}, attr: { 'title': fileName, 'href': linkPreviewMain() }"
+																target="_blank">
+																<div class="iconMain">
+																	<i class="attachmentIcon attachmentMainIcon"
+																		data-bind="css: iconClass()"></i>
+																	<i class="attachmentIconText attachmentMainIconText"
+																		data-bind="text: iconText()"></i>
+																</div>
+																<div class="iconBG"
+																	data-bind="attr: { 'style': linkThumbnailPreviewStyle() }">
+																</div>
+																<div class="iconPreview">
+																	<i class="attachmentIcon icon-eye show-hover"></i>
+																</div>
+															</a>
+														</div>
+														<div class="showPreplay">
+															<div class="iconMain">
+																<i class="attachmentIcon attachmentMainIcon"
+																	data-bind="css: iconClass()"></i>
+															</div>
+															<div class="iconPreview">
+																<i class="attachmentIcon icon-play show-hover"></i>
+															</div>
+														</div>
+													</div>
+													<div class="attachmentNameParent">
+														<div class="mmview">
+															<span class="attachmentName"
+																data-bind="text: fileName"></span>&nbsp;
+														</div>
+														<div>
+															<span class="attachmentSize"
+																data-bind="text: friendlySize"></span>&nbsp;
+														</div>
+													</div>
+													<div class="checkedParent">
+														<i class="checkboxAttachment icon-checkbox-unchecked" data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked',
+																click: function () { checked(!checked()); return false }"></i>
+													</div>
+												</li>
+											</ul>
+											<i class="icon-cog controls-handle"
+												data-bind="visible: allowAttachmnetControls() && !showAttachmnetControls(), click: function () { showAttachmnetControls(true); showAttachmnetControlsState(true); }"></i>
+										</div>
+	
+										<div class="attachmentsControls"
+											data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
+	
+											<span data-bind="visible: downloadAsZipAllowed">
+	
+												<span class="g-ui-link" data-bind="click: downloadAsZip">
+													<span class="i18n" data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
+													&nbsp;&nbsp;
+													<i class="icon-remove iconcolor-red"
+														data-bind="visible: downloadAsZipError"></i>
+													<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
+														css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
+												</span>
+											</span>
+	
+											<span data-bind="visible: saveToOwnCloudAllowed">
+												&nbsp;&nbsp;&nbsp;&nbsp;
+												<i class="icon-remove iconcolor-red"
+													data-bind="visible: saveToOwnCloudError"></i>
+												<i class="icon-ok iconcolor-green"
+													data-bind="visible: saveToOwnCloudSuccess"></i>
+												<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
+														css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
+												&nbsp;&nbsp;
+												<span class="g-ui-link" data-bind="click: saveToOwnCloud">
+													<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
+												</span>
+											</span>
+	
+											<span data-bind="visible: saveToDropboxAllowed">
+												&nbsp;&nbsp;&nbsp;&nbsp;
+												<i class="icon-remove iconcolor-red"
+													data-bind="visible: saveToDropboxError"></i>
+												<i class="icon-ok iconcolor-green"
+													data-bind="visible: saveToDropboxSuccess"></i>
+												<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
+														css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
+												&nbsp;&nbsp;
+												<span class="g-ui-link" data-bind="click: saveToDropbox">
+													<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
+												</span>
+											</span>
+	
+											<button type="button" class="close" style="margin-right: 5px;"
+												data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
+										</div>
+									</div>
+	
+									<div class="bodyText g-ui-min-height-300 rl-mv-root i18nflex" data-bind="initDom: messagesBodiesDom"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="v-mess-button-toolbar clearfix" data-bind="visible: message">
 					<nobr>
 						<div class="btn-group pull-right">
 							<div class="btn-group pull-right"
@@ -265,272 +536,7 @@
 					</nobr>
 				</div>
 
-				<div data-bind="visible: message">
-					<div class="messageItemHeader" data-bind="css: {'emptySubject': '' === viewSubject()}">
-						<div class="subjectParent">
-							<button class="close" data-bind="command: closeMessageCommand"
-								style="margin-top: -2px;">&times;</button>
-							<span class="infoParent g-ui-user-select-none"
-								data-bind="click: function() { showFullInfo(!showFullInfo()); }">
-								<i class="icon-info" style="padding-top: 1px;"></i>
-							</span>
-							<span class="flagParent g-ui-user-select-none">
-								<i class="icon-star-empty flagOff"
-									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"
-									style="padding-top: 2px;"></i>
-							</span>
-							<b style="color: red; margin-right: 5px" data-bind="visible: viewIsImportant">!</b>
-							<span class="subject"
-								data-bind="text: viewSubject, title: viewSubject, event: { 'dblclick': toggleFullScreen }"></span>
-							<span class="i18n emptySubjectText" data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
-								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
-						</div>
-						<div>
-							<div>
-								<img class="fromPic"
-									data-bind="visible: viewUserPicVisible, attr: {'src': viewUserPic() }">
-								<div style="overflow: hidden;">
-									<div class="informationShort" data-bind="event: { 'dblclick': toggleFullScreen }">
-										<span>
-											<span class="from" data-bind="html: viewFromShort, title: viewFrom"></span>
-											<span data-bind="visible: viewFromDkimVisibility">
-												&nbsp;
-												<i
-													data-bind="css: viewFromDkimStatusIconClass, title: viewFromDkimStatusTitle"></i>
-											</span>
-										</span>
-										<span data-bind="visible: 0 < viewTimeStamp()">
-											(<span class="date" data-moment-format="FULL"
-												data-bind="moment: viewTimeStamp"></span>)
-										</span>
-									</div>
-									<div class="informationShortWrp">
-										<div class="informationShort"
-											data-bind="visible: viewTo, event: { 'dblclick': toggleFullScreen }">
-											<span>
-												<span class="i18n uiLabel labelTo"
-													data-i18n="MESSAGE/LABEL_TO"></span>:&nbsp;<span class="to"
-													data-bind="text: viewTo"></span>
-											</span>
-										</div>
-										<div class="informationShort"
-											data-bind="visible: viewCc, event: { 'dblclick': toggleFullScreen }">
-											<span>
-												<span class="i18n uiLabel labelTo"
-													data-i18n="MESSAGE/LABEL_CC"></span>:&nbsp;<span class="to"
-													data-bind="text: viewCc"></span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="informationFull" data-bind="visible: showFullInfo()">
-								<table>
-									<tr data-bind="visible: '' !== viewFrom()">
-										<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_FROM"></span></td>
-										<td>
-											<span class="pull-right size" data-bind="text: viewSize"></span>
-											<span class="from uiLabelValue"
-												data-bind="text: viewFrom, title: viewFrom"></span>
-							</div>
-							</td>
-							</tr>
-							<tr data-bind="visible: '' !== viewTo()">
-								<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_TO"></span></td>
-								<td><span class="to uiLabelValue" data-bind="text: viewTo, title: viewTo"></span></td>
-							</tr>
-							<tr data-bind="visible: '' !== viewCc()">
-								<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_CC"></span></td>
-								<td><span class="cc uiLabelValue" data-bind="text: viewCc, title: viewCc"></span></td>
-							</tr>
-							<tr data-bind="visible: '' !== viewBcc()">
-								<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_BCC"></span></td>
-								<td><span class="bcc uiLabelValue" data-bind="text: viewBcc, title: viewBcc"></span>
-								</td>
-							</tr>
-							<tr data-bind="visible: '' !== viewReplyTo()">
-								<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_REPLY_TO"></span></td>
-								<td><span class="replyTo uiLabelValue"
-										data-bind="text: viewReplyTo, title: viewReplyTo"></span></td>
-							</tr>
-							<tr data-bind="visible: 0 < viewTimeStamp()">
-								<td><span class="i18n uiLabel" data-i18n="MESSAGE/LABEL_DATE"></span></td>
-								<td>
-									<span class="date uiLabelValue" data-moment-format="FULL"
-										data-bind="moment: viewTimeStamp"></span>
-									&nbsp;
-									(<span class="date uiLabelValue" data-moment-format="FROMNOW"
-										data-bind="moment: viewTimeStamp"></span>)
-								</td>
-							</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="messageItem fixIndex">
-					<div class="content g-scrollbox" tabindex="0" data-scroller-shadows-content data-bind="hasfocus: messageDomFocused, css: { 'focused': messageDomFocused },
-							style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
-
-						<div class="content-wrapper">
-
-							<div>
-								<span class="buttonUp" data-bind="click: scrollMessageToTop">
-									<i class="icon-up"></i>
-								</span>
-								<span class="buttonFull" data-bind="click: fullScreen">
-									<i class="icon-arrows-out"></i>
-								</span>
-								<span class="buttonUnFull" data-bind="click: unFullScreen">
-									<i class="icon-arrows-in"></i>
-								</span>
-
-								<div class="line-loading e-strip-animation"
-									data-bind="visible: messageLoadingThrottle()"></div>
-
-								<div class="loading g-ui-min-height-300" data-bind="visible: messageLoadingThrottle()">
-									<span class="i18n text" data-i18n="MESSAGE/MESSAGE_LOADING"></span><span
-										class="textLoadingAnimationD1">.</span><span
-										class="textLoadingAnimationD2">.</span><span
-										class="textLoadingAnimationD3">.</span>
-								</div>
-							</div>
-
-							<div class="g-ui-min-height-300 content-content"
-								data-bind="visible: !messageLoadingThrottle()">
-								<div class="bodySubHeader">
-									<div class="showImages"
-										data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
-										<i class="icon-image"></i>
-										&nbsp;&nbsp;
-										<span class="i18n text" data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
-									</div>
-									<div class="readReceipt"
-										data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
-										<i class="icon-mail"></i>
-										&nbsp;&nbsp;
-										<span class="i18n text" data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
-									</div>
-									<div class="attachmentsPlace"
-										data-bind="visible: message() && message().hasVisibleAttachments(),
-											css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
-										<ul class="attachmentList"
-											data-bind="foreach: message() ? message().attachments() : []">
-											<li class="attachmentItem clearfix" draggable="true" data-tooltip-join="top"
-												data-bind="visible: !isLinked, event: { 'dragstart': eventDragStart }, attr: { 'title': fileName }, css: {'checked': checked}">
-												<div class="attachmentIconParent pull-left"
-													data-bind="css: { 'hasPreview': hasPreview(), 'hasPreplay': hasPreplay(), 'isImage': isImage() }">
-													<div class="hidePreview">
-														<div class="iconMain">
-															<i class="attachmentIcon attachmentMainIcon"
-																data-bind="css: iconClass()"></i>
-															<i class="attachmentIconText attachmentMainIconText"
-																data-bind="text: iconText()"></i>
-														</div>
-													</div>
-													<div class="showPreview">
-														<a data-bind="click: $root.attachmentPreview, css: {'attachmentImagePreview': isImage(), 'visible': !isLinked}, attr: { 'title': fileName, 'href': linkPreviewMain() }"
-															target="_blank">
-															<div class="iconMain">
-																<i class="attachmentIcon attachmentMainIcon"
-																	data-bind="css: iconClass()"></i>
-																<i class="attachmentIconText attachmentMainIconText"
-																	data-bind="text: iconText()"></i>
-															</div>
-															<div class="iconBG"
-																data-bind="attr: { 'style': linkThumbnailPreviewStyle() }">
-															</div>
-															<div class="iconPreview">
-																<i class="attachmentIcon icon-eye show-hover"></i>
-															</div>
-														</a>
-													</div>
-													<div class="showPreplay">
-														<div class="iconMain">
-															<i class="attachmentIcon attachmentMainIcon"
-																data-bind="css: iconClass()"></i>
-														</div>
-														<div class="iconPreview">
-															<i class="attachmentIcon icon-play show-hover"></i>
-														</div>
-													</div>
-												</div>
-												<div class="attachmentNameParent">
-													<div class="mmview">
-														<span class="attachmentName"
-															data-bind="text: fileName"></span>&nbsp;
-													</div>
-													<div>
-														<span class="attachmentSize"
-															data-bind="text: friendlySize"></span>&nbsp;
-													</div>
-												</div>
-												<div class="checkedParent">
-													<i class="checkboxAttachment icon-checkbox-unchecked" data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked',
-															click: function () { checked(!checked()); return false }"></i>
-												</div>
-											</li>
-										</ul>
-										<i class="icon-cog controls-handle"
-											data-bind="visible: allowAttachmnetControls() && !showAttachmnetControls(), click: function () { showAttachmnetControls(true); showAttachmnetControlsState(true); }"></i>
-									</div>
-
-									<div class="attachmentsControls"
-										data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
-
-										<span data-bind="visible: downloadAsZipAllowed">
-
-											<span class="g-ui-link" data-bind="click: downloadAsZip">
-												<span class="i18n" data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
-												&nbsp;&nbsp;
-												<i class="icon-remove iconcolor-red"
-													data-bind="visible: downloadAsZipError"></i>
-												<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
-													css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
-											</span>
-										</span>
-
-										<span data-bind="visible: saveToOwnCloudAllowed">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											<i class="icon-remove iconcolor-red"
-												data-bind="visible: saveToOwnCloudError"></i>
-											<i class="icon-ok iconcolor-green"
-												data-bind="visible: saveToOwnCloudSuccess"></i>
-											<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
-													css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
-											&nbsp;&nbsp;
-											<span class="g-ui-link" data-bind="click: saveToOwnCloud">
-												<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
-											</span>
-										</span>
-
-										<span data-bind="visible: saveToDropboxAllowed">
-											&nbsp;&nbsp;&nbsp;&nbsp;
-											<i class="icon-remove iconcolor-red"
-												data-bind="visible: saveToDropboxError"></i>
-											<i class="icon-ok iconcolor-green"
-												data-bind="visible: saveToDropboxSuccess"></i>
-											<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
-													css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
-											&nbsp;&nbsp;
-											<span class="g-ui-link" data-bind="click: saveToDropbox">
-												<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
-											</span>
-										</span>
-
-										<button type="button" class="close" style="margin-right: 5px;"
-											data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
-									</div>
-								</div>
-
-								<div class="bodyText g-ui-min-height-300 rl-mv-root"
-									data-bind="initDom: messagesBodiesDom"></div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>

@@ -6,10 +6,6 @@
 			<div class="legend">
 				<span class="i18n i18nflex" data-i18n="SETTINGS_ACCOUNTS/LEGEND_ACCOUNTS"></span>
 				<i class="icon-spinner animated" style="margin-top: 5px" data-bind="visible: accounts.loading"></i>
-				<a class="btn i18nflex sp-save" data-bind="click: addNewAccount">
-					<i class="icon-user-add"></i>
-					<span class="i18n space-font" data-i18n="SETTINGS_ACCOUNTS/BUTTON_ADD_ACCOUNT"></span>
-				</a>
 			</div>
 
 			<div class="view-block">
@@ -44,6 +40,13 @@
 						</tbody>
 					</table>
 				</div>
+
+				<div class="accounts-list-wrp">
+					<button class="btn sp-save" data-bind="click: addNewAccount">
+						<i class="icon-user-add"></i>
+						<span class="i18n i18nflex space-font" data-i18n="SETTINGS_ACCOUNTS/BUTTON_ADD_ACCOUNT"></span>
+					</button>
+				</div>
 			</div>
 		</div>
 
@@ -54,10 +57,6 @@
 		<div class="form-horizontal view-flex">
 			<div class="legend" style="margin-left: 20px;">
 				<span class="i18n i18nflex" data-i18n="SETTINGS_ACCOUNTS/LEGEND_IDENTITIES"></span>
-				<a class="btn i18nflex sp-save" data-bind="click: addNewIdentity">
-					<i class="icon-user-add"></i>
-					<span class="i18n space-font" data-i18n="SETTINGS_ACCOUNTS/BUTTON_ADD_IDENTITY"></span>
-				</a>
 			</div>
 
 			<div class="view-block">
@@ -96,6 +95,13 @@
 						</tbody>
 					</table>
 				</div>
+
+				<div class="accounts-list-wrp">
+					<button class="btn sp-save" data-bind="click: addNewIdentity">
+						<i class="icon-user-add"></i>
+						<span class="i18n i18nflex space-font" data-i18n="SETTINGS_ACCOUNTS/BUTTON_ADD_IDENTITY"></span>
+					</button>
+				</div>
 			</div>
 		</div>
 
@@ -106,9 +112,6 @@
 		<div class="form-horizontal view-flex">
 		    	<div class="legend">
 				<span class="i18n i18nflex" data-i18n="SETTINGS_PERSONALS/LEGEND_PERSONALS"></span>
-				<a class="btn i18nflex sp-save" data-bind="click: phoneNmChange">
-					<span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_SAVE"></span>
-				</a>
 		    	</div>
 		
 			<table class="table table-hover list-table i18nflex sf-table">
@@ -172,6 +175,11 @@
 			  		</tr>
 				</tbody>
 			</table>
+			<div class="accounts-list-wrp">
+				<button class="btn sp-save" data-bind="click: phoneNmChange">
+					<span class="i18n i18nflex" data-i18n="SETTINGS_PERSONALS/BUTTON_SAVE"></span>
+				</button>
+			</div>
 
 	  	</div>
 
