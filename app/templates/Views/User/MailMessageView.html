@@ -232,19 +232,8 @@
 								</div>
 	
 								<div class="g-ui-min-height-300 content-content" data-bind="visible: !messageLoadingThrottle()">
-									<div class="bodySubHeader">
-										<div class="showImages"
-											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
-											<i class="icon-image"></i>
-											&nbsp;&nbsp;
-											<span class="i18n text" data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
-										</div>
-										<div class="readReceipt"
-											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
-											<i class="icon-mail"></i>
-											&nbsp;&nbsp;
-											<span class="i18n text" data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
-										</div>
+									<div class="bodySubHeader view-flex">
+										
 										<div class="attachmentsPlace"
 											data-bind="visible: message() && message().hasVisibleAttachments(),
 												css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
@@ -292,11 +281,11 @@
 													<div class="attachmentNameParent">
 														<div class="mmview">
 															<span class="attachmentName"
-																data-bind="text: fileName"></span>&nbsp;
+																data-bind="text: fileName"></span>
 														</div>
 														<div>
 															<span class="attachmentSize"
-																data-bind="text: friendlySize"></span>&nbsp;
+																data-bind="text: friendlySize"></span>
 														</div>
 													</div>
 													<div class="checkedParent">
@@ -316,7 +305,7 @@
 	
 												<span class="g-ui-link" data-bind="click: downloadAsZip">
 													<span class="i18n" data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
-													&nbsp;&nbsp;
+													
 													<i class="icon-remove iconcolor-red"
 														data-bind="visible: downloadAsZipError"></i>
 													<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
@@ -325,28 +314,28 @@
 											</span>
 	
 											<span data-bind="visible: saveToOwnCloudAllowed">
-												&nbsp;&nbsp;&nbsp;&nbsp;
+												
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToOwnCloudError"></i>
 												<i class="icon-ok iconcolor-green"
 													data-bind="visible: saveToOwnCloudSuccess"></i>
 												<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
 														css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
-												&nbsp;&nbsp;
+												
 												<span class="g-ui-link" data-bind="click: saveToOwnCloud">
 													<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
 												</span>
 											</span>
 	
 											<span data-bind="visible: saveToDropboxAllowed">
-												&nbsp;&nbsp;&nbsp;&nbsp;
+												
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToDropboxError"></i>
 												<i class="icon-ok iconcolor-green"
 													data-bind="visible: saveToDropboxSuccess"></i>
 												<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
 														css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
-												&nbsp;&nbsp;
+												
 												<span class="g-ui-link" data-bind="click: saveToDropbox">
 													<span class="i18n" data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
 												</span>
@@ -357,7 +346,24 @@
 										</div>
 									</div>
 	
-									<div class="bodyText g-ui-min-height-300 rl-mv-root i18nflex" data-bind="initDom: messagesBodiesDom"></div>
+									<div class="bodyText g-ui-min-height-300 rl-mv-root i18nflex" data-bind="initDom: messagesBodiesDom">
+
+										<div class="showImages"
+											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
+											<div>
+												<i class="icon-image"></i>
+												<span class="i18n text i18nflex" data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
+											</div>
+										</div>
+										<div class="readReceipt"
+											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
+											<div>
+												<i class="icon-mail"></i>
+												<span class="i18n text i18nflex" data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
+											</div>
+										</div>
+			
+									</div>
 								</div>
 							</div>
 						</div>
@@ -367,7 +373,7 @@
 				<div class="v-mess-button-toolbar clearfix" data-bind="visible: message">
 					<nobr>
 						<div class="btn-group pull-right">
-							<div class="btn-group pull-right"
+							<div class="btn-group"
 								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 								<a class="btn btn-thin-2 btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
 									id="more-view-dropdown-id" href="#" tabindex="-1" data-toggle="dropdown"
@@ -383,7 +389,7 @@
 											<a class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: replyCommand">
 												<i class="icon-reply"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_REPLY"></span>
 											</a>
 										</li>
@@ -391,7 +397,7 @@
 											<a class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: replyAllCommand">
 												<i class="icon-reply-all"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
 											</a>
 										</li>
@@ -399,7 +405,7 @@
 											<a class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: forwardCommand">
 												<i class="icon-forward"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_FORWARD"></span>
 											</a>
 										</li>
@@ -407,7 +413,7 @@
 											<a class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: editAsNewCommand">
 												<i class="icon-pencil"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
 											</a>
 										</li>
@@ -415,7 +421,7 @@
 											<a class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: forwardAsAttachmentCommand">
 												<i class="icon-forward"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n"
 													data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
 											</a>
@@ -429,7 +435,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: archiveCommand">
 												<i class="icon-archive"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
 											</a>
 										</li>
@@ -438,7 +444,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: spamCommand">
 												<i class="icon-warning"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_SPAM"></span>
 											</a>
 										</li>
@@ -447,7 +453,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: notSpamCommand">
 												<i class="icon-check-mark-circle-two"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
 											</a>
 										</li>
@@ -455,7 +461,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="command: deleteCommand">
 												<i class="icon-trash"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_DELETE"></span>
 											</a>
 										</li>
@@ -464,7 +470,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="link: viewUnsubscribeLink()">
 												<i class="icon-remove"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
 											</a>
 										</li>
@@ -477,7 +483,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="click: function () { if (message()) { message().printMessage(); }} ">
 												<i class="icon-print"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/MENU_PRINT"></span>
 											</a>
 										</li>
@@ -485,7 +491,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
 												<i class="icon-popup"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
 											</a>
 										</li>
@@ -494,7 +500,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="link: viewViewLink()">
 												<i class="icon-file-code"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
 											</a>
 										</li>
@@ -502,7 +508,7 @@
 											<a target="_blank" class="e-link menuitem" href="#" tabindex="-1"
 												data-bind="link: viewDownloadLink()">
 												<i class="icon-download"></i>
-												&nbsp;&nbsp;
+												
 												<span class="i18n" data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
 											</a>
 										</li>
