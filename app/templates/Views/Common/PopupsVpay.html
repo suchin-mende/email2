@@ -9,22 +9,28 @@
 			</div>
 			<div class="modal-body pl-body">
 				<div class="vPlan-title">
-					<span class="">套餐</span>
-					<span class="">18 GB邮箱容量
+					<span class="vPlan-prefix">套餐</span>
+					<span class="vPlan-pName">18 GB邮箱容量
 						<span>30元/月</span>
 					</span>
 				</div>
 				<div class="vPlan-account-area">
-					<span class="">帐号</span>
-					<span class="">zay7oo@vip.mongol.email</span>
+					<div class="vPlan-account">
+						<span class="">帐号</span>
+						<span class="">zay7oo@vip.mongol.email</span>
+					</div>
 				</div>
 				<div class="vPlan-sale">
-					<div class="sale-list">
-						<div class="sale-item" data-bind="foreach: vPayBox">
+					<div class="sale-list" data-bind="foreach: vSaleList">
+						<div class="sale-item" data-bind="click: function () { $root.vSaleChooser(vipPlanCd); }">
+							<div class="sale-tips">赠1个月服务期</div>
 							<div class="sale-msg">
-								<div class="sale-time" data-bind="text: monthNr">1</div>
-								<div class="sale-price" data-bind="text: price">2</div>
-								<div class="sale-tips" data-bind="text: descriptionTx">3</div>
+								<div class="sale-time" data-bind="text: monthNr"></div>
+								<div class="sale-price">
+									<span class="s-price-unit">￥</span>
+									<span class="s-price-money" data-bind="text: price"></span>
+								</div>
+								<div class="sale-sub-tips" data-bind="text: descriptionTx"></div>
 							</div>
 						</div>
 					</div>
@@ -40,15 +46,15 @@
 				<div class="vPlan-payment">
 					<div class="payment-argeement"></div>
 					<div class="payment-msg">
-						<div class="pay-QRcode"></div>
+						<img class="pay-QRcode" data-bind="attr: { 'src': payQr()}" alt="QRcode"></img>
 						<div class="pay-order-msg">
 							<p class="price-msg">
-								<span class="unit"></span>
-								<span class="money"></span>
+								<span class="prc-unit">￥</span>
+								<span class="prc-money" data-bind="text: vPayPrc"></span>
 							</p>
 
 							<div>
-								<p class="pay-tips"></p>
+								<p class="pay-tips">使用支付宝或微信扫码支付</p>
 								<div class="pay-icon">
 									<i></i>
 									<i></i>
@@ -56,7 +62,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="payment-button" style="display: none;">
+					<div class="payment-btn" style="display: none;">
 						<button></button>
 						<span></span>
 					</div>

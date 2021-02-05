@@ -32,6 +32,7 @@ en:
     LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "Get Captcha"
     LABEL_CELLPHONE_VERIFICATION_CODE: "Auth code"
   REGISTER: ######后加
+    SHOW_PAYMENT: "VIP  Cash"
     LABEL_EMAIL: "Email"
     LABEL_PASSWORD: "Password"
     LABEL_AFFIRM_PASSWORD: "Confirm Password"
