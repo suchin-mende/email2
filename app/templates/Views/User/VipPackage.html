@@ -65,11 +65,9 @@
                                                         <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
                                                         <p class="tag-p i18nflex mid-text" data-bind="text: descriptionTx"></p>
                                                         <div class="btm-text view-flex">
-                                                            <p class="tag-p" data-bind="text: eventPrice"></p>
+                                                            <p class="tag-p">￥</p>
+                                                            <p data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p ePrice' : ' ' }"></p>
                                                             <p data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}"></p>
-                                                            <p class="tag-p" data-i18n="VIPPACKAGE/SALE_PLAN"></p>
-                                                            <p class="tag-p">  RMB</p>
-                                                            <span data-i18n="VIPPACKAGE/TITLE_VIP"></span>
                                                         </div>
                                                     </div>
                                                 </div>

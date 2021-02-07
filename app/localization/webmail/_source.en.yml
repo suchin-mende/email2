@@ -1,4 +1,12 @@
 en:
+  VIPCASH:
+    LABEL_TITLE: "VIP Cash"
+    LABEL_PACKGE: "Packge"
+    LABEL_ACCOUNT: "account"
+    LABEL_DISCOUNT: "Promo code"
+    PLACEHOLDER_DISCOUNT: "Please enter the promo code"
+    LABEL_PAY_TIPS: "Use Alipay or WeChat to scan the code to pay"
+    LABEL_TIME: "/Month"
   VIPLOGIN:
     LABEL_CHANGE: "change"
     LABEL_EMAIL: "Email"
@@ -32,7 +40,6 @@ en:
     LABEL_GAIN_CELLPHONE_VERIFICATION_CODE: "Get Captcha"
     LABEL_CELLPHONE_VERIFICATION_CODE: "Auth code"
   REGISTER: ######后加
-    SHOW_PAYMENT: "VIP  Cash"
     LABEL_EMAIL: "Email"
     LABEL_PASSWORD: "Password"
     LABEL_AFFIRM_PASSWORD: "Confirm Password"
@@ -44,7 +51,7 @@ en:
     LABEL_LOGIN_ACCOUNT: "Login account"
     LABEL_MONGOL_EMAIL: "@mongol.email"
     LABEL_HALGAI_EMAIL: "@halgai.com" 
-    LABE_LTITLE: "邮箱注册"
+    LABE_LTITLE: "Sign up"
     LABEL_USERCD_HELP:
           Start with a letter and use combinations of 6 to 18 characters (letter, number, dot, underline)
     LABEL_PASSWORD_HELP:
@@ -68,7 +75,7 @@ en:
     TITLE_SIGN_IN_FACEBOOK: "Sign In using Facebook"
     TITLE_SIGN_IN_TWITTER: "Sign In using Twitter"
     LABEL_FORGOT_PASSWORD: "Forgot password"
-    LABEL_REGISTRATION: "Registration"
+    LABEL_REGISTRATION: "Sign Up"
     LABEL_QRCODE_SCAN: "Scan the QR code"
     LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
   TOP_TOOLBAR:

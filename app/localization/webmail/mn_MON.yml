@@ -1,4 +1,12 @@
 mn_MON:
+   VIPCASH:
+    LABEL_TITLE: "VIP ᠮᠥᠩᠭᠦᠨ ᠲᠣᠭᠠᠴᠠᠭ᠎ᠠ"
+    LABEL_PACKGE: " ᠪᠠᠭᠴᠠ"
+    LABEL_ACCOUNT: " ᠳᠠᠩᠰᠠ"
+    LABEL_DISCOUNT: " ᠤᠷᠠᠮᠰᠢᠭᠤᠯᠤᠯ"
+    PLACEHOLDER_DISCOUNT: " ᠤᠷᠠᠮᠰᠢᠭᠤᠯᠤᠯ ᠤᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠠᠢ"
+    LABEL_PAY_TIPS: "Alipay ᠪᠤᠶᠤ WeChat ᠪᠡᠷ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢ ᠰᠢᠷᠪᠢᠵᠤ ᠮᠥᠩᠭᠦ ᠪᠡᠨ ᠲᠣᠭᠠᠯᠠᠭᠠᠷᠠᠢ"
+    LABEL_TIME: "\ ᠰᠠᠷ᠎ᠠ"
    LOGIN:
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
@@ -18,7 +26,6 @@ mn_MON:
     LABEL_QRCODE_SCAN: "Email APP ᠊ᠤᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
    REGISTER:
-    SHOW_PAYMENT: "VIP  Cash"
     M_LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
