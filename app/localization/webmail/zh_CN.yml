@@ -1,4 +1,12 @@
 zh_CN:
+  VIPCASH:
+    LABEL_TITLE: "VIP 收银台"
+    LABEL_PACKGE: "套餐"
+    LABEL_ACCOUNT: "账号"
+    LABEL_DISCOUNT: "优惠码"
+    PLACEHOLDER_DISCOUNT: "请输入优惠码"
+    LABEL_PAY_TIPS: "使用支付宝或微信扫码支付"
+    LABEL_TIME: "/月"
   LOGIN:
     LABEL_EMAIL: "邮箱"
     LABEL_LOGIN: "登入"
