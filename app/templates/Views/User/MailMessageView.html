@@ -351,14 +351,14 @@
 										<div class="showImages"
 											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
 											<div>
-												<i class="icon-image"></i>
+												<i class="icon-image t-ortion"></i>
 												<span class="i18n text i18nflex" data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
 											</div>
 										</div>
 										<div class="readReceipt"
 											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
 											<div>
-												<i class="icon-mail"></i>
+												<i class="icon-mail t-ortion"></i>
 												<span class="i18n text i18nflex" data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
 											</div>
 										</div>
@@ -372,7 +372,7 @@
 
 				<div class="v-mess-button-toolbar clearfix" data-bind="visible: message">
 					<nobr>
-						<div class="btn-group pull-right">
+						<div class="btn-group">
 							<div class="btn-group"
 								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 								<a class="btn btn-thin-2 btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
@@ -515,17 +515,17 @@
 									</div>
 								</ul>
 							</div>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReply pull-right"
+							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReply"
 								data-tooltip-join="bottom"
 								data-bind="visible: 'reply' === lastReplyAction() && allowComposer, command: replyCommand, tooltip: 'MESSAGE/BUTTON_REPLY'">
 								<i class="icon-reply"></i>
 							</a>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReplyAll pull-right"
+							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReplyAll"
 								data-tooltip-join="bottom"
 								data-bind="visible: 'replyall' === lastReplyAction() && allowComposer, command: replyAllCommand, tooltip: 'MESSAGE/BUTTON_REPLY_ALL'">
 								<i class="icon-reply-all"></i>
 							</a>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonForward pull-right"
+							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonForward"
 								data-tooltip-join="bottom"
 								data-bind="visible: 'forward' === lastReplyAction() && allowComposer, command: forwardCommand, tooltip: 'MESSAGE/BUTTON_FORWARD'">
 								<i class="icon-forward"></i>

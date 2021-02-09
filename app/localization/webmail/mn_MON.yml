@@ -1,12 +1,12 @@
 mn_MON:
    VIPCASH:
     LABEL_TITLE: "VIP ᠮᠥᠩᠭᠦᠨ ᠲᠣᠭᠠᠴᠠᠭ᠎ᠠ"
-    LABEL_PACKGE: " ᠪᠠᠭᠴᠠ"
-    LABEL_ACCOUNT: " ᠳᠠᠩᠰᠠ"
+    LABEL_PACKGE: " ᠪᠠᠭᠴᠠ :"
+    LABEL_ACCOUNT: " ᠳᠠᠩᠰᠠ :"
     LABEL_DISCOUNT: " ᠤᠷᠠᠮᠰᠢᠭᠤᠯᠤᠯ"
     PLACEHOLDER_DISCOUNT: " ᠤᠷᠠᠮᠰᠢᠭᠤᠯᠤᠯ ᠤᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠲᠠᠭᠯᠠᠭᠠᠷᠠᠢ"
     LABEL_PAY_TIPS: "Alipay ᠪᠤᠶᠤ WeChat ᠪᠡᠷ ᠡᠷᠢᠶᠡᠪᠦᠷ ᠢ ᠰᠢᠷᠪᠢᠵᠤ ᠮᠥᠩᠭᠦ ᠪᠡᠨ ᠲᠣᠭᠠᠯᠠᠭᠠᠷᠠᠢ"
-    LABEL_TIME: "\ ᠰᠠᠷ᠎ᠠ"
+    LABEL_TIME: "/ ᠰᠠᠷ᠎ᠠ"
    LOGIN:
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_LOGIN: "ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"

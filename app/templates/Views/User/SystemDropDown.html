@@ -12,7 +12,7 @@
 					&nbsp;
 					<span class="top-caret"></span>
 				</a>
-				<ul class="dropdown-menu g-ui-menu menu-right i18nflex" tabindex="-1" role="menu" aria-labelledby="top-system-dropdown-id">
+				<ul class="dropdown-menu g-ui-menu menu-right" tabindex="-1" role="menu" aria-labelledby="top-system-dropdown-id">
 
 					<!-- ko if: accounts().length -->
 						<!-- ko foreach: accounts -->
@@ -38,7 +38,7 @@
 						<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: addAccountClick">
 							<i class="icon-plus"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="TOP_TOOLBAR/BUTTON_ADD_ACCOUNT"></span>
+							<span class="i18n i18nflex" data-i18n="TOP_TOOLBAR/BUTTON_ADD_ACCOUNT"></span>
 						</a>
 					</li>
 					<!-- /ko -->
@@ -46,14 +46,14 @@
 						<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: settingsClick">
 							<i class="icon-cog"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="TOP_TOOLBAR/BUTTON_SETTINGS"></span>
+							<span class="i18n i18nflex" data-i18n="TOP_TOOLBAR/BUTTON_SETTINGS"></span>
 						</a>
 					</li>
 					<li class="e-item" role="presentation" data-bind="visible: allowHelp">
 						<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: settingsHelp">
 							<i class="icon-help"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="TOP_TOOLBAR/BUTTON_HELP"></span>
+							<span class="i18n i18nflex" data-i18n="TOP_TOOLBAR/BUTTON_HELP"></span>
 						</a>
 					</li>
 					<li class="divider" role="presentation" data-bind="visible: allowSettings || allowHelp"></li>
@@ -61,21 +61,21 @@
 						<a class="e-link menuitem" href="./?/DesktopVersion/" tabindex="-1">
 							<i class="icon-laptop"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
+							<span class="i18n i18nflex" data-i18n="MOBILE/BUTTON_DESKTOP_VERSION"></span>
 						</a>
 					</li>
 					<li class="e-item" role="presentation" data-bind="visible: !mobile">
 						<a class="e-link menuitem" href="./?/MobileVersion/" tabindex="-1">
 							<i class="icon-mobile"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="MOBILE/BUTTON_MOBILE_VERSION"></span>
+							<span class="i18n i18nflex" data-i18n="MOBILE/BUTTON_MOBILE_VERSION"></span>
 						</a>
 					</li>
 					<li class="e-item" role="presentation">
 						<a class="e-link menuitem" href="#" tabindex="-1" data-bind="click: logoutClick">
 							<i class="icon-power"></i>
 							&nbsp;&nbsp;
-							<span class="i18n" data-i18n="TOP_TOOLBAR/BUTTON_LOGOUT"></span>
+							<span class="i18n i18nflex" data-i18n="TOP_TOOLBAR/BUTTON_LOGOUT"></span>
 						</a>
 					</li>
 				</ul>

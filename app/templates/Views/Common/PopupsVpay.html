@@ -10,13 +10,13 @@
 			<div class="modal-body pl-body">
 				<div class="vPlan-sale">
 					<div class="sale-list" data-bind="foreach: vSaleList">
-						<div id="vChoose" class="sale-item" data-bind="click: function () { $root.vSaleChooser(vipPlanCd); }">
+						<div data-bind="click: function () { $root.vSaleChooser(vipPlanCd, index); }, 
+							attr: {class: index == $root.vSelected() ? 'sale-item selected' : 'sale-item'}">
 							<!-- <div class="sale-tips">赠1个月服务期</div> -->
 							<div class="sale-msg">
 								<div class="sale-time">
 									<span data-bind="text: monthNr"></span>
 									<span class="i18nflex" data-i18n="VIPCASH/LABEL_TIME"></span>
-									<span>月</span>
 								</div>
 								<div class="sale-price">
 									<span class="s-price-unit">￥</span>
@@ -32,14 +32,14 @@
 					<div class="view-flex">
 						<div class="vPlan-title i18nflex">
 							<span class="vPlan-prefix" data-i18n="VIPCASH/LABEL_PACKGE"></span>
-							<span class="vPlan-pName" data-bind="text: packgeCapac">
-								<span data-bind="text: packgePrc"></span>
-							</span>
+							<span class="vPlan-pName" data-bind="text: packgeCapac"></span>
+							<span data-bind="text: packgePrc"></span>
+							<span class="i18nflex" data-i18n="VIPCASH/LABEL_TIME"></span>
 						</div>
 						<div class="vPlan-account-area i18nflex">
 							<div class="vPlan-account">
 								<span class="" data-i18n="VIPCASH/LABEL_ACCOUNT"></span>
-								<span class="" data-bind="text: email">zay7oo@vip.mongol.email</span>
+								<span class="" data-bind="text: email"></span>
 							</div>
 						</div>
 						<div class="vPlan-discount i18nflex">

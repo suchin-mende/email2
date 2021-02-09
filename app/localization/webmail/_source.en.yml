@@ -1,8 +1,8 @@
 en:
   VIPCASH:
     LABEL_TITLE: "VIP Cash"
-    LABEL_PACKGE: "Packge"
-    LABEL_ACCOUNT: "account"
+    LABEL_PACKGE: "Packge :"
+    LABEL_ACCOUNT: "account :"
     LABEL_DISCOUNT: "Promo code"
     PLACEHOLDER_DISCOUNT: "Please enter the promo code"
     LABEL_PAY_TIPS: "Use Alipay or WeChat to scan the code to pay"
