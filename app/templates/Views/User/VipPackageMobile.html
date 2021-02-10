@@ -7,7 +7,7 @@
             </div>
       </div>
       <div class="m-middle-view" data-bind="foreach: vPlanBox">
-            <div class="m-vip-box" data-bind="click: function () { $root.salePack(vipPlanCd); }">
+            <div class="m-vip-box" data-bind="click: function () { $root.salePack(vipPlanCd, index); }">
                   <div data-bind="attr: { 
                         class: index == 0 ? 'c-box case-gold': index == 1 ? 'c-box case-green' : 'c-box case-diamond',
                     }">
@@ -40,8 +40,12 @@
                               </div>
 
                               <div class="m-text-box">
-                                  <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
-                                  <p class="tag-p" data-bind="text: price">/p>
+                                    <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
+                                    <div class="view-flex">
+                                          <p class="tag-p">￥</p>
+                                          <p data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p m-ePrice' : ' ' }"></p>
+                                          <p data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}"></p>
+                                    </div>
                               </div>
 
                               <div class="m-vDetail">
