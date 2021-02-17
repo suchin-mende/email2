@@ -3,7 +3,7 @@ ja_JP:
     LABEL_EMAIL: "メールアドレス"
     LABEL_LOGIN: "ログイン"
     LABEL_PASSWORD: "パスワード"
-    LABEL_SIGN_ME: "サインイン状態を保持する"
+    LABEL_SIGN_ME: "保持する"
     LABEL_VERIFICATION_CODE: "確認コード"
     LABEL_DONT_ASK_VERIFICATION_CODE: "2週間、コードを確認しない"
     BUTTON_SIGN_IN: "サインイン"

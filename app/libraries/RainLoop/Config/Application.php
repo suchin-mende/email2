@@ -181,13 +181,13 @@ class Application extends \RainLoop\Config\AbstractConfig
 			),
 
 			'contacts' => array(
-				'enable'			=> array(false, 'Enable contacts'),
+				'enable'			=> array(true, 'Enable contacts'),
 				'allow_sync'		=> array(false),
 				'sync_interval'		=> array(20),
 				'type'				=> array('sqlite', ''),
-				'pdo_dsn'			=> array('mysql:host=127.0.0.1;port=3306;dbname=rainloop', ''),
+				'pdo_dsn'			=> array('mysql:host=127.0.0.1;port=3306;dbname=mongolEmail', ''),
 				'pdo_user'			=> array('root', ''),
-				'pdo_password'		=> array('', ''),
+				'pdo_password'		=> array('root', ''),
 				'suggestions_limit' => array(30)
 			),
 

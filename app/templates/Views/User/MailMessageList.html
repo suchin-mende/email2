@@ -16,10 +16,6 @@
 							<span class="i18n" data-i18n="FOLDER_LIST/BUTTON_NEW_MESSAGE"></span>
 						</span>
 					</a>
-					<a class="btn buttonContacts pull-left" data-tooltip-join="top"
-						data-bind="tooltip: 'FOLDER_LIST/BUTTON_CONTACTS'">
-						<i class="icon-address-book"></i>
-					</a>
 				</div>
 
 				<div class="btn-group" data-bind="visible: leftPanelDisabled()">
@@ -34,20 +30,26 @@
 				</div>
 				<div class="btn-group">&nbsp;</div>
 				<!-- /ko -->
+				<div class="btn-group" data-bind="visible: allowReload && mobileCheckedStateHide()">
+					<a class="btn single btn-dark-disabled-border buttonReload" data-tooltip-join="top"
+						data-bind="command: reloadCommand, tooltip: 'MESSAGE_LIST/BUTTON_RELOAD'">
+						<i class="icon-spinner" data-bind="css: {'animated': messageListCompleteLoadingThrottleForAnimation}"></i>
+					</a>
+				</div>
 				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
 					<a class="btn single buttonCompose" data-tooltip-join="top"
 						data-bind="click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
 							<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
 								<use xlink:href="#iconpen"></use>
-						  	</svg>
+						  </svg>
+							<span class="btn-text-wrp buttonComposeText">
+								<span>NEW</span>
+							</span>
 					</a>
 				</div>
-				<div class="btn-group" data-bind="visible: mobileCheckedStateHide()">&nbsp;</div>
-				<div class="btn-group" data-bind="visible: allowReload && mobileCheckedStateHide()">
-					<a class="btn single btn-dark-disabled-border buttonReload" data-tooltip-join="top"
-						data-bind="command: reloadCommand, tooltip: 'MESSAGE_LIST/BUTTON_RELOAD'">
-						<i class="icon-spinner"
-							data-bind="css: {'animated': messageListCompleteLoadingThrottleForAnimation}"></i>
+				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
+					<a class="btn single buttonContacts" data-tooltip-join="top" data-bind="click: contactsClick, tooltip: 'FOLDER_LIST/BUTTON_CONTACTS'">
+						<i class="icon-address-book"></i>
 					</a>
 				</div>
 				<div class="btn-group" data-bind="visible: allowReload && mobileCheckedStateHide()">&nbsp;</div>
@@ -299,4 +301,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>

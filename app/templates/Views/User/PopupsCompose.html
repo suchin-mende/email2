@@ -1,18 +1,14 @@
 <div class="popups">
-	<div class="modal hide b-compose" data-backdrop="static"
-		data-bind="modal: modalVisibility, css: {'loading': saving() || sending()}">
+	<div class="modal hide b-compose" data-backdrop="static" data-bind="modal: modalVisibility, css: {'loading': saving() || sending()}">
 		<div class="modal-header b-header-toolbar g-ui-user-select-none">
-			<a class="close-custom" data-tooltip-join="top"
-				data-bind="click: tryToClosePopup, tooltip: 'COMPOSE/BUTTON_CANCEL'">&times;</a>
-			<a class="minimize-custom" data-tooltip-join="top"
-				data-bind="click: skipCommand, tooltip: 'COMPOSE/BUTTON_MINIMIZE'"></a>
+			<a class="close-custom" data-tooltip-join="top" data-bind="click: tryToClosePopup, tooltip: 'COMPOSE/BUTTON_CANCEL'">&times;</a>
+			<a class="minimize-custom" data-tooltip-join="top" data-bind="click: skipCommand, tooltip: 'COMPOSE/BUTTON_MINIMIZE'"></a>
 		</div>
 		<div class="modal-body">
 			<div class="modal-flex edit-box">
 				<div class="b-header g-ui-user-select-none">
 					<div class="g-ui-table i18nflex">
 						<div class="e-row">
-
 							<div class="e-cell e-value">
 								<div class="dropdown pull-left"
 									data-bind="registrateBootstrapDropdown: true, openDropdownTrigger: identitiesDropdownTrigger">
