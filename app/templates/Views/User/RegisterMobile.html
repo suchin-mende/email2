@@ -11,7 +11,7 @@
                   </div>
             </div>
             <div data-bind="visible: vBox() != null">
-                  <div class="c-vBox">
+                  <div class="c-vBox" data-bind="click: function () { $root.showPayment(vipPlanCd); }">
                         <div class="box-i">
                               <div data-bind="style: { display: vIdx() == 0 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon r-m-icon r-m-gold-color" aria-hidden="true">
@@ -67,15 +67,6 @@
                             <br />
                             <span data-bind="text: submitErrorAddidional"></span>
                         </div>
-                  </div>
-            </div>
-
-            <div class="vertical-view">
-                  <div class="login-flex" id="VipPackageInfo" style="display: none;">
-                      <p class="vip-m" data-i18n="VIPLOGIN/LABEL__VIA_PACKAGE"></p>
-                      <p class="price"></p>
-                      <p class="" data-i18n="VIPLOGIN/LABEL_VIP_CAPACITY"></p>
-                      <p class="vip-m" data-i18n="VIPLOGIN/LABEL_CHANGE" data-bind="click: gotoVipPackage"></p>
                   </div>
             </div>
 
