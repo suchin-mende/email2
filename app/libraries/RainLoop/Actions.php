@@ -9771,4 +9771,21 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		return $this->TrueResponse(__FUNCTION__, $rsp);
 	}
+
+	public function DoPersonal()
+	{
+		$uid = \MailSo\Base\Utils::Trim($this->GetActionParam('pUid', ''));
+		
+
+		$rsp = $this->ApiServiceProvider()->perSonal($uid, );
+		$rsp = json_decode($rsp, true);
+
+		if ($rsp == null)
+			throw new \RainLoop\Exceptions\Exception();
+
+			$plans = array(
+				'plan' => $rsp
+			);
+			return $this->TrueResponse(__FUNCTION__, $plans);
+	}
 }
