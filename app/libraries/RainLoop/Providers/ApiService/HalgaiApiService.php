@@ -69,6 +69,13 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 		return $this->get(APP_API_PATH, $this->makeRoute(array($this->getLanguage(), APP_API_VERSION, APP_API_COMPANY, 'vip/plans')));
 	}
 
+	public function perSonal()
+	{
+		return $this->get(APP_API_PATH, $this->makeRoute(array($this->getLanguage(), APP_API_VERSION, APP_API_COMPANY, APP_API_USER, 'uid')), array(
+			'pUid' => $uid,
+		));
+	}
+
 	public function vipPlan($planCd, $childPlans)
 	{
 		$params = array(
@@ -98,6 +105,22 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 		);
 		if ($ticketCode != null)
 			array_push($params, $ticketCode);
+		return $this->get(
+			APP_API_PATH,
+			$this->makeRoute($params)
+		);
+	}
+
+	public function perSonal($uid)
+	{
+		$params = array(
+			$this->getLanguage(), 
+			APP_API_VERSION, 
+			APP_API_COMPANY, 
+			'vip/plan',
+			$uid
+		);
+
 		return $this->get(
 			APP_API_PATH,
 			$this->makeRoute($params)
