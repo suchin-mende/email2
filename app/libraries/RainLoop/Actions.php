@@ -9774,18 +9774,12 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 	public function DoPersonal()
 	{
-		$uid = \MailSo\Base\Utils::Trim($this->GetActionParam('pUid', ''));
+		$uid = \MailSo\Base\Utils::Trim($this->GetActionParam('uid', ''));
 		
 
-		$rsp = $this->ApiServiceProvider()->perSonal($uid, );
+		$rsp = $this->ApiServiceProvider()->perSonal($uid);
 		$rsp = json_decode($rsp, true);
 
-		if ($rsp == null)
-			throw new \RainLoop\Exceptions\Exception();
-
-			$plans = array(
-				'plan' => $rsp
-			);
-			return $this->TrueResponse(__FUNCTION__, $plans);
+		return $this->TrueResponse(__FUNCTION__);
 	}
 }
