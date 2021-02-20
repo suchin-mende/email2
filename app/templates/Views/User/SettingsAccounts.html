@@ -55,22 +55,22 @@
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_USERID"></span>
-				    			<span class="folder-system-name" data-bind="text: email"></span>
+				    			<span class="folder-system-name"></span>
 						</td>
 			  		</tr>
 			  		<tr class="folder-item">
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_EMAILID"></span>
-				    			<span class="folder-system-name" data-bind="text: email"></span>
+				    			<span class="folder-system-name"></span>
 						</td>
 			  		</tr>
 			  		<tr class="folder-item">
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_PHONENM"></span>
-				    			<span class="folder-system-name" data-bind="text: email"></span>
-				    			<a class="btn i18nflex sp-btn" data-bind="click: phoneNmChange">
+				    			<span class="folder-system-name"></span>
+				    			<a class="btn i18nflex sp-btn" data-bind="click: function () { $root.phoneNmChange(); }">
 					  			<span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_CHANGE"></span>
 				    			</a>
 						</td>
@@ -79,8 +79,8 @@
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_PASSWORD"></span>
-				    			<span class="folder-system-name" data-bind="text: email"></span>
-				    			<a class="btn i18nflex sp-btn" data-bind="click: passwordChange">
+				    			<span class="folder-system-name"></span>
+				    			<a class="btn i18nflex sp-btn" data-bind="click: function () { $root.passwordChange(); }">
 					  			<span class="i18n" data-i18n="SETTINGS_PERSONALS/BUTTON_CHANGE"></span>
 				    			</a>
 						</td>
@@ -89,23 +89,22 @@
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_SEX"></span>
-				    			<span class="folder-system-name" data-bind="email"></span>
+				    			<span class="folder-system-name"></span>
 						</td>
 			  		</tr>
 			  		<tr class="folder-item">
 						<td>
 				    			<span class="folder-padding"></span>
 				    			<span class="folder-name" data-i18n="SETTINGS_PERSONALS/LABEL_WECHATID"></span>
-				    			<span class="folder-system-name" data-bind="email"></span>
+				    			<span class="folder-system-name"></span>
 				    			<input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-					  		autocapitalize="off" spellcheck="false"
-					  		data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+					  		autocapitalize="off" spellcheck="false" />
 						</td>
 			  		</tr>
 				</tbody>
 			</table>
 			<div class="accounts-list-wrp">
-				<button class="btn sp-save" data-bind="click: phoneNmChange">
+				<button class="btn sp-save">
 					<span class="i18n i18nflex" data-i18n="SETTINGS_PERSONALS/BUTTON_SAVE"></span>
 				</button>
 			</div>
