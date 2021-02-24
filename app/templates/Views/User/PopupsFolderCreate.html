@@ -1,5 +1,6 @@
 <div class="popups">
-	<div class="modal hide b-folder-create-content g-ui-user-select-none pfc-folder" data-bind="modal: modalVisibility">
+	<div class="modal hide b-folder-create-content g-ui-user-select-none pfc-folder"
+		data-bind="modal: modalVisibility">
 		<div class="modal-flex pfc-flex">
 			<div class="modal-header mgl-header">
 
@@ -11,20 +12,23 @@
 				<div class="form-horizontal modal-flex">
 					<br />
 					<div class="control-group">
-						<div style="display: block;">
+						<div>
 							<label class="control-label folder-create">
-								<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_NAME"></span>
+								<span class="i18n i18nflex"
+									data-i18n="POPUPS_CREATE_FOLDER/LABEL_NAME"></span>
 							</label>
 							<div class="controls pfc-mgl">
-								<input type="text" class="uiInput inputName input-mgl" autocomplete="off"
-									autocorrect="off" autocapitalize="off" spellcheck="false"
+								<input type="text" class="uiInput inputName input-mgl"
+									autocomplete="off" autocorrect="off" autocapitalize="off"
+									spellcheck="false"
 									data-bind="textInput: folderName, hasfocus: folderName.focused, onEnter: createFolderCommand" />
 							</div>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label folder-create">
-							<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/LABEL_PARENT"></span>
+							<span class="i18n i18nflex"
+								data-i18n="POPUPS_CREATE_FOLDER/LABEL_PARENT"></span>
 						</label>
 						<div class="controls pfc-mgl">
 							<div class="selectBox dropdownlist selectBox-dropdown" title="" tabindex="NaN"
@@ -45,13 +49,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal-footer mgl-footer">
-				<button type="button" class="close create-close-mgl" data-bind="command: cancelCommand">&times;</button>
-				<a class="btn buttonCreate create-mgl" data-bind="command: createFolderCommand">
-					<i class="icon-folder-add"></i>
-					&nbsp;&nbsp;
-					<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/BUTTON_CREATE"></span>
-				</a>
+			<div class="modal-footer mgl-footer md-grid">
+				<div>
+					<button type="button" class="close v-close"
+						data-bind="command: cancelCommand">&times;</button>
+				</div>
+				<div>
+					<a class="btn buttonCreate" data-bind="command: createFolderCommand">
+						<i class="icon-folder-add"></i>
+						&nbsp;&nbsp;
+						<span class="i18n i18nflex" data-i18n="POPUPS_CREATE_FOLDER/BUTTON_CREATE"></span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

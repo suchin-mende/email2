@@ -9,9 +9,9 @@
 				<div class="b-toolbar btn-toolbar hide-on-mobile">
 					<a class="btn buttonCompose pull-left" data-tooltip-join="top"
 						data-bind="click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
-							<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
-								<use xlink:href="#iconpen"></use>
-							</svg>
+						<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
+							<use xlink:href="#iconpen"></use>
+						</svg>
 						<span class="btn-text-wrp buttonComposeText">
 							<span class="i18n" data-i18n="FOLDER_LIST/BUTTON_NEW_MESSAGE"></span>
 						</span>
@@ -33,22 +33,24 @@
 				<div class="btn-group" data-bind="visible: allowReload && mobileCheckedStateHide()">
 					<a class="btn single btn-dark-disabled-border buttonReload" data-tooltip-join="top"
 						data-bind="command: reloadCommand, tooltip: 'MESSAGE_LIST/BUTTON_RELOAD'">
-						<i class="icon-spinner" data-bind="css: {'animated': messageListCompleteLoadingThrottleForAnimation}"></i>
+						<i class="icon-spinner"
+							data-bind="css: {'animated': messageListCompleteLoadingThrottleForAnimation}"></i>
 					</a>
 				</div>
 				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
 					<a class="btn single buttonCompose" data-tooltip-join="top"
 						data-bind="click: composeClick, tooltip: 'FOLDER_LIST/BUTTON_NEW_MESSAGE', css: {'btn-warning': composeInEdit, 'btn-success': !composeInEdit()}">
-							<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
-								<use xlink:href="#iconpen"></use>
-						  </svg>
-							<span class="btn-text-wrp buttonComposeText">
-								<span>NEW</span>
-							</span>
+						<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
+							<use xlink:href="#iconpen"></use>
+						</svg>
+						<span class="btn-text-wrp buttonComposeText">
+							<span>NEW</span>
+						</span>
 					</a>
 				</div>
 				<div class="btn-group" data-bind="visible: allowComposer && mobileCheckedStateHide()">
-					<a class="btn single buttonContacts" data-tooltip-join="top" data-bind="click: contactsClick, tooltip: 'FOLDER_LIST/BUTTON_CONTACTS'">
+					<a class="btn single buttonContacts" data-tooltip-join="top"
+						data-bind="click: contactsClick, tooltip: 'FOLDER_LIST/BUTTON_CONTACTS'">
 						<i class="icon-address-book"></i>
 					</a>
 				</div>
@@ -57,8 +59,8 @@
 				<div class="btn-group dropdown colored-toggle hide-on-mobile"
 					data-bind="visible: allowMessageListActions, registrateBootstrapDropdown: true, openDropdownTrigger: moveDropdownTrigger">
 					<a id="move-dropdown-id" href="#" tabindex="-1"
-						class="btn single btn-dark-disabled-border dropdown-toggle buttonMove" data-toggle="dropdown"
-						data-tooltip-join="top"
+						class="btn single btn-dark-disabled-border dropdown-toggle buttonMove"
+						data-toggle="dropdown" data-tooltip-join="top"
 						data-bind="command: moveCommand, tooltip: 'MESSAGE_LIST/BUTTON_MOVE_TO'">
 						<i class="icon-copy visible-on-ctrl-btn"></i>
 						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
@@ -66,8 +68,8 @@
 						</svg>
 						<span class="caret"></span>
 					</a>
-					<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="move-dropdown-id" role="menu"
-						data-bind="foreach: folderMenuForMove">
+					<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="move-dropdown-id"
+						role="menu" data-bind="foreach: folderMenuForMove">
 						<!-- ko if: seporator -->
 						<li class="divider" role="presentation" data-bind="visible: seporator"></li>
 						<!-- /ko -->
@@ -92,7 +94,8 @@
 					</a>
 				</div>
 				<!-- /ko -->
-				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateHide()">&nbsp;
+				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateHide()">
+					&nbsp;
 				</div>
 				<div class="btn-group" data-bind="visible: allowMessageListActions && mobileCheckedStateShow()">
 					<a class="btn first btn-dark-disabled-border button-archive" data-tooltip-join="top"
@@ -109,19 +112,21 @@
 							css: {'first': !isArchiveVisible()}">
 						<i class="icon-check-mark-circle-two"></i>
 					</a>
-					<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top" data-bind="command: deleteCommand, tooltip: 'MESSAGE_LIST/BUTTON_DELETE',
+					<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top"
+						data-bind="command: deleteCommand, tooltip: 'MESSAGE_LIST/BUTTON_DELETE',
 							css: {'first': !isArchiveVisible() && !isSpamVisible() && !isUnSpamVisible()}">
-							<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
-								<use xlink:href="#iconre04"></use>
-							</svg>
+						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
+							<use xlink:href="#iconre04"></use>
+						</svg>
 						<!--<span data-bind="text: printableMessageCountForDeletion()"></span>-->
 					</a>
 				</div>
 				<div class="btn-group hide-on-mobile" data-bind="visible: allowMessageListActions">&nbsp;</div>
 				<div class="btn-group dropdown colored-toggle hide-on-mobile"
 					data-bind="visible: allowComposer || allowMessageListActions || allowDangerousActions, registrateBootstrapDropdown: true, openDropdownTrigger: moreDropdownTrigger">
-					<a id="more-list-dropdown-id" class="btn single btn-dark-disabled-border dropdown-toggle buttonMore"
-						href="#" tabindex="-1" data-toggle="dropdown" data-tooltip-join="top"
+					<a id="more-list-dropdown-id"
+						class="btn single btn-dark-disabled-border dropdown-toggle buttonMore" href="#"
+						tabindex="-1" data-toggle="dropdown" data-tooltip-join="top"
 						data-bind="tooltip: 'MESSAGE_LIST/BUTTON_MORE'">
 						<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
 							<use xlink:href="#iconre05"></use>
@@ -135,7 +140,8 @@
 								<a class="e-link menuitem" href="#" tabindex="-1">
 									<i class="icon-none"></i>
 									&nbsp;&nbsp;
-									<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/MENU_UNSET_SEEN"></span>
+									<span class="i18n i18nflex"
+										data-i18n="MESSAGE_LIST/MENU_UNSET_SEEN"></span>
 								</a>
 							</li>
 							<li class="e-item" role="presentation"
@@ -143,7 +149,8 @@
 								<a class="e-link menuitem" href="#" tabindex="-1">
 									<i class="icon-none"></i>
 									&nbsp;&nbsp;
-									<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/MENU_SET_SEEN"></span>
+									<span class="i18n i18nflex"
+										data-i18n="MESSAGE_LIST/MENU_SET_SEEN"></span>
 								</a>
 							</li>
 							<li class="e-item" role="presentation"
@@ -151,7 +158,8 @@
 								<a class="e-link menuitem" href="#" tabindex="-1">
 									<i class="icon-none"></i>
 									&nbsp;&nbsp;
-									<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/MENU_SET_FLAG"></span>
+									<span class="i18n i18nflex"
+										data-i18n="MESSAGE_LIST/MENU_SET_FLAG"></span>
 								</a>
 							</li>
 							<li class="e-item" role="presentation"
@@ -159,7 +167,8 @@
 								<a class="e-link menuitem" href="#" tabindex="-1">
 									<i class="icon-none"></i>
 									&nbsp;&nbsp;
-									<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/MENU_UNSET_FLAG"></span>
+									<span class="i18n i18nflex"
+										data-i18n="MESSAGE_LIST/MENU_UNSET_FLAG"></span>
 								</a>
 							</li>
 							<li class="e-item" role="presentation"
@@ -167,7 +176,8 @@
 								<a class="e-link menuitem" href="#" tabindex="-1">
 									<i class="icon-none"></i>
 									&nbsp;&nbsp;
-									<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/MENU_SET_ALL_SEEN"></span>
+									<span class="i18n i18nflex"
+										data-i18n="MESSAGE_LIST/MENU_SET_ALL_SEEN"></span>
 								</a>
 							</li>
 						</div>
@@ -178,17 +188,19 @@
 							<a class="e-link menuitem" href="#" tabindex="-1">
 								<i class="icon-reply-all"></i>
 								&nbsp;&nbsp;
-								<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/BUTTON_MULTY_FORWARD"></span>
+								<span class="i18n i18nflex"
+									data-i18n="MESSAGE_LIST/BUTTON_MULTY_FORWARD"></span>
 							</a>
 						</li>
-						<li class="divider" role="presentation" data-bind="visible: allowDangerousActions"></li>
+						<li class="divider" role="presentation" data-bind="visible: allowDangerousActions">
+						</li>
 						<li class="e-item" role="presentation"
 							data-bind="visible: allowDangerousActions, command: deleteWithoutMoveCommand">
 							<a class="e-link menuitem" href="#" tabindex="-1">
-								<svg class="hsvg-icon h-icon tbg-icon" aria-hidden="true">
-									<use xlink:href="#iconre04"></use>
-								</svg>
-								<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/BUTTON_DELETE_WITHOUT_MOVE"></span>
+								<i class="icon-trash"></i>
+								&nbsp;&nbsp;
+								<span class="i18n i18nflex"
+									data-i18n="MESSAGE_LIST/BUTTON_DELETE_WITHOUT_MOVE"></span>
 							</a>
 						</li>
 						<li class="e-item" role="presentation"
@@ -196,7 +208,8 @@
 							<a class="e-link menuitem" href="#" tabindex="-1">
 								<i class="icon-fire"></i>
 								&nbsp;&nbsp;
-								<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/BUTTON_EMPTY_FOLDER"></span>
+								<span class="i18n i18nflex"
+									data-i18n="MESSAGE_LIST/BUTTON_EMPTY_FOLDER"></span>
 							</a>
 						</li>
 					</ul>
@@ -210,7 +223,7 @@
 					<i class="checkboxCkeckAll"
 						data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
 					<div class="view-flex search-view" data-bind="visible: allowSearch">
-						
+
 						<div class="close-input-wrp">
 							<div>
 								<a class="btn buttonMoreSearch ipsm-mgl"
@@ -222,24 +235,26 @@
 								<a class="close"
 									data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">&times;</a>
 							</div>
-							<div class="line-top" style="margin-left: 10px;"></div>
+							<div class="line-top" style="margin: 0px 5px;"></div>
 
 							<div>
-								<input type="text" class="i18n span4 inputSearch ips-mgl i18nflex" tabindex="-1" placeholder="Search"
-								autocorrect="off" autocapitalize="off"
-								data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
-								data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
+								<input type="text" class="i18n span4 inputSearch ips-mgl i18nflex"
+									tabindex="-1" placeholder="Search" autocorrect="off"
+									autocapitalize="off"
+									data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
+									data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
 								<svg class="hsvg-icon h-icon s-search" aria-hidden="true">
 									<use xlink:href="#iconre06"></use>
 								</svg>
 							</div>
-							
+
 						</div>
 					</div>
 
 				</div>
 			</div>
-			<div class="line-loading e-strip-animation" data-bind="visible: messageListCompleteLoadingThrottle"></div>
+			<div class="line-loading e-strip-animation" data-bind="visible: messageListCompleteLoadingThrottle">
+			</div>
 			<div class="mainDelimiter toolbarDelimiter"></div>
 			<div class="b-content" data-bind="nano: true, scrollerShadows: true, initDom: dragOverBodyArea">
 				<div class="content g-scrollbox" data-scroller-shadows-content>
@@ -263,7 +278,8 @@
 							<span class="g-ui-link i18n" data-i18n="MESSAGE_LIST/BUTTON_EMPTY_FOLDER"
 								data-bind="command: clearCommand"></span>
 						</div>
-						<div class="listError" data-bind="visible: !dragOver() && '' !== messageListError()">
+						<div class="listError"
+							data-bind="visible: !dragOver() && '' !== messageListError()">
 							<span class="error" data-bind="text: messageListError"></span>
 						</div>
 						<div class="listEmptyList"
@@ -274,7 +290,8 @@
 							messageListCompleteLoadingThrottle() && '' === messageListError()">
 							<span class="i18n" data-i18n="MESSAGE_LIST/LIST_LOADING"></span><span
 								class="textLoadingAnimationD1">.</span><span
-								class="textLoadingAnimationD2">.</span><span class="textLoadingAnimationD3">.</span>
+								class="textLoadingAnimationD2">.</span><span
+								class="textLoadingAnimationD3">.</span>
 						</div>
 						<div class="listEmptySearchList"
 							data-bind="visible: !dragOver() && 0 === messageList().length && !messageListCompleteLoadingThrottle() && '' === messageListError() && '' !== messageListSearch()">
@@ -283,7 +300,8 @@
 						<div
 							data-bind="draggable: dragAndDronHelper, droppableSelector: '.b-folders .content.g-scrollbox'">
 							<div class="messageListPlace"
-								data-bind="template: { name: messageListItemTemplate(), foreach: messageList }"></div>
+								data-bind="template: { name: messageListItemTemplate(), foreach: messageList }">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -301,4 +319,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>
