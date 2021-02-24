@@ -2,10 +2,8 @@
 	<a class="e-link"
 		data-bind="droppable: function (oEvent, oUi) { $root.messagesDrop($data, oUi); }, css: { 'selected': selected, 'selectable': selectable, 'print-count': 0 < printableUnreadCount().length, 'anim-action-class': actionBlink, 'is-inbox': isInbox }">
 		<span class="focused-poiner"></span>
-		<svg class="hsvg-icon h-icon show-pw" aria-hidden="true">
-			<use xlink:href="#iconeye01"></use>
-		</svg>
-		<span class="name" data-bind="attr: {src: localImg() }"></span>
+
+		<img class="i-box" data-bind="attr: {src: localImg() }">
 		<span class="name" data-bind="text: localName()"></span>
 		<span class="inbox-star-icon">
 			<i class="icon-star"></i>
