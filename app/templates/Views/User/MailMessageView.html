@@ -81,7 +81,7 @@
 
 					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
 						<span class="i18n i18nflex" data-bind="visible: !logoImg">
-							<img data-bind="attr: { 'src': messTip() }">
+							<img style="height: 50vh; width: 50vw;" data-bind="attr: { 'src': messTip() }">
 						</span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
 							<img style="height: 99%" data-bind="attr: { 'src': logoImg }" />
@@ -163,7 +163,7 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<div class="informationFull" data-bind="visible: showFullInfo()">
+							<div class="informationFull i18nflex" data-bind="visible: showFullInfo()">
 								<table>
 									<tr data-bind="visible: '' !== viewFrom()">
 										<td><span class="i18n uiLabel i18nflex" data-i18n="MESSAGE/LABEL_FROM"></span></td>
