@@ -1,8 +1,8 @@
 <div class="popups">
-	<div class="modal hide b-folder-clear-content g-ui-user-select-none modal-width" style="width: 15%; height: 50%;"
+	<div class="modal hide b-folder-clear-content g-ui-user-select-none" style="width: fit-content;"
 		data-bind="modal: modalVisibility">
 		<div class="modal-flex" style="height: 100%;">
-			<div class="modal-header header-width">
+			<div class="modal-header">
 
 				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/TITLE_CLEAR_FOLDER"
@@ -11,30 +11,38 @@
 						data-bind="visible: clearingProcess"></span>
 				</h3>
 			</div>
-			<div class="modal-body body-width">
-				<div class="i18nflex">
-					<i class="icon-warning" style="color:red"></i>
+			<div class="modal-body">
+				<div class="form-horizontal ptfc-box modal-flex">
+					<div>
+						<i class="icon-warning" style="color:red"></i>
+						&nbsp;&nbsp;
+						<strong>
+							<div class="i18n i18nflex"
+								data-i18n="[html]POPUPS_CLEAR_FOLDER/DANGER_DESC_WARNING"></div>
+						</strong>
+					</div>
+					<br />
+					<br />
 					&nbsp;&nbsp;
-					<strong>
-						<span class="i18n" data-i18n="[html]POPUPS_CLEAR_FOLDER/DANGER_DESC_WARNING"></span>
-					</strong>
+					&nbsp;&nbsp;
+					<span class="i18nflex" data-bind="html: dangerDescHtml"></span>
 					<br />
-					<br />
-					<span data-bind="html: dangerDescHtml"></span>
-					<br />
-					<span class="i18n" data-i18n="[html]POPUPS_CLEAR_FOLDER/DANGER_DESC_HTML_2"></span>
+					<span class="i18n i18nflex"
+						data-i18n="[html]POPUPS_CLEAR_FOLDER/DANGER_DESC_HTML_2"></span>
 				</div>
 			</div>
-			<div class="modal-footer footer-width">
-
-				<button type="button" class="close v-close" style="position: relative;right: 10px;"
-					data-bind="command: cancelCommand">&times;</button>
-				<a class="btn btn-danger buttonClear btclr-mgl" data-bind="command: clearCommand">
-					<i class="icon-fire"
-						data-bind="css: {'icon-fire': !clearingProcess(), 'icon-spinner animated white': clearingProcess()}"></i>
-					&nbsp;&nbsp;
-					<span class="i18n" data-i18n="POPUPS_CLEAR_FOLDER/BUTTON_CLEAR"></span>
-				</a>
+			<div class="modal-footer md-grid">
+				<div>
+					<button type="button" class="close v-close"
+						data-bind="command: cancelCommand">&times;</button>
+				</div>
+				<div>
+					<a class="btn btn-danger buttonClear" data-bind="command: clearCommand">
+						<i class="icon-fire"
+							data-bind="css: {'icon-fire': !clearingProcess(), 'icon-spinner animated white': clearingProcess()}"></i>
+						<span class="i18n i18nflex" data-i18n="POPUPS_CLEAR_FOLDER/BUTTON_CLEAR"></span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>

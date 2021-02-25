@@ -11,7 +11,7 @@ interface ApiServiceInterface
 	public function sendRegisterSms($sUserCd, $stel);
 	public function sendFindPasswordSms($sUserCd);
 	public function findPassword($sUserCd, $authCd, $sPassword);
-	public function perSonal($uid);
+	public function perSonal();
 
 	// vip类型
 	public function vipPlans();
