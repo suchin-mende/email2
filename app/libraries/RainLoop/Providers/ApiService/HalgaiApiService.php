@@ -104,14 +104,13 @@ implements \RainLoop\Providers\ApiService\ApiServiceInterface
 		);
 	}
 
-	public function perSonal($uid)
+	public function perSonal()
 	{
 		$params = array(
 			$this->getLanguage(), 
 			APP_API_VERSION, 
 			APP_API_COMPANY, 
-			'user/profile',
-			$uid
+			'user-profile',
 		);
 
 		return $this->get(

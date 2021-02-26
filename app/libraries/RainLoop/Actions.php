@@ -2348,9 +2348,16 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 			throw $oException;
 		}
 
+		// $this->StorageProvider()->Put(
+		// 	null,
+		// 	\RainLoop\Providers\Storage\Enumerations\StorageType::NOBODY,
+		// 	'sessionKey',
+		// 	$apiLoginResult['user']['sessionKey']
+		// );
+
 		try {
 			$oAccount = $this->LoginProcess(
-				$apiLoginResult['user']['mail'],
+				$apiLoginResult['sessionKey'],
 				$sPassword,
 				$bSignMe ? $this->generateSignMeToken($apiLoginResult['user']['mail']) : '',
 				$sAdditionalCode,
@@ -9774,12 +9781,22 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 	public function DoPersonal()
 	{
-		$uid = \MailSo\Base\Utils::Trim($this->GetActionParam('uid', ''));
+		$uid = \MailSo\Base\Utils::Trim($this->GetActionParam('', ''));
 		
-
+		// $sessionKey = $this->StorageProvider()->Get(
+		// 	null,
+		// 	\RainLoop\Providers\Storage\Enumerations\StorageType::NOBODY,
+		// 	'sessionKey',
+		// 	''
+		// );
+		// $a = array(
+		// 	'a' => $sessionKey
+		// );
+		
 		$rsp = $this->ApiServiceProvider()->perSonal($uid);
-		$rsp = json_decode($rsp, true);
+		$oAccount1 = $this->getAccountFromToken(false);
+		$rsp = json_encode($oAccount1, true);
 
-		return $this->TrueResponse(__FUNCTION__);
+		return $this->TrueResponse(__FUNCTION__, $a);
 	}
 }
