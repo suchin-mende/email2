@@ -9767,10 +9767,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 	public function DoVipCoupon()
 	{
+		
 		$userCd = \MailSo\Base\Utils::Trim($this->GetActionParam('userCd', ''));
 		$planCd = \MailSo\Base\Utils::Trim($this->GetActionParam('planCd', ''));
 		$ticketCode = \MailSo\Base\Utils::Trim($this->GetActionParam('ticketCode', null));
-
+		var_dump($userCd);
 		$rsp = $this->ApiServiceProvider()->vipCoupon($userCd, $planCd, $ticketCode);
 		$rsp = json_decode($rsp, true);
 
@@ -9793,11 +9794,11 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		// $a = array(
 		// 	'a' => $sessionKey
 		// );
-		
-		$rsp = $this->ApiServiceProvider()->perSonal($uid);
+		var_dump($this->getAccountFromToken(false));
+		// $rsp = $this->ApiServiceProvider()->perSonal($uid);
 		$oAccount1 = $this->getAccountFromToken(false);
 		$rsp = json_encode($oAccount1, true);
 
-		return $this->TrueResponse(__FUNCTION__, $a);
+		return $this->TrueResponse(__FUNCTION__, $rsp);
 	}
 }
