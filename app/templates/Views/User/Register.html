@@ -11,11 +11,10 @@
 
             <div class="loginFormWrapper fullFormWrapper">
                 <center class="plugin-mark-Login-BeforeLogo">
-                      <div class="wrapper-parent">
+                    <div class="wrapper-parent">
 
-                        <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/"
-                            autocorrect="off" autocapitalize="off" spellcheck="false"
-                            data-bind="submit: submitForm,
+                        <form class="wrapper loginForm login-flex" style="width: 800px;" action="#/" autocorrect="off"
+                            autocapitalize="off" spellcheck="false" data-bind="submit: submitForm,
                                 css: {
                                     'errorAnimated': formError,
                                     'submitting': submitRequest()
@@ -23,7 +22,8 @@
 
                             <div>
                                 <div class="err-view">
-                                    <div class="alert alert Error i18nflex" data-bind="visibleAnimated: '' !== submitError()">
+                                    <div class="alert alert Error i18nflex"
+                                        data-bind="visibleAnimated: '' !== submitError()">
                                         <span data-bind="text: submitError"></span>
                                         <div data-bind="visible: '' !== submitErrorAddidional()">
                                             <br />
@@ -37,7 +37,9 @@
 
                             <div>
                                 <div class="vertical-view">
-                                    <h3 class="label-h3 i18nflex" data-bind="click: function () { $root.showPayment(vipPlanCd); }" data-i18n="REGISTER/LABEL_TITLE"></h3>
+                                    <h3 class="label-h3 i18nflex"
+                                        data-bind="click: function () { $root.showPayment(vipPlanCd); }"
+                                        data-i18n="REGISTER/LABEL_TITLE"></h3>
                                 </div>
                             </div>
 
@@ -50,14 +52,14 @@
                                             </svg>
                                             <p class="i18nflex" data-bind="text: vPlanTx"></p>
                                         </div>
-                                        
+
                                         <div class="packge-v v-label" data-bind="click: gotoVipPackage">
                                             <svg class="hsvg-icon h-icon v-back-icon v-label" aria-hidden="true">
                                                 <use xlink:href="#iconvip05"></use>
                                             </svg>
                                             <p class="v-label" data-i18n="VIPLOGIN/LABEL_CHANGE"></p>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -69,18 +71,19 @@
                                             <use xlink:href="#iconemail"></use>
                                         </svg>
                                         <div class="vertical-view">
-                                            <input type="email" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
-                                            autocomplete="email"
-                                            maxlength="20"
-                                            data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
+                                            <input type="email" class="v-input checkAutocomplete"
+                                                data-i18n="[placeholder]REGISTER/LABEL_EMAIL" autocomplete="email"
+                                                maxlength="20"
+                                                data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
                                         </div>
                                     </div>
-                                        <div class="c-tooltip">
-                                            <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
-                                                <use xlink:href="#iconaks_help"></use>
-                                            </svg>
-                                            <span class="c-tooltiptext i18nflex" data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
-                                        </div>
+                                    <div class="c-tooltip">
+                                        <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
+                                            <use xlink:href="#iconaks_help"></use>
+                                        </svg>
+                                        <span class="c-tooltiptext i18nflex"
+                                            data-i18n="REGISTER/LABEL_USERCD_HELP"></span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -91,17 +94,18 @@
                                             <use xlink:href="#iconkey"></use>
                                         </svg>
                                         <div class="vertical-view">
-                                            <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
-                                            autocomplete="current-password"
-                                            maxlength="20"
-                                            data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+                                            <input type="password" class="v-input checkAutocomplete"
+                                                data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
+                                                autocomplete="current-password" maxlength="20"
+                                                data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
                                         </div>
                                     </div>
                                     <div class="c-tooltip">
                                         <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                             <use xlink:href="#iconaks_help"></use>
                                         </svg>
-                                        <span class="c-tooltiptext i18nflex" data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
+                                        <span class="c-tooltiptext i18nflex"
+                                            data-i18n="REGISTER/LABEL_PASSWORD_HELP"></span>
                                     </div>
                                 </div>
                             </div>
@@ -111,10 +115,10 @@
                                     <use xlink:href="#iconkey"></use>
                                 </svg>
                                 <div class="vertical-view">
-                                    <input type="password" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
-                                    autocomplete="current-password"
-                                    maxlength="20"
-                                    data-bind="textInput: confPwd, hasFocus: confPwdFocus, disable: submitRequest">
+                                    <input type="password" class="v-input checkAutocomplete"
+                                        data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
+                                        autocomplete="current-password" maxlength="20"
+                                        data-bind="textInput: confPwd, hasFocus: confPwdFocus, disable: submitRequest">
                                 </div>
                             </div>
 
@@ -125,12 +129,12 @@
                                             <use xlink:href="#iconphone-01"></use>
                                         </svg>
                                         <div class="vertical-view">
-                                            <input type="tel" class="v-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
-                                            maxlength="11"
-                                            data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
+                                            <input type="tel" class="v-input checkAutocomplete"
+                                                data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" maxlength="11"
+                                                data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
                                         </div>
                                     </div>
-    
+
                                     <div class="c-tooltip">
                                         <svg class="hsvg-icon h-icon tool-icon" aria-hidden="true">
                                             <use xlink:href="#iconaks_help"></use>
@@ -147,14 +151,14 @@
                                             <use xlink:href="#iconphone-01"></use>
                                         </svg>
                                         <div class="vertical-view">
-                                            <input type="text" class="v-input sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE"
-                                                maxlength="6"
+                                            <input type="text" class="v-input sms-input checkAutocomplete"
+                                                data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6"
                                                 data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
                                         </div>
                                     </div>
                                     <div class="v-btn v-sms">
-                                        <div id="smsCode" data-bind="command: smsCodeCommand">
-                                            <span class="i18nflex" style="padding-top: 20px;" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
+                                        <div id="smsCode" data-bind="command: smsCodeCommand"
+                                            data-i18n="REGISTER/BUTTON_SMS_CODE">
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +172,8 @@
                                     <div class="v-btn v-regist" data-bind="click: gotoLogin">
                                         <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
                                     </div>
-                                    <div class="v-btn v-members" data-bind="click: gotoVipPackage, visible: vBox() == null">
+                                    <div class="v-btn v-members"
+                                        data-bind="click: gotoVipPackage, visible: vBox() == null">
                                         <span class="i18nflex" data-i18n="LOGIN/LABEL_VIP_MEMBERS"></span>
                                     </div>
                                 </div>
@@ -177,7 +182,7 @@
                             <div>
                                 <div class="vertical-view">
                                     <div class="v-tag-none">
-    
+
                                     </div>
                                 </div>
                             </div>
@@ -185,19 +190,19 @@
                             <div>
                                 <div class="vertical-view">
                                     <div class="QR-code" data-bind="click: gotoQRcode">
-                                      <svg class="hsvg-icon h-icon" aria-hidden="true">
-                                          <use xlink:href="#iconwechatqr"></use>
-                                      </svg>
-                                          <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
+                                        <svg class="hsvg-icon h-icon" aria-hidden="true">
+                                            <use xlink:href="#iconwechatqr"></use>
+                                        </svg>
+                                        <span class="i18nflex" data-i18n="REGISTER/LABEL_QRCODE_SCAN"></span>
                                     </div>
-                              </div>
+                                </div>
                             </div>
 
                         </form>
                     </div>
                 </center>
-          </div>
-        <div class="v-right-sidebar" data-bind="template: {name: 'Footer'}"></div>
+            </div>
+            <div class="v-right-sidebar" data-bind="template: {name: 'Footer'}"></div>
         </div>
     </div>
 

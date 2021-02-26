@@ -16,42 +16,42 @@
                               <div data-bind="style: { display: vIdx() == 0 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon r-m-icon r-m-gold-color" aria-hidden="true">
                                           <use xlink:href="#iconvip01"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon r-m-icon-bd m-gold-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon r-m-icon-bd m-gold-color" aria-hidden="true">
                                           <use xlink:href="#iconvip01"></use>
-                                      </svg>
-        
-                                      <div class="r-m-text-box m-gold-color">
+                                    </svg>
+
+                                    <div class="r-m-text-box m-gold-color">
                                           <p class="i18nflex" data-bind="text: vPlanTx"></p>
-                                      </div>
+                                    </div>
                               </div>
 
                               <div data-bind="style: { display: vIdx() == 1 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon r-m-icon m-green-color" aria-hidden="true">
                                           <use xlink:href="#iconvip02"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon r-m-icon-bd v-green-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon r-m-icon-bd v-green-color" aria-hidden="true">
                                           <use xlink:href="#iconvip02"></use>
-                                      </svg>
-                                      <div class="r-m-text-box v-green-color">
+                                    </svg>
+                                    <div class="r-m-text-box v-green-color">
                                           <p class="i18nflex" data-bind="text: vPlanTx"></p>
-                                      </div>
+                                    </div>
                               </div>
 
                               <div data-bind="style: { display: vIdx() == 2 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon r-m-icon m-diamond-color" aria-hidden="true">
                                           <use xlink:href="#iconvip03"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon r-m-icon-bd v-diamond-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon r-m-icon-bd v-diamond-color" aria-hidden="true">
                                           <use xlink:href="#iconvip03"></use>
-                                      </svg>
-                                      <div class="r-m-text-box v-diamond-color">
+                                    </svg>
+                                    <div class="r-m-text-box v-diamond-color">
                                           <p class="i18nflex" data-bind="text: vPlanTx"></p>
-                                      </div>
+                                    </div>
                               </div>
 
                               <div class="packge-doc">
-                                    <p class="i18nflex" data-bind="text: vLongTX"></p>
+                                    <p class="i18nflex" data-bind="text: vLongTx"></p>
                               </div>
                         </div>
                   </div>
@@ -61,11 +61,11 @@
             <div class="vertical-view err-view">
                   <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">?
                         <button type="button" class="close"
-                            data-bind="click: function () { submitError('') }">&times;</button>
+                              data-bind="click: function () { submitError('') }">&times;</button>
                         <span data-bind="text: submitError"></span>
                         <div data-bind="visible: '' !== submitErrorAddidional()">
-                            <br />
-                            <span data-bind="text: submitErrorAddidional"></span>
+                              <br />
+                              <span data-bind="text: submitErrorAddidional"></span>
                         </div>
                   </div>
             </div>
@@ -75,44 +75,39 @@
                         <use xlink:href="#iconemail"></use>
                   </svg>
                   <input type="email" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_EMAIL"
-                        autocomplete="email"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        spellcheck="false"
+                        autocomplete="email" autocorrect="off" autocapitalize="off" spellcheck="false"
                         data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
             </div>
             <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconkey"></use>
                   </svg>
-                  <input type="password" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_PASSWORD"
-                        minlength="6"
-                        maxlength="20"
+                  <input type="password" class="m-input checkAutocomplete"
+                        data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" minlength="6" maxlength="20"
                         data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
             </div>
             <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconkey"></use>
                   </svg>
-                  <input type="password" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD"
-                        minlength="6"
-                        maxlength="20"
+                  <input type="password" class="m-input checkAutocomplete"
+                        data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" minlength="6" maxlength="20"
                         data-bind="textInput: confPwd, hasFocus: confPwdFocus, disable: submitRequest">
             </div>
             <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                         <use xlink:href="#iconphone-01"></use>
                   </svg>
-                  <input type="tel" class="m-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER"
-                        maxlength="11"
+                  <input type="tel" class="m-input checkAutocomplete"
+                        data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" maxlength="11"
                         data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
             </div>
             <div class="vertical-view r-line">
                   <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
                         <use xlink:href="#iconphone-01"></use>
                   </svg>
-                  <input type="text" class="m-input m-sms-input checkAutocomplete" data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE"
-                        maxlength="6"
+                  <input type="text" class="m-input m-sms-input checkAutocomplete"
+                        data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6"
                         data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
                   <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
                         <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
@@ -126,7 +121,8 @@
                         <button class="m-btn v-regist" data-bind="click: gotoLogin">
                               <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
                         </button>
-                        <button class="m-btn v-members m-vip" data-bind="click: gotoVipPackage, visible: vBox() == null">
+                        <button class="m-btn v-members m-vip"
+                              data-bind="click: gotoVipPackage, visible: vBox() == null">
                               <span class="i18nflex" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
                         </button>
                   </div>
