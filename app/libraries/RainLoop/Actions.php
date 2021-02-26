@@ -2357,7 +2357,8 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 
 		try {
 			$oAccount = $this->LoginProcess(
-				$apiLoginResult['sessionKey'],
+				$apiLoginResult['user']['mail'],
+				// $apiLoginResult['sessionKey'],
 				$sPassword,
 				$bSignMe ? $this->generateSignMeToken($apiLoginResult['user']['mail']) : '',
 				$sAdditionalCode,
