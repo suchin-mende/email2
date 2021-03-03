@@ -1,15 +1,15 @@
 <div class="popups">
 	<div class="modal hide b-two-factor-content g-ui-user-select-none ptfc-folder" data-bind="modal: modalVisibility">
-		<div class="modal-flex ptfc-flex">
+		<div class="modal-flex">
 			<div class="modal-header">
 				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_CFG/LEGEND_TWO_FACTOR_AUTH"></span>
 				</h3>
 			</div>
 			<div class="modal-body ptfc-body">
-				<div class="form-horizontal ptfc-box" data-bind="visible: capaTwoFactor">
-					<div class="control-group ptfc-ctrl" data-bind="visible: twoFactorStatus">
-						<div class="controls ptfc-cons">
+				<div class="form-horizontal modal-flex" data-bind="visible: capaTwoFactor">
+					<div data-bind="visible: twoFactorStatus">
+						<div>
 							<div style="display: inline-block" data-tooltip-join="top"
 								data-bind="tooltip: viewTwoFactorEnableTooltip">
 								<div data-bind="component: {
@@ -28,12 +28,12 @@
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LINK_TEST"></span>
 						</div>
 					</div>
-					<div class="control-group ptfc-ctrl">
+					<div>
 						<label class="control-label ptfc-label">
 							<span class="i18n"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_USER"></span>
 						</label>
-						<div class="controls ptfc-cons" style="padding-top: 5px; margin-left: 6px;">
+						<div style="padding-top: 5px; margin-left: 6px;">
 							<strong><span data-bind="text: viewUser"></span></strong>
 							<div style="padding-top: 15px;" data-bind="visible: lock">
 								<blockquote>
@@ -44,21 +44,20 @@
 							</div>
 						</div>
 					</div>
-					<div class="control-group ptfc-ctrl"
-						data-bind="visible: '' === viewSecret() && twoFactorStatus() && !clearing()">
-						<div class="controls ptfc-cons" style="padding-top: 5px;">
+					<div data-bind="visible: '' === viewSecret() && twoFactorStatus() && !clearing()">
+						<div>
 							<strong data-bind="visible: secreting">...</strong>
 							<span class="g-ui-link i18n"
 								data-bind="click: showSecret, visible: !secreting()"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_SHOW_SECRET"></span>
 						</div>
 					</div>
-					<div class="control-group ptfc-ctrl" data-bind="visible: '' !== viewSecret()">
+					<div data-bind="visible: '' !== viewSecret()">
 						<label class="control-label ptfc-label">
 							<span class="i18n"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_SECRET"></span>
 						</label>
-						<div class="controls ptfc-cons" style="padding-top: 5px;">
+						<div>
 							<strong data-bind="text: viewSecret"></strong>
 
 							<span class="g-ui-link i18n" data-bind="click: hideSecret"
@@ -74,12 +73,12 @@
 							<!-- /ko -->
 						</div>
 					</div>
-					<div class="control-group ptfc-ctrl" data-bind="visible: '' !== viewBackupCodes()">
+					<div data-bind="visible: '' !== viewBackupCodes()">
 						<label class="control-label ptfc-label">
 							<span class="i18n"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_BACKUP_CODES"></span>
 						</label>
-						<div class="controls ptfc-cons" style="padding-top: 5px;">
+						<div>
 							<pre class="pre-mgl" data-bind="text: viewBackupCodes"></pre>
 
 							<blockquote class="m-bqueote">

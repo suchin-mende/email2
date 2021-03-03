@@ -22,21 +22,22 @@
 						</div>
 					</div>
 					<br />
-					<div class="control-group popacc-mgl" data-bind="css: {'error': emailError}">
+					<div data-bind="css: {'error': emailError}">
 						<label class="i18n control-label pacc-label" data-i18n="LOGIN/LABEL_EMAIL"></label>
 						<div class="controls pacc-ctrl">
 							<label style="margin-top: 5px;" data-bind="visible: !isNew()"><strong
 									data-bind="text: email"></strong></label>
-							<input type="email" class="inputEmail input-mgl" autocomplete="off" autocorrect="off"
-								autocapitalize="off" spellcheck="false"
+							<input type="email" class="inputEmail input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="visible: isNew, textInput: email, onEnter: addAccountCommand, hasfocus: emailFocus" />
 						</div>
 					</div>
-					<div class="control-group popacc-mgl" data-bind="css: {'error': passwordError}">
-						<label class="i18n control-label pacc-label" data-i18n="LOGIN/LABEL_PASSWORD"></label>
+					<div data-bind="css: {'error': passwordError}">
+						<label class="i18n control-label pacc-label"
+							data-i18n="LOGIN/LABEL_PASSWORD"></label>
 						<div class="controls pacc-ctrl">
-							<input type="password" class="inputPassword input-mgl" autocomplete="off" autocorrect="off"
-								autocapitalize="off" spellcheck="false"
+							<input type="password" class="inputPassword input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="value: password, onEnter: addAccountCommand" />
 						</div>
 					</div>

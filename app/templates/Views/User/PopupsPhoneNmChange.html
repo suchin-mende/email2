@@ -1,53 +1,50 @@
 <div class="popups">
     <div class="modal hide b-folder-create-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-        <div class="modal-flex pfc-flex">
-            <div class="modal-header mgl-header">
+        <div class="modal-flex">
+            <div class="modal-header">
 
                 <h3>
                     <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/TITLE_CHANGE_PHONENM"></span>
                 </h3>
             </div>
-            <div class="modal-body" style="width: 100%;">
+            <div class="modal-body">
                 <div class="form-horizontal modal-flex">
-                    <br />
-                    <div class="control-group">
-                        <div style="display: block;">
-                            <label class="control-label folder-create">
-                                <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_NEW_PHONENM"></span>
+                    <div>
+                        <div class="pop-label">
+                            <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_NEW_PHONENM"></span>
                             </label>
-                            <div class="controls pfc-mgl">
+                            <div class="vertical-view">
                                 <input type="text" class="uiInput inputName input-mgl" autocomplete="off"
                                     autocorrect="off" autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: newPhoneNm, hasfocus: newPhoneNm.focused, onEnter: savePhoneNmCommand" />
                             </div>
                         </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label folder-create">
-                            <a class="btn buttonCreate smscode-mgl">
-                                <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_SMSCODE"></span>
-                            </a>
-                        </label>
-                        <div class="controls pfc-mgl">
-                            <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-                                autocapitalize="off" spellcheck="true"
-                                data-bind="textInput: smsCode, hasfocus: smsCode.focused, onEnter: savePhoneNmCommand" />
+                        <div>
+                            <div class="pop-label">
+                                <a class="btn buttonCreate smscode-mgl">
+                                    <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_SMSCODE"></span>
+                                </a>
+                            </div>
+                            <div class="vertical-view">
+                                <input type="text" class="uiInput inputName input-mgl" autocomplete="off"
+                                    autocorrect="off" autocapitalize="off" spellcheck="true"
+                                    data-bind="textInput: smsCode, hasfocus: smsCode.focused, onEnter: savePhoneNmCommand" />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer mgl-footer md-grid">
-                <div>
-                    <button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
-                </div>
-                <div>
-                    <a class="btn buttonCreate" data-bind="command: savePhoneNmCommand">
-                        <i class="icon-floppy"></i>
-                        &nbsp;&nbsp;
-                        <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/BUTTON_SAVE"></span>
-                    </a>
+                <div class="modal-footer md-grid">
+                    <div>
+                        <button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
+                    </div>
+                    <div>
+                        <a class="btn buttonCreate" data-bind="command: savePhoneNmCommand">
+                            <i class="icon-floppy"></i>
+                            &nbsp;&nbsp;
+                            <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/BUTTON_SAVE"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
