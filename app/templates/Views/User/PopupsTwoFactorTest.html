@@ -1,18 +1,17 @@
 <div class="popups">
 	<div class="modal hide b-two-factor-test-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-		<div class="modal-flex ptft-flex">
+		<div class="modal-flex">
 			<div class="modal-header">
 
 				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_TWO_FACTOR_TEST/TITLE_TEST_CODE"></span>
 				</h3>
 			</div>
-			<div class="modal-body ptft-body">
+			<div class="modal-body">
 				<div class="form-horizontal">
-					<div class="control-group piden-mgl modal-flex">
-						<label class="i18n control-label piden-label"
-							data-i18n="POPUPS_TWO_FACTOR_TEST/LABEL_CODE"></label>
-						<div class="controls piden-ctrl">
+					<div class="modal-flex">
+						<label class="i18n" data-i18n="POPUPS_TWO_FACTOR_TEST/LABEL_CODE"></label>
+						<div class="vertical-view">
 							<input type="text" class="input-mgl" autocomplete="off" autocorrect="off"
 								autocapitalize="off" spellcheck="false"
 								data-bind="textInput: code, hasfocus: code.focused, onEnter: testCodeCommand" />

@@ -3,13 +3,12 @@
 		<div class="legend">
 			<span class="i18n i18nflex" data-i18n="SETTINGS_SECURITY/LEGEND_SECURITY"></span>
 		</div>
-		<div class="control-group ss-group">
-			<label class="control-label label-v ss-label">
+		<div>
+			<label>
 				<span class="i18n i18nflex" data-i18n="SETTINGS_SECURITY/LABEL_AUTOLOGOUT"></span>
 			</label>
-			<div class="controls ss-ctrl">
-				<div class="selectBox dropdownlist selectBox-dropdown"
-					data-bind="component: {
+			<div>
+				<div class="selectBox dropdownlist selectBox-dropdown" data-bind="component: {
 						name: 'Select',
 						params: {
 							inline: true,
@@ -26,11 +25,12 @@
 			</div>
 		</div>
 		<br />
-		<div class="control-group ss-group" data-bind="visible: capaTwoFactor">
-			<label class="control-label ss-label"></label>
-			<div class="controls ss-block">
+		<div data-bind="visible: capaTwoFactor">
+			<label></label>
+			<div class="vertical-view">
 				<i class="icon-lock"></i>
-				<span class="i18n g-ui-link" tabindex="0" data-i18n="SETTINGS_SECURITY/LABEL_CONFIGURE_TWO_FACTOR"
+				<span class="i18n g-ui-link" tabindex="0"
+					data-i18n="SETTINGS_SECURITY/LABEL_CONFIGURE_TWO_FACTOR"
 					data-bind="click: configureTwoFactor, onSpace: configureTwoFactor, onEnter: configureTwoFactor"></span>
 			</div>
 		</div>

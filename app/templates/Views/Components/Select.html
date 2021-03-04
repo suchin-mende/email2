@@ -2,12 +2,10 @@
 	<!-- ko if: preLabeled -->
 	<span class="i18n" data-bind="attr: {'data-i18n': preLabel}"></span>
 	<!-- /ko -->
-	<div style="width: 100%;" 
-		data-bind="
+	<div style="width: 100%;" data-bind="
 			command: toggleDropDownCommand,
 			css: className,
-			optionsAfterRender: defautOptionsAfterRender"
-	>
+			optionsAfterRender: defautOptionsAfterRender">
 		<div class="select-dn"></div>
 		<span class="selectBox-arrow"></span>
 	</div>
@@ -20,10 +18,10 @@
 		optionsValue: optionsValue,
 		optionsCaption: optionsCaption,
 		css: className,
-		optionsAfterRender: defautOptionsAfterRender"
-	>
+		optionsAfterRender: defautOptionsAfterRender">
 	</select>
-	<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" style="display:none;"></ul>
+	<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" style="display:none;">
+	</ul>
 	<!-- ko if: labeled -->
 	<span class="i18n" data-bind="attr: {'data-i18n': label}"></span>
 	<!-- /ko -->

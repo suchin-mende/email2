@@ -1,19 +1,18 @@
 <div class="popups">
-	<div class="modal hide b-folder-system-content g-ui-user-select-none pfs-folder"
-		data-bind="modal: modalVisibility">
-		<div class="modal-flex pfs-flex">
-			<div class="modal-header mgl-header">
+	<div class="modal hide b-folder-system-content g-ui-user-select-none" data-bind="modal: modalVisibility">
+		<div class="modal-flex">
+			<div class="modal-header">
 				<h3 class="i18nflex">
 					<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/TITLE_SYSTEM_FOLDERS"></span>
 				</h3>
 			</div>
-			<div class="modal-body folder-width">
-				<div class="form-horizontal folder-box">
+			<div class="modal-body">
+				<div class="form-horizontal">
 					<div class="alert" data-bind="visible: '' !== notification()">
 						<span data-bind="text: notification"></span>
 					</div>
 					<br />
-					<div class="control-group pfs-grp">
+					<div>
 
 						<label class="control-label folder-label">
 							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SENT"></span>
@@ -37,7 +36,7 @@
 						</div>
 
 					</div>
-					<div class="control-group pfs-grp">
+					<div>
 						<label class="control-label folder-label">
 							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_DRAFTS"></span>
 						</label>
@@ -59,7 +58,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="control-group pfs-grp">
+					<div>
 						<label class="control-label folder-label">
 							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_SPAM"></span>
 						</label>
@@ -81,7 +80,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="control-group pfs-grp">
+					<div>
 						<label class="control-label folder-label">
 							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_TRASH"></span>
 						</label>
@@ -103,7 +102,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="control-group pfs-grp">
+					<div>
 						<label class="control-label folder-label">
 							<span class="i18n" data-i18n="POPUPS_SYSTEM_FOLDERS/LABEL_ARCHIVE"></span>
 						</label>
@@ -129,7 +128,7 @@
 				</div>
 
 			</div>
-			<div class="modal-footer mgl-footer">
+			<div class="modal-footer">
 				<button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
 
 
