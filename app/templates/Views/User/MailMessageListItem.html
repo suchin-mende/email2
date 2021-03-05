@@ -1,39 +1,44 @@
 <div class="messageListItem" data-bind="css: lineAsCss()">
-	<div class="sidebarParent"></div>
+
+	<div class="sidebarParent">
+		&nbsp;
+	</div>
+
 	<div class="delimiter"></div>
+
 	<div class="wrapper">
-		<div class="messList">
+		<div style="height: 70%;">
 			<div class="checkedParent">
 				<i class="checkboxMessage"
 					data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked'"></i>
 			</div>
-			<div class="senderParent actionHandle dragHandle">
-				<span class="replyFlag"><i class="icon-reply"></i></span>
-				<span class="forwardFlag"><i class="icon-forward"></i></span>
-				<span class="sender" data-bind="text: senderEmailsString, attr: {'title': senderClearEmailsString}"></span>
-			</div>
-			<div class="view-flex">
+
+			<div>
 				<div class="subjectParent actionHandle dragHandle">
 					<b class="importantMark">!</b>
-					<span class="subject emptySubjectText i18nflex" data-bind="text: $root.emptySubjectValue"></span>
-					<span class="subject-prefix" data-bind="text: subjectPrefix"></span>
-					<span class="subject-suffix" data-bind="text: subjectSuffix"></span>
+					<span class="subject emptySubjectText i18nflex"
+						data-bind="text: $root.emptySubjectValue"></span>
+					<span class="subject-prefix i18nflex" data-bind="text: subjectPrefix"></span>
+					<span class="subject-suffix i18nflex" data-bind="text: subjectSuffix"></span>
 				</div>
-				<div class="attachmentParent actionHandle dragHandle">
-					<span class="attachment">
-						<i data-bind="css: attachmentIconClass"></i>
-					</span>
+
+				<div class="senderParent actionHandle dragHandle">
+					<span class="replyFlag"><i class="icon-reply"></i>&nbsp;</span>
+					<span class="forwardFlag"><i class="icon-forward"></i>&nbsp;</span>
+					<span class="sender i18nflex"
+						data-bind="text: senderEmailsString, attr: {'title': senderClearEmailsString}"></span>
+					&nbsp;
 				</div>
 			</div>
-			
 		</div>
 
 
-		<div class="mail-mess i18nflex">
-			<div class="dateParent actionHandle dragHandle">
-				<span class="date" data-moment-format="SHORT" data-moment-format-title="FULL"
-					data-bind="moment: dateTimeStampInUTC"></span>
-			</div>
+		<div class="dateParent actionHandle dragHandle">
+			<span class="date i18nflex" data-moment-format="SHORT" data-moment-format-title="FULL"
+				data-bind="moment: dateTimeStampInUTC"></span>
+		</div>
+
+		<div>
 			<div class="flagParent">
 				<span class="flagOn">
 					<i class="icon-star"></i>
@@ -51,6 +56,12 @@
 						<span data-bind="text: threadsLen"></span>
 						<i class="icon-right-mini"></i>
 					</span>
+				</span>
+			</div>
+
+			<div class="attachmentParent actionHandle dragHandle">
+				<span class="attachment">
+					<i data-bind="css: attachmentIconClass"></i>
 				</span>
 			</div>
 		</div>

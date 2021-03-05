@@ -7,7 +7,7 @@
 					<span class="i18n" data-i18n="VIPCASH/LABEL_TITLE"></span>
 				</h3>
 			</div>
-			<div class="modal-body pl-body">
+			<div class="modal-body">
 				<div class="vPlan-sale">
 					<div class="sale-list" data-bind="foreach: vSaleList">
 						<div data-bind="click: function () { $root.vSaleChooser(vipPlanCd, index); }, 
@@ -20,8 +20,10 @@
 								</div>
 								<div class="sale-price">
 									<span class="s-price-unit">￥</span>
-									<span class="s-price-money ePrice" data-bind="text: eventPrice"></span>
-									<span data-bind="text: price, attr: {class: eventPrice != null ? 's-ePrice-money tag-line' : 's-price-money'}"></span>
+									<span class="s-price-money ePrice"
+										data-bind="text: eventPrice"></span>
+									<span
+										data-bind="text: price, attr: {class: eventPrice != null ? 's-ePrice-money tag-line' : 's-price-money'}"></span>
 								</div>
 								<div class="sale-sub-tips" data-bind="text: descriptionTx"></div>
 							</div>
@@ -45,16 +47,18 @@
 						<div class="vPlan-discount i18nflex">
 							<span class="discount-title" data-i18n="VIPCASH/LABEL_DISCOUNT"></span>
 							<span class="discount-input">
-								<input class="dis-input" type="text" data-i18n="[placeholder]VIPCASH/PLACEHOLDER_DISCOUNT"
+								<input class="dis-input" type="text"
+									data-i18n="[placeholder]VIPCASH/PLACEHOLDER_DISCOUNT"
 									data-bind="textInput: PromoCode">
 							</span>
 						</div>
 					</div>
-					
+
 					<div class="vPlan-payment">
 						<div class="payment-argeement"></div>
 						<div class="payment-msg">
-							<img class="pay-QRcode" data-bind="attr: { 'src': payQr()}" alt="QRcode"></img>
+							<img class="pay-QRcode" data-bind="attr: { 'src': payQr()}"
+								alt="QRcode"></img>
 							<div class="pay-order-msg">
 								<p class="price-msg">
 									<span class="prc-unit">￥</span>
@@ -63,9 +67,10 @@
 										<span data-bind="text: vPayPrc"></span>
 									</span>
 								</p>
-	
+
 								<div class="view-flex">
-									<p class="pay-tips i18nflex" data-i18n="VIPCASH/LABEL_PAY_TIPS"></p>
+									<p class="pay-tips i18nflex" data-i18n="VIPCASH/LABEL_PAY_TIPS">
+									</p>
 									<div class="pay-icon">
 										<svg class="hsvg-icon h-icon input-icon" aria-hidden="true">
 											<use xlink:href="#iconwechat"></use>

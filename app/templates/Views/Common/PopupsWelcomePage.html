@@ -1,9 +1,9 @@
 <div class="popups">
-	<div class="modal hide b-welcom-page-content g-ui-user-select-none pw-modal" data-bind="modal: modalVisibility">
+	<div class="modal hide b-welcom-page-content g-ui-user-select-none" data-bind="modal: modalVisibility">
 
-		<div class="modal-body pw-body">
-			<div data-bind="if: welcomePageURL" class="pw-page">
-				<iframe src="javascript:1;" tabindex="-1" frameborder="0" class="pw-page2"
+		<div class="modal-body">
+			<div data-bind="if: welcomePageURL">
+				<iframe src="javascript:1;" tabindex="-1" frameborder="0"
 					data-bind="attr: {'src': welcomePageURL}"></iframe>
 			</div>
 		</div>

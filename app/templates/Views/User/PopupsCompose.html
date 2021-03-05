@@ -1,5 +1,6 @@
 <div class="popups">
-	<div class="modal hide b-compose" data-backdrop="static" data-bind="modal: modalVisibility, css: {'loading': saving() || sending()}">
+	<div class="modal hide b-compose" data-backdrop="static"
+		data-bind="modal: modalVisibility, css: {'loading': saving() || sending()}">
 		<div class="modal-header b-header-toolbar g-ui-user-select-none">
 
 			<div class="pull-left">
@@ -28,9 +29,11 @@
 							data-bind="css: { 'icon-attachment': 0 === attachmentsInProcessCount(), 'icon-spinner animated': 0 < attachmentsInProcessCount(), 'icon-white': 0 < attachmentsInErrorCount() }"></i>
 					</button>
 
-					<a class="btn first" data-tooltip-join="bottom" style="padding-left: 10px; padding-right: 10px;" data-bind="visible: addAttachmentEnabled(), initDom: composeUploaderButton, tooltip: 'COMPOSE/ATTACH_FILES',
+					<a class="btn first" data-tooltip-join="bottom"
+						style="padding-left: 10px; padding-right: 10px;" data-bind="visible: addAttachmentEnabled(), initDom: composeUploaderButton, tooltip: 'COMPOSE/ATTACH_FILES',
 															css: {'last': !(driveEnabled() && driveVisible()) && !(dropboxEnabled())}">
-						<sup style="font-weight: bold; font-size: 100%; top: -0.3em;">+</sup><i class="icon-attachment"></i>
+						<sup style="font-weight: bold; font-size: 100%; top: -0.3em;">+</sup><i
+							class="icon-attachment"></i>
 					</a>
 					<a class="btn" data-tooltip-join="bottom" data-bind="visible: dropboxEnabled, command: dropboxCommand, tooltip: 'COMPOSE/DROPBOX',
 															css: {'first': !addAttachmentEnabled(), 'last': !(driveEnabled() && driveVisible())}">
@@ -46,12 +49,14 @@
 						<i class="icon-list"></i>
 					</a>
 					<ul class="dropdown-menu g-ui-menu" role="menu">
-						<li class="e-item" data-bind="click: function () { requestReadReceipt(!requestReadReceipt()); }">
+						<li class="e-item"
+							data-bind="click: function () { requestReadReceipt(!requestReadReceipt()); }">
 							<a class="e-link">
 								<i class="icon-checkbox-unchecked"
 									data-bind="css: {'icon-checkbox-checked': requestReadReceipt(), 'icon-checkbox-unchecked': !requestReadReceipt() }"></i>
 								&nbsp;&nbsp;
-								<span class="i18n" data-i18n="COMPOSE/BUTTON_REQUEST_READ_RECEIPT"></span>
+								<span class="i18n"
+									data-i18n="COMPOSE/BUTTON_REQUEST_READ_RECEIPT"></span>
 							</a>
 						</li>
 						<li class="e-item" data-bind="click: function () { requestDsn(!requestDsn()); }">
@@ -62,7 +67,8 @@
 								<span class="i18n" data-i18n="COMPOSE/BUTTON_REQUEST_DSN"></span>
 							</a>
 						</li>
-						<li class="e-item" data-bind="click: function () { markAsImportant(!markAsImportant()); }">
+						<li class="e-item"
+							data-bind="click: function () { markAsImportant(!markAsImportant()); }">
 							<a class="e-link">
 								<i class="icon-checkbox-unchecked"
 									data-bind="css: {'icon-checkbox-checked': markAsImportant(), 'icon-checkbox-unchecked': !markAsImportant() }"></i>
@@ -71,7 +77,8 @@
 							</a>
 						</li>
 						<li class="divider" data-bind="visible: capaOpenPGP"></li>
-						<li class="e-item" data-bind="visible: capaOpenPGP, click: openOpenPgpPopup, css: {'disabled': isHtml()}">
+						<li class="e-item"
+							data-bind="visible: capaOpenPGP, click: openOpenPgpPopup, css: {'disabled': isHtml()}">
 							<a class="e-link">
 								<i class="icon-key"></i>
 								&nbsp;&nbsp;
@@ -81,8 +88,10 @@
 					</ul>
 				</div>
 			</div>
-			<a class="close-custom" data-tooltip-join="top" data-bind="click: tryToClosePopup, tooltip: 'COMPOSE/BUTTON_CANCEL'">&times;</a>
-			<a class="minimize-custom" data-tooltip-join="top" data-bind="click: skipCommand, tooltip: 'COMPOSE/BUTTON_MINIMIZE'"></a>
+			<a class="close-custom" data-tooltip-join="top"
+				data-bind="click: tryToClosePopup, tooltip: 'COMPOSE/BUTTON_CANCEL'">&times;</a>
+			<a class="minimize-custom" data-tooltip-join="top"
+				data-bind="click: skipCommand, tooltip: 'COMPOSE/BUTTON_MINIMIZE'"></a>
 		</div>
 		<div class="modal-body">
 			<div class="modal-flex edit-box">
@@ -92,15 +101,18 @@
 							<div class="e-cell e-value">
 								<div class="dropdown pull-left"
 									data-bind="registrateBootstrapDropdown: true, openDropdownTrigger: identitiesDropdownTrigger">
-									<a class="dropdown-toggle g-ui-dropdown e-identity" href="#" tabindex="-1"
-										id="identity-label-id" role="button" data-toggle="dropdown"
+									<a class="dropdown-toggle g-ui-dropdown e-identity" href="#"
+										tabindex="-1" id="identity-label-id" role="button"
+										data-toggle="dropdown"
 										data-bind="text: currentIdentityView, dropdownCloser: true, css: {'multiply': 1 < identitiesOptions().length }">
 									</a>
 									<!-- ko if: 1 < identitiesOptions().length -->
-									<ul class="dropdown-menu g-ui-menu" role="menu" aria-labelledby="identity-label-id">
+									<ul class="dropdown-menu g-ui-menu" role="menu"
+										aria-labelledby="identity-label-id">
 										<!-- ko foreach: identitiesOptions -->
 										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" tabindex="-1" href="javascript:void(0);"
+											<a class="e-link menuitem" tabindex="-1"
+												href="javascript:void(0);"
 												data-bind="click: function (oIdentity) { $root.selectIdentity(oIdentity); return true; }">
 												<span data-bind="text: optText"></span>
 											</a>
@@ -117,10 +129,13 @@
 											data-bind="visible: !showCc(), click: function () { showCc(true); }"></span>
 										&nbsp;&nbsp;
 										<span data-bind="visible: !showBcc()">
-											<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_BCC" data-bind="click: function () { showBcc(true); }"></span>
+											<span class="i18n g-ui-link"
+												data-i18n="COMPOSE/TITLE_BCC"
+												data-bind="click: function () { showBcc(true); }"></span>
 											&nbsp;&nbsp;
 										</span>
-										<span class="i18n g-ui-link" data-i18n="COMPOSE/TITLE_REPLY_TO"
+										<span class="i18n g-ui-link"
+											data-i18n="COMPOSE/TITLE_REPLY_TO"
 											data-bind="visible: !showReplyTo(), click: function () { showReplyTo(true); }"></span>
 										&nbsp;
 									</label>
@@ -129,14 +144,16 @@
 						</div>
 						<div class="e-row">
 							<div class="e-cell e-label">
-								<label class="control-label" data-bind="css: {'error-to': emptyToError}">
-									<span class="i18n" data-i18n="COMPOSE/TITLE_TO" data-tooltip-join="top"
+								<label class="control-label"
+									data-bind="css: {'error-to': emptyToError}">
+									<span class="i18n" data-i18n="COMPOSE/TITLE_TO"
+										data-tooltip-join="top"
 										data-bind="tooltipErrorTip: emptyToErrorTooltip"></span>
 								</label>
 							</div>
 							<div class="e-cell e-value">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-									spellcheck="false"
+								<input type="text" autocomplete="off" autocorrect="off"
+									autocapitalize="off" spellcheck="false"
 									data-bind="emailsTags: to, emailsTagsFocus: to.focused, autoCompleteSource: emailsSource" />
 							</div>
 						</div>
@@ -145,8 +162,9 @@
 								<span class="i18n" data-i18n="COMPOSE/TITLE_CC"></span>
 							</div>
 							<div class="e-cell e-value">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-									spellcheck="false" data-bind="emailsTags: cc, autoCompleteSource: emailsSource" />
+								<input type="text" autocomplete="off" autocorrect="off"
+									autocapitalize="off" spellcheck="false"
+									data-bind="emailsTags: cc, autoCompleteSource: emailsSource" />
 							</div>
 						</div>
 						<div class="e-row bcc-row" data-bind="visible: showBcc">
@@ -154,8 +172,9 @@
 								<span class="i18n" data-i18n="COMPOSE/TITLE_BCC"></span>
 							</div>
 							<div class="e-cell e-value">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-									spellcheck="false" data-bind="emailsTags: bcc, autoCompleteSource: emailsSource" />
+								<input type="text" autocomplete="off" autocorrect="off"
+									autocapitalize="off" spellcheck="false"
+									data-bind="emailsTags: bcc, autoCompleteSource: emailsSource" />
 							</div>
 						</div>
 						<div class="e-row reply-to-row" data-bind="visible: showReplyTo">
@@ -163,8 +182,8 @@
 								<span class="i18n" data-i18n="COMPOSE/TITLE_REPLY_TO"></span>
 							</div>
 							<div class="e-cell e-value">
-								<input type="text" autocomplete="off" autocorrect="off" autocapitalize="off"
-									spellcheck="false"
+								<input type="text" autocomplete="off" autocorrect="off"
+									autocapitalize="off" spellcheck="false"
 									data-bind="emailsTags: replyTo, autoCompleteSource: emailsSource" />
 							</div>
 						</div>
@@ -186,20 +205,25 @@
 						<div class="content-wrapper">
 							<div class="b-attachment-place att-drop-mgl"
 								data-bind="visible: addAttachmentEnabled() && dragAndDropEnabled() && dragAndDropVisible(), initDom: composeUploaderDropPlace, css: {'dragAndDropOver': dragAndDropOver}">
-								<span class="i18n" data-i18n="COMPOSE/ATTACH_DROP_FILES_DESC"></span>
+								<span class="i18n i18nflex"
+									data-i18n="COMPOSE/ATTACH_DROP_FILES_DESC"></span>
 							</div>
 							<ul class="attachmentList"
-								data-bind="template: { name: 'ComposeAttachment', foreach: attachments }"></ul>
-							<div class="no-attachments-desc no-att-mgl" data-bind="visible: 0 === attachments().length">
-								<span class="i18n " data-i18n="COMPOSE/NO_ATTACHMENTS_HERE_DESC"></span>
+								data-bind="template: { name: 'ComposeAttachment', foreach: attachments }">
+							</ul>
+							<div class="no-attachments-desc no-att-mgl"
+								data-bind="visible: 0 === attachments().length">
+								<span class="i18n i18nflex"
+									data-i18n="COMPOSE/NO_ATTACHMENTS_HERE_DESC"></span>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="textAreaParent middle-width"
-				data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 10, 100]"></div>
-					<!-- data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 200, 40]"> -->
+					data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 10, 100]">
+				</div>
+				<!-- data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 200, 40]"> -->
 
 
 				<div class="b-header g-ui-user-select-none p-compose">
@@ -215,12 +239,10 @@
 							data-bind="css: {'icon-floppy': !saving(), 'icon-spinner animated': saving(), 'icon-white': savedError()}"></i>
 						<span class="i18n btn-text hide-on-mobile" data-i18n="COMPOSE/BUTTON_SAVE"></span>
 					</a>
-						<a class="btn button-delete button-delete-transitions"
-							data-bind="command: deleteCommand">
-							<i class="icon-trash"></i>
-						</a>
-						<span class=" saved-text hide-on-mobile"
-							data-bind="text: savedTimeText"></span>
+					<a class="btn button-delete button-delete-transitions" data-bind="command: deleteCommand">
+						<i class="icon-trash"></i>
+					</a>
+					<span class=" saved-text hide-on-mobile" data-bind="text: savedTimeText"></span>
 
 				</div>
 
