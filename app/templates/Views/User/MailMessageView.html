@@ -1,4 +1,4 @@
-<div id="rl-sub-right">
+<div id="rl-sub-right-v">
 	<div class="messageView"
 		data-bind="css: {'message-selected': isMessageSelected, 'message-focused': messageFocused}">
 
@@ -88,7 +88,7 @@
 
 					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
 						<span class="i18n i18nflex" data-bind="visible: !logoImg">
-							<img style="height: 50vh; width: 50vw;"
+							<img style="height: 50vh; width: 40vw;"
 								data-bind="attr: { 'src': messTip() }">
 						</span>
 						<div class="logoPlace" data-bind="visible: logoImg, if: logoImg">
@@ -130,12 +130,12 @@
 							<span class="i18n emptySubjectText i18nflex"
 								data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
 								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
-							<button class="close"
+							<button class="close" style="float: unset;"
 								data-bind="command: closeMessageCommand">&times;</button>
 						</div>
 
 						<div class="v-informationFull">
-							<div>
+							<div style="margin-left: 30px;">
 								<img class="v-fromPic"
 									data-bind="visible: viewUserPicVisible, attr: {'src': viewUserPic() }">
 								<div class="view-flex">
@@ -438,7 +438,7 @@
 										class="icon-ellipsis-alt"></span>
 									<span data-bind="visible: allowComposer" class="caret"></span>
 								</a>
-								<ul class="dropdown-menu g-ui-menu mmv-mgl" role="menu"
+								<ul class="dropdown-menu g-ui-menu" role="menu"
 									aria-labelledby="more-view-dropdown-id">
 									<div data-bind="visible: allowComposer && !isDraftFolder()">
 										<li class="e-item" role="presentation">
@@ -620,7 +620,6 @@
 
 					</nobr>
 				</div>
-
 			</div>
 		</div>
 	</div>
