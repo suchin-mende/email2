@@ -123,14 +123,14 @@
 									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"
 									style="padding-top: 2px;"></i>
 							</span>
-							<b style="color: red; margin-right: 5px"
+							<b style="color: red; margin-top: 5px"
 								data-bind="visible: viewIsImportant">!</b>
 							<span class="subject i18nflex"
 								data-bind="text: viewSubject, title: viewSubject, event: { 'dblclick': toggleFullScreen }"></span>
 							<span class="i18n emptySubjectText i18nflex"
 								data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
 								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
-							<button class="close" style="float: unset;"
+							<button class="close"
 								data-bind="command: closeMessageCommand">&times;</button>
 						</div>
 
@@ -322,15 +322,23 @@
 															</div>
 														</div>
 													</div>
-													<div class="attachmentNameParent">
-														<div class="mmview">
-															<span class="attachmentName"
-																data-bind="text: fileName"></span>
+
+													<!-- <div class="attachmentNameParent">
+														<div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+															<span class="attachmentName" data-bind="text: fileName"></span>&nbsp;
 														</div>
 														<div>
-															<span class="attachmentSize"
-																data-bind="text: friendlySize"></span>
+															<span class="attachmentSize" data-bind="text: friendlySize"></span>&nbsp;
 														</div>
+													</div>
+													 -->
+													<div class="attachmentNameParent">
+														<span class="attachmentName"
+															data-bind="text: fileName"></span>
+
+														<span class="attachmentSize"
+															data-bind="text: friendlySize"></span>
+
 													</div>
 													<div class="checkedParent">
 														<i class="checkboxAttachment icon-checkbox-unchecked"
@@ -346,21 +354,22 @@
 										<div class="attachmentsControls"
 											data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
 
-											<span data-bind="visible: downloadAsZipAllowed">
+											<div data-bind="visible: downloadAsZipAllowed">
 
 												<span class="g-ui-link"
 													data-bind="click: downloadAsZip">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
+													<div class="i18n i18nflex"
+														data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP">
+													</div>
 
 													<i class="icon-remove iconcolor-red"
 														data-bind="visible: downloadAsZipError"></i>
 													<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
 														css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
 												</span>
-											</span>
+											</div>
 
-											<span data-bind="visible: saveToOwnCloudAllowed">
+											<div data-bind="visible: saveToOwnCloudAllowed">
 
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToOwnCloudError"></i>
@@ -371,12 +380,13 @@
 
 												<span class="g-ui-link"
 													data-bind="click: saveToOwnCloud">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
+													<div class="i18n i18nflex"
+														data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD">
+													</div>
 												</span>
-											</span>
+											</div>
 
-											<span data-bind="visible: saveToDropboxAllowed">
+											<div data-bind="visible: saveToDropboxAllowed">
 
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToDropboxError"></i>
@@ -387,37 +397,44 @@
 
 												<span class="g-ui-link"
 													data-bind="click: saveToDropbox">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
+													<div class="i18n i18nflex"
+														data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX">
+													</div>
 												</span>
-											</span>
+											</div>
+											<div>
+												<button class="close" style="float: unset;"
+													data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
+											</div>
 
-											<button type="button" class="close"
-												style="margin-right: 5px;"
-												data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
 										</div>
 									</div>
 
-									<div class="bodyText g-ui-min-height-300 rl-mv-root i18nflex"
-										data-bind="initDom: messagesBodiesDom">
-
-										<div class="showImages"
-											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
-											<div>
-												<i class="icon-image t-ortion"></i>
-												<span class="i18n text i18nflex"
-													data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
+									<div class="view-flex">
+										<div>
+											<div class="showImages"
+												data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
+												<div>
+													<i class="icon-image t-ortion"></i>
+													<div class="i18n text i18nflex"
+														data-i18n="MESSAGE/BUTTON_SHOW_IMAGES">
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="readReceipt"
-											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
-											<div>
-												<i class="icon-mail t-ortion"></i>
-												<span class="i18n text i18nflex"
-													data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
+											<div class="readReceipt"
+												data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
+												<div>
+													<i class="icon-mail t-ortion"></i>
+													<div class="i18n text i18nflex"
+														data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT">
+													</div>
+												</div>
 											</div>
+
 										</div>
 
+										<div class="bodyText g-ui-min-height-300 rl-mv-root"
+											data-bind="initDom: messagesBodiesDom"></div>
 									</div>
 								</div>
 							</div>
@@ -427,8 +444,8 @@
 
 				<div class="v-mess-button-toolbar clearfix" data-bind="visible: message">
 					<nobr>
-						<div class="btn-group">
-							<div class="btn-group"
+						<div>
+							<div
 								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 								<a class="btn btn-thin-2 btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
 									id="more-view-dropdown-id" href="#" tabindex="-1"
