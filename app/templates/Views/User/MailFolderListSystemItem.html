@@ -1,14 +1,14 @@
-<div class="e-item b-folder-system-item i18nflex">
-	<a class="e-link"
+<div class="e-item b-folder-system-item">
+	<div class="e-link v-e-link"
 		data-bind="droppable: function (oEvent, oUi) { $root.messagesDrop($data, oUi); }, css: { 'selected': selected, 'selectable': selectable, 'print-count': 0 < printableUnreadCount().length, 'anim-action-class': actionBlink, 'is-inbox': isInbox }">
-		<span class="focused-poiner"></span>
 
 		<img class="i-box" data-bind="attr: {src: localImg() }">
-		<span class="name" data-bind="text: localName()"></span>
-		<span class="inbox-star-icon">
+
+		<div class="name i18nflex" data-bind="text: localName()"></div>
+		<div class="inbox-star-icon">
 			<i class="icon-star"></i>
 			<i class="icon-star-empty"></i>
-		</span>
-		<span class="count" data-bind="text: printableUnreadCount"></span>
-	</a>
+		</div>
+		<div class="count" data-bind="text: printableUnreadCount"></div>
+	</div>
 </div>
