@@ -17,7 +17,6 @@
 						data-bind="visible: isDraftFolder(), tooltip: 'MESSAGE/BUTTON_EDIT'">
 						<a class="btn single btn-success buttonEdit"
 							data-bind="command: messageEditCommand">
-							&nbsp;&nbsp;
 							<i class="icon-pencil icon-white"></i>
 						</a>
 					</div>
@@ -25,22 +24,18 @@
 					<div class="btn-group" data-bind="visible: !usePreviewPane()">
 						<a class="btn first btn-dark-disabled-border button-archive" data-tooltip-join="top"
 							data-bind="visible: !isDraftFolder() && !isArchiveFolder() && !isArchiveDisabled(), command: archiveCommand, tooltip: 'MESSAGE/BUTTON_ARCHIVE'">
-							&nbsp;&nbsp;
 							<i class="icon-archive"></i>
 						</a>
 						<a class="btn btn-dark-disabled-border button-spam" data-tooltip-join="top"
 							data-bind="visible: !isDraftFolder() && !isSentFolder() && !isSpamFolder() && !isSpamDisabled(), command: spamCommand, tooltip: 'MESSAGE/BUTTON_SPAM'">
-							&nbsp;&nbsp;
 							<i class="icon-warning"></i>
 						</a>
 						<a class="btn btn-dark-disabled-border button-not-spam" data-tooltip-join="top"
 							data-bind="visible: !isDraftFolder() && !isSentFolder() && isSpamFolder() && !isSpamDisabled(), command: notSpamCommand, tooltip: 'MESSAGE/BUTTON_NOT_SPAM'">
-							&nbsp;&nbsp;
 							<i class="icon-check-mark-circle-two"></i>
 						</a>
 						<a class="btn last btn-dark-disabled-border button-delete" data-tooltip-join="top"
 							data-bind="command: deleteCommand, tooltip: 'MESSAGE/BUTTON_DELETE'">
-							&nbsp;&nbsp;
 							<i class="icon-trash"></i>
 						</a>
 					</div>
@@ -61,14 +56,16 @@
 
 		<div class="b-content b-message-view-wrapper thm-message-view-background-color">
 
-			<div class="v-mess-tips">
+			<div style="height: 100%">
+
+
 				<div class="b-message-view-backdrop" data-bind="visible: moveAction">
 					<div class="backdrop-message-wrp">
 						<div class="backdrop-message">
 							<i class="icon-folder"
 								style="padding: 0 7px; font-size: 24px; width: 24px; line-height: 24px;"></i>
-							<span class="i18n i18nflex" style="vertical-align: middle; padding: 0 7px"
-								data-i18n="MESSAGE/MESSAGE_VIEW_MOVE_DESC"></span>
+							<div class="i18n i18nflex" style="vertical-align: middle; padding: 0 7px"
+								data-i18n="MESSAGE/MESSAGE_VIEW_MOVE_DESC"></div>
 						</div>
 					</div>
 				</div>
@@ -80,14 +77,14 @@
 
 				<div class="b-message-view-desc error"
 					data-bind="visible: !message() && '' !== messageError() && !hasCheckedMessages()">
-					<span class="text i18nflex" data-bind="text: messageError()"></span>
+					<div class="text" data-bind="text: messageError()"></div>
 				</div>
 
 				<div data-bind="visible: !message() && '' === messageError() && !hasCheckedMessages()"
 					style="height: 100%">
 
 					<div class="b-message-view-desc" data-bind="visible: !logoIframe">
-						<span class="i18n i18nflex" data-bind="visible: !logoImg">
+						<span class="i18n" data-bind="visible: !logoImg">
 							<img style="height: 50vh; width: 40vw;"
 								data-bind="attr: { 'src': messTip() }">
 						</span>
@@ -105,45 +102,47 @@
 					</div>
 
 				</div>
-			</div>
 
-			<div class="view-flex" style="height: 100%">
 
-				<div class="Mail-info-view" data-bind="visible: message">
+				<div data-bind="visible: message">
+					<div class="messageItemHeader view-flex"
+						data-bind="css: {'emptySubject': '' === viewSubject()}">
 
-					<div class="v-messageItemHeader" data-bind="css: {'emptySubject': '' === viewSubject()}">
 						<div class="subjectParent i18nflex">
 
 							<span class="infoParent g-ui-user-select-none"
 								data-bind="click: function() { showFullInfo(!showFullInfo()); }">
-								<i class="icon-info" style="padding-top: 1px;"></i>
+								<i class="icon-info"></i>
 							</span>
 							<span class="flagParent g-ui-user-select-none">
 								<i class="icon-star-empty flagOff"
-									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"
-									style="padding-top: 2px;"></i>
+									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"></i>
 							</span>
-							<b style="color: red; margin-top: 5px"
-								data-bind="visible: viewIsImportant">!</b>
-							<span class="subject i18nflex"
+							<b style="color: red;" data-bind="visible: viewIsImportant">!</b>
+							<span class="subject"
 								data-bind="text: viewSubject, title: viewSubject, event: { 'dblclick': toggleFullScreen }"></span>
-							<span class="i18n emptySubjectText i18nflex"
-								data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
+							<span class="i18n emptySubjectText" data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
 								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
+
 							<button class="close"
 								data-bind="command: closeMessageCommand">&times;</button>
 						</div>
 
-						<div>
-							<div style="margin-left: 30px;">
-								<img class="v-fromPic"
-									data-bind="visible: viewUserPicVisible, attr: {'src': viewUserPic() }">
+						<div class="v-messageItemHeader">
+							<div>
+								<div>
+									<img class="fromPic"
+										data-bind="visible: viewUserPicVisible, attr: {'src': viewUserPic() }">
+								</div>
+
 								<div class="view-flex">
+
 									<div class="informationShort i18nflex"
 										data-bind="event: { 'dblclick': toggleFullScreen }">
 										<span>
-											<span class="from i18nflex"
+											<span class="from"
 												data-bind="html: viewFromShort, title: viewFrom"></span>
+
 											<span data-bind="visible: viewFromDkimVisibility">
 												&nbsp;
 												<i
@@ -151,10 +150,12 @@
 											</span>
 										</span>
 									</div>
+
 									<div class="informationShort i18nflex"
 										data-bind="event: { 'dblclick': toggleFullScreen }">
+
 										<span data-bind="visible: 0 < viewTimeStamp()">
-											(<span class="date i18nflex" data-moment-format="FULL"
+											(<span class="date" data-moment-format="FULL"
 												data-bind="moment: viewTimeStamp"></span>)
 										</span>
 									</div>
@@ -163,8 +164,8 @@
 											data-bind="visible: viewTo, event: { 'dblclick': toggleFullScreen }">
 											<span>
 												<span class="i18n uiLabel labelTo"
-													data-i18n="MESSAGE/LABEL_TO"></span>:
-												<span class="to"
+													data-i18n="MESSAGE/LABEL_TO"></span>:&nbsp;<span
+													class="to"
 													data-bind="text: viewTo"></span>
 											</span>
 										</div>
@@ -172,8 +173,8 @@
 											data-bind="visible: viewCc, event: { 'dblclick': toggleFullScreen }">
 											<span>
 												<span class="i18n uiLabel labelTo"
-													data-i18n="MESSAGE/LABEL_CC"></span>:
-												<span class="to"
+													data-i18n="MESSAGE/LABEL_CC"></span>:&nbsp;<span
+													class="to"
 													data-bind="text: viewCc"></span>
 											</span>
 										</div>
@@ -181,11 +182,15 @@
 								</div>
 								<div class="clearfix"></div>
 							</div>
-							<div class="informationFull i18nflex" data-bind="visible: showFullInfo()">
+
+							<div class="v-informationFull i18nflex" data-bind="visible: showFullInfo()">
+
 								<table>
 									<tr data-bind="visible: '' !== viewFrom()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_FROM"></span></td>
+										<td>
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_FROM"></span>
+										</td>
 										<td>
 											<span class="pull-right size"
 												data-bind="text: viewSize"></span>
@@ -193,64 +198,96 @@
 												data-bind="text: viewFrom, title: viewFrom"></span>
 										</td>
 									</tr>
+
 									<tr data-bind="visible: '' !== viewTo()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_TO"></span></td>
-										<td><span class="to uiLabelValue"
+										<td>
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_TO"></span>
+										</td>
+										<td>
+											<span class="to uiLabelValue"
 												data-bind="text: viewTo, title: viewTo"></span>
 										</td>
 									</tr>
+
 									<tr data-bind="visible: '' !== viewCc()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_CC"></span></td>
-										<td><span class="cc uiLabelValue"
+										<td>
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_CC"></span>
+										</td>
+										<td>
+											<span class="cc uiLabelValue"
 												data-bind="text: viewCc, title: viewCc"></span>
 										</td>
 									</tr>
+
 									<tr data-bind="visible: '' !== viewBcc()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_BCC"></span></td>
-										<td><span class="bcc uiLabelValue"
+										<td>
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_BCC"></span>
+										</td>
+										<td>
+											<span class="bcc uiLabelValue"
 												data-bind="text: viewBcc, title: viewBcc"></span>
 										</td>
 									</tr>
+
 									<tr data-bind="visible: '' !== viewReplyTo()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_REPLY_TO"></span></td>
-										<td><span class="replyTo uiLabelValue"
+										<td>
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_REPLY_TO"></span>
+										</td>
+										<td>
+											<span class="replyTo uiLabelValue"
 												data-bind="text: viewReplyTo, title: viewReplyTo"></span>
 										</td>
 									</tr>
+
 									<tr data-bind="visible: 0 < viewTimeStamp()">
-										<td><span class="i18n uiLabel i18nflex"
-												data-i18n="MESSAGE/LABEL_DATE"></span></td>
 										<td>
-											<span class="date uiLabelValue i18nflex"
+											<span class="i18n uiLabel"
+												data-i18n="MESSAGE/LABEL_DATE"></span>
+										</td>
+										<td>
+											<span class="date uiLabelValue"
 												data-moment-format="FULL"
 												data-bind="moment: viewTimeStamp"></span>
 											&nbsp;
-											(<span class="date uiLabelValue i18nflex"
+											(<span class="date uiLabelValue"
 												data-moment-format="FROMNOW"
 												data-bind="moment: viewTimeStamp"></span>)
 										</td>
 									</tr>
+
 								</table>
+
+
 							</div>
 						</div>
 					</div>
 
-					<div class="messageItem fixIndex">
+
+					<div class="messageItem fixIndex"
+						data-bind="css: viewLineAsCss(), nano: true, scrollerShadows: true, attr: {'style': 'top:' + viewBodyTopValue() + 'px' }">
 						<div class="content g-scrollbox" tabindex="0" data-scroller-shadows-content
 							data-bind="hasfocus: messageDomFocused, css: { 'focused': messageDomFocused },
-								style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
+							style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
 
 							<div class="content-wrapper">
 
 								<div>
-									<span class="buttonUp" data-bind="click: scrollMessageToTop">
+									<span class="buttonUp v-buttonUp"
+										data-bind="click: scrollMessageToTop">
 										<i class="icon-up"></i>
 									</span>
-									<span class="buttonFull" data-bind="click: fullScreen">
+
+									<span class="buttonLeft v-buttonLeft"
+										data-bind="click: scrollMessageToLeft">
+										<i class="icon-left"></i>
+									</span>
+
+									<span class="buttonFull v-buttonFull"
+										data-bind="click: fullScreen">
 										<i class="icon-arrows-out"></i>
 									</span>
 									<span class="buttonUnFull" data-bind="click: unFullScreen">
@@ -272,11 +309,24 @@
 
 								<div class="g-ui-min-height-300 content-content"
 									data-bind="visible: !messageLoadingThrottle()">
-									<div class="bodySubHeader view-flex">
-
+									<div class="bodySubHeader">
+										<div class="showImages"
+											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
+											<i class="icon-image"></i>
+											&nbsp;&nbsp;
+											<span class="i18n text"
+												data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
+										</div>
+										<div class="readReceipt"
+											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
+											<i class="icon-mail"></i>
+											&nbsp;&nbsp;
+											<span class="i18n text"
+												data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
+										</div>
 										<div class="attachmentsPlace"
 											data-bind="visible: message() && message().hasVisibleAttachments(),
-												css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
+											css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
 											<ul class="attachmentList"
 												data-bind="foreach: message() ? message().attachments() : []">
 												<li class="attachmentItem clearfix"
@@ -322,28 +372,21 @@
 															</div>
 														</div>
 													</div>
-
-													<!-- <div class="attachmentNameParent">
-														<div style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-															<span class="attachmentName" data-bind="text: fileName"></span>&nbsp;
+													<div class="attachmentNameParent">
+														<div
+															style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+															<span class="attachmentName"
+																data-bind="text: fileName"></span>&nbsp;
 														</div>
 														<div>
-															<span class="attachmentSize" data-bind="text: friendlySize"></span>&nbsp;
+															<span class="attachmentSize"
+																data-bind="text: friendlySize"></span>&nbsp;
 														</div>
-													</div>
-													 -->
-													<div class="attachmentNameParent">
-														<span class="attachmentName"
-															data-bind="text: fileName"></span>
-
-														<span class="attachmentSize"
-															data-bind="text: friendlySize"></span>
-
 													</div>
 													<div class="checkedParent">
 														<i class="checkboxAttachment icon-checkbox-unchecked"
 															data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked',
-																click: function () { checked(!checked()); return false }"></i>
+															click: function () { checked(!checked()); return false }"></i>
 													</div>
 												</li>
 											</ul>
@@ -354,291 +397,280 @@
 										<div class="attachmentsControls"
 											data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
 
-											<div data-bind="visible: downloadAsZipAllowed">
-
+											<span data-bind="visible: downloadAsZipAllowed">
+												<i class="icon-remove iconcolor-red"
+													data-bind="visible: downloadAsZipError"></i>
+												<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
+													css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
+												&nbsp;&nbsp;
 												<span class="g-ui-link"
 													data-bind="click: downloadAsZip">
-													<div class="i18n i18nflex"
-														data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP">
-													</div>
-
-													<i class="icon-remove iconcolor-red"
-														data-bind="visible: downloadAsZipError"></i>
-													<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
-														css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
+													<span class="i18n"
+														data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
 												</span>
-											</div>
+											</span>
 
-											<div data-bind="visible: saveToOwnCloudAllowed">
-
+											<span data-bind="visible: saveToOwnCloudAllowed">
+												&nbsp;&nbsp;&nbsp;&nbsp;
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToOwnCloudError"></i>
 												<i class="icon-ok iconcolor-green"
 													data-bind="visible: saveToOwnCloudSuccess"></i>
 												<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
-														css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
-
+													css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
+												&nbsp;&nbsp;
 												<span class="g-ui-link"
 													data-bind="click: saveToOwnCloud">
-													<div class="i18n i18nflex"
-														data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD">
-													</div>
+													<span class="i18n"
+														data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
 												</span>
-											</div>
+											</span>
 
-											<div data-bind="visible: saveToDropboxAllowed">
-
+											<span data-bind="visible: saveToDropboxAllowed">
+												&nbsp;&nbsp;&nbsp;&nbsp;
 												<i class="icon-remove iconcolor-red"
 													data-bind="visible: saveToDropboxError"></i>
 												<i class="icon-ok iconcolor-green"
 													data-bind="visible: saveToDropboxSuccess"></i>
 												<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
-														css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
-
+													css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
+												&nbsp;&nbsp;
 												<span class="g-ui-link"
 													data-bind="click: saveToDropbox">
-													<div class="i18n i18nflex"
-														data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX">
-													</div>
+													<span class="i18n"
+														data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
 												</span>
-											</div>
-											<div>
-												<button class="close" style="float: unset;"
-													data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
-											</div>
+											</span>
 
+											<button type="button" class="close"
+												style="margin-right: 5px;"
+												data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
 										</div>
 									</div>
 
-									<div class="view-flex">
-										<div>
-											<div class="showImages"
-												data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
-												<div>
-													<i class="icon-image t-ortion"></i>
-													<div class="i18n text i18nflex"
-														data-i18n="MESSAGE/BUTTON_SHOW_IMAGES">
-													</div>
-												</div>
-											</div>
-											<div class="readReceipt"
-												data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
-												<div>
-													<i class="icon-mail t-ortion"></i>
-													<div class="i18n text i18nflex"
-														data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT">
-													</div>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="bodyText g-ui-min-height-300 rl-mv-root"
-											data-bind="initDom: messagesBodiesDom"></div>
-									</div>
+									<div class="bodyText g-ui-min-height-300 rl-mv-root"
+										data-bind="initDom: vMessagesBodiesDom"></div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="v-mess-button-toolbar clearfix" data-bind="visible: message">
 
+					<div class="message-fixed-button-toolbar clearfix" data-bind="visible: message">
 						<div>
-							<div
-								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
-								<a class="btn btn-thin-2 btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
-									id="more-view-dropdown-id" href="#" tabindex="-1"
-									data-toggle="dropdown" data-tooltip-join="bottom"
-									data-bind="command: messageVisibilityCommand, css: {'first': !allowComposer}">
-									<span data-bind="visible: !allowComposer"
-										class="icon-ellipsis-alt"></span>
-									<span data-bind="visible: allowComposer" class="caret"></span>
-								</a>
-								<ul class="dropdown-menu g-ui-menu" role="menu"
-									aria-labelledby="more-view-dropdown-id">
-									<div data-bind="visible: allowComposer && !isDraftFolder()">
-										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" href="#" tabindex="-1"
-												data-bind="command: replyCommand">
-												<i class="icon-reply"></i>
+							<div class="btn-group">
+								<div class="btn-group pull-right"
+									data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_REPLY"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" href="#" tabindex="-1"
-												data-bind="command: replyAllCommand">
-												<i class="icon-reply-all"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" href="#" tabindex="-1"
-												data-bind="command: forwardCommand">
-												<i class="icon-forward"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_FORWARD"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" href="#" tabindex="-1"
-												data-bind="command: editAsNewCommand">
-												<i class="icon-pencil"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a class="e-link menuitem" href="#" tabindex="-1"
-												data-bind="command: forwardAsAttachmentCommand">
-												<i class="icon-forward"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
-											</a>
-										</li>
+									<div class="btn btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
+										id="more-view-dropdown-id" href="#" tabindex="-1"
+										data-toggle="dropdown" data-tooltip-join="bottom"
+										data-bind="command: messageVisibilityCommand, css: {'first': !allowComposer}">
+										<span data-bind="visible: !allowComposer"
+											class="icon-ellipsis-alt"></span>
+										<span data-bind="visible: allowComposer"
+											class="caret"></span>
 									</div>
-									<div
-										data-bind="visible: allowMessageListActions && usePreviewPane()">
-										<li class="divider" role="presentation"
-											data-bind="visible: allowComposer && !isDraftFolder()">
-										</li>
-										<li class="e-item" role="presentation"
-											data-bind="visible: !isDraftFolder() && !isArchiveFolder() && !isArchiveDisabled()">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="command: archiveCommand">
-												<i class="icon-archive"></i>
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation"
-											data-bind="visible: !isDraftFolder() && !isSentFolder() && !isSpamFolder() && !isSpamDisabled()">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1" data-bind="command: spamCommand">
-												<i class="icon-warning"></i>
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_SPAM"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation"
-											data-bind="visible: !isDraftFolder() && !isSentFolder() && isSpamFolder() && !isSpamDisabled()">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="command: notSpamCommand">
-												<i class="icon-check-mark-circle-two"></i>
+									<ul class="dropdown-menu g-ui-menu" role="menu"
+										aria-labelledby="more-view-dropdown-id">
+										<div data-bind="visible: allowComposer && !isDraftFolder()">
+											<li class="e-item" role="presentation">
+												<a class="e-link menuitem" href="#"
+													tabindex="-1"
+													data-bind="command: replyCommand">
+													<i class="icon-reply"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_REPLY"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a class="e-link menuitem" href="#"
+													tabindex="-1"
+													data-bind="command: replyAllCommand">
+													<i class="icon-reply-all"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a class="e-link menuitem" href="#"
+													tabindex="-1"
+													data-bind="command: forwardCommand">
+													<i class="icon-forward"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_FORWARD"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a class="e-link menuitem" href="#"
+													tabindex="-1"
+													data-bind="command: editAsNewCommand">
+													<i class="icon-pencil"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a class="e-link menuitem" href="#"
+													tabindex="-1"
+													data-bind="command: forwardAsAttachmentCommand">
+													<i class="icon-forward"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
+												</a>
+											</li>
+										</div>
+										<div
+											data-bind="visible: allowMessageListActions && usePreviewPane()">
+											<li class="divider" role="presentation"
+												data-bind="visible: allowComposer && !isDraftFolder()">
+											</li>
+											<li class="e-item" role="presentation"
+												data-bind="visible: !isDraftFolder() && !isArchiveFolder() && !isArchiveDisabled()">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="command: archiveCommand">
+													<i class="icon-archive"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation"
+												data-bind="visible: !isDraftFolder() && !isSentFolder() && !isSpamFolder() && !isSpamDisabled()">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="command: spamCommand">
+													<i class="icon-warning"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_SPAM"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation"
+												data-bind="visible: !isDraftFolder() && !isSentFolder() && isSpamFolder() && !isSpamDisabled()">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="command: notSpamCommand">
+													<i class="icon-check-mark-circle-two"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="command: deleteCommand">
+													<i class="icon-trash"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_DELETE"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation"
+												data-bind="visible: message() && message().hasUnsubsribeLinks()">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="link: viewUnsubscribeLink()">
+													<i class="icon-remove"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
+												</a>
+											</li>
+										</div>
+										<div data-bind="visible: allowMessageActions">
+											<li class="divider" role="presentation"
+												data-bind="visible: (allowComposer && !isDraftFolder()) || (allowMessageListActions && usePreviewPane())">
+											</li>
+											<li class="e-item" role="presentation">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="click: function () { if (message()) { message().printMessage(); }} ">
+													<i class="icon-print"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/MENU_PRINT"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
+													<i class="icon-popup"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
+												</a>
+											</li>
+											<li class="divider" role="presentation"></li>
+											<li class="e-item" role="presentation">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="link: viewViewLink()">
+													<i class="icon-file-code"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
+												</a>
+											</li>
+											<li class="e-item" role="presentation">
+												<a target="_blank" class="e-link menuitem"
+													href="#" tabindex="-1"
+													data-bind="link: viewDownloadLink()">
+													<i class="icon-download"></i>
+													&nbsp;&nbsp;
+													<span class="i18n"
+														data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
+												</a>
+											</li>
+										</div>
+									</ul>
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="command: deleteCommand">
-												<i class="icon-trash"></i>
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_DELETE"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation"
-											data-bind="visible: message() && message().hasUnsubsribeLinks()">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="link: viewUnsubscribeLink()">
-												<i class="icon-remove"></i>
+								</div>
 
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
-											</a>
-										</li>
-									</div>
-									<div data-bind="visible: allowMessageActions">
-										<li class="divider" role="presentation"
-											data-bind="visible: (allowComposer && !isDraftFolder()) || (allowMessageListActions && usePreviewPane())">
-										</li>
-										<li class="e-item" role="presentation">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="click: function () { if (message()) { message().printMessage(); }} ">
-												<i class="icon-print"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/MENU_PRINT"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
-												<i class="icon-popup"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
-											</a>
-										</li>
-										<li class="divider" role="presentation"></li>
-										<li class="e-item" role="presentation">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1" data-bind="link: viewViewLink()">
-												<i class="icon-file-code"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
-											</a>
-										</li>
-										<li class="e-item" role="presentation">
-											<a target="_blank" class="e-link menuitem" href="#"
-												tabindex="-1"
-												data-bind="link: viewDownloadLink()">
-												<i class="icon-download"></i>
-
-												<span class="i18n"
-													data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
-											</a>
-										</li>
-									</div>
-								</ul>
+								<div class="btn btn-transparent first btn-dark-disabled-border buttonReply"
+									data-tooltip-join="bottom"
+									data-bind="visible: 'reply' === lastReplyAction() && allowComposer, command: replyCommand, tooltip: 'MESSAGE/BUTTON_REPLY'">
+									<i class="icon-reply"></i>
+								</div>
+								<div class="btn btn-transparent first btn-dark-disabled-border buttonReplyAll"
+									data-tooltip-join="bottom"
+									data-bind="visible: 'replyall' === lastReplyAction() && allowComposer, command: replyAllCommand, tooltip: 'MESSAGE/BUTTON_REPLY_ALL'">
+									<i class="icon-reply-all"></i>
+								</div>
+								<div class="btn btn-transparent first btn-dark-disabled-border buttonForward"
+									data-tooltip-join="bottom"
+									data-bind="visible: 'forward' === lastReplyAction() && allowComposer, command: forwardCommand, tooltip: 'MESSAGE/BUTTON_FORWARD'">
+									<i class="icon-forward"></i>
+								</div>
 							</div>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReply"
-								data-tooltip-join="bottom"
-								data-bind="visible: 'reply' === lastReplyAction() && allowComposer, command: replyCommand, tooltip: 'MESSAGE/BUTTON_REPLY'">
-								<i class="icon-reply"></i>
-							</a>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonReplyAll"
-								data-tooltip-join="bottom"
-								data-bind="visible: 'replyall' === lastReplyAction() && allowComposer, command: replyAllCommand, tooltip: 'MESSAGE/BUTTON_REPLY_ALL'">
-								<i class="icon-reply-all"></i>
-							</a>
-							<a class="btn btn-thin-2 btn-transparent first btn-dark-disabled-border buttonForward"
-								data-tooltip-join="bottom"
-								data-bind="visible: 'forward' === lastReplyAction() && allowComposer, command: forwardCommand, tooltip: 'MESSAGE/BUTTON_FORWARD'">
-								<i class="icon-forward"></i>
-							</a>
-						</div>
 
-						<div class="btn-group pull-right hide-on-mobile" data-tooltip-join="right"
-							data-bind="visible: isDraftFolder(), tooltip: 'MESSAGE/BUTTON_EDIT'">
-							<div class="btn single btn-success buttonEdit"
-								data-bind="command: messageEditCommand">
-								<i class="icon-pencil icon-white"></i>
+							<div class="hide-on-mobile" data-tooltip-join="bottom"
+								data-bind="visible: isDraftFolder(), tooltip: 'MESSAGE/BUTTON_EDIT'">
+
+								<div class="btn single btn-success buttonEdit"
+									data-bind="command: messageEditCommand">
+									<i class="icon-pencil icon-white"></i>
+								</div>
 							</div>
-						</div>
 
+						</div>
 					</div>
 
-				</div>
 
+				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
