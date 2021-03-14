@@ -77,7 +77,7 @@
 
 				<div class="b-message-view-desc error"
 					data-bind="visible: !message() && '' !== messageError() && !hasCheckedMessages()">
-					<div class="text" data-bind="text: messageError()"></div>
+					<div class="text i18nflex" data-bind="text: messageError()"></div>
 				</div>
 
 				<div data-bind="visible: !message() && '' === messageError() && !hasCheckedMessages()"
@@ -268,7 +268,7 @@
 
 
 					<div class="messageItem fixIndex"
-						data-bind="css: viewLineAsCss(), nano: true, scrollerShadows: true, attr: {'style': 'top:' + viewBodyTopValue() + 'px' }">
+						data-bind="css: viewLineAsCss(), nano: true, scrollerShadows: true">
 						<div class="content g-scrollbox" tabindex="0" data-scroller-shadows-content
 							data-bind="hasfocus: messageDomFocused, css: { 'focused': messageDomFocused },
 							style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
@@ -276,30 +276,12 @@
 							<div class="content-wrapper">
 
 								<div>
-									<span class="buttonUp v-buttonUp"
-										data-bind="click: scrollMessageToTop">
-										<i class="icon-up"></i>
-									</span>
-
-									<span class="buttonLeft v-buttonLeft"
-										data-bind="click: scrollMessageToLeft">
-										<i class="icon-left"></i>
-									</span>
-
-									<span class="buttonFull v-buttonFull"
-										data-bind="click: fullScreen">
-										<i class="icon-arrows-out"></i>
-									</span>
-									<span class="buttonUnFull" data-bind="click: unFullScreen">
-										<i class="icon-arrows-in"></i>
-									</span>
-
 									<div class="line-loading e-strip-animation"
 										data-bind="visible: messageLoadingThrottle()"></div>
 
 									<div class="loading g-ui-min-height-300"
 										data-bind="visible: messageLoadingThrottle()">
-										<span class="i18n text"
+										<span class="i18n text i18nflex"
 											data-i18n="MESSAGE/MESSAGE_LOADING"></span><span
 											class="textLoadingAnimationD1">.</span><span
 											class="textLoadingAnimationD2">.</span><span
@@ -307,149 +289,183 @@
 									</div>
 								</div>
 
-								<div class="g-ui-min-height-300 content-content"
+								<div class="g-ui-min-height-300 content-content v-mail-content"
 									data-bind="visible: !messageLoadingThrottle()">
+
 									<div class="bodySubHeader">
 										<div class="showImages"
 											data-bind="visible: message() && message().hasImages(), click: function() { showImages(message()); }">
 											<i class="icon-image"></i>
 											&nbsp;&nbsp;
-											<span class="i18n text"
-												data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></span>
+											<div class="i18n text i18nflex"
+												data-i18n="MESSAGE/BUTTON_SHOW_IMAGES"></div>
 										</div>
 										<div class="readReceipt"
 											data-bind="visible: message() && !isDraftOrSentFolder() && '' !== message().readReceipt() && !message().isReadReceipt(), click: function() { readReceipt(message()); }">
 											<i class="icon-mail"></i>
 											&nbsp;&nbsp;
-											<span class="i18n text"
-												data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT"></span>
+											<div class="i18n text i18nflex"
+												data-i18n="MESSAGE/BUTTON_NOTIFY_READ_RECEIPT">
+											</div>
 										</div>
-										<div class="attachmentsPlace"
-											data-bind="visible: message() && message().hasVisibleAttachments(),
+									</div>
+
+									<div class="bodyText g-ui-min-height-300 rl-mv-root"
+										data-bind="initDom: vMessagesBodiesDom">
+
+										<div class="view-flex">
+											<div class="attachmentsPlace"
+												data-bind="visible: message() && message().hasVisibleAttachments(),
 											css: {'selection-mode' : showAttachmnetControls, 'unselectedAttachmentsError': highlightUnselectedAttachments}">
-											<ul class="attachmentList"
-												data-bind="foreach: message() ? message().attachments() : []">
-												<li class="attachmentItem clearfix"
-													draggable="true" data-tooltip-join="top"
-													data-bind="visible: !isLinked, event: { 'dragstart': eventDragStart }, attr: { 'title': fileName }, css: {'checked': checked}">
-													<div class="attachmentIconParent pull-left"
-														data-bind="css: { 'hasPreview': hasPreview(), 'hasPreplay': hasPreplay(), 'isImage': isImage() }">
-														<div class="hidePreview">
-															<div class="iconMain">
-																<i class="attachmentIcon attachmentMainIcon"
-																	data-bind="css: iconClass()"></i>
-																<i class="attachmentIconText attachmentMainIconText"
-																	data-bind="text: iconText()"></i>
-															</div>
-														</div>
-														<div class="showPreview">
-															<a data-bind="click: $root.attachmentPreview, css: {'attachmentImagePreview': isImage(), 'visible': !isLinked}, attr: { 'title': fileName, 'href': linkPreviewMain() }"
-																target="_blank">
+												<ul class="attachmentList"
+													data-bind="foreach: message() ? message().attachments() : []">
+													<li class="attachmentItem clearfix"
+														draggable="true"
+														data-tooltip-join="top"
+														data-bind="visible: !isLinked, event: { 'dragstart': eventDragStart }, attr: { 'title': fileName }, css: {'checked': checked}">
+														<div class="attachmentIconParent pull-left"
+															data-bind="css: { 'hasPreview': hasPreview(), 'hasPreplay': hasPreplay(), 'isImage': isImage() }">
+															<div class="hidePreview">
 																<div class="iconMain">
 																	<i class="attachmentIcon attachmentMainIcon"
 																		data-bind="css: iconClass()"></i>
 																	<i class="attachmentIconText attachmentMainIconText"
 																		data-bind="text: iconText()"></i>
 																</div>
-																<div class="iconBG"
-																	data-bind="attr: { 'style': linkThumbnailPreviewStyle() }">
+															</div>
+															<div class="showPreview">
+																<a data-bind="click: $root.attachmentPreview, css: {'attachmentImagePreview': isImage(), 'visible': !isLinked}, attr: { 'title': fileName, 'href': linkPreviewMain() }"
+																	target="_blank">
+																	<div
+																		class="iconMain">
+																		<i class="attachmentIcon attachmentMainIcon"
+																			data-bind="css: iconClass()"></i>
+																		<i class="attachmentIconText attachmentMainIconText"
+																			data-bind="text: iconText()"></i>
+																	</div>
+																	<div class="iconBG"
+																		data-bind="attr: { 'style': linkThumbnailPreviewStyle() }">
+																	</div>
+																	<div
+																		class="iconPreview">
+																		<i
+																			class="attachmentIcon icon-eye show-hover"></i>
+																	</div>
+																</a>
+															</div>
+															<div class="showPreplay">
+																<div class="iconMain">
+																	<i class="attachmentIcon attachmentMainIcon"
+																		data-bind="css: iconClass()"></i>
 																</div>
 																<div
 																	class="iconPreview">
 																	<i
-																		class="attachmentIcon icon-eye show-hover"></i>
+																		class="attachmentIcon icon-play show-hover"></i>
 																</div>
-															</a>
-														</div>
-														<div class="showPreplay">
-															<div class="iconMain">
-																<i class="attachmentIcon attachmentMainIcon"
-																	data-bind="css: iconClass()"></i>
-															</div>
-															<div class="iconPreview">
-																<i
-																	class="attachmentIcon icon-play show-hover"></i>
 															</div>
 														</div>
-													</div>
-													<div class="attachmentNameParent">
-														<div
-															style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-															<span class="attachmentName"
-																data-bind="text: fileName"></span>&nbsp;
+														<div class="attachmentNameParent">
+															<div
+																style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+																<span class="attachmentName"
+																	data-bind="text: fileName"></span>&nbsp;
+															</div>
+															<div>
+																<span class="attachmentSize"
+																	data-bind="text: friendlySize"></span>&nbsp;
+															</div>
 														</div>
-														<div>
-															<span class="attachmentSize"
-																data-bind="text: friendlySize"></span>&nbsp;
-														</div>
-													</div>
-													<div class="checkedParent">
-														<i class="checkboxAttachment icon-checkbox-unchecked"
-															data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked',
+														<div class="checkedParent">
+															<i class="checkboxAttachment icon-checkbox-unchecked"
+																data-bind="css: checked() ? 'checkboxMessage icon-checkbox-checked' : 'checkboxMessage icon-checkbox-unchecked',
 															click: function () { checked(!checked()); return false }"></i>
-													</div>
-												</li>
-											</ul>
-											<i class="icon-cog controls-handle"
-												data-bind="visible: allowAttachmnetControls() && !showAttachmnetControls(), click: function () { showAttachmnetControls(true); showAttachmnetControlsState(true); }"></i>
-										</div>
+														</div>
+													</li>
+												</ul>
+												<i class="icon-cog controls-handle"
+													data-bind="visible: allowAttachmnetControls() && !showAttachmnetControls(), click: function () { showAttachmnetControls(true); showAttachmnetControlsState(true); }"></i>
+											</div>
 
-										<div class="attachmentsControls"
-											data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
+											<div class="attachmentsControls"
+												data-bind="visible: showAttachmnetControls() && message() && message().hasVisibleAttachments()">
 
-											<span data-bind="visible: downloadAsZipAllowed">
-												<i class="icon-remove iconcolor-red"
-													data-bind="visible: downloadAsZipError"></i>
-												<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
+												<span data-bind="visible: downloadAsZipAllowed">
+													<i class="icon-remove iconcolor-red"
+														data-bind="visible: downloadAsZipError"></i>
+													<i class="icon-file-zip" data-bind="visible: !downloadAsZipError(),
 													css: {'icon-file-zip': !downloadAsZipLoading(), 'icon-spinner animated': downloadAsZipLoading()}"></i>
-												&nbsp;&nbsp;
-												<span class="g-ui-link"
-													data-bind="click: downloadAsZip">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
+													&nbsp;&nbsp;
+													<div class="g-ui-link"
+														data-bind="click: downloadAsZip">
+														<span class="i18n i18nflex"
+															data-i18n="MESSAGE/LINK_DOWNLOAD_AS_ZIP"></span>
+													</div>
 												</span>
-											</span>
 
-											<span data-bind="visible: saveToOwnCloudAllowed">
-												&nbsp;&nbsp;&nbsp;&nbsp;
-												<i class="icon-remove iconcolor-red"
-													data-bind="visible: saveToOwnCloudError"></i>
-												<i class="icon-ok iconcolor-green"
-													data-bind="visible: saveToOwnCloudSuccess"></i>
-												<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
+												<span
+													data-bind="visible: saveToOwnCloudAllowed">
+													&nbsp;&nbsp;&nbsp;&nbsp;
+													<i class="icon-remove iconcolor-red"
+														data-bind="visible: saveToOwnCloudError"></i>
+													<i class="icon-ok iconcolor-green"
+														data-bind="visible: saveToOwnCloudSuccess"></i>
+													<i class="icon-cloud-up" data-bind="visible: !saveToOwnCloudSuccess() && !saveToOwnCloudError(),
 													css: {'icon-cloud-up': !saveToOwnCloudLoading(), 'icon-spinner animated': saveToOwnCloudLoading()}"></i>
-												&nbsp;&nbsp;
-												<span class="g-ui-link"
-													data-bind="click: saveToOwnCloud">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
+													&nbsp;&nbsp;
+													<span class="g-ui-link"
+														data-bind="click: saveToOwnCloud">
+														<span class="i18n"
+															data-i18n="MESSAGE/LINK_SAVE_TO_CLOUD"></span>
+													</span>
 												</span>
-											</span>
 
-											<span data-bind="visible: saveToDropboxAllowed">
-												&nbsp;&nbsp;&nbsp;&nbsp;
-												<i class="icon-remove iconcolor-red"
-													data-bind="visible: saveToDropboxError"></i>
-												<i class="icon-ok iconcolor-green"
-													data-bind="visible: saveToDropboxSuccess"></i>
-												<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
+												<span data-bind="visible: saveToDropboxAllowed">
+													&nbsp;&nbsp;&nbsp;&nbsp;
+													<i class="icon-remove iconcolor-red"
+														data-bind="visible: saveToDropboxError"></i>
+													<i class="icon-ok iconcolor-green"
+														data-bind="visible: saveToDropboxSuccess"></i>
+													<i class="icon-dropbox" data-bind="visible: !saveToDropboxSuccess() && !saveToDropboxError(),
 													css: {'icon-dropbox': !saveToDropboxLoading(), 'icon-spinner animated': saveToDropboxLoading()}"></i>
-												&nbsp;&nbsp;
-												<span class="g-ui-link"
-													data-bind="click: saveToDropbox">
-													<span class="i18n"
-														data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
+													&nbsp;&nbsp;
+													<span class="g-ui-link"
+														data-bind="click: saveToDropbox">
+														<span class="i18n"
+															data-i18n="MESSAGE/LINK_SAVE_TO_DROPBOX"></span>
+													</span>
 												</span>
+
+												<button type="button" class="close"
+													style="margin-right: 5px;"
+													data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
+											</div>
+										</div>
+
+
+										<div>
+											<span class="buttonUp v-buttonUp"
+												data-bind="click: scrollMessageToTop">
+												<i class="icon-up"></i>
 											</span>
 
-											<button type="button" class="close"
-												style="margin-right: 5px;"
-												data-bind="click: function () { showAttachmnetControls(false); showAttachmnetControlsState(false); }">×</button>
+											<span class="buttonLeft v-buttonLeft"
+												data-bind="click: scrollMessageToLeft">
+												<i class="icon-left"></i>
+											</span>
+
+											<span class="buttonFull v-buttonFull"
+												data-bind="click: fullScreen">
+												<i class="icon-arrows-out"></i>
+											</span>
+											<span class="buttonUnFull v-buttonUnFull"
+												data-bind="click: unFullScreen">
+												<i class="icon-arrows-in"></i>
+											</span>
 										</div>
+
 									</div>
 
-									<div class="bodyText g-ui-min-height-300 rl-mv-root"
-										data-bind="initDom: vMessagesBodiesDom"></div>
 								</div>
 							</div>
 						</div>
@@ -457,214 +473,213 @@
 
 
 					<div class="message-fixed-button-toolbar clearfix" data-bind="visible: message">
+
 						<div>
-							<div class="btn-group">
-								<div class="btn-group pull-right"
-									data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
+							<div class="btn-group pull-right"
+								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 
-									<div class="btn btn-transparent last btn-dark-disabled-border dropdown-toggle buttonMore"
-										id="more-view-dropdown-id" href="#" tabindex="-1"
-										data-toggle="dropdown" data-tooltip-join="bottom"
-										data-bind="command: messageVisibilityCommand, css: {'first': !allowComposer}">
-										<span data-bind="visible: !allowComposer"
-											class="icon-ellipsis-alt"></span>
-										<span data-bind="visible: allowComposer"
-											class="caret"></span>
+								<div class="btn last btn-dark-disabled-border dropdown-toggle buttonMore"
+									id="more-view-dropdown-id" href="#" tabindex="-1"
+									data-toggle="dropdown" data-tooltip-join="bottom"
+									data-bind="command: messageVisibilityCommand, css: {'first': !allowComposer}">
+									<span data-bind="visible: !allowComposer"
+										class="icon-ellipsis-alt"></span>
+									<svg data-bind="visible: allowComposer"
+										class="hsvg-icon h-icon v-arrow" aria-hidden="true">
+										<use xlink:href="#iconran-arrow"></use>
+									</svg>
+								</div>
+
+
+								<ul class="dropdown-menu menu-right g-ui-menu i18nflex" role="menu"
+									aria-labelledby="more-view-dropdown-id">
+									<div data-bind="visible: allowComposer && !isDraftFolder()">
+										<li class="e-item" role="presentation">
+											<a class="e-link menuitem" href="#" tabindex="-1"
+												data-bind="command: replyCommand">
+												<i class="icon-reply"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_REPLY"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a class="e-link menuitem" href="#" tabindex="-1"
+												data-bind="command: replyAllCommand">
+												<i class="icon-reply-all"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a class="e-link menuitem" href="#" tabindex="-1"
+												data-bind="command: forwardCommand">
+												<i class="icon-forward"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_FORWARD"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a class="e-link menuitem" href="#" tabindex="-1"
+												data-bind="command: editAsNewCommand">
+												<i class="icon-pencil"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a class="e-link menuitem" href="#" tabindex="-1"
+												data-bind="command: forwardAsAttachmentCommand">
+												<i class="icon-forward"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
+											</a>
+										</li>
 									</div>
+									<div
+										data-bind="visible: allowMessageListActions && usePreviewPane()">
+										<li class="divider" role="presentation"
+											data-bind="visible: allowComposer && !isDraftFolder()">
+										</li>
+										<li class="e-item" role="presentation"
+											data-bind="visible: !isDraftFolder() && !isArchiveFolder() && !isArchiveDisabled()">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="command: archiveCommand">
+												<i class="icon-archive"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation"
+											data-bind="visible: !isDraftFolder() && !isSentFolder() && !isSpamFolder() && !isSpamDisabled()">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1" data-bind="command: spamCommand">
+												<i class="icon-warning"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_SPAM"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation"
+											data-bind="visible: !isDraftFolder() && !isSentFolder() && isSpamFolder() && !isSpamDisabled()">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="command: notSpamCommand">
+												<i class="icon-check-mark-circle-two"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="command: deleteCommand">
+												<i class="icon-trash"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_DELETE"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation"
+											data-bind="visible: message() && message().hasUnsubsribeLinks()">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="link: viewUnsubscribeLink()">
+												<i class="icon-remove"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
+											</a>
+										</li>
+									</div>
+									<div data-bind="visible: allowMessageActions">
+										<li class="divider" role="presentation"
+											data-bind="visible: (allowComposer && !isDraftFolder()) || (allowMessageListActions && usePreviewPane())">
+										</li>
+										<li class="e-item" role="presentation">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="click: function () { if (message()) { message().printMessage(); }} ">
+												<i class="icon-print"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/MENU_PRINT"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
+												<i class="icon-popup"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
+											</a>
+										</li>
+										<li class="divider" role="presentation"></li>
+										<li class="e-item" role="presentation">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1" data-bind="link: viewViewLink()">
+												<i class="icon-file-code"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
+											</a>
+										</li>
+										<li class="e-item" role="presentation">
+											<a target="_blank" class="e-link menuitem" href="#"
+												tabindex="-1"
+												data-bind="link: viewDownloadLink()">
+												<i class="icon-download"></i>
+												&nbsp;&nbsp;
+												<span class="i18n"
+													data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
+											</a>
+										</li>
+									</div>
+								</ul>
 
 
-									<ul class="dropdown-menu g-ui-menu" role="menu"
-										aria-labelledby="more-view-dropdown-id">
-										<div data-bind="visible: allowComposer && !isDraftFolder()">
-											<li class="e-item" role="presentation">
-												<a class="e-link menuitem" href="#"
-													tabindex="-1"
-													data-bind="command: replyCommand">
-													<i class="icon-reply"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_REPLY"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a class="e-link menuitem" href="#"
-													tabindex="-1"
-													data-bind="command: replyAllCommand">
-													<i class="icon-reply-all"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a class="e-link menuitem" href="#"
-													tabindex="-1"
-													data-bind="command: forwardCommand">
-													<i class="icon-forward"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_FORWARD"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a class="e-link menuitem" href="#"
-													tabindex="-1"
-													data-bind="command: editAsNewCommand">
-													<i class="icon-pencil"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a class="e-link menuitem" href="#"
-													tabindex="-1"
-													data-bind="command: forwardAsAttachmentCommand">
-													<i class="icon-forward"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
-												</a>
-											</li>
-										</div>
-										<div
-											data-bind="visible: allowMessageListActions && usePreviewPane()">
-											<li class="divider" role="presentation"
-												data-bind="visible: allowComposer && !isDraftFolder()">
-											</li>
-											<li class="e-item" role="presentation"
-												data-bind="visible: !isDraftFolder() && !isArchiveFolder() && !isArchiveDisabled()">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="command: archiveCommand">
-													<i class="icon-archive"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation"
-												data-bind="visible: !isDraftFolder() && !isSentFolder() && !isSpamFolder() && !isSpamDisabled()">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="command: spamCommand">
-													<i class="icon-warning"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_SPAM"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation"
-												data-bind="visible: !isDraftFolder() && !isSentFolder() && isSpamFolder() && !isSpamDisabled()">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="command: notSpamCommand">
-													<i class="icon-check-mark-circle-two"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="command: deleteCommand">
-													<i class="icon-trash"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_DELETE"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation"
-												data-bind="visible: message() && message().hasUnsubsribeLinks()">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="link: viewUnsubscribeLink()">
-													<i class="icon-remove"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
-												</a>
-											</li>
-										</div>
-										<div data-bind="visible: allowMessageActions">
-											<li class="divider" role="presentation"
-												data-bind="visible: (allowComposer && !isDraftFolder()) || (allowMessageListActions && usePreviewPane())">
-											</li>
-											<li class="e-item" role="presentation">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="click: function () { if (message()) { message().printMessage(); }} ">
-													<i class="icon-print"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/MENU_PRINT"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
-													<i class="icon-popup"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
-												</a>
-											</li>
-											<li class="divider" role="presentation"></li>
-											<li class="e-item" role="presentation">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="link: viewViewLink()">
-													<i class="icon-file-code"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
-												</a>
-											</li>
-											<li class="e-item" role="presentation">
-												<a target="_blank" class="e-link menuitem"
-													href="#" tabindex="-1"
-													data-bind="link: viewDownloadLink()">
-													<i class="icon-download"></i>
-													&nbsp;&nbsp;
-													<span class="i18n"
-														data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
-												</a>
-											</li>
-										</div>
-									</ul>
-
-
-								</div>
-
-								<div class="btn btn-transparent first btn-dark-disabled-border buttonReply"
-									data-tooltip-join="bottom"
-									data-bind="visible: 'reply' === lastReplyAction() && allowComposer, command: replyCommand, tooltip: 'MESSAGE/BUTTON_REPLY'">
-									<i class="icon-reply"></i>
-								</div>
-								<div class="btn btn-transparent first btn-dark-disabled-border buttonReplyAll"
-									data-tooltip-join="bottom"
-									data-bind="visible: 'replyall' === lastReplyAction() && allowComposer, command: replyAllCommand, tooltip: 'MESSAGE/BUTTON_REPLY_ALL'">
-									<i class="icon-reply-all"></i>
-								</div>
-								<div class="btn btn-transparent first btn-dark-disabled-border buttonForward"
-									data-tooltip-join="bottom"
-									data-bind="visible: 'forward' === lastReplyAction() && allowComposer, command: forwardCommand, tooltip: 'MESSAGE/BUTTON_FORWARD'">
-									<i class="icon-forward"></i>
-								</div>
 							</div>
-
-							<div class="hide-on-mobile" data-tooltip-join="bottom"
-								data-bind="visible: isDraftFolder(), tooltip: 'MESSAGE/BUTTON_EDIT'">
-
-								<div class="btn single btn-success buttonEdit"
-									data-bind="command: messageEditCommand">
-									<i class="icon-pencil icon-white"></i>
-								</div>
-							</div>
-
 						</div>
+
+						<div>
+							<div class="btn btn-success button-send" style="margin: 5px;"
+								data-tooltip-join="bottom"
+								data-bind="visible: 'reply' === lastReplyAction() && allowComposer, command: replyCommand, tooltip: 'MESSAGE/BUTTON_REPLY'">
+								<svg class="hsvg-icon h-icon tb-icon" aria-hidden="true">
+									<use xlink:href="#iconpen"></use>
+								</svg>
+								<div class="i18n i18nflex" data-i18n="MESSAGE/BUTTON_REPLY"></div>
+							</div>
+
+							<div class="btn btn-transparent buttonReplyAll" data-tooltip-join="bottom"
+								data-bind="visible: 'replyall' === lastReplyAction() && allowComposer, command: replyAllCommand, tooltip: 'MESSAGE/BUTTON_REPLY_ALL'">
+								<i class="icon-reply-all"></i>
+							</div>
+
+							<div class="btn btn-transparent buttonForward" data-tooltip-join="bottom"
+								data-bind="visible: 'forward' === lastReplyAction() && allowComposer, command: forwardCommand, tooltip: 'MESSAGE/BUTTON_FORWARD'">
+								<i class="icon-forward"></i>
+							</div>
+						</div>
+
+						<div class="hide-on-mobile" data-tooltip-join="bottom"
+							data-bind="visible: isDraftFolder(), tooltip: 'MESSAGE/BUTTON_EDIT'">
+
+							<div class="btn single btn-success buttonEdit"
+								data-bind="command: messageEditCommand">
+								<i class="icon-pencil icon-white"></i>
+							</div>
+						</div>
+
 					</div>
 
 
