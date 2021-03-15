@@ -219,15 +219,17 @@
 
 			<div class="second-toolbar thm-message-list-top-toolbar">
 				<div>
-					<div>
-						<i class="checkboxCkeckAll"
-							data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
-					</div>
+
+					<i class="checkboxCkeckAll"
+						data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
+
 
 					<div data-bind="visible: allowSearch">
 						<div class="btn buttonMoreSearch"
 							data-bind="visible: allowSearchAdv, click: advancedSearchClick">
-							<div class="caret"></div>
+							<svg class="hsvg-icon h-icon v-arrow" aria-hidden="true">
+								<use xlink:href="#iconlan-arrow"></use>
+							</svg>
 						</div>
 						<div class="s-face-input">
 							<div class="close" style="float: unset;"
@@ -297,7 +299,7 @@
 							<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/EMPTY_SEARCH_LIST"></span>
 						</div>
 
-						<div style="height: 63em;"
+						<div style="height: 90.5vh;"
 							data-bind="draggable: dragAndDronHelper, droppableSelector: '.b-folders .content.g-scrollbox'">
 							<div class="messageListPlace i18nflex"
 								data-bind="template: { name: messageListItemTemplate(), foreach: messageList }">
