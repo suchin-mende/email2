@@ -119,9 +119,10 @@
 									data-bind="css: {'icon-star flagOn': viewIsFlagged, 'icon-star-empty flagOff': !viewIsFlagged()}"></i>
 							</span>
 							<b style="color: red;" data-bind="visible: viewIsImportant">!</b>
-							<span class="subject"
+							<span class="subject i18nflex"
 								data-bind="text: viewSubject, title: viewSubject, event: { 'dblclick': toggleFullScreen }"></span>
-							<span class="i18n emptySubjectText" data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
+							<span class="i18n emptySubjectText i18nflex"
+								data-i18n="MESSAGE/EMPTY_SUBJECT_TEXT"
 								data-bind="event: { 'dblclick': toggleFullScreen }"></span>
 
 							<button class="close"
@@ -129,6 +130,7 @@
 						</div>
 
 						<div class="v-messageItemHeader">
+
 							<div>
 								<div>
 									<img class="fromPic"
@@ -260,8 +262,6 @@
 									</tr>
 
 								</table>
-
-
 							</div>
 						</div>
 					</div>
@@ -269,23 +269,27 @@
 
 					<div class="messageItem fixIndex"
 						data-bind="css: viewLineAsCss(), nano: true, scrollerShadows: true">
+
 						<div class="content g-scrollbox" tabindex="0" data-scroller-shadows-content
 							data-bind="hasfocus: messageDomFocused, css: { 'focused': messageDomFocused },
 							style: {'background-color': messageLoadingThrottle() ? '' : bodyBackgroundColor()}">
 
 							<div class="content-wrapper">
 
-								<div>
-									<div class="line-loading e-strip-animation"
-										data-bind="visible: messageLoadingThrottle()"></div>
 
-									<div class="loading g-ui-min-height-300"
-										data-bind="visible: messageLoadingThrottle()">
-										<span class="i18n text i18nflex"
-											data-i18n="MESSAGE/MESSAGE_LOADING"></span><span
-											class="textLoadingAnimationD1">.</span><span
-											class="textLoadingAnimationD2">.</span><span
-											class="textLoadingAnimationD3">.</span>
+								<div class="line-loading e-strip-animation"
+									data-bind="visible: messageLoadingThrottle()">
+								</div>
+
+								<div class="loading g-ui-min-height-300"
+									data-bind="visible: messageLoadingThrottle()">
+									<div class="i18n text i18nflex"
+										data-i18n="MESSAGE/MESSAGE_LOADING">
+									</div>
+									<div class="v-load-amt i18nflex">
+										<span class="textLoadingAnimationD1">.</span>
+										<span class="textLoadingAnimationD2">.</span>
+										<span class="textLoadingAnimationD3">.</span>
 									</div>
 								</div>
 
@@ -478,12 +482,14 @@
 							<div class="btn-group pull-right"
 								data-bind="registrateBootstrapDropdown: true, visible: allowComposer || allowMessageListActions || allowMessageActions">
 
-								<div class="btn last btn-dark-disabled-border dropdown-toggle buttonMore"
+								<div class="btn single btn-dark-disabled-border dropdown-toggle buttonMore"
 									id="more-view-dropdown-id" href="#" tabindex="-1"
 									data-toggle="dropdown" data-tooltip-join="bottom"
 									data-bind="command: messageVisibilityCommand, css: {'first': !allowComposer}">
-									<span data-bind="visible: !allowComposer"
-										class="icon-ellipsis-alt"></span>
+
+									<span class="icon-ellipsis-alt"
+										data-bind="visible: !allowComposer">
+									</span>
 									<svg data-bind="visible: allowComposer"
 										class="hsvg-icon h-icon v-arrow" aria-hidden="true">
 										<use xlink:href="#iconran-arrow"></use>
@@ -645,7 +651,6 @@
 										</li>
 									</div>
 								</ul>
-
 
 							</div>
 						</div>

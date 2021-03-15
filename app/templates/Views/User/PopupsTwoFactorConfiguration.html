@@ -7,11 +7,11 @@
 				</h3>
 			</div>
 			<div class="modal-body">
-				<div class="form-horizontal modal-flex" data-bind="visible: capaTwoFactor">
-					<div data-bind="visible: twoFactorStatus">
-						<div>
-							<div style="display: inline-block" data-tooltip-join="top"
-								data-bind="tooltip: viewTwoFactorEnableTooltip">
+				<div class="form-horizontal view-flex" data-bind="visible: capaTwoFactor">
+
+					<div class="v-items" data-bind="visible: twoFactorStatus">
+						<div class="vertical-view">
+							<div data-tooltip-join="top" data-bind="tooltip: viewTwoFactorEnableTooltip">
 								<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
@@ -22,20 +22,26 @@
 									}
 								}"></div>
 							</div>
+						</div>
 
-							<span class="i18n g-ui-link"
-								data-bind="click: testTwoFactor, visible: twoFactorStatus"
-								data-i18n="POPUPS_TWO_FACTOR_CFG/LINK_TEST"></span>
+						<div class="i18n g-ui-link i18nflex"
+							data-bind="click: testTwoFactor, visible: twoFactorStatus"
+							data-i18n="POPUPS_TWO_FACTOR_CFG/LINK_TEST">
 						</div>
 					</div>
-					<div>
-						<label class="control-label ptfc-label">
-							<span class="i18n"
-								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_USER"></span>
-						</label>
-						<div style="padding-top: 5px; margin-left: 6px;">
-							<strong><span data-bind="text: viewUser"></span></strong>
-							<div style="padding-top: 15px;" data-bind="visible: lock">
+
+					<div class="v-items">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex"
+								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_USER">
+							</div>
+						</div>
+						<div class="vertical-view">
+							<strong>
+								<span style="line-height: 30px;" data-bind="text: viewUser"></span>
+							</strong>
+
+							<div data-bind="visible: lock">
 								<blockquote>
 									<p class="muted i18n width100-on-mobile"
 										data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_REQUIRE_DESC">
@@ -44,49 +50,53 @@
 							</div>
 						</div>
 					</div>
-					<div data-bind="visible: '' === viewSecret() && twoFactorStatus() && !clearing()">
-						<div>
+
+					<div class="v-items"
+						data-bind="visible: '' === viewSecret() && twoFactorStatus() && !clearing()">
+						<div style="line-height: 30px;">
 							<strong data-bind="visible: secreting">...</strong>
-							<span class="g-ui-link i18n"
+							<span class="g-ui-link i18n i18nflex"
 								data-bind="click: showSecret, visible: !secreting()"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_SHOW_SECRET"></span>
 						</div>
 					</div>
-					<div data-bind="visible: '' !== viewSecret()">
-						<label class="control-label ptfc-label">
-							<span class="i18n"
+					<div class="v-items" data-bind="visible: '' !== viewSecret()">
+						<div class="pop-label pop-label-iden">
+							<span class="i18n i18nflex"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_SECRET"></span>
-						</label>
-						<div>
-							<strong data-bind="text: viewSecret"></strong>
-
-							<span class="g-ui-link i18n" data-bind="click: hideSecret"
+						</div>
+						<div class="vertical-view">
+							<strong style="line-height: 30px;" data-bind="text: viewSecret"></strong>
+							<span style="line-height: 30px;" class="g-ui-link i18n"
+								data-bind="click: hideSecret"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/BUTTON_HIDE_SECRET"></span>
-
-							<blockquote>
-								<p class="muted i18n width100-on-mobile"
-									data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_SECRET_DESC"></p>
-							</blockquote>
-							<!-- ko if: '' !== viewUrl() -->
-							<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2P8DwQACgAD/il4QJ8AAAAASUVORK5CYII="
-								data-bind="attr: {'src': viewUrl}" />
-							<!-- /ko -->
 						</div>
 					</div>
-					<div data-bind="visible: '' !== viewBackupCodes()">
-						<label class="control-label ptfc-label">
-							<span class="i18n"
+					<div class="v-items" data-bind="visible: '' !== viewSecret()">
+						<!-- ko if: '' !== viewUrl() -->
+						<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQIW2P8DwQACgAD/il4QJ8AAAAASUVORK5CYII="
+							data-bind="attr: {'src': viewUrl}" />
+						<!-- /ko -->
+						<blockquote class="v-quote">
+							<p class="muted i18n i18nflex width100-on-mobile"
+								data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_SECRET_DESC">
+							</p>
+						</blockquote>
+					</div>
+					<div class="v-items" data-bind="visible: '' !== viewBackupCodes()">
+						<div class="pop-label pop-label-iden">
+							<span class="i18n i18nflex"
 								data-i18n="POPUPS_TWO_FACTOR_CFG/LABEL_TWO_FACTOR_BACKUP_CODES"></span>
-						</label>
-						<div>
-							<pre class="pre-mgl" data-bind="text: viewBackupCodes"></pre>
-
-							<blockquote>
-								<p class="muted i18n width100-on-mobile"
-									data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_BACKUP_CODES_DESC">
-								</p>
-							</blockquote>
 						</div>
+					</div>
+					<div class="v-items" data-bind="visible: '' !== viewBackupCodes()">
+						<pre class="pre-mgl" data-bind="text: viewBackupCodes"></pre>
+
+						<blockquote class="v-quote">
+							<p class="muted i18n i18nflex width100-on-mobile"
+								data-i18n="POPUPS_TWO_FACTOR_CFG/TWO_FACTOR_BACKUP_CODES_DESC">
+							</p>
+						</blockquote>
 					</div>
 				</div>
 			</div>
