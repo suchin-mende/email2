@@ -6,7 +6,7 @@
 			command: toggleDropDownCommand,
 			css: className,
 			optionsAfterRender: defautOptionsAfterRender">
-		<div class="select-dn"></div>
+		<div class="select-dn i18nflex"></div>
 		<span class="selectBox-arrow"></span>
 	</div>
 	<select style="display: none;" data-bind="
@@ -20,7 +20,8 @@
 		css: className,
 		optionsAfterRender: defautOptionsAfterRender">
 	</select>
-	<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu" style="display:none;">
+	<ul class="selectBox-dropdown-menu selectBox-options dropdownlist-selectBox-dropdown-menu i18nflex"
+		style="display:none;">
 	</ul>
 	<!-- ko if: labeled -->
 	<span class="i18n" data-bind="attr: {'data-i18n': label}"></span>
