@@ -9,112 +9,102 @@
 			</div>
 			<div class="modal-body">
 
-				<form class="form-horizontal" action="#/" autocomplete="off" onsubmit="return false;"
+				<form class="form-horizontal view-flex" action="#/" autocomplete="off" onsubmit="return false;"
 					data-bind="command: searchCommand">
 
-					<div>
-
-						<div class="vertical-view">
-
-							<div>
-								<div class="pop-label">
-									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_FROM"></span>
-								</div>
-								<div class="vertical-view">
-									<input type="text" class="uiInput inputFrom input-mgl"
-										autocomplete="off" autocorrect="off" autocapitalize="off"
-										spellcheck="false"
-										data-bind="value: from, onEnter: searchCommand, hasfocus: fromFocus, onEsc: cancelCommand" />
-								</div>
-							</div>
-
-							<div>
-								<div class="pop-label">
-									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TO"></span>
-								</div>
-								<div class="vertical-view">
-									<input type="text" class="uiInput inputFrom input-mgl"
-										autocomplete="off" autocorrect="off" autocapitalize="off"
-										spellcheck="false"
-										data-bind="value: to, onEnter: searchCommand, onEsc: cancelCommand" />
-								</div>
-							</div>
-
-							<div>
-								<div class="pop-label">
-									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_SUBJECT"></span>
-								</div>
-								<div class="vertical-view">
-									<input type="text" class="uiInput inputFrom input-mgl"
-										autocomplete="off" autocorrect="off" autocapitalize="off"
-										spellcheck="false"
-										data-bind="value: subject, onEnter: searchCommand, onEsc: cancelCommand" />
-								</div>
-							</div>
-
-							<div>
-								<div class="pop-label">
-									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_TEXT"></span>
-								</div>
-								<div class="vertical-view">
-									<input type="text" class="uiInput inputFrom input-mgl"
-										autocomplete="off" autocorrect="off" autocapitalize="off"
-										spellcheck="false"
-										data-bind="value: text, onEnter: searchCommand, onEsc: cancelCommand" />
-								</div>
-							</div>
-
+					<div class="v-items">
+						<div class="pop-label">
+							<div class="i18n i18nflex" data-i18n="SEARCH/LABEL_ADV_FROM"></div>
 						</div>
 						<div class="vertical-view">
+							<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
+								data-bind="value: from, onEnter: searchCommand, hasfocus: fromFocus, onEsc: cancelCommand" />
+						</div>
+					</div>
 
-							<div>
-								<div class="pop-label">
-									<span class="i18n" data-i18n="SEARCH/LABEL_ADV_DATE"></span>
-								</div>
-								<div class="vertical-view">
-									<div class="selectBox dropdownlist selectBox-dropdown" data-bind="component: {
-											name: 'Select',
-											params: {
-												options: selectedDates,
-												value: selectedDateValue,
-												optionsText: 'name',
-												optionsValue: 'id',
-                                                				lg: 'mn',
-                                                				pid: 'Pid1'
-											}
-                                        				}">
-									</div>
-								</div>
+					<div class="v-items">
+						<div class="pop-label">
+							<div class="i18n i18nflex" data-i18n="SEARCH/LABEL_ADV_TO"></div>
+						</div>
+						<div class="vertical-view">
+							<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
+								data-bind="value: to, onEnter: searchCommand, onEsc: cancelCommand" />
+						</div>
+					</div>
+
+					<div class="v-items">
+						<div class="pop-label">
+							<div class="i18n i18nflex" data-i18n="SEARCH/LABEL_ADV_SUBJECT"></div>
+						</div>
+						<div class="vertical-view">
+							<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
+								data-bind="value: subject, onEnter: searchCommand, onEsc: cancelCommand" />
+						</div>
+					</div>
+
+					<div class="v-items">
+						<div class="pop-label">
+							<div class="i18n i18nflex" data-i18n="SEARCH/LABEL_ADV_TEXT"></div>
+						</div>
+						<div class="vertical-view">
+							<input type="text" class="uiInput inputFrom input-mgl" autocomplete="off"
+								autocorrect="off" autocapitalize="off" spellcheck="false"
+								data-bind="value: text, onEnter: searchCommand, onEsc: cancelCommand" />
+						</div>
+					</div>
+
+
+
+					<div class="v-items">
+						<div class="pop-label">
+							<div class="i18n i18nflex" data-i18n="SEARCH/LABEL_ADV_DATE">
 							</div>
+						</div>
+						<div class="vertical-view">
+							<div class="selectBox dropdownlist selectBox-dropdown" data-bind="component: {
+									name: 'Select',
+									params: {
+										options: selectedDates,
+										value: selectedDateValue,
+										optionsText: 'name',
+										optionsValue: 'id',
+										lg: 'mn',
+										pid: 'Pid1'
+									}
+								}">
+							</div>
+						</div>
+					</div>
 
-							<div>
-								<div class="vertical-view">
-									<div data-bind="component: {
+					<div class="v-items">
+						<div class="vertical-view">
+							<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_UNSEEN',
 										value: unseen
 									}
 								}"></div>
-									<div data-bind="component: {
+							<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_FLAGGED',
 										value: starred
 									}
 								}"></div>
-									<div data-bind="component: {
+							<div data-bind="component: {
 									name: 'Checkbox',
 									params: {
 										label: 'SEARCH/LABEL_ADV_HAS_ATTACHMENT',
 										value: hasAttachment
 									}
 								}"></div>
-								</div>
-							</div>
-
 						</div>
 					</div>
+
 				</form>
 			</div>
 			<div class="modal-footer md-grid">

@@ -217,33 +217,29 @@
 
 		<div class="b-message-list-wrapper">
 
-			<div class="second-toolbar thm-message-list-top-toolbar">
-				<div>
+			<div class="second-toolbar">
 
-					<i class="checkboxCkeckAll"
-						data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
+				<i class="checkboxCkeckAll"
+					data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
 
 
-					<div data-bind="visible: allowSearch">
-						<div class="btn buttonMoreSearch"
-							data-bind="visible: allowSearchAdv, click: advancedSearchClick">
-							<svg class="hsvg-icon h-icon v-arrow" aria-hidden="true">
-								<use xlink:href="#iconlan-arrow"></use>
-							</svg>
-						</div>
-						<div class="s-face-input">
-							<div class="close" style="float: unset;"
-								data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">
-								&times;</div>
-							<div class="vertical-view">
-								<input class="search-input" tabindex="-1" placeholder="Search"
-									autocorrect="off" autocapitalize="off"
-									data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
-									data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
-							</div>
-						</div>
+				<div data-bind="visible: allowSearch">
+					<div class="btn" style="border: 0;"
+						data-bind="visible: allowSearchAdv, click: advancedSearchClick">
+						<svg class="hsvg-icon h-icon v-arrow" aria-hidden="true">
+							<use xlink:href="#iconlan-arrow"></use>
+						</svg>
 					</div>
-
+				</div>
+				<div class="s-face-input">
+					<div class="close" style="float: unset;"
+						data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">
+						&times;</div>
+					<div class="vertical-view">
+						<input class="search-input" tabindex="-1" placeholder="Search" autocorrect="off"
+							autocapitalize="off" data-i18n="[placeholder]SEARCH/MAIN_INPUT_PLACEHOLDER"
+							data-bind="value: inputProxyMessageListSearch, onEnter: searchEnterAction, hasfocus: inputMessageListSearchFocus" />
+					</div>
 				</div>
 
 				<div class="line-loading e-strip-animation"
@@ -251,12 +247,12 @@
 				</div>
 			</div>
 
-			<div class="b-content v-b-content"
-				data-bind="nano: true, scrollerShadows: true, initDom: dragOverBodyArea">
+			<div class="b-content" data-bind="nano: true, scrollerShadows: true, initDom: dragOverBodyArea">
 
 				<div class="content g-scrollbox" data-scroller-shadows-content>
 
-					<div class="content-wrapper v-content-wrapper view-flex">
+					<div class="content-wrapper view-flex" style="height: 90.5vh;"
+						data-bind="draggable: dragAndDronHelper, droppableSelector: '.b-folders .content.g-scrollbox'">
 
 						<div class="listThreadUidDesc"
 							data-bind="visible: '' !== messageListEndThreadUid(), click: cancelThreadUid">
@@ -266,13 +262,14 @@
 							</div>
 						</div>
 						<div class="listSearchDesc" data-bind="visible: '' !== messageListSearchDesc()">
-							<div data-bind="text: messageListSearchDesc"></div>
+							<div class="i18nflex" data-bind="text: messageListSearchDesc"></div>
 						</div>
 						<div class="listDragOver" style="display: none;"
 							data-bind="css: {'viewAppendArea': dragOver() && '' === messageListError() && !popupVisibility(), 'dragOverEnter': dragOverEnter }, initDom: dragOverArea">
 							<i class="icon-down e-icon"></i>
 							&nbsp;&nbsp;
-							<div class="i18n i18nflex" data-i18n="MESSAGE_LIST/PUT_MESSAGE_HERE"></div>
+							<div class="i18n i18nflex" data-i18n="MESSAGE_LIST/PUT_MESSAGE_HERE">
+							</div>
 						</div>
 						<div class="listClear" data-bind="visible: clearListIsVisible()">
 							<div class="g-ui-link i18n i18nflex"
@@ -288,29 +285,29 @@
 							<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/EMPTY_LIST"></span>
 						</div>
 						<div class="listEmptyListLoading" data-bind="visible: !dragOver() && 0 === messageList().length &&
-								messageListCompleteLoadingThrottle() && '' === messageListError()">
-							<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/LIST_LOADING"></span>
-							<span class="textLoadingAnimationD1">.</span>
-							<span class="textLoadingAnimationD2">.</span>
-							<span class="textLoadingAnimationD3">.</span>
+									messageListCompleteLoadingThrottle() && '' === messageListError()">
+							<div class="i18n i18nflex" data-i18n="MESSAGE_LIST/LIST_LOADING"></div>
+
+							<div class="v-load-amt i18nflex">
+								<span class="textLoadingAnimationD1">.</span>
+								<span class="textLoadingAnimationD2">.</span>
+								<span class="textLoadingAnimationD3">.</span>
+							</div>
 						</div>
 						<div class="listEmptySearchList"
 							data-bind="visible: !dragOver() && 0 === messageList().length && !messageListCompleteLoadingThrottle() && '' === messageListError() && '' !== messageListSearch()">
 							<span class="i18n i18nflex" data-i18n="MESSAGE_LIST/EMPTY_SEARCH_LIST"></span>
 						</div>
 
-						<div style="height: 90.5vh;"
-							data-bind="draggable: dragAndDronHelper, droppableSelector: '.b-folders .content.g-scrollbox'">
-							<div class="messageListPlace i18nflex"
-								data-bind="template: { name: messageListItemTemplate(), foreach: messageList }">
-							</div>
+						<div class="messageListPlace i18nflex"
+							data-bind="template: { name: messageListItemTemplate(), foreach: messageList }">
 						</div>
 					</div>
 
 				</div>
 			</div>
 
-			<div class="b-footer thm-message-list-bottom-toolbar i18nflex">
+			<div class="b-footer i18nflex">
 				<span data-tooltip-i18n="off" data-tooltip-mobile="on"
 					data-bind="visible: 0 < userUsageProc(), tooltip: quotaTooltip" class="e-quota">
 					<span data-bind="text: userUsageProc"></span>%

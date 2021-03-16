@@ -11,52 +11,67 @@
 				</h3>
 			</div>
 			<div class="modal-body">
-				<div class="form-horizontal g-ui-user-select-none">
+				<div class="form-horizontal g-ui-user-select-none view-flex">
+
 					<div class="alert" data-bind="visible: '' !== submitError()">
 						<button type="button" class="close"
 							data-bind="click: function () { submitError('') }">&times;</button>
 						<span data-bind="text: submitError"></span>
 					</div>
 
-					<div data-bind="visible: !owner(), css: {'error': email.hasError}">
-						<label class="i18n" data-i18n="POPUPS_IDENTITY/LABEL_EMAIL"></label>
+					<div class="v-items" data-bind="visible: !owner(), css: {'error': email.hasError}">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex" data-i18n="POPUPS_IDENTITY/LABEL_EMAIL"></div>
+						</div>
+
 						<div class="vertical-view">
 							<input type="email" class="inputEmail input-mgl" autocomplete="off"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="value: email, onEnter: addOrEditIdentityCommand, hasfocus: email.focused" />
 						</div>
 					</div>
-					<div data-bind="visible: owner">
-						<label class="i18n" data-i18n="POPUPS_IDENTITY/LABEL_EMAIL"></label>
+
+					<div class="v-items" data-bind="visible: owner">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex" data-i18n="POPUPS_IDENTITY/LABEL_EMAIL"></div>
+						</div>
+
 						<div class="vertical-view">
 							<div class="textEmail" data-bind="text: email"></div>
 						</div>
 					</div>
-					<div>
-						<label class="i18n" data-i18n="POPUPS_IDENTITY/LABEL_NAME"></label>
+					<div class="v-items">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex" data-i18n="POPUPS_IDENTITY/LABEL_NAME"></div>
+						</div>
+
 						<div class="vertical-view">
 							<input type="text" class="inputName input-mgl" autocomplete="off"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="value: name, onEnter: addOrEditIdentityCommand, hasfocus: name.focused" />
 						</div>
 					</div>
-					<div data-bind="visible: showReplyTo, css: {'error': replyTo.hasError}">
-						<label class="i18n" data-i18n="POPUPS_IDENTITY/LABEL_REPLY_TO"></label>
+					<div class="v-items" data-bind="visible: showReplyTo, css: {'error': replyTo.hasError}">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex" data-i18n="POPUPS_IDENTITY/LABEL_REPLY_TO"></div>
+						</div>
 						<div class="vertical-view">
 							<input type="text" class="inputReplyTo input-mgl" autocomplete="off"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="value: replyTo, onEnter: addOrEditIdentityCommand, hasfocus: replyTo.focused" />
 						</div>
 					</div>
-					<div data-bind="visible: showBcc, css: {'error': bcc.hasError}">
-						<label class="i18n" data-i18n="POPUPS_IDENTITY/LABEL_BCC"></label>
+					<div class="v-items" data-bind="visible: showBcc, css: {'error': bcc.hasError}">
+						<div class="pop-label pop-label-iden">
+							<div class="i18n i18nflex" data-i18n="POPUPS_IDENTITY/LABEL_BCC"></div>
+						</div>
 						<div class="vertical-view">
 							<input type="text" class="inputBcc input-mgl" autocomplete="off"
 								autocorrect="off" autocapitalize="off" spellcheck="false"
 								data-bind="value: bcc, onEnter: addOrEditIdentityCommand, hasfocus: bcc.focused" />
 						</div>
 					</div>
-					<div data-bind="visible: !showReplyTo() || !showBcc()">
+					<div class="v-items" data-bind="visible: !showReplyTo() || !showBcc()">
 						<div class="vertical-view">
 							<span data-bind="visible: !showReplyTo()">
 								<span class="i18n g-ui-link" data-i18n="POPUPS_IDENTITY/LABEL_REPLY_TO"
@@ -69,10 +84,8 @@
 							</span>
 						</div>
 					</div>
-				</div>
-				<hr />
-				<div class="form-horizontal g-ui-user-select-none">
-					<div>
+
+					<div class="v-items">
 						<div class="vertical-view">
 							<div data-bind="component: {
 								name: 'Checkbox',
@@ -83,10 +96,11 @@
 							}"></div>
 						</div>
 					</div>
-					<div>
-						<div class="e-signature-place" data-bind="editor: signature"></div>
-					</div>
 				</div>
+
+
+				<div class="e-signature-place" data-bind="editor: signature"></div>
+
 			</div>
 			<div class="modal-footer md-grid">
 				<div>
