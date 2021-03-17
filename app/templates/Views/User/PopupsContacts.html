@@ -4,7 +4,7 @@
 			<a class="btn single button-create-contact" data-bind="command: newCommand">
 				<i class="icon-plus"></i>
 				&nbsp;&nbsp;
-				<span class="i18n" data-i18n="CONTACTS/BUTTON_ADD_CONTACT"></span>
+				<span class="i18n i18nflex" data-i18n="CONTACTS/BUTTON_ADD_CONTACT"></span>
 			</a>
 		</div>
 		<div class="modal-header b-header-toolbar g-ui-user-select-none">
@@ -92,23 +92,23 @@
 				<div class="content g-scrollbox" data-scroller-shadows-content>
 					<div class="content-wrapper">
 						<div class="listClear" data-bind="visible: viewClearSearch() && '' !== search()">
-							<span class="g-ui-link i18n" data-i18n="CONTACTS/CLEAR_SEARCH"
+							<span class="g-ui-link i18n i18nflex" data-i18n="CONTACTS/CLEAR_SEARCH"
 								data-bind="command: clearCommand"></span>
 						</div>
 						<div class="listEmptyList"
 							data-bind="visible: 0 === contacts().length && '' === search() && !contacts.loading()">
-							<span class="i18n" data-i18n="CONTACTS/EMPTY_LIST"></span>
+							<span class="i18n i18nflex" data-i18n="CONTACTS/EMPTY_LIST"></span>
 						</div>
 						<div class="listEmptyListLoading"
 							data-bind="visible: 0 === contacts().length && '' === search() && contacts.loading()">
-							<span class="i18n" data-i18n="CONTACTS/LIST_LOADING"></span>
+							<span class="i18n i18nflex" data-i18n="CONTACTS/LIST_LOADING"></span>
 							<span class="textLoadingAnimationD1">.</span>
 							<span class="textLoadingAnimationD2">.</span>
 							<span class="textLoadingAnimationD3">.</span>
 						</div>
 						<div class="listEmptySearchList"
 							data-bind="visible: 0 === contacts().length && '' !== search() && !contacts.loading()">
-							<span class="i18n" data-i18n="CONTACTS/EMPTY_SEARCH"></span>
+							<span class="i18n i18nflex" data-i18n="CONTACTS/EMPTY_SEARCH"></span>
 						</div>
 						<div class="e-contact-foreach g-ui-user-select-none"
 							data-bind="foreach: contacts, visible: 0 < contacts().length">
