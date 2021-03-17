@@ -54,7 +54,7 @@
 			</nobr>
 		</div>
 
-		<div class="b-content b-message-view-wrapper thm-message-view-background-color">
+		<div class="b-content b-message-view-wrapper">
 
 			<div style="height: 100%">
 
@@ -108,7 +108,7 @@
 					<div class="messageItemHeader view-flex"
 						data-bind="css: {'emptySubject': '' === viewSubject()}">
 
-						<div class="subjectParent i18nflex">
+						<div class="subjectParent vertical-view">
 
 							<span class="infoParent g-ui-user-select-none"
 								data-bind="click: function() { showFullInfo(!showFullInfo()); }">
@@ -314,7 +314,7 @@
 										</div>
 									</div>
 
-									<div class="bodyText g-ui-min-height-300 rl-mv-root"
+									<div class="v-bodyText g-ui-min-height-300 rl-mv-root"
 										data-bind="initDom: vMessagesBodiesDom">
 
 										<div class="view-flex">
@@ -491,8 +491,8 @@
 										data-bind="visible: !allowComposer">
 									</span>
 									<svg data-bind="visible: allowComposer"
-										class="hsvg-icon h-icon v-arrow" aria-hidden="true">
-										<use xlink:href="#iconran-arrow"></use>
+										class="hsvg-icon h-icon btn-more-icon" aria-hidden="true">
+										<use xlink:href="#iconre05"></use>
 									</svg>
 								</div>
 
