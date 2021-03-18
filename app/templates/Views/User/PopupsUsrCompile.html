@@ -17,7 +17,7 @@
                         <div class="vertical-view">
                             <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
                                 autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+                                data-bind="textInput: usrName, hasfocus: usrName.focused, onEnter: createPersonalCommand" />
                         </div>
                     </div>
 
@@ -26,9 +26,18 @@
                             <span class="i18n i18nflex" data-i18n="POPUPS_USR_CMPL/LABEL_USR_SEX"></span>
                         </div>
                         <div class="vertical-view">
-                            <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-                                autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+                            <div class="selectBox dropdownlist selectBox-dropdown" data-bind="component: {
+									name: 'Select',
+									params: {
+										options: usrSex,
+										value: usrSexValue,
+										optionsText: 'name',
+										optionsValue: 'id',
+										lg: 'mn',
+										pid: 'Pid12'
+									}
+								}">
+                            </div>
                         </div>
                     </div>
 
@@ -39,7 +48,7 @@
                         <div class="vertical-view">
                             <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
                                 autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+                                data-bind="textInput: usrHtown, hasfocus: usrHtown.focused, onEnter: createPersonalCommand" />
                         </div>
                     </div>
 
@@ -48,9 +57,18 @@
                             <span class="i18n i18nflex" data-i18n="POPUPS_USR_CMPL/LABEL_USR_NTOWN"></span>
                         </div>
                         <div class="vertical-view">
-                            <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-                                autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+                            <div class="selectBox dropdownlist selectBox-dropdown" data-bind="component: {
+									name: 'Select',
+									params: {
+										options: usrNtown,
+										value: usrNtownValue,
+										optionsText: 'name',
+										optionsValue: 'id',
+										lg: 'mn',
+										pid: 'Pid13'
+									}
+								}">
+                            </div>
                         </div>
                     </div>
 
@@ -61,7 +79,7 @@
                         <div class="vertical-view">
                             <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
                                 autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: personalName, hasfocus: personalName.focused, onEnter: createPersonalCommand" />
+                                data-bind="textInput: usrCard, hasfocus: usrCard.focused, onEnter: createPersonalCommand" />
                         </div>
                     </div>
                 </div>
@@ -72,7 +90,7 @@
                 </div>
                 <div class="btn-bottom">
                     <button class="btn buttonCreate" data-bind="command: cancelCommand">
-                        <div class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PASSWORD/BUTTON_SAVE"></div>
+                        <div class="i18n i18nflex" data-i18n="POPUPS_USR_CMPL/BUTTON_SAVE"></div>
                     </button>
                 </div>
             </div>

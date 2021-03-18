@@ -38,7 +38,8 @@
 				<tr class="folder-item">
 					<td>
 						<span class="folder-padding"></span>
-						<span class="folder-name i18nflex">VIP Cash</span>
+						<span class="folder-name i18nflex"
+							data-i18n="SETTINGS_PERSONALS/LABEL_V_PROFILE"></span>
 						<span class="folder-system-name"></span>
 					</td>
 				</tr>
@@ -220,23 +221,32 @@
 			<div class="user-avatars thm-body">
 				<div class="m-user-list">
 					<div class="m-user-item" data-bind="click: function () { $root.isShowUsrDetails(); }">
-						<div class="user-img">
-							<svg class="hsvg-icon h-icon" aria-hidden="true">
-								<use xlink:href="#iconre19"></use>
-							</svg>
+						<div class="user-mark">
+							<i class="icon-star"></i>
+						</div>
+
+						<img class="user-img" data-bind="attr: {'src': userImg()}">
+
+						<div class="user-vip">
+							<i class="icon-star"></i>
 						</div>
 					</div>
 				</div>
 
 				<div class="uPoints-view">
 					<div class="uPoints-level" data-bind="click: function () { $root.isShowUsrDetails(); }">
-						<span class="uPoints-prefix">010101010</span>
+						<span class="uPoints-prefix">
+							<i class="icon-star"></i>
+							<i class="icon-star"></i>
+							<i class="icon-star"></i>
+						</span>
 					</div>
 					<div class="uPoints-area" data-bind="click: function () { $root.isShowUsrDetails(); }">
 						<span>0000000</span>
+						<span>(80p))</span>
 					</div>
 					<div class="uPoints-account-area">
-						<span>9999999</span>
+						<span>9999999@mail.com</span>
 					</div>
 				</div>
 				<div class="uThemes">
@@ -256,22 +266,25 @@
 					</div>
 					<div class="u-value">
 						<span class="i18nflex" data-bind="">70%</span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 				<div class="u-items" data-bind="click: function () { $root.showPayment(); }">
 					<div class="u-label">
-						<span class="i18nflex">VIP Cash</span>
+						<span class="i18nflex" data-i18n="SETTINGS_PERSONALS/LABEL_V_PROFILE"></span>
 					</div>
 					<div class="u-value">
 						<span class="i18nflex" data-bind="">᠎ᠠᠯᠳᠠᠨ ᠡᠷᠳᠡᠨᠢᠳᠤ ᠭᠡᠰᠢᠬᠦᠨ</span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 				<div class="u-items" data-bind="click: function () { $root.isShowUsrDetails(); }">
 					<div class="u-label">
-						<span class="i18nflex">ID card</span>
+						<span class="i18nflex" data-i18n="SETTINGS_PERSONALS/LABEL_REAL_AUTH"></span>
 					</div>
 					<div class="u-value">
 						<span class="i18nflex" data-bind=""></span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 				<div class="u-items" data-bind="click: function () { $root.isShowPwdChange(); }">
@@ -280,6 +293,7 @@
 					</div>
 					<div class="u-value">
 						<span class="i18nflex" data-bind=""></span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 				<div class="u-items" data-bind="click: function () { $root.isShowPnmChange(); }">
@@ -288,23 +302,25 @@
 					</div>
 					<div class="u-value">
 						<span class="i18nflex" data-bind="">13947990011</span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 				<div class="u-items" style="border-right: 0;"
 					data-bind="click: function () { $root.isShowUsrDetails(); }">
 					<div class="u-label">
-						<div class="i18nflex">QR-Code</div>
-						<svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
-							<use xlink:href="#iconwechatqr"></use>
-						</svg>
+						<span class="i18nflex" data-i18n="SETTINGS_PERSONALS/LABEL_QRCODE"></span>
 					</div>
 					<div class="u-value">
-						<span class="i18nflex" data-bind="">᠎ABCDEF12345</span>
+						<span>
+							<svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+								<use xlink:href="#iconwechatqr"></use>
+							</svg>
+						</span>
+						<i class="icon-down-mini u-down-size"></i>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="usr-bottom"></div>
 	</div>
 
 </div>
