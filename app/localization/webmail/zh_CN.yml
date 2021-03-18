@@ -288,6 +288,16 @@ zh_CN:
     DANGER_DESC_HTML_1: "此操作将完全删除文件夹 <strong>%FOLDER%</strong> 中的所有邮件！"
     DANGER_DESC_HTML_2: "一旦操作执行，不可中断和撤销！"
     TITLE_CLEARING_PROCESS: "文件夹清理中..."
+  POPUPS_USR_CMPL:
+    TITLE_USR_CMPL: "Compile your userinfo"
+    LABEL_USR_NAME: "Name"
+    LABEL_USR_SEX: "Sex"
+    LABEL_USR_HTOWN: "HomeTown"
+    LABEL_USR_NTOWN: "NowTown"
+    LABEL_USR_ICARD: "ID CARD"
+    BUTTON_SAVE: "Save"
+    BUTTON_CANCEL: "Cancel"
+    BUTTON_CLOSE: "Close"
   POPUPS_CHANGE_PHONENM:
     TITLE_CHANGE_PHONENM: "更换手机号︖"
     LABEL_NEW_PHONENM: "新手机号 :"

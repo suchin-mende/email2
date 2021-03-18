@@ -375,6 +375,16 @@ mn_MON:
     DANGER_DESC_HTML_1: "ᠲᠤᠰ ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ ᠨᠢ  ᠳᠤᠭᠲᠤᠢ  ᠳ᠋ᠡᠬᠢ <strong>%FOLDER%</strong> ᠵᠠᠬᠢᠳᠠᠯ ᠢ ᠪᠥᠬᠦᠨ ᠢ ᠠᠷᠢᠯᠤᠭᠠᠨ᠎᠎ᠠ"
     DANGER_DESC_HTML_2: "ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ ᠶᠠᠪᠤᠭᠳᠠᠪᠠᠯ᠂ ᠪᠤᠴᠠᠬᠤ ᠪᠠ  ᠵᠤᠭᠰᠤᠭᠠᠬᠤ ᠪᠤᠯᠤᠮᠵᠢ ᠦᠭᠡᠢ"
     TITLE_CLEARING_PROCESS: " ᠳᠤᠭᠲᠤᠢ ᠶᠢ ᠴᠡᠪᠡᠷᠯᠡᠵᠦ ᠪᠤᠢ..."
+   POPUPS_USR_CMPL:
+    TITLE_USR_CMPL: "Compile your userinfo"
+    LABEL_USR_NAME: "Name"
+    LABEL_USR_SEX: "Sex"
+    LABEL_USR_HTOWN: "HomeTown"
+    LABEL_USR_NTOWN: "NowTown"
+    LABEL_USR_ICARD: "ID CARD"
+    BUTTON_SAVE: "Save"
+    BUTTON_CANCEL: "Cancel"
+    BUTTON_CLOSE: "Close"
    POPUPS_CHANGE_PHONENM:
     TITLE_CHANGE_PHONENM: "ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ  ‍ᠢᠶ᠋ᠡᠨ ᠰᠣᠯᠢᠬᠤ ᠤᠤ︖"
     LABEL_NEW_PHONENM: "ᠰᠢᠨ᠎ᠡ ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ :"
