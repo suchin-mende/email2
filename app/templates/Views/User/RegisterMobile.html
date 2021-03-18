@@ -58,22 +58,20 @@
             </div>
       </div>
       <div class="m-middle-view m-view-box">
-            <div>
-                  <div>
-                        <div class="vertical-view err-view">
-                              <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
-                                    <button type="button" class="close"
-                                          data-bind="click: function () { submitError('') }">&times;</button>
-                                    <span data-bind="text: submitError"></span>
-                                    <div data-bind="visible: '' !== submitErrorAddidional()">
-                                          <br />
-                                          <span data-bind="text: submitErrorAddidional"></span>
-                                    </div>
+            <div class="v-reg-items">
+                  <div class="vertical-view err-view">
+                        <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
+                              <button type="button" class="close"
+                                    data-bind="click: function () { submitError('') }">&times;</button>
+                              <span data-bind="text: submitError"></span>
+                              <div data-bind="visible: '' !== submitErrorAddidional()">
+                                    <br />
+                                    <span data-bind="text: submitErrorAddidional"></span>
                               </div>
                         </div>
                   </div>
             </div>
-            <div>
+            <div class="v-reg-items">
                   <div class="m-face-input r-line">
                         <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                               <use xlink:href="#iconemail"></use>
@@ -86,7 +84,7 @@
                         </div>
                   </div>
             </div>
-            <div>
+            <div class="v-reg-items">
                   <div class="m-face-input r-line">
                         <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                               <use xlink:href="#iconkey"></use>
@@ -98,7 +96,7 @@
                         </div>
                   </div>
             </div>
-            <div>
+            <div class="v-reg-items">
                   <div class="m-face-input r-line">
                         <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                               <use xlink:href="#iconkey"></use>
@@ -110,7 +108,7 @@
                         </div>
                   </div>
             </div>
-            <div>
+            <div class="v-reg-items">
                   <div class="m-face-input r-line">
                         <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
                               <use xlink:href="#iconphone-01"></use>
@@ -122,7 +120,7 @@
                         </div>
                   </div>
             </div>
-            <div>
+            <div class="v-reg-items">
                   <div class="m-face-input r-line">
                         <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
                               <use xlink:href="#iconphone-01"></use>
@@ -137,21 +135,19 @@
                         </div>
                   </div>
             </div>
-            <div>
-                  <div>
-                        <div class="vertical-view">
-                              <div class="m-btn-group">
-                                    <button class="m-btn v-login" data-bind="command: submitCommand">
-                                          <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
-                                    </button>
-                                    <button class="m-btn v-regist" data-bind="click: gotoLogin">
-                                          <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
-                                    </button>
-                                    <button class="m-btn v-members m-vip"
-                                          data-bind="click: gotoVipPackage, visible: vBox() == null">
-                                          <span class="i18nflex" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
-                                    </button>
-                              </div>
+            <div class="v-reg-items">
+                  <div class="vertical-view">
+                        <div class="m-btn-group">
+                              <button class="m-btn v-login" data-bind="command: submitCommand">
+                                    <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
+                              </button>
+                              <button class="m-btn v-regist" data-bind="click: gotoLogin">
+                                    <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
+                              </button>
+                              <button class="m-btn v-members m-vip"
+                                    data-bind="click: gotoVipPackage, visible: vBox() == null">
+                                    <span class="i18nflex" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
+                              </button>
                         </div>
                   </div>
             </div>
