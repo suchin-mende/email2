@@ -17,7 +17,7 @@
                         <div class="vertical-view">
                             <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
                                 autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: newPhoneNm, hasfocus: newPhoneNm.focused, onEnter: savePhoneNmCommand" />
+                                data-bind="textInput: newPhoneNm, hasfocus: newPhoneNmFocus" />
                         </div>
                     </div>
 
@@ -30,7 +30,7 @@
                         <div class="vertical-view">
                             <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
                                 autocapitalize="off" spellcheck="true"
-                                data-bind="textInput: smsCode, hasfocus: smsCode.focused, onEnter: savePhoneNmCommand" />
+                                data-bind="textInput: smsCode, hasfocus: smsCodeFocus" />
                         </div>
                     </div>
 
@@ -41,7 +41,7 @@
                     <button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
                 </div>
                 <div>
-                    <a class="btn buttonCreate" data-bind="command: savePhoneNmCommand">
+                    <a class="btn buttonCreate" data-bind="command: submitCommand">
                         <i class="icon-floppy"></i>
                         <div class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/BUTTON_SAVE"></div>
                     </a>
