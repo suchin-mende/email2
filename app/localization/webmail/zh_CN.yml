@@ -8,7 +8,7 @@ zh_CN:
     LABEL_PAY_TIPS: "使用支付宝或微信扫码支付"
     LABEL_TIME: "/月"
   LOGIN:
-    LABEL_EMAIL: "邮箱"
+    LABEL_EMAIL: "邮箱/账户/手机号"
     LABEL_LOGIN: "登入"
     LABEL_PASSWORD: "密码"
     LABEL_SIGN_ME: "记住我"

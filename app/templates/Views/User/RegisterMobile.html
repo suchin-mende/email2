@@ -78,7 +78,7 @@
                         </svg>
                         <div class="vertical-view">
                               <input type="email" class="m-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_EMAIL" autocomplete="email" autocorrect="off"
+                                    data-i18n="[placeholder]REGISTER/LABEL_EMAIL" maxlength="33" autocorrect="off"
                                     autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
                         </div>
@@ -92,6 +92,7 @@
                         <div class="vertical-view">
                               <input type="password" class="m-input checkAutocomplete"
                                     data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" minlength="6" maxlength="20"
+                                    autocorrect="off" autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
                         </div>
                   </div>
@@ -104,6 +105,7 @@
                         <div class="vertical-view">
                               <input type="password" class="m-input checkAutocomplete"
                                     data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" minlength="6" maxlength="20"
+                                    autocorrect="off" autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: confPwd, hasFocus: confPwdFocus, disable: submitRequest">
                         </div>
                   </div>
@@ -116,6 +118,7 @@
                         <div class="vertical-view">
                               <input type="tel" class="m-input checkAutocomplete"
                                     data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" maxlength="11"
+                                    autocorrect="off" autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
                         </div>
                   </div>
@@ -127,7 +130,8 @@
                         </svg>
                         <div class="vertical-view">
                               <input type="text" class="m-input m-sms-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6"
+                                    data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6" autocorrect="off"
+                                    autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
                               <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
                                     <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>

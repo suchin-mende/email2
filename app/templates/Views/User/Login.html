@@ -64,8 +64,8 @@
                                     </svg>
                                     <div class="vertical-view">
                                         <input type="email" class="v-input checkAutocomplete"
-                                            data-i18n="[placeholder]LOGIN/LABEL_EMAIL" maxlength="20"
-                                            autocomplete="email"
+                                            data-i18n="[placeholder]LOGIN/LABEL_EMAIL" maxlength="33" autocorrect="off"
+                                            autocapitalize="off" spellcheck="false"
                                             data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
                                     </div>
                                 </div>
@@ -81,8 +81,7 @@
                                     <div class="vertical-view">
                                         <input class="v-input checkAutocomplete"
                                             data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" maxlength="20"
-                                            autocomplete="current-password" autocorrect="off" autocapitalize="off"
-                                            spellcheck="false"
+                                            autocorrect="off" autocapitalize="off" spellcheck="false"
                                             data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
                                     </div>
                                     <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw"
