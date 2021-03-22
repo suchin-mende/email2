@@ -63,7 +63,7 @@ en:
     LABEL_SYSTEM_HELP: "ᠮᠡᠷᠭᠡᠵᠢᠯ ᠦᠨ ᠰᠠᠨᠠᠭᠤᠯᠭ᠎ᠠ"
     LABEL_HALGAI_COMMPANY: "ᠬᠠᠯᠠᠭᠠᠢ ᠮᠡᠳᠡᠭᠡᠯᠡᠯ ᠲᠧᠭᠨᠢᠭ ᠤᠨ ᠬᠢᠵᠠᠭᠠᠷᠳᠤ ᠺᠣᠮᠫᠠᠨᠢ"
   LOGIN:
-    LABEL_EMAIL: "Email"
+    LABEL_EMAIL: "Email/Account/Phone Num"
     LABEL_LOGIN: "Login"
     LABEL_PASSWORD: "Password"
     LABEL_SIGN_ME: "Remember Me"
