@@ -31,7 +31,7 @@
                               <input type="email" class="m-input lm-input checkAutocomplete"
                                     data-i18n="[placeholder]LOGIN/LABEL_EMAIL" maxlength="33" autocorrect="off"
                                     autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
+                                    data-bind="textInput: email, hasFocus: emailFocus, event: { blur: emailBlur }, disable: submitRequest">
                         </div>
                   </div>
 
@@ -45,7 +45,7 @@
                               <input type="password" class="m-input lm-input checkAutocomplete"
                                     data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" maxlength="20" autocorrect="off"
                                     autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
+                                    data-bind="textInput: password, hasFocus: passwordFocus, event: { blur: pwdBlur }, disable: submitRequest">
                         </div>
                   </div>
             </div>
