@@ -52,7 +52,7 @@
                                     <input type="email" class="v-input checkAutocomplete"
                                         data-i18n="[placeholder]LOGIN/LABEL_EMAIL" maxlength="33" autocorrect="off"
                                         autocapitalize="off" spellcheck="false"
-                                        data-bind="textInput: email, hasFocus: emailFocus, disable: submitRequest">
+                                        data-bind="textInput: email, hasFocus: emailFocus, event: { blur: emailBlur }, disable: submitRequest">
                                 </div>
                             </div>
 
@@ -66,7 +66,7 @@
                                     <input class="v-input checkAutocomplete"
                                         data-i18n="[placeholder]LOGIN/LABEL_PASSWORD" maxlength="20" autocorrect="off"
                                         autocapitalize="off" spellcheck="false"
-                                        data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest, attr:{ type: inputType }">
+                                        data-bind="textInput: password, hasFocus: passwordFocus, event: { blur: pwdBlur }, disable: submitRequest, attr:{ type: inputType }">
                                 </div>
                                 <svg data-bind="click: isShowPw" class="hsvg-icon h-icon show-pw" aria-hidden="true">
                                     <use data-bind="visible: inputType() != 'text'" xlink:href="#iconeye01"></use>

@@ -57,13 +57,13 @@
                   </div>
             </div>
       </div>
-      <div class="m-middle-view m-view-box">
+      <div class="m-middle-view m-reg-view-box">
             <div class="v-reg-items">
                   <div class="vertical-view err-view">
                         <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
                               <button type="button" class="close"
                                     data-bind="click: function () { submitError('') }">&times;</button>
-                              <span data-bind="text: submitError"></span>
+                              <span class="i18nflex" data-bind="text: submitError"></span>
                               <div data-bind="visible: '' !== submitErrorAddidional()">
                                     <br />
                                     <span data-bind="text: submitErrorAddidional"></span>
@@ -133,10 +133,10 @@
                                     data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6" autocorrect="off"
                                     autocapitalize="off" spellcheck="false"
                                     data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
-                              <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
-                                    <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
-                              </button>
                         </div>
+                        <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
+                              <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
+                        </button>
                   </div>
             </div>
             <div class="v-reg-items">
