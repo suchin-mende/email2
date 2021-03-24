@@ -7,10 +7,10 @@
                 </svg>
 
             </div>
-            <div class="e-right-view r-full">
+            <div class="e-right-view r-full form-grid">
 
-                <div class="loginFormWrapper fullFormWrapper">
-                    <center class="plugin-mark-Login-BeforeLogo">
+                <div class="loginFormWrapper l-item">
+                    <div class="plugin-mark-Login-BeforeLogo">
                         <div class="wrapper-parent">
 
                             <div class="wrapper view-flex">
@@ -25,49 +25,60 @@
                                 <div>
                                     <div class="vPackge" data-bind="foreach: vPlanBox">
 
-                                        <div class="vCard" data-bind="click: function () { $root.salePack(vipPlanCd, index); }">
+                                        <div class="vCard"
+                                            data-bind="click: function () { $root.salePack(vipPlanCd, index); }">
 
-                                            <div 
-                                                data-bind="attr: { 
+                                            <div data-bind="attr: { 
                                                     class: index == 0 ? 'vFront vip-option case-gold': index == 1 ? 'vFront vip-option case-green' : 'vFront vip-option case-diamond',
                                                 }">
-                                                
+
                                                 <div class="box-i">
 
-                                                    <div class="vp-icon" data-bind="style: { display: index == 0 ? 'block' : 'none' }">
+                                                    <div class="vp-icon"
+                                                        data-bind="style: { display: index == 0 ? 'block' : 'none' }">
                                                         <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
                                                             <use xlink:href="#iconvip01"></use>
                                                         </svg>
-                                                        <svg class="hsvg-icon h-icon v-icon-bd v-gold-color" aria-hidden="true">
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-gold-color"
+                                                            aria-hidden="true">
                                                             <use xlink:href="#iconvip01"></use>
                                                         </svg>
                                                     </div>
 
-                                                    <div class="vp-icon" data-bind="style: { display: index == 1 ? 'block' : 'none' }">
+                                                    <div class="vp-icon"
+                                                        data-bind="style: { display: index == 1 ? 'block' : 'none' }">
                                                         <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
                                                             <use xlink:href="#iconvip02"></use>
                                                         </svg>
-                                                        <svg class="hsvg-icon h-icon v-icon-bd v-green-color" aria-hidden="true">
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-green-color"
+                                                            aria-hidden="true">
                                                             <use xlink:href="#iconvip02"></use>
                                                         </svg>
                                                     </div>
 
-                                                    <div class="vp-icon" data-bind="style: { display: index == 2 ? 'block' : 'none' }">
+                                                    <div class="vp-icon"
+                                                        data-bind="style: { display: index == 2 ? 'block' : 'none' }">
                                                         <svg class="hsvg-icon h-icon v-icon" aria-hidden="true">
                                                             <use xlink:href="#iconvip03"></use>
                                                         </svg>
-                                                        <svg class="hsvg-icon h-icon v-icon-bd v-diamond-color" aria-hidden="true">
+                                                        <svg class="hsvg-icon h-icon v-icon-bd v-diamond-color"
+                                                            aria-hidden="true">
                                                             <use xlink:href="#iconvip03"></use>
                                                         </svg>
                                                     </div>
-    
+
                                                     <div class="text-box">
                                                         <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
-                                                        <p class="tag-p i18nflex mid-text" data-bind="text: descriptionTx"></p>
+                                                        <p class="tag-p i18nflex mid-text"
+                                                            data-bind="text: descriptionTx"></p>
                                                         <div class="btm-text view-flex">
                                                             <p class="tag-p">￥</p>
-                                                            <p data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p ePrice' : ' ' }"></p>
-                                                            <p data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}"></p>
+                                                            <p
+                                                                data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p ePrice' : ' ' }">
+                                                            </p>
+                                                            <p
+                                                                data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}">
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -80,16 +91,16 @@
                                             </div>
 
                                         </div>
-    
+
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
-                    </center>
-              </div>
+                    </div>
+                </div>
 
-            <div class="v-right-sidebar" data-bind="template: {name: 'Footer'}"></div>
+                <div class="v-right-sidebar r-item" data-bind="template: {name: 'Footer'}"></div>
 
             </div>
         </div>
