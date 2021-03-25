@@ -489,14 +489,12 @@
 									<span class="icon-ellipsis-alt"
 										data-bind="visible: !allowComposer">
 									</span>
-									<svg data-bind="visible: allowComposer"
-										class="hsvg-icon h-icon btn-more-icon" aria-hidden="true">
-										<use xlink:href="#iconre05"></use>
-									</svg>
+									<span class="icon-ellipsis"
+										data-bind="visible: allowComposer"></span>
 								</div>
 
 
-								<ul class="dropdown-menu menu-right g-ui-menu i18nflex" role="menu"
+								<ul class="dropdown-menu menu-right g-ui-menu" role="menu"
 									aria-labelledby="more-view-dropdown-id">
 									<div data-bind="visible: allowComposer && !isDraftFolder()">
 										<li class="e-item" role="presentation">
@@ -504,7 +502,7 @@
 												data-bind="command: replyCommand">
 												<i class="icon-reply"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_REPLY"></span>
 											</a>
 										</li>
@@ -513,7 +511,7 @@
 												data-bind="command: replyAllCommand">
 												<i class="icon-reply-all"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_REPLY_ALL"></span>
 											</a>
 										</li>
@@ -522,7 +520,7 @@
 												data-bind="command: forwardCommand">
 												<i class="icon-forward"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_FORWARD"></span>
 											</a>
 										</li>
@@ -531,7 +529,7 @@
 												data-bind="command: editAsNewCommand">
 												<i class="icon-pencil"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_EDIT_AS_NEW"></span>
 											</a>
 										</li>
@@ -540,7 +538,7 @@
 												data-bind="command: forwardAsAttachmentCommand">
 												<i class="icon-forward"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_FORWARD_AS_ATTACHMENT"></span>
 											</a>
 										</li>
@@ -557,7 +555,7 @@
 												data-bind="command: archiveCommand">
 												<i class="icon-archive"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_ARCHIVE"></span>
 											</a>
 										</li>
@@ -567,7 +565,7 @@
 												tabindex="-1" data-bind="command: spamCommand">
 												<i class="icon-warning"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_SPAM"></span>
 											</a>
 										</li>
@@ -578,7 +576,7 @@
 												data-bind="command: notSpamCommand">
 												<i class="icon-check-mark-circle-two"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_NOT_SPAM"></span>
 											</a>
 										</li>
@@ -588,7 +586,7 @@
 												data-bind="command: deleteCommand">
 												<i class="icon-trash"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_DELETE"></span>
 											</a>
 										</li>
@@ -599,7 +597,7 @@
 												data-bind="link: viewUnsubscribeLink()">
 												<i class="icon-remove"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_UNSUBSCRIBE"></span>
 											</a>
 										</li>
@@ -614,7 +612,7 @@
 												data-bind="click: function () { if (message()) { message().printMessage(); }} ">
 												<i class="icon-print"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/MENU_PRINT"></span>
 											</a>
 										</li>
@@ -624,7 +622,7 @@
 												data-bind="click: function () { if (message()) { message().viewPopupMessage(); }}">
 												<i class="icon-popup"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/BUTTON_IN_NEW_WINDOW"></span>
 											</a>
 										</li>
@@ -634,7 +632,7 @@
 												tabindex="-1" data-bind="link: viewViewLink()">
 												<i class="icon-file-code"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/MENU_VIEW_ORIGINAL"></span>
 											</a>
 										</li>
@@ -644,7 +642,7 @@
 												data-bind="link: viewDownloadLink()">
 												<i class="icon-download"></i>
 												&nbsp;&nbsp;
-												<span class="i18n"
+												<span class="i18n i18nflex"
 													data-i18n="MESSAGE/MENU_DOWNLOAD_ORIGINAL"></span>
 											</a>
 										</li>

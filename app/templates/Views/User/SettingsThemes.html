@@ -9,7 +9,8 @@
 		</div>
 	</div>
 	<div class="b-themes-list v-themes" data-bind="foreach: themesObjects">
-		<div class="e-item" data-bind="click: function () { $root.theme(name); }, css: { 'selected': selected }">
+		<div class="e-item" style="display: inline-flex;"
+			data-bind="click: function () { $root.theme(name); }, css: { 'selected': selected }">
 			<img class="e-image"
 				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
 				data-bind="attr: { 'src': themePreviewSrc }" />
