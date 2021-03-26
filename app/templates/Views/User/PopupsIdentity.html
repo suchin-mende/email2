@@ -74,12 +74,14 @@
 					<div class="v-items" data-bind="visible: !showReplyTo() || !showBcc()">
 						<div class="vertical-view">
 							<span data-bind="visible: !showReplyTo()">
-								<span class="i18n g-ui-link" data-i18n="POPUPS_IDENTITY/LABEL_REPLY_TO"
+								<span class="i18n i18nflex g-ui-link"
+									data-i18n="POPUPS_IDENTITY/LABEL_REPLY_TO"
 									data-bind="click: function () { showReplyTo(true); }"></span>
 								&nbsp;&nbsp;
 							</span>
 							<span data-bind="visible: !showBcc()">
-								<span class="i18n g-ui-link" data-i18n="POPUPS_IDENTITY/LABEL_BCC"
+								<span class="i18n i18nflex g-ui-link"
+									data-i18n="POPUPS_IDENTITY/LABEL_BCC"
 									data-bind="click: function () { showBcc(true); }"></span>
 							</span>
 						</div>

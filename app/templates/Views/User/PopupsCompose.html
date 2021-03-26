@@ -215,7 +215,7 @@
 				</div>
 
 				<div class="attachmentAreaParent b-content v-attachmentAreaParent"
-					data-bind="nano: true, scrollerShadows: true, visible: attachmentsPlace, initResizeTrigger: [resizer(), 9, 100]">
+					data-bind="nano: true, scrollerShadows: true, visible: attachmentsPlace, initResizeTrigger: [resizer(), 10, 100]">
 					<div class="content g-scrollbox" data-scroller-shadows-content>
 						<div class="content-wrapper">
 							<div class="b-attachment-place"
@@ -235,7 +235,7 @@
 					</div>
 				</div>
 
-				<div class="textAreaParent middle-width"
+				<div class="textAreaParent"
 					data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 10, 100]">
 				</div>
 				<!-- data-bind="visible: !attachmentsPlace(), initDom: composeEditorArea, initResizeTrigger: [resizer(), 200, 40]"> -->
@@ -249,7 +249,7 @@
 							data-bind="command: sendCommand, tooltipErrorTip: sendErrorDesc, css: {'btn-success': sendButtonSuccess, 'btn-danger': sendError, 'btn-warning': sendSuccessButSaveError }">
 							<i class="icon-white"
 								data-bind="css: {'icon-paper-plane': !sending(), 'icon-spinner animated big': sending()}"></i>
-							<span class="i18n btn-text hide-on-mobile"
+							<span class="i18n i18nflex btn-text hide-on-mobile"
 								data-i18n="COMPOSE/BUTTON_SEND"></span>
 						</a>
 						<a class="btn button-save" style="margin-top: 5px;"
