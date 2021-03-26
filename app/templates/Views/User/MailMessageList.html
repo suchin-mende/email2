@@ -224,15 +224,16 @@
 					data-bind="css: checkAll() ? (isIncompleteChecked() ? 'icon-checkbox-partial' : 'icon-checkbox-checked') : 'icon-checkbox-unchecked'"></i>
 
 
-				<div data-bind="visible: allowSearch">
-					<div class="btn" style="border: 0;"
-						data-bind="visible: allowSearchAdv, click: advancedSearchClick">
-						<svg class="hsvg-icon h-icon v-arrow" aria-hidden="true">
-							<use xlink:href="#iconlan-arrow"></use>
-						</svg>
-					</div>
-				</div>
 				<div class="s-face-input">
+					<div data-bind="visible: allowSearch">
+						<div class="btn s-btn"
+							data-bind="visible: allowSearchAdv, click: advancedSearchClick">
+							<svg class="hsvg-icon h-icon v-arrow" aria-hidden="true">
+								<use xlink:href="#iconlan-arrow"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="s-line-top"></div>
 					<div class="close" style="float: unset;"
 						data-bind="click: cancelSearch, visible: '' !== messageListSearchDesc()">
 						&times;</div>
