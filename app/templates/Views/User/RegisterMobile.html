@@ -1,5 +1,6 @@
-<div id="rl-right" style="position: relative; left: 0 !important;" class="b-login-content m-view vRegBox-view">
+<div id="rl-right" style="left: 0 !important;" class="b-login-content m-view">
       <div class="m-head-view">
+            <div class="top-menu" data-bind="visible: vBox() == null"></div>
             <div class="m-top-menu" data-bind="visible: vBox() != null">
                   <svg class="hsvg-icon h-icon menu-icon" aria-hidden="true" data-bind="click: gotoVipPackage">
                         <use xlink:href="#iconleftarrow"></use>
@@ -57,104 +58,98 @@
                   </div>
             </div>
       </div>
-      <div class="m-middle-view m-reg-view-box">
-            <div class="v-reg-items">
-                  <div class="vertical-view err-view">
-                        <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
-                              <button type="button" class="close"
-                                    data-bind="click: function () { submitError('') }">&times;</button>
-                              <span class="i18nflex" data-bind="text: submitError"></span>
-                              <div data-bind="visible: '' !== submitErrorAddidional()">
-                                    <br />
-                                    <span data-bind="text: submitErrorAddidional"></span>
-                              </div>
+      <div class="m-middle-view mr-view-box">
+
+            <div class="vertical-view err-view">
+                  <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
+                        <button type="button" class="close"
+                              data-bind="click: function () { submitError('') }">&times;</button>
+                        <span class="i18nflex" data-bind="text: submitError"></span>
+                        <div data-bind="visible: '' !== submitErrorAddidional()">
+                              <br />
+                              <span data-bind="text: submitErrorAddidional"></span>
                         </div>
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="m-face-input r-line">
-                        <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
-                              <use xlink:href="#iconemail"></use>
-                        </svg>
-                        <div class="vertical-view">
-                              <input type="email" class="m-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_EMAIL" maxlength="33" autocorrect="off"
-                                    autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: email, hasFocuns: emailFocus, disable: submitRequest">
-                        </div>
+
+            <div class="m-face-input r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconemail"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="email" class="m-input checkAutocomplete"
+                              data-i18n="[placeholder]REGISTER/LABEL_EMAIL" maxlength="33" autocorrect="off"
+                              autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: email, hasFocuns: emailFocus, event: { blur: emailBlur }, disable: submitRequest">
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="m-face-input r-line">
-                        <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
-                              <use xlink:href="#iconkey"></use>
-                        </svg>
-                        <div class="vertical-view">
-                              <input type="password" class="m-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" minlength="6" maxlength="20"
-                                    autocorrect="off" autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: password, hasFocus: passwordFocus, disable: submitRequest">
-                        </div>
+
+            <div class="m-face-input r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconkey"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="password" class="m-input checkAutocomplete"
+                              data-i18n="[placeholder]REGISTER/LABEL_PASSWORD" minlength="6" maxlength="20"
+                              autocorrect="off" autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: password, hasFocus: passwordFocus, event: { blur: pwdBlur }, disable: submitRequest">
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="m-face-input r-line">
-                        <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
-                              <use xlink:href="#iconkey"></use>
-                        </svg>
-                        <div class="vertical-view">
-                              <input type="password" class="m-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" minlength="6" maxlength="20"
-                                    autocorrect="off" autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: confPwd, hasFocus: confPwdFocus, disable: submitRequest">
-                        </div>
+
+            <div class="m-face-input r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconkey"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="password" class="m-input checkAutocomplete"
+                              data-i18n="[placeholder]REGISTER/LABEL_AFFIRM_PASSWORD" minlength="6" maxlength="20"
+                              autocorrect="off" autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: confPwd, hasFocus: confPwdFocus, event: { blur: confPwdBlur }, disable: submitRequest">
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="m-face-input r-line">
-                        <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
-                              <use xlink:href="#iconphone-01"></use>
-                        </svg>
-                        <div class="vertical-view">
-                              <input type="tel" class="m-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" maxlength="11"
-                                    autocorrect="off" autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, disable: submitRequest">
-                        </div>
+
+            <div class="m-face-input r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconphone-01"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="tel" class="m-input checkAutocomplete"
+                              data-i18n="[placeholder]REGISTER/LABEL_CELLPHONE_NUMBER" maxlength="11" autocorrect="off"
+                              autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: mPhoneNum, hasFocus: mPhoneNumFocus, event: { blur: mPhoneNumBlur }, disable: submitRequest">
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="m-face-input r-line">
-                        <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
-                              <use xlink:href="#iconphone-01"></use>
-                        </svg>
-                        <div class="vertical-view">
-                              <input type="text" class="m-input m-sms-input checkAutocomplete"
-                                    data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6" autocorrect="off"
-                                    autocapitalize="off" spellcheck="false"
-                                    data-bind="textInput: smsCode, hasFocus: smsCodeFocus, disable: submitRequest">
-                        </div>
-                        <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
-                              <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
+
+            <div class="m-face-input r-line">
+                  <svg class="hsvg-icon h-icon ipt-icon m-sms-icon" aria-hidden="true">
+                        <use xlink:href="#iconphone-01"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="text" class="m-input m-sms-input checkAutocomplete"
+                              data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="6" autocorrect="off"
+                              autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: smsCode, hasFocus: smsCodeFocus, event: { blur: smsCodeBlur }, disable: submitRequest">
+                  </div>
+                  <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
+                        <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
+                  </button>
+            </div>
+
+            <div class="vertical-view">
+                  <div class="m-btn-group">
+                        <button class="m-btn v-login" data-bind="command: submitCommand">
+                              <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
+                        </button>
+                        <button class="m-btn v-regist" data-bind="click: gotoLogin">
+                              <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
+                        </button>
+                        <button class="m-btn v-members m-vip"
+                              data-bind="click: gotoVipPackage, visible: vBox() == null">
+                              <span data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
                         </button>
                   </div>
             </div>
-            <div class="v-reg-items">
-                  <div class="vertical-view">
-                        <div class="m-btn-group">
-                              <button class="m-btn v-login" data-bind="command: submitCommand">
-                                    <span class="i18nflex" data-i18n="REGISTER/LABEL_REGISTRATION"></span>
-                              </button>
-                              <button class="m-btn v-regist" data-bind="click: gotoLogin">
-                                    <span class="i18nflex" data-i18n="REGISTER/LABEL_LOGIN_ACCOUNT"></span>
-                              </button>
-                              <button class="m-btn v-members m-vip"
-                                    data-bind="click: gotoVipPackage, visible: vBox() == null">
-                                    <span class="i18nflex" data-i18n="LOGIN/M_LABEL_VIP_MEMBERS"></span>
-                              </button>
-                        </div>
-                  </div>
-            </div>
+
       </div>
       <div class="m-footer-view">
             <div class="social-view">
