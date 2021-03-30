@@ -1,4 +1,4 @@
-<div id="rl-right" style="position: relative; left: 0 !important;" class="m-login-content m-view vBox-view">
+<div id="rl-right" style="left: 0 !important;" class="m-login-content m-view vBox-view">
       <div class="m-head-view">
             <div class="m-top-menu">
                   <svg class="hsvg-icon h-icon menu-icon" aria-hidden="true" data-bind="click: gotoLogin">
@@ -15,36 +15,40 @@
                               <div data-bind="style: { display: index == 0 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
                                           <use xlink:href="#iconvip01"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon m-icon-bd m-gold-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon m-icon-bd m-gold-color" aria-hidden="true">
                                           <use xlink:href="#iconvip01"></use>
-                                      </svg>
+                                    </svg>
                               </div>
 
                               <div data-bind="style: { display: index == 1 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
                                           <use xlink:href="#iconvip02"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon m-icon-bd m-green-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon m-icon-bd m-green-color" aria-hidden="true">
                                           <use xlink:href="#iconvip02"></use>
-                                      </svg>
+                                    </svg>
                               </div>
 
                               <div data-bind="style: { display: index == 2 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon m-icon" aria-hidden="true">
                                           <use xlink:href="#iconvip03"></use>
-                                      </svg>
-                                      <svg class="hsvg-icon h-icon m-icon-bd m-diamond-color" aria-hidden="true">
+                                    </svg>
+                                    <svg class="hsvg-icon h-icon m-icon-bd m-diamond-color" aria-hidden="true">
                                           <use xlink:href="#iconvip03"></use>
-                                      </svg>
+                                    </svg>
                               </div>
 
                               <div class="m-text-box">
                                     <p class="tag-p i18nflex" data-bind="text: vipPlanTx"></p>
                                     <div class="view-flex">
                                           <p class="tag-p">￥</p>
-                                          <p data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p m-ePrice' : ' ' }"></p>
-                                          <p data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}"></p>
+                                          <p
+                                                data-bind="text: eventPrice, attr:{class: eventPrice != null ? 'tag-p m-ePrice' : ' ' }">
+                                          </p>
+                                          <p
+                                                data-bind="text: price, attr: {class: eventPrice != null ? 'tag-p tag-line' : 'tag-p'}">
+                                          </p>
                                     </div>
                               </div>
 
@@ -56,6 +60,6 @@
             </div>
       </div>
       <div class="m-footer-view">
-            
+
       </div>
 </div>
