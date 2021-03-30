@@ -110,7 +110,7 @@
 
 				<div class="b-header g-ui-user-select-none view-flex">
 
-					<div>
+					<div class="v-cell">
 						<div
 							data-bind="registrateBootstrapDropdown: true, openDropdownTrigger: identitiesDropdownTrigger">
 							<a class="e-identity i18nflex" href="#" tabindex="-1" id="identity-label-id"
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 
-					<div>
+					<div class="v-cell">
 
 						<div class="e-cell pop-label pop-label-mail"
 							data-bind="css: {'error-to': emptyToError}">
@@ -152,7 +152,7 @@
 						</div>
 					</div>
 
-					<div>
+					<div class="v-cell">
 						<div class="e-cell pop-label pop-label-mail">
 							<div class="i18n i18nflex" data-i18n="COMPOSE/TITLE_SUBJECT"></div>
 						</div>
@@ -165,7 +165,7 @@
 						</div>
 					</div>
 
-					<div class="e-row cc-row" data-bind="visible: showCc">
+					<div class="v-cell e-row cc-row" data-bind="visible: showCc">
 						<div class="e-cell pop-label pop-label-mail">
 							<div class="i18n i18nflex" data-i18n="COMPOSE/TITLE_CC"></div>
 							<!-- <a class="close v-close" data-bind="click: showCc(false)">&times;</a> -->
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 
-					<div class="e-row bcc-row" data-bind="visible: showBcc">
+					<div class="v-cell e-row bcc-row" data-bind="visible: showBcc">
 						<div class="e-cell pop-label pop-label-mail">
 							<div class="i18n i18nflex" data-i18n="COMPOSE/TITLE_BCC"></div>
 						</div>
@@ -188,7 +188,7 @@
 						</div>
 					</div>
 
-					<div class="e-row reply-to-row" data-bind="visible: showReplyTo">
+					<div class="v-cell e-row reply-to-row" data-bind="visible: showReplyTo">
 						<div class="e-cell pop-label pop-label-mail">
 							<div class="i18n i18nflex" data-i18n="COMPOSE/TITLE_REPLY_TO"></div>
 						</div>
@@ -199,7 +199,7 @@
 						</div>
 					</div>
 
-					<div class="e-row">
+					<div class="v-cell e-row">
 						<span class="i18n i18nflex g-ui-link v-g-ui-link" data-i18n="COMPOSE/TITLE_CC"
 							data-bind="visible: !showCc(), click: function () { showCc(true); }"></span>
 						&nbsp;&nbsp;
