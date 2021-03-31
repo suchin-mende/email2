@@ -804,6 +804,7 @@ en:
     EMAIL_UNLL_ERROR: "Mail address cannot be empty"
     PASSWORD_UNLL_ERROR: "The password cannot be empty"
     CONF_PASSWORD_UNLL_ERROR: "Verify that the password cannot be blank"
+    SMSCODE_UNEQUAL_ERROR: "SmsCode Inconsistency"
     PASSWORD_UNEQUAL_ERROR: "Password Inconsistency"
     PHONE_UNLL_ERROR: "The phone number cannot be blank"
     PHONE_CODE_UNLL_ERROR: "The mobile verification code cannot be empty"

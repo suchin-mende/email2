@@ -9487,7 +9487,7 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 				//							$mResponse->FullNameRaw(), $mStatus['MESSAGES'], $mStatus['UNSEEN'], $mStatus['UIDNEXT'],
 				//								empty($mStatus['HIGHESTMODSEQ']) ? '' : $mStatus['HIGHESTMODSEQ'])
 				//					);
-				//				}
+				//				}1
 
 				$aCheckableFolder = \call_user_func($fGetCheckableFolder);
 				if (!\is_array($aCheckableFolder)) {
@@ -9800,5 +9800,13 @@ NewThemeLink IncludeCss LoadingDescriptionEsc TemplatesLink LangLink IncludeBack
 		$rsp = json_encode($oAccount1, true);
 
 		return $this->TrueResponse(__FUNCTION__, $rsp);
+	}
+
+	public function DoSafeCode()
+	{
+		$mResult = false;
+		$sName = (string) $this->GetActionParam();
+
+		
 	}
 }

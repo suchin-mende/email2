@@ -826,6 +826,7 @@ mn_MON:
     EMAIL_UNLL_ERROR: "ᠢᠮᠧᠯ ᠬᠠᠶᠠᠭ ᠢᠶᠡᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
     PASSWORD_UNLL_ERROR: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
     CONF_PASSWORD_UNLL_ERROR: "ᠪᠠᠲᠤᠯᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
+    SMSCODE_UNEQUAL_ERROR: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠪᠣᠷᠣᠭᠣ"
     PASSWORD_UNEQUAL_ERROR: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ ᠨᠢᠭᠡᠳᠦᠯ ᠦᠭᠡᠢ"
     PHONE_UNLL_ERROR: "ᠤᠲᠠᠰᠤᠨ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
     PHONE_CODE_UNLL_ERROR: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ ᠢᠶᠠᠨ ᠪᠢᠴᠢᠭᠡᠷᠡᠢ"
