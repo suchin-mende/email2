@@ -3,7 +3,6 @@
 		data-bind="droppable: function (oEvent, oUi) { $root.messagesDrop($data, oUi); }, css: { 'selected': selected, 'selectable': selectable, 'print-count': 0 < printableUnreadCount().length, 'anim-action-class': actionBlink, 'is-inbox': isInbox }">
 
 		<img class="i-box" data-bind="attr: {src: localImg() }">
-
 		<div class="name i18nflex" data-bind="text: localName()"></div>
 		<div class="inbox-star-icon">
 			<i class="icon-star"></i>
