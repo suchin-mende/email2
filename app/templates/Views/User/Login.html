@@ -83,6 +83,21 @@
                                 </span>
                             </div>
 
+                            <div class="sms-flex">
+                                <div class="face-input face-sms">
+                                    <svg class="hsvg-icon h-icon ipt-img" aria-hidden="true">
+                                        <use xlink:href="#iconphone-01"></use>
+                                    </svg>
+                                    <div class="vertical-view">
+                                        <input type="text" class="v-input sms-input checkAutocomplete"
+                                            data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="4"
+                                            autocorrect="off" autocapitalize="off" spellcheck="false"
+                                            data-bind="textInput: smsCode, hasFocus: smsCodeFocus">
+                                    </div>
+                                </div>
+                                <div id="v_container"></div>
+                            </div>
+
                             <div class="btn-flex">
                                 <div class="v-btn v-login" data-bind="command: submitCommand">
                                     <span class="i18nflex" data-i18n="LOGIN/BUTTON_SIGN_IN"></span>
