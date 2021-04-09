@@ -1,63 +1,24 @@
 <div class="popups">
     <div class="modal hide b-folder-create-content g-ui-user-select-none" data-bind="modal: modalVisibility">
-        <div class="modal-flex">
-            <div class="modal-header">
-
-                <h3>
-                    <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/TITLE_CHANGE_PHONENM"></span>
-                </h3>
-            </div>
-            <div class="modal-body">
-                <div class="form-horizontal view-flex">
-
-                    <div class="v-items">
-                        <div class="pop-label">
-                            <div class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_NEW_PHONENM"></div>
-                        </div>
-                        <div class="vertical-view">
-                            <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-                                autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: newPhoneNm, hasfocus: newPhoneNmFocus" />
-                        </div>
+        <!-- <div class="modal-header">
+            
+        </div> -->
+        <div class="modal-body">
+            <div class="form-horizontal">
+                <button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
+                <div class="input-items">
+                    <div class="face-vms-input">
+                        <input type="text" maxlength="4"
+                            class="i18n input-block-level inputPassword sms-input checkAutocomplete" autocorrect="off"
+                            autocapitalize="off" spellcheck="false"
+                            data-bind="textInput: smsCode, hasFocus: smsCodeFocus"
+                            data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" />
                     </div>
-
-                    <div class="v-items">
-                        <div class="pop-label">
-                            <a class="btn buttonCreate">
-                                <span class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/LABEL_SMSCODE"></span>
-                            </a>
-                        </div>
-                        <div class="vertical-view">
-                            <input type="text" class="uiInput inputName input-mgl" autocomplete="off" autocorrect="off"
-                                autocapitalize="off" spellcheck="true"
-                                data-bind="textInput: smsCode, hasfocus: smsCodeFocus" />
-                        </div>
-                    </div>
-
-                    <div class="controls login-line input-items">
-                        <div class="face-vms-input">
-                            <input type="text" maxlength="4"
-                                class="i18n input-block-level inputPassword sms-input checkAutocomplete"
-                                autocorrect="off" autocapitalize="off" spellcheck="false"
-                                data-bind="textInput: smsCode, hasFocus: smsCodeFocus"
-                                data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" />
-                        </div>
-                        <div id="v_container"></div>
-                    </div>
-
+                    <div id="v_container"></div>
                 </div>
-            </div>
-            <div class="modal-footer md-grid">
-                <div>
-                    <button type="button" class="close v-close" data-bind="command: cancelCommand">&times;</button>
-                </div>
-                <div>
-                    <a class="btn buttonCreate" data-bind="command: submitCommand">
-                        <i class="icon-floppy"></i>
-                        <div class="i18n i18nflex" data-i18n="POPUPS_CHANGE_PHONENM/BUTTON_SAVE"></div>
-                    </a>
-                </div>
+
             </div>
         </div>
+        <!-- <div class="modal-footer"></div> -->
     </div>
 </div>
