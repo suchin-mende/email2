@@ -12,7 +12,7 @@
                   </div>
             </div>
             <div data-bind="visible: vBox() != null">
-                  <div class="c-vBox" data-bind="click: function () { $root.showPayment(vipPlanCd); }">
+                  <div class="c-vBox">
                         <div class="box-i">
                               <div data-bind="style: { display: vIdx() == 0 ? 'block' : 'none' }">
                                     <svg class="hsvg-icon h-icon r-m-icon r-m-gold-color" aria-hidden="true">
@@ -62,8 +62,8 @@
 
             <div class="vertical-view err-view">
                   <div class="alert alert Error m-alert" data-bind="visibleAnimated: '' !== submitError()">
-                        <button type="button" class="close"
-                              data-bind="click: function () { submitError('') }">&times;</button>
+                        <!-- <button type="button" class="close"
+                              data-bind="click: function () { submitError('') }">&times;</button> -->
                         <span class="i18nflex" data-bind="text: submitError"></span>
                         <div data-bind="visible: '' !== submitErrorAddidional()">
                               <br />
