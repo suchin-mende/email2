@@ -130,12 +130,9 @@
                               autocapitalize="off" spellcheck="false"
                               data-bind="textInput: smsCode, hasFocus: smsCodeFocus, event: { blur: smsCodeBlur }, disable: submitRequest">
                   </div>
-                  <button class="m-btn m-sms-btn">
-                        <span id="smsCode" class="i18nflex" data-bind="command: smsCodeCommand"
-                              data-i18n="REGISTER/BUTTON_SMS_CODE">
-                        </span>
+                  <button class="m-btn m-sms-btn" id="smsCode" data-bind="command: smsCodeCommand">
+                        <span class="i18nflex" data-i18n="REGISTER/BUTTON_SMS_CODE"></span>
                   </button>
-
             </div>
 
             <div class="vertical-view">
