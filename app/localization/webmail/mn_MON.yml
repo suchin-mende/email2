@@ -26,7 +26,6 @@ mn_MON:
     LABEL_QRCODE_SCAN: "Email APP ᠊ᠤᠨ ᠡᠷᠢᠶᠡᠪᠦᠷ  ᠢᠶᠡᠷ ᠨᠡᠪᠲᠡᠷᠡᠬᠦ"
     LABEL_QRCODE_TEXT: "～Please scan the code to log in～"
    REGISTER:
-    M_LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_TITLE: "ᠰᠢᠨ᠎ᠡ  ᠪᠡᠷ ᠢᠮᠸᠯ ᠪᠦᠷᠢᠳᠬᠡᠬᠦ"
     LABEL_EMAIL: "ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_PASSWORD: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
@@ -65,8 +64,8 @@ mn_MON:
     FIND_FORGO_BU: " ᠳᠠᠷᠠᠭ᠎ᠠ ᠠᠯᠬᠤᠮ"
     LABEL_EMAIL: "ᠨᠡᠷ᠎ᠡ ‍\ ᠢᠮᠧᠯ ᠊ᠤᠨ ᠬᠠᠶᠠᠭ"
     LABEL_PHONE_NUMBER: "ᠭᠠᠷ ᠤᠲᠠᠰᠦᠨ ᠳ᠋ᠤᠭᠠᠷ"
-    LABEL_PASSWORD_FORMAT: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
-    LABEL_CONFIRM_PASSWOD_FORMAT: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ‍ᠢᠶ᠋ᠡᠨ ᠪᠠᠲᠤᠯᠠᠬᠤ"
+    LABEL_NEW_PASSWORD: " ᠰᠢᠨ᠎ᠡ ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ"
+    LABEL_CONF_PASSWORD: " ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ‍ᠢᠶ᠋ᠡᠨ ᠪᠠᠲᠤᠯᠠᠬᠤ"
     LABEL_TITLE: "ᠨᠢᠭᠤᠴᠠ ᠳ᠋ᠤᠭᠠᠷ  ‍ᠢᠶ᠋ᠡᠨ ᠮᠠᠷᠲᠠᠪᠠ"
     LABEL_AUTH_CODE: "ᠰᠢᠯᠭᠠᠬᠤ ᠳ᠋ᠤᠭᠠᠷ"
     BUTTON_SMS_CODE: "ᠳ᠋ᠤᠭᠠᠷ ᠢᠯᠡᠭᠡᠬᠦ"

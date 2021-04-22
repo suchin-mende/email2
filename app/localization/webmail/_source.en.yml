@@ -33,10 +33,10 @@ en:
   FINDPASSWORD:
     LABEL_EMAIL: "Email"
     LABEL_NEXT_STEP: "下一步"
-    LABEL_PASSWOD_FORMAT: "New password"
-    LABEL_CONFIRM_PASSWOD_FORMAT: "Confirm Password"
+    LABEL_NEW_PASSWORD: "New password"
+    LABEL_CONF_PASSWORD: "Confirm Password"
     LABEL_CONFIRM: "Confirm"
-    LABEL_FINDPWD: "Retrieve password"
+    LABEL_TITLE: "Retrieve password"
     LABEL_AUTH_CODE: "Auth code"
     BUTTON_SMS_CODE: "Get Captcha"
   REGISTER: ######后加
@@ -51,7 +51,7 @@ en:
     LABEL_LOGIN_ACCOUNT: "Login account"
     LABEL_MONGOL_EMAIL: "@mongol.email"
     LABEL_HALGAI_EMAIL: "@halgai.com" 
-    LABE_LTITLE: "Sign up"
+    LABEL_TITLE: "Sign up"
     LABEL_USERCD_HELP:
           Start with a letter and use combinations of 6 to 18 characters (letter, number, dot, underline)
     LABEL_PASSWORD_HELP:
