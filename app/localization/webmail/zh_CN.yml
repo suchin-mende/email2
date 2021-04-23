@@ -34,10 +34,10 @@ zh_CN:
   FINDPASSWORD:
     LABEL_EMAIL: "邮箱"
     LABEL_NEXT_STEP: "下一步"
-    LABEL_PASSWOD_FORMAT: "新密码"
-    LABEL_CONFIRM_PASSWOD_FORMAT: "确认新密码"
+    LABEL_NEW_PASSWORD: "新密码"
+    LABEL_CONF_PASSWORD: "确认新密码"
     LABEL_CONFIRM: "确认"
-    LABEL_FINDPWD: "找回密码"
+    LABEL_TITLE: "找回密码"
     BUTTON_SMS_CODE: "获取验证码"
     LABEL_AUTH_CODE: "验证码"
   REGISTER: ######后加
@@ -53,7 +53,7 @@ zh_CN:
     LABEL_LOGIN_ACCOUNT: "登录账号"
     LABEL_MONGOL_EMAIL: "@mongol.email"
     LABEL_HALGAI_EMAIL: "@halgai.com" 
-    LABE_LTITLE: "邮箱注册"
+    LABEL_TITLE: "邮箱注册"
     LABEL_USERCD_HELP:
           以字母开头，并使用6至18个字符的组合(字母、数字、点、下划线)
     LABEL_PASSWORD_HELP:
