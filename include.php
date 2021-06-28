@@ -42,7 +42,10 @@
 			define('APP_GOOGLE_ACCESS_TOKEN_PREFIX', ':GAT:');
 			define('APP_WEB_SITE', 'http://www.halgai.com/');
 			// define('APP_API_PATH', 'http://api.halgai.com/');
-			define('APP_API_PATH', 'https://api.mongol.email/');
+			// define('APP_API_PATH', 'https://api.mongol.email/');
+			
+			define('APP_API_PATH', 'http://121.5.69.41:3000/');
+			
 			define('APP_API_COMPANY', 'halgai');
 			define('APP_API_VERSION', 'v1');
 			define('APP_API_SERVICE_ID', '1');
