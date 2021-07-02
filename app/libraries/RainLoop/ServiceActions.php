@@ -1344,7 +1344,7 @@ class ServiceActions
 	private function convertLanguageNameToMomentLanguageName($sLanguage)
 	{
 		$aHelper = array('en_gb' => 'en-gb', 'fr_ca' => 'fr-ca', 'pt_br' => 'pt-br',
-			'uk_ua' => 'ua', 'zh_cn' => 'zh-cn', 'zh_tw' => 'zh-tw', 'fa_ir' => 'fa', 'mn_mon' => 'mn-mon');
+			'uk_ua' => 'ua', 'zh_cn' => 'zh-cn', 'zh_tw' => 'zh-tw', 'fa_ir' => 'fa', 'mn_MON' => 'mn-mon');
 
 		return isset($aHelper[$sLanguage]) ? $aHelper[$sLanguage] : \substr($sLanguage, 0, 2);
 	}
