@@ -44,6 +44,19 @@
                               data-bind="textInput: password, hasFocus: passwordFocus, event: { blur: pwdBlur }, disable: submitRequest">
                   </div>
             </div>
+            <div class="m-face-input lr-line" style="position: relative;">
+                  <svg class="hsvg-icon h-icon ipt-icon login-ipt-icon" aria-hidden="true">
+                        <use xlink:href="#iconphone-01"></use>
+                  </svg>
+                  <div class="vertical-view">
+                        <input type="password" class="m-input lm-input checkAutocomplete"
+                        data-i18n="[placeholder]REGISTER/LABEL_AUTH_CODE" maxlength="4" autocorrect="off"
+                              autocapitalize="off" spellcheck="false"
+                              data-bind="textInput: smsCode, event:{change:smsChange}">
+                        
+                  </div>
+                  <div id="v_container"></div>
+            </div>
 
 
             <div class="vertical-view">
